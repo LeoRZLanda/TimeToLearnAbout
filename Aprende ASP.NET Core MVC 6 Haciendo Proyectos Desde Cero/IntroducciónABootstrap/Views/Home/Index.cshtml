@@ -1,0 +1,738 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="row">
+        <div class="col">
+            Columna 1
+        </div>
+
+        <div class="col">
+            Columna 2
+        </div>
+
+        <div class="col">
+            Columna 3
+        </div>
+    </div>
+
+</div>
+
+
+<h2>Ejemplo: Vertical</h2>
+
+<div class="row">
+    <div class="col-sm-4">
+        Columna 1
+    </div>
+
+    <div class="col-sm-4">
+        Columna 2
+    </div>
+
+    <div class="col-sm-4">
+        Columna 3
+    </div>
+</div>
+
+
+<h4>Ejemplo 1: Aliniando la fila</h4>
+
+<div class="row align-items-start">
+    <div class="col">
+        Columna 1
+    </div>
+
+    <div class="col">
+        Columna 2
+    </div>
+
+    <div class="col">
+        Columna 3
+    </div>
+</div>
+
+<div class="row align-items-center">
+    <div class="col">
+        Columna 1
+    </div>
+
+    <div class="col">
+        Columna 2
+    </div>
+
+    <div class="col">
+        Columna 3
+    </div>
+</div>
+
+<div class="row align-items-end">
+    <div class="col">
+        Columna 1
+    </div>
+
+    <div class="col">
+        Columna 2
+    </div>
+
+    <div class="col">
+        Columna 3
+    </div>
+</div>
+
+<h4>Ejemplo 2: Aliniando las columnas horizontalmente</h4>
+
+<div class="row">
+    <div class="col align-self-start">
+        Columna 1
+    </div>
+
+    <div class="col align-self-center">
+        Columna 2
+    </div>
+
+    <div class="col align-self-end">
+        Columna 3
+    </div>
+</div>
+
+
+<h4>Ejemplo3: Offset</h4>
+
+
+<div class="row">
+    <div class="col-4">Columna 1</div>
+    <div class="col-4 offset-1">Columna 2</div>
+</div>
+
+<h4>Ejemplo4: Auto margen</h4>
+
+
+<div class="row">
+    <div class="col-4">Columna 1</div>
+    <div class="col-4 ms-auto">Columna 2</div>
+</div>
+
+
+<h4>Ejemplo5: Gutter Horizontal</h4>
+
+<div class="row gx-sm-0 gx-md-3 gx-lg-5">
+    <div class="col">
+        <div class="bg-light border">
+            Columna 1
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="bg-light border">
+            Columna 2
+        </div>
+    </div>
+</div>
+
+<h4>Ejemplo6: Gutter Vertical</h4>
+
+<div class="row gx-sm-0 gx-md-3 gx-lg-5 gy-1">
+    <div class="col-6">
+        <div class="bg-light border">
+            Columna 1
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="bg-light border">
+            Columna 2
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="bg-light border">
+            Columna 3
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="bg-light border">
+            Columna 4
+        </div>
+    </div>
+</div>
+
+<h4>Ejemplo7: Gutter Horizontal y Gutter Vertical</h4>
+
+<div class="row g-sm-0 g-md-3 g-lg-5">
+    <div class="col-6">
+        <div class="bg-light border">
+            Columna 1
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="bg-light border">
+            Columna 2
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="bg-light border">
+            Columna 3
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="bg-light border">
+            Columna 4
+        </div>
+    </div>
+</div>
+
+<h4>Ejemplo8: Manejando imagenes</h4>
+
+<div class="row g-3">
+    <div class="col-sm-3">
+        <img class="img-fluid" src="https://asset.vg247.com/zenless-zone-zero_obqWbPP.jpg/BROK/thumbnail/1600x900/format/jpg/quality/80/zenless-zone-zero_obqWbPP.jpg"/>
+    </div>
+
+    <div class="col-sm-3">
+        <img class="img-fluid" src="https://asset.vg247.com/zenless-zone-zero_obqWbPP.jpg/BROK/thumbnail/1600x900/format/jpg/quality/80/zenless-zone-zero_obqWbPP.jpg"/>
+    </div>
+
+    <div class="col-sm-3">
+        <img class="img-fluid" src="https://asset.vg247.com/zenless-zone-zero_obqWbPP.jpg/BROK/thumbnail/1600x900/format/jpg/quality/80/zenless-zone-zero_obqWbPP.jpg"/>
+    </div>
+
+    <div class="col-sm-3">
+        <img class="img-fluid" src="https://asset.vg247.com/zenless-zone-zero_obqWbPP.jpg/BROK/thumbnail/1600x900/format/jpg/quality/80/zenless-zone-zero_obqWbPP.jpg"/>
+    </div>
+</div>
+
+<h4>Ejemplo9: Imgen Thumbnail</h4>
+
+<div class="row">
+    <div class="col-sm-4">
+        <img class = "img-fluid img-thumbnail rounded-circle" src="https://staticg.sportskeeda.com/editor/2023/06/49933-16867746943748-1920.jpg"/>
+    </div>
+</div>
+
+
+<h4>Ejemplo10: Colores</h4>
+
+<div class="mb-2">
+    <button class="btn btn-primary">Botón primario</button>
+</div>
+
+<div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+<div class="p-3 mb-2 bg-primary bg-gradient text-white">.bg-primary con gradiente</div>
+
+<div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
+<div class="p-3 mb-2 bg-secondary bg-gradient text-white">.bg-secondary con gradiente</div>
+
+<div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+<div class="p-3 mb-2 bg-success bg-gradient text-white">.bg-success con gradiente</div>
+
+<div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+<div class="p-3 mb-2 bg-danger bg-gradient text-white">.bg-danger con gradiente</div>
+
+<div class="p-3 mb-2 bg-warning text-dark">.bg-warning</div>
+<div class="p-3 mb-2 bg-warning bg-gradient text-dark">.bg-warning con gradiente</div>
+
+<div class="p-3 mb-2 bg-info text-dark">.bg-info</div>
+<div class="p-3 mb-2 bg-info bg-gradient text-dark">.bg-info con gradiente</div>
+
+<div class="p-3 mb-2 bg-light text-dark">.bg-light</div>
+<div class="p-3 mb-2 bg-light bg-gradient text-dark">.bg-light con gradiente</div>
+
+<div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
+<div class="p-3 mb-2 bg-dark bg-gradient text-white">.bg-dark con gradiente</div>
+
+<div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+<div class="p-3 mb-2 bg-white bg-gradient text-dark">.bg-white con gradiente</div>
+
+<h4>Ejemplo11: Tablas</h4>
+
+<table class="table table-hover table-borderless sm">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Nombre1</td>
+            <td>Apellido1</td>
+        </tr>
+
+        <tr class="table-success">
+            <td>2</td>
+            <td>Nombre2</td>
+            <td>Apellido2</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td colspan="2">Nombre3 Appellido3</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Ejemplo12: Mantener el ratio de un video</h4>
+
+
+<div>
+    Sin ratio
+</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/G9tScR87hGY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div>
+    Con ratio 16x9
+</div>
+
+<div class="ratio ratio-16x9">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/G9tScR87hGY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
+<div class="row gy-4">
+    <div class="col-md-4">
+        <div class="ratio ratio-16x9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/G9tScR87hGY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="ratio ratio-16x9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/G9tScR87hGY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="ratio ratio-16x9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/G9tScR87hGY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+</div>
+
+
+<h4>Ejemplo13: Anchura</h4>
+
+<div class="w-25 p-3 bg-primary">width 25%</div>
+<div class="w-50 p-3 bg-secondary">width 25%</div>
+<div class="w-75 p-3 bg-primary">width 25%</div>
+<div class="w-100 p-3 bg-secondary">width 25%</div>
+<div class="w-auto p-3 bg-primary">width auto</div>
+
+<h4>Ejemplo14: Altura</h4>
+
+<div style="height: 100px;" class="bg-info">
+    <div class="h-25 d-inline-block bg-primary" style="width: 120px;">height 25%</div>
+    <div class="h-50 d-inline-block bg-secondary" style="width: 120px;">height 50%</div>
+    <div class="h-75 d-inline-block bg-primary" style="width: 120px;">height 75%</div>
+    <div class="h-100 d-inline-block bg-secondary" style="width: 120px;">height 100%</div>
+    <div class="h-auto d-inline-block bg-primary" style="width: 120px;">height auto</div>
+</div>
+
+
+<h4>Ejemplo15: Toda la pantalla</h4>
+
+<div class="vw-100 bg-success">Width 100vw</div>
+<div class="vh-100 bg-secondary">height 100vh</div>
+
+
+<h4>Ejemplo16: Márgenes</h4>
+
+<div>
+    Fila 1
+</div>
+
+<div class="mt-4">
+    Fila 2
+</div>
+
+<div>
+    Fila 3
+</div>
+
+<button class="btn btn-primary me-5">Boton 1</button>
+<button class="btn btn-secondary px-2">Boton 2</button>
+
+
+<h4>Ejemplo17: Alineado Texto</h4>
+
+
+<p class="text-start">Texto a la izquierda</p>
+<p class="text-center">Texto en el centro</p>
+<p class="text-end">Texto a la derecha</p>
+
+<p class="text-sm-center">Texto centralizado en patallas pequeñas o más grandes</p>
+<p class="text-md-center">Texto centralizado en patallas medianas o más grandes</p>
+<p class="text-lg-center">Texto centralizado en patallas grandes o más grandes</p>
+<p class="text-xl-center">Texto centralizado en patallas extra-grandes o más grandes</p>
+
+<h2>Texto dentro de su contenedor</h2>
+
+<div class="badge bg-primary text-wrap" style="width: 6rem;">
+    Este texto no se sale de su contenedor
+</div>
+
+<div class="badge bg-primary text-wrap text-break" style="width:  6rem;">
+    mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+</div>
+
+<h2>Transformando texto</h2>
+
+<p class="text-lowercase">Minusculas</p>
+<p class="text-uppercase">Mayusculas texto</p>
+<p class="textcapitalize">cada palabra cn mayusculas</p>
+
+
+<h2>Tamaño de textos</h2>
+
+
+<p class="fs-1">.fs-1</p>
+<p class="fs-2">.fs-2</p>
+<p class="fs-3">.fs-3</p>
+<p class="fs-4">.fs-4</p>
+<p class="fs-5">.fs-5</p>
+<p class="fs-6">.fs-6</p>
+
+
+<h2>Estilo del texto</h2>
+
+<p class="fw-bold">Negrita</p>
+<p class="fw-bolder">Más negrita</p>
+<p class="fw-normal">Normal</p>
+
+<p class="fw-light">Texto Light</p>
+<p class="fw-lighter">Más Light</p>
+<p class="fw-italic">Cursiva</p>
+
+<p class="text-decoration-underline">Subrayado</p>
+<p class="text-decoration-line-through">Linea a travez del texto</p>
+
+<a href="#" class="">Enlace con decoración</a>
+
+<a href="#" class="text-decoration-none">Enlace sin decoración</a>
+
+
+<h2>Formulario Normal</h2>
+
+<form>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Descripcion</label>
+        <textarea type="email" class="form-control" rows="3"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Color Favorito</label>
+        <select class="form-select">
+            <option value="1">Azul</option>
+            <option value="2">Rojo</option>
+            <option value="3">Verde</option>
+        </select>
+    </div>
+
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" checked />
+        <label class="form-label">Es Empleado</label>
+    </div>
+
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name = "miradio" />
+        <label> Opcion1</label>
+    </div>
+
+    <div class="form-check">
+        <input type="radio" class="form-check-input" name = "miradio" />
+        <label> Opcion2</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" placeholder="email" />
+        <label>Email</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" disabled />
+    </div>
+
+    <div class="mb-3">
+        <label>Color de la camisa</label>
+        <input type="color" class="form-control form-control-color" value="#563d7c" />
+    </div>
+
+    <div>
+        <div class="btn btn-primary">Enviar</div>
+        <div class="btn btn-secondary">Cancelar</div>
+    </div>
+</form>
+
+<h2>Formulario con columnas</h2>
+
+<div class="row">
+    <div class="col">
+        <input type="text" class="form-control" placeholder="Primer Nombre">
+    </div>
+
+    <div class="col">
+        <input type="text" class="form-control" placeholder="Primer Apellido">
+    </div>
+
+    <div class="col">
+        <button class="btn btn-primary">Enviar</button>
+    </div>
+</div>
+
+<h2>Acordeón</h2>
+
+<div class="acordion" id="ejemploAcordeon">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button data-bs-toggle="collapse" data-bs-target="#elementoacordeon" class="accordion-button">Elemento 1</button>
+        </h2>
+
+        <div id="elementoacordeon" class="accordion-collapse collapse show" data-bs-parent="#ejemploAcordeon">
+            <div class="accordion-body">
+                Este es el contenido del primer elemento.
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button data-bs-toggle="collapse" data-bs-target="#elemento2acordeon" class="accordion-button">Elemento 2</button>
+        </h2>
+
+        <div id="elemento2acordeon" class="accordion-collapse collapse" data-bs-parent="#ejemploAcordeon">
+            <div class="accordion-body">
+                Este es el contenido del segundo elemento.
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2>Alertas</h2>
+
+<div class="alert alert-primary" role="alert">
+  A simple primary alert—check it out!
+</div>
+<div class="alert alert-secondary" role="alert">
+  A simple secondary alert—check it out!
+</div>
+<div class="alert alert-success" role="alert">
+  A simple success alert—check it out!
+</div>
+<div class="alert alert-danger" role="alert">
+  A simple danger alert—check it out!
+</div>
+<div class="alert alert-warning" role="alert">
+  A simple warning alert—check it out!
+</div>
+<div class="alert alert-info" role="alert">
+  A simple info alert—check it out!
+</div>
+<div class="alert alert-light" role="alert">
+  A simple light alert—check it out!
+</div>
+<div class="alert alert-dark" role="alert">
+  A simple dark alert—check it out!
+</div>
+
+<button onclick="mostrarAlertaExitoso()">Mostra alerta exitosa</button>
+<button onclick="mostrarAlertaError()">Mostra alerta de error</button>
+
+<div>
+    Las alertas se van a mostrar aqui
+</div>
+
+<div id="contenedor-alertas">
+
+</div>
+
+@section Scripts{
+    <script>
+        function mostrarAlertaExitoso(){
+            mostrarAlerta("Este es un mensaje exitoso", "success");
+        }
+
+        function mostrarAlertaError(){
+            mostrarAlerta("Este es un mensaje de error", "danger");
+        }
+
+        function mostrarAlerta(mensaje, tipo){
+            const alerta = document.createElement("div");
+            alerta.innerHTML = `<div class="alert alert-${tipo}" role="alert">
+                                ${mensaje}
+                                </div>`;
+            const contenedorAlertas = document.getElementById('contenedor-alertas');
+            contenedorAlertas.append(alerta);
+        }
+    </script>
+}
+
+<h2>Carousel</h2>
+
+<div id="carouselEjemplo" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <img src="https://asset.vg247.com/zenless-zone-zero_obqWbPP.jpg/BROK/thumbnail/1600x900/format/jpg/quality/80/zenless-zone-zero_obqWbPP.jpg" class="d-block w-100">
+        </div>
+
+        <div class="carousel-item">
+            <img src="https://www.pcinvasion.com/wp-content/uploads/2022/06/zenless-zone-zero.jpg" class="d-block w-100">
+        </div>
+
+        <div class="carousel-item">
+            <img src="https://cdnb.artstation.com/p/assets/images/images/051/390/769/large/cruz-vu-zenless-zone-zero-compressed.jpg?1657174322" class="d-block w-100">
+        </div>
+
+    </div>
+
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselEjemplo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselEjemplo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselEjemplo" data-bs-slide-to="2"></button>
+    </div>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselEjemplo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+
+</div>
+
+<h2>Vetanas Modales</h2>
+
+<!--Boton abre modal-->
+
+<div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ejemploModal">Abrir Modal</div>
+
+<!--Modal-->
+
+<div class="modal fade" id="ejemploModal" tabindex="-1">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Titulo de modal</h5>
+                <button type="button" class="btn-close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Este es un pequño formulario</p>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input class="form-control" type="text">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</div>
+                <div class="btn btn-primary" data-bs-dismiss="modal">Salvar cambios</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<h2>Tabs</h2>
+
+<ul class="nav nav-tabs justify-content-center">
+    <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1">Tab 1</button>
+    </li>
+
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">Tab 2</button>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="tab1">
+        Buenos días
+    </div>
+
+    <div class="tab-pane fade" id="tab2">
+        Adíos
+    </div>
+</div>
+
+<h2>Menu lateral con offCanvas</h2>
+
+
+<button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#ejemploOffCanvas">
+    Abrir offcanvas
+</button>
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="ejemploOffCanvas">
+
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Mi aplicacion</h5>
+        <button class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body">
+        <div>
+            Un texto de ejemplo
+        </div>
+    </div>
+</div>
+
+<h2>Mostrando Toasts</h2>
+
+<button type="button" class="btn btn-primary" onclick="mostrarToast()">Mostrar toast</button>
+
+<!--Bueno-->
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="miToast" class="toast">
+        <div class="toast-header">
+            <strong class="me-auto">Mensaje enviado</strong>
+            <small>Hace unos instantes</small>
+            <button class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body">
+            El mensaje fue enviado a.
+        </div>
+    </div>
+</div>
+
+<!--Malo
+
+<div class="position-fixed botton-0 end-0 p-3" style="z-index: 11">
+    <div id="miToast" class="toast">
+        <div class="toast-header">
+            <strong class="me-auto">Mensaje enviado</strong>
+            <small>Hace unos instantes</small>
+            <button class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body">
+            El mensaje fue enviado a.
+        </div>
+    </div>
+</div>
+
+-->
+
+@section Scripts2{
+    <script>
+        function mostrarToast(){
+            var ejemmploToast = document.getElementById("miToast");
+            var toast = new bootstrap.Toast(ejemmploToast);
+            toast.show();
+        }
+    </script>
+}

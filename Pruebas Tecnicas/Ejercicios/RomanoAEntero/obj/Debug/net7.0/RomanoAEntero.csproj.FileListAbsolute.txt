@@ -1,0 +1,14 @@
+C:\5940\L\Cursos\Pruebas Tecnicas\Ejercicios\RomanoAEntero\obj\Debug\net7.0\RomanoAEntero.GeneratedMSBuildEditorConfig.editorconfig
+C:\5940\L\Cursos\Pruebas Tecnicas\Ejercicios\RomanoAEntero\obj\Debug\net7.0\RomanoAEntero.AssemblyInfoInputs.cache
+C:\5940\L\Cursos\Pruebas Tecnicas\Ejercicios\RomanoAEntero\obj\Debug\net7.0\RomanoAEntero.AssemblyInfo.cs
+C:\5940\L\Cursos\Pruebas Tecnicas\Ejercicios\RomanoAEntero\obj\Debug\net7.0\RomanoAEntero.csproj.CoreCompileInputs.cache
+C:\5940\L\Cursos\Pruebas Tecnicas\Ejercicios\RomanoAEntero\bin\Debug\net7.0\RomanoAEntero.exe
+C:\5940\L\Cursos\Pruebas Tecnicas\Ejercicios\RomanoAEntero\bin\Debug\net7.0\RomanoAEntero.deps.json
+C:\5940\L\Cursos\Pruebas Tecnicas\Ejercicios\RomanoAEntero\bin\Debug\net7.0\RomanoAEntero.runtimeconfig.json
+C:\5940\L\Cursos\Pruebas Tecnicas\Ejercicios\RomanoAEntero\bin\Debug\net7.0\RomanoAEntero.dll
+C:\5940\L\Cursos\Pruebas Tecnicas\Ejercicios\RomanoAEntero\bin\Debug\net7.0\RomanoAEntero.pdb
+C:\5940\L\Cursos\Pruebas Tecnicas\Ejercicios\RomanoAEntero\obj\Debug\net7.0\RomanoAEntero.dll
+C:\5940\L\Cursos\Pruebas Tecnicas\Ejercicios\RomanoAEntero\obj\Debug\net7.0\refint\RomanoAEntero.dll
+C:\5940\L\Cursos\Pruebas Tecnicas\Ejercicios\RomanoAEntero\obj\Debug\net7.0\RomanoAEntero.pdb
+C:\5940\L\Cursos\Pruebas Tecnicas\Ejercicios\RomanoAEntero\obj\Debug\net7.0\RomanoAEntero.genruntimeconfig.cache
+C:\5940\L\Cursos\Pruebas Tecnicas\Ejercicios\RomanoAEntero\obj\Debug\net7.0\ref\RomanoAEntero.dll

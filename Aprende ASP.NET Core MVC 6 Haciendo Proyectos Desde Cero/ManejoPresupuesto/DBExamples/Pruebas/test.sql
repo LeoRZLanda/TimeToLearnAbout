@@ -1,0 +1,1 @@
+SELECT * FROM Categorías WHERE UsuarioId = 1

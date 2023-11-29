@@ -1,0 +1,18 @@
+#reordenable{
+    cursor: move;
+}
+
+.contenedor-totales{
+    display: flex;
+    justify-content: space-between;
+    font-size: 26px;
+    text-align: center;
+}
+
+.activo{
+    color: blue;
+}
+
+.pasivo{
+    color: red;
+}

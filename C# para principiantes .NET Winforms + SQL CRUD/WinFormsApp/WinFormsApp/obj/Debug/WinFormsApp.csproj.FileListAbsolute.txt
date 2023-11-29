@@ -1,0 +1,11 @@
+C:\Users\lramirez\8496\L\GitHub\Cursos\C# para principiantes .NET Winforms + SQL CRUD\WinFormsApp\WinFormsApp\bin\Debug\WinFormsApp.exe.config
+C:\Users\lramirez\8496\L\GitHub\Cursos\C# para principiantes .NET Winforms + SQL CRUD\WinFormsApp\WinFormsApp\bin\Debug\WinFormsApp.exe
+C:\Users\lramirez\8496\L\GitHub\Cursos\C# para principiantes .NET Winforms + SQL CRUD\WinFormsApp\WinFormsApp\bin\Debug\WinFormsApp.pdb
+C:\Users\lramirez\8496\L\GitHub\Cursos\C# para principiantes .NET Winforms + SQL CRUD\WinFormsApp\WinFormsApp\obj\Debug\WinFormsApp.csproj.AssemblyReference.cache
+C:\Users\lramirez\8496\L\GitHub\Cursos\C# para principiantes .NET Winforms + SQL CRUD\WinFormsApp\WinFormsApp\obj\Debug\WinFormsApp.Contacts.resources
+C:\Users\lramirez\8496\L\GitHub\Cursos\C# para principiantes .NET Winforms + SQL CRUD\WinFormsApp\WinFormsApp\obj\Debug\WinFormsApp.ContactsDetails.resources
+C:\Users\lramirez\8496\L\GitHub\Cursos\C# para principiantes .NET Winforms + SQL CRUD\WinFormsApp\WinFormsApp\obj\Debug\WinFormsApp.Properties.Resources.resources
+C:\Users\lramirez\8496\L\GitHub\Cursos\C# para principiantes .NET Winforms + SQL CRUD\WinFormsApp\WinFormsApp\obj\Debug\WinFormsApp.csproj.GenerateResource.cache
+C:\Users\lramirez\8496\L\GitHub\Cursos\C# para principiantes .NET Winforms + SQL CRUD\WinFormsApp\WinFormsApp\obj\Debug\WinFormsApp.csproj.CoreCompileInputs.cache
+C:\Users\lramirez\8496\L\GitHub\Cursos\C# para principiantes .NET Winforms + SQL CRUD\WinFormsApp\WinFormsApp\obj\Debug\WinFormsApp.exe
+C:\Users\lramirez\8496\L\GitHub\Cursos\C# para principiantes .NET Winforms + SQL CRUD\WinFormsApp\WinFormsApp\obj\Debug\WinFormsApp.pdb
