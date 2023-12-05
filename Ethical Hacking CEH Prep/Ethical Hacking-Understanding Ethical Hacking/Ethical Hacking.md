@@ -968,15 +968,15 @@ A couple of things that we need to consider when it comes to these diferent laye
 
 Consider This
 
-* <details>
+<details>
 	<summary>Never ignore the edge</summary>
 	<p>Just because we have these other lines of defenses behind us deeper wiyhin our infrastrucutre, doesn't mean that we should ignore the edge. The edge is where we want to stop the breach from.</p>
 </details>
-* <details>
+<details>
 	<summary>Follow the workflow</summary>
 	<p>To determine your protection points.</p>
 </details>
-* <details>
+<details>
 	<summary>Zero Trust Security posture</summary>
 	<p>And as final option, consider a zero trust security posture, these types of mechanisms are implemented in a default mode, where there is no connectivity allowed and less credentials have been validated.</p>
 </details>
@@ -1339,3 +1339,487 @@ Basically involves defining diferent;
 </ol>
 
 ## The role of AI/ML
+
+When it comes to IA, there are several cyberscurity companie out there using AI to actually send aletrs or raise alerts to you when something has happened to you or when you start to see malware, botnets, new exploits popping up on you, including things like users and how they're handling data.
+
+Then of talking about IA lets start of machine learning, is kind of a branch of IA.  It's what allows the system the ability to slef learn without any explicit programming. 
+
+The cibersecurity sector is \#4 in this AI environment, there are over 80 private companies in cybersecurity that are using AI, and they're categorizing them into nine main areas that they operate.
+
+1. Mobile security
+2. Inthernet of Things
+3. Internet of Threats
+4. Behavior Analysis
+
+Amoung other fun things.
+
+Now as far as certification  concerned with CEH, they just want you to be aware of artificial intelligence and machine learning, not necessarily how to do it beacause it's still a baby in its evolution.
+
+## Can AI and ML Stop Attacks?
+
+Well, they're doing quite a bit already, and again, this is an emerging technologyso it's changing all the tima, but they are actually helping in:
+
+<div>
+	<table class = "AIML">
+		<thead>
+			<tr>
+				<th colspan = "2">Areas</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<details>
+						<summary>Authenticationand password protection</summary></br>
+						<p>
+							Using AI to improve how well the biometric validations or face recognition is accomplished, looking different things such as tracking key, correlation and patterns.
+						</p></br>
+					</details>
+				</td>
+				<td>
+					<details>
+						<summary>Phishing</summary></br>
+						<p>
+							AI and ML play a pivotal rol in preventing, as well as identifying different types of phishing attacks.
+						</p></br>
+					</details>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<details>
+						<summary>Threat detection</summary></br>
+						<p>
+							Can help notify administrators of an impending cyber threat by carrying out different logical data analysis.
+						</p></br>
+					</details>
+				</td>
+				<td>
+					<details>
+						<summary>Vulnerability management</summary></br>
+						<p>
+							The fastest technology in making sure that machines aren't vulnerable, or patching vulnerabilities quickly.
+						</p></br>
+					</details>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<details>
+						<summary>Behavioral analysis</summary></br>
+						<p>
+							A great example of this is our credit cards, monitoring if you are buying something outside of things that you would normally purchase, and the credit card gets locked until be unlock via phone app.
+						</p></br>
+					</details>
+				</td>
+				<td>
+					<details>
+						<summary>AI-based antivirus</summary></br>
+						<p>
+							These type of solutions will use anomaly detection to understand or get a better grasp of understanding how a program is supposed to operate. Kind of like that behavioral analysis, but it's done at a software level.
+						</p></br>
+					</details>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<details>
+						<summary>Botnets</summary></br>
+						<p>
+							Many security profesional are using AI and ML algorithms to alert them about suspicious behavior that may be caused by botnets.
+						</p></br>
+					</details>
+				</td>
+				<td>
+					<details>
+						<summary>Fraud</summary></br>
+						<p>
+							Very similar to the behavioral analysis, where we're,AI, looking for detect patterns are out of the ordinary when it comes to transactions.
+						</p></br>
+					</details>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<details>
+						<summary>Network security</summary></br>
+						<p>
+							Help administratirs to do some of their normal day-to-day network security tasks like, making sure the map of the enterprise is current, or up to date, so as you move machine around or change subnets, that map gets updated, as well helpig to generate some really nice security policies in the fly.
+						</p></br>
+					</details>
+				</td>
+				<td>
+					<details>
+						<summary>AI vs. AI</summary></br>
+						<p>
+							Attackers are starting to use AI threats, but there's some AI software ut there that can detect diferent types of AI attacks befire a network gets compromised.
+						</p></br>
+					</details>
+				</td>
+			</tr>
+		</tobdy>
+	</table>
+	<style>
+		.AIML tr, .AIML td, .AIML th{
+			border: 0px;
+		}
+	</style>
+</div>
+
+## Learning Check
+
+What is it I'm describing when I say that you need to be looking at the degress of uncertainty or expectation of potential damage that a malicious event could actually cause?
+
+<details>
+	<summary>Answer</summary></br>
+	<p>Description of <b>Risk</b></p></br>
+</details>
+
+There are two different ways that we could rate risk. Of the two different ways, wich one gives you a sclae of the curent risk occurrence or the likelihood along with the consequences or impact, and it's typically shown in a graphical representation?
+
+<details>
+	<summary>Answer</summary></br>
+	<p>Risk Matrix</p></br>
+</details>
+
+We then talked about threat modeling. 
+
+Wich one actually breaks down an object to identify the trust boundaries, entry points, data flow, and even exit points?
+
+<details>
+	<summary>Answer</summary></br>
+	<p>Decompose the application</p></br>
+</details>
+
+
+The we got into looking at the future of AI.
+
+
+Theres actually a child process of artificial intelligence that helps AI to make determinations whitout any input for computation. what did I just describe?
+
+<details>
+	<summary>Answer</summary></br>
+	<p>Machine Learning</p></br>
+</details>
+
+
+We also talked about incident response and handling, and one of the phases actually went through and helps us to prevent the spread of an infection to other assets. What that phase was called?
+
+<details>
+	<summary>Answer</summary></br>
+	<p>Containment</p></br>
+</details>
+
+Wich phase removes the root cause of an incident?
+
+<details>
+	<summary>Answer</summary></br>
+	<p>Erradication</p></br>
+</details>
+
+
+### Key Terms
+
+* Ways AI and ML prevent attacks
+* Incident Handling and Response
+* Risk
+
+
+# Differentiate Information Security Laws and Standars
+
+I think it's probably important here to note that there is a difference between the law and a standard or a guideline.
+
+A standard is just simply a document that is established, typically by consensus, and is approved by a boyd that is recognized by that particular industry, and it provides common rules, as well as guidelines and activities for their particular environment.
+
+## The basics
+
+### The standard for credit card processing
+
+**Payment Card Industry Data Security Standard (PCI DSS)**
+
+How his name say to us, a standard in order to accept credit cards. And those are going to include things like being able to prove that you;
+
+<details>
+	<summary>Build and maintain a secure network</summary></br>
+	<p>Including things like firewall configurtions in place to protect cardholder data. Obviuosly don't using defaults settings, specially for system passwords.</p></br>
+</details>
+
+<details>
+	<summary>Protect carholder data</summary></br>
+	<p>Meaning that we're going to encrypt it while it's in motion or even in storage.</p></br>
+</details>
+
+<details>
+	<summary>Maintain a VMP</summary></br>
+	<p>A Vulnerability Management Program, showing that you use and regularly update your antivirus as well as your programs that are involved in any system that is involved in the credit card process.</p></br>
+</details>
+
+<details>
+	<summary>Strong acces controls</summary></br>
+	<p>We're going to restrict access to cardholder information so that the business doesn't get everything. They only that's need to know for that business is transmitted or actuakky received by that business. We'll also go through in assign unique IDs to each person with computer access, and we're going to restrict physical access to any of the cardholder information that the company is storing.</p></br>
+</details>
+
+<details>
+	<summary>Monitor and test</summary></br>
+	<p>We also have being able to prove that we regularly monitor and test our netwoks, and of course we're going to update those at any time.</p></br>
+</details>
+
+<details>
+	<summary>nformation security policy</summary></br>
+	<p>We´re going to have a policy in place, maintain it, update it for anybody that's involved in the process of handling any type of credit card information.   </p></br>
+</details>
+
+
+### ISO/IEC 27001:2013
+
+We also have something that specifes the requirements for information security;
+
+✔ Implement
+✔ Maintain
+✔ Establish
+✔ Improve
+
+So we're going to make sure that we stablish;
+
+* Security requirements and goals
+* Cost-effective
+* Compliance
+* New and existing InfoSec processes
+* Status of InfoSec activities
+* Provide InfoSec information to customers
+
+
+### Health Insurance Portability and Accountability Act (HIPAA)
+
+Actually provides federal protection for any individual's health information maintained or stored by any type of health company.
+
+And they've laid out several different rles for administrative, physical and technical safeguards and they include things like;
+
+<details>
+	<summary>Electronic transaction and code set standars</summary></br>
+	<p> Any transacton, including health claims, payment, remittance, claim status, authorizations, payments have to be secured. Wether it's in motion or in storage or at rest.</p></br>
+</details>
+
+<details>
+	<summary>Privacy rule</summary></br>
+	<p>This actually establishes another standard to protect people's medical records and other personal health information, including who the healthcare provider is, what the health plan is, All this information has to be secure, as well as, it gve us, the patient, the right for use to control our health information. Includign the right to llok at and actually get a copy of our health records.</p></br>
+</details>
+
+<details>
+	<summary>Security rule</summary></br>
+	<p>This rule requires appropriate physical, technical safeguards, administatuve safeguards to make sure that we have that CIA, Confidentiality, Integrity and  Authorization of electronic protected health information.</p></br>
+</details>
+
+<details>
+	<summary>National Identifier</summary></br>
+	<p>This is basically setting that each employer has a national number that identifies them on all of the different transactions that may take place.</p></br>
+</details>
+
+<details>
+	<summary>Enforcement rule</summary></br>
+	<p>This is going to contain provisionsrelated to any type of compliance, as well as investigations, as well as the possibility of imposing penalties for  vaiolations of any HIPAA rules.</p></br>
+</details>
+
+### Sarbanes-Oxley (SOX)
+
+Was created in 2002 to help protect public and investors by adding additional accuracy and reliability when it comes to corporate disclosures.
+
+Now unfortunately, this act doesn't go through and tell the organization how they store the records, butinstead it describes the recirds that the organization must store and how long they storm for.
+
+Now, the key requirement for SOX, are actually organized into several different titles.
+
+<ol>
+	<li>
+		<details>
+			<summary>Public Company Accounting Oversight Board (PCAOB)</summary></br>
+			<p>Wich creates a central oversight board tasked with going through and making sure audits are performed, as well as helping us to handle quality control.</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Auditor Independence</summary></br>
+			<p>Wich basically help to society that new auditors are required to be rotated, as well as restricts auditing companies from providing consulting services to their clients.</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Corporate Responsability</summary></br>
+			<p>It looks at the interaction between auditors that may be extrenal, as well as corporate auditors or commitees and their responsabilities. It also goes through and helpsto specify the behaviors of corporate officers and any penalties for noncompliance</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Enhanced Financial Disclosures</summary></br>
+			<p>Get into describing reporting requirements for financial transactions.</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Analyst Conflicts of Interest</summary></br>
+			<p>It's going to give us a code of condict for security analysts and make sure they disclose any knowledgeable conflits of interest that they may have.</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Commission Resources and Authority</summary></br>
+			<p>Wich goes through and helps to define the SEC's, Securities exchange Commision,  authority to censor or actually bar security professional from working.</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Studies and Reports</summary></br>
+			<p>This goes thrugh and specifies what the Security Exchange Commission, SEC, the different types of studies that they can conduct and how they report their findings.</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Corporate and Criminal Fraud Accountability</summary></br>
+			<p>Sections that goes through an actually describes the different criminal penalties for going through and altering financial records or manipulating them, or interfering with investigations.</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>White Collar Crime Penalty Enhacement</summary></br>
+			<p>This actually goes through and increases the criminal penalties associated with white collar crimes,  whereby it goes through recommends stronger sentencing guidelines.</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Corporate tax Returns</summary></br>
+			<p>This goes through and basically tells us that the CEO should sign the company tax return.</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Corporate Fraud Accountability</summary></br>
+			<p>It goes through identifies any type of tampering or fraud as criminal offenses and then joins or combines those offenses together into specific penalties</p></br>
+		</details>
+	</li>
+</ol>
+
+
+### Federal Level 
+
+
+|DMCA|FISMA|
+| - | - |
+|WIPO Treaty|Framework for effective InfoSec controls|
+|Defines legal prohibitions|Categorizing|
+||Minimum security requirements|
+||Selecting security controls|
+||Assessing security controls|
+||Security authorization systems|
+
+
+Digital Millennium Copyrght Act(DMCA) signed back in 1996 from the World Intellectual Property Organization (WIPO)
+
+Fedarl Information Security Management Act (FISMA), 2002, and it creates severa different standars and guidelines that are required by congressional legislation. A framework that's actually effetive for InfoSec Controls that are out there. 
+
+It includes things like standars for categorizing information and information systems by the impact that system or information would have on the business if there becomes breached.
+
+Now it stime to learn at global level
+
+## GDPR and DPA
+
+### GDPR
+
+General Data Protection Regulation, very stringent when it comes to privacy and security laws globally, went into affect back in 2018, and there's some very hefty fines for anybody who violates it.
+
+If i have already take a course deeper into GDPR you can see it here.
+
+If not, in general includes seven protections and accountablity principles.
+
+1. Lawfulness, transparency and fairness
+2. Purpose limitation
+3. Storage limitation
+4. Data minimization
+5. Accuracy
+6. Accountability
+7. Integrity and confidentiality
+
+
+### Data Protection Act 2018 (DPA)
+
+This is a **framework for data protection** that came out of the UK, and it's designed to **protect individuals** when it comes to personal data, making sure that personal data is processed lawfully.
+
+It also talks about rights that organization may or may not have to different personal information. Sets out different proteciton rules for law enforcement and how to handle data protection whan it comes to other areas, like national security or even defense.
+
+Sadly, al the laws and standars depend on the country that you live in or work.
+
+## Learning Check
+
+
+Which regulation requires every provider who does business electronically to use the same healthcare transactions, code sets and identifiers?
+
+<details>
+	<summary>Answer</summary></br>
+	<p>HIPAA</p></br>
+</details>
+
+Wich standard applies to anybody involved in the payment card processing system?
+
+<details>
+	<summary>Answer</summary></br>
+	<p>PCI DSS</p></br>
+</details>
+
+Wich standard has the requirements for stablishing, maintaining, and implementing continual improvement over information security management systems?
+
+<details>
+	<summary>Answer</summary></br>
+	<p>ISO/IEC 27001:2013</p></br>
+</details>
+
+Wich regulation was put in action back in 2018 and has the most stringent privacy and security laws globally? 
+
+<details>
+	<summary>Answer</summary></br>
+	<p>GDPR</p></br>
+</details>
+
+How about the law in the United States that helps with copyrights and intellectual property?
+
+<details>
+	<summary>Answer</summary></br>
+	<p>DMCA</p></br>
+</details>
+
+Wich laws are designed to protect public investors by increasing the accuracy and reliability of corporate disclosures?
+
+<details>
+	<summary>Answer</summary></br>
+	<p>Sarbanes Oxley (SOX)</p></br>
+</details>
+
+This regulation actually provides a framework for making sure of the effectiveness of information security controls.
+
+<details>
+	<summary>Answer</summary></br>
+	<p>FISMA</p></br>
+</details>
+
+This one's a framework for data protection in the UK.
+
+<details>
+	<summary>Answer</summary></br>
+	<p>DPA</p></br>
+</details>
+
+
+## Next Step
+
+Remeber this is only the begining, the next topic will cover is **Ethical hacking: Reconnaissance/footprinting** click and see you there.
+
+# Domain Summary
+
+## Objetives Covered
+
+* Current Security Trends
+* Cyber Kill Chain Methodology and TTP's
+* Adversary Behavioral Identification
+* Indicators of Compromise (IoC)
+* Hacking concepts, types, scope and phases
+* Information Security Controls
+* InfoSec Laws and Standars
+* What's expected of an Ethical Hacker
+
