@@ -33,7 +33,7 @@ I also insert the example exercises to get us some help follow along to the CEH
 
 This preparation consist in 60 hours of course and more than 20 vids
 
-![[Pasted image 20231127122904.png]]
+![course route](https://github.com/LeoRZLanda/TimeToLearnAbout/blob/main/Ethical%20Hacking%20CEH%20Prep/Ethical%20Hacking-Understanding%20Ethical%20Hacking/Apendix/Pasted%20image%2020231127122904.png)
 
 # Classifying Information Security
 
@@ -46,7 +46,7 @@ The porpuse of this, we can understand this thanks to the next quote.
 
 ## Breaches by Industry
 
-![[Pasted image 20231128190653.png]]
+![Breaches](https://github.com/LeoRZLanda/TimeToLearnAbout/blob/main/Ethical%20Hacking%20CEH%20Prep/Ethical%20Hacking-Understanding%20Ethical%20Hacking/Apendix/Pasted%20image%2020231128190653.png)
 
 
 ## Some interesting Stats
@@ -190,7 +190,7 @@ Attacks = Motive + Method + Vulnerability
 ## The technology triangle
 
 
-![[Pasted image 20231129155925.png]]
+![TechTriangle](https://github.com/LeoRZLanda/TimeToLearnAbout/blob/main/Ethical%20Hacking%20CEH%20Prep/Ethical%20Hacking-Understanding%20Ethical%20Hacking/Apendix/Pasted%20image%2020231129155925.png)
 
 How can we appreciate, as we get closer to any sectin of the environment we lose attetion into the other two.
 
