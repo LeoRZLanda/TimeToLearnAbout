@@ -1,0 +1,140 @@
+<svg fill="none" viewBox="0 0 600 148" width="600" height="148" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <style>
+                .risk-matrix{
+					width: 100%;
+					color: black;
+					border-collapse: collapse;
+				}
+				.cabeza th{
+					color: white;
+					background-color: #8063A4;
+				}
+				.cuello th{
+					color: black;
+					background-color: #DAEEF5;
+				}
+				.risk-matrix th, .risk-matrix td{
+					border: 1px solid white;
+				}
+				.space{
+					border: 0px;
+                    padding: 5px 5px 5px 5px
+					border-bottom: 1px solid red;
+					background-color: #DAEEF5;
+				}
+				.Low{
+					background-color: #C8D8F0;
+				}
+				.Medium{
+					background-color: #D7E4BE;
+				}
+				.High{
+					background-color: #FDE9DB;
+				}
+				.Extreme{
+					background-color: #E6B8B8;
+				}
+				.risk-matrix tr:nth-child(even) {
+					background-color: #D8D3E2;
+				}
+				.risk-matrix tr{
+					background-color: #EEEBEE;
+				}
+            </style>
+            <table class="risk-matrix">
+                <thead>
+                    <tr class = "cabeza">
+                        <th colspan = "3">Probability</th>
+                        <th colspan = "5">Consequences</th>
+                    </tr>
+                    <tr class = "cuello">
+                        <th class = "space" colspan = "3"></th>
+                        <th>Insignificant</th>
+                        <th>Minor</th>
+                        <th>Moderate</th>
+                        <th>Major</th>
+                        <th>Severe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>81-100%</td>
+                        <td class = "space"></td>
+                        <td>Very High Probability</td>
+                        <td class = "Low">Low</td>
+                        <td class = "Medium">Medium</td>
+                        <td class = "High">High</td>
+                        <td class = "Extreme">Extreme</td>
+                        <td class = "Extreme">Extreme</td>
+                    </tr>
+                    <tr>
+                        <td>61-80%</td>
+                        <td class = "space"></td>
+                        <td>High Probability</td>
+                        <td class = "Low">Low</td>
+                        <td class = "Medium">Medium</td>
+                        <td class = "High">High</td>
+                        <td class = "High">High</td>
+                        <td class = "Extreme">Extreme</td>
+                    </tr>
+                    <tr>
+                        <td>41-60%</td>
+                        <td class = "space"></td>
+                        <td>Equal Probability</td>
+                        <td class = "Low">Low</td>
+                        <td class = "Medium">Medium</td>
+                        <td class = "Medium">Medium</td>
+                        <td class = "High">High</td>
+                        <td class = "High">High</td>
+                    </tr>
+                    <tr>
+                        <td>21-40%</td>
+                        <td class = "space"></td>
+                        <td>Low Probability</td>
+                        <td class = "Low">Low</td>
+                        <td class = "Low">Low</td>
+                        <td class = "Medium">Medium</td>
+                        <td class = "Medium">Medium</td>
+                        <td class = "High">High</td>
+                    </tr>
+                    <tr>
+                        <td>1-20%</td>
+                        <td class = "space"></td>
+                        <td>Vey Low Probability</td>
+                        <td class = "Low">Low</td>
+                        <td class = "Low">Low</td>
+                        <td class = "Medium">Medium</td>
+                        <td class = "Medium">Medium</td>
+                        <td class = "High">High</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </foreignObject>
+</svg>
+
+<!--
+
+<style>
+		@media screen and (min-width: 1350px) {
+			.container{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin: 0 auto;
+				text-align: center;
+			}
+		}
+		@media screen and (max-width: 1349px) {
+			.RL{
+				padding-left: 15%;
+			}
+			.RM{
+				padding-left: 25%;
+			}
+		}
+	</style>
+
+-->
