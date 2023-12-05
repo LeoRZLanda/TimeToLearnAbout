@@ -508,7 +508,7 @@ In which pahse of the Cyber Kill Chain Methodology,exploits a vulnerabiity by ex
 	</p>
 </details>
 
-Wich phase performs actions to achive the intended objectives or goals?
+  Wich phase performs actions to achive the intended objectives or goals?
 
 <details>
 	<summary>Answer</summary>
@@ -529,6 +529,7 @@ We also talked about some of the behaviors that an attacker might have. Wich one
 It's when the attacker is going to use some type of protocol to obfuscate malicious traffic, and it's something that really hard to block because most everybody allows it through.
 
 <details>
+	</br>
 	<summary>Answer</summary>
 	<p>
 		DNS Tunneling
@@ -553,6 +554,788 @@ Techniques: Those behaviors.
 Procedures: The way that an attacker performs the attack.
 
 # Comparing Hacking and Ethical Hacking
+Its important to know the deference between hacking and ethical hacking.
 
 ## Hacking Concepts
 
+### What is Hacking?
+
+>Hacking is exploiting security controls either in a technical, physical or a human-based element
+>
+>-Kevin Mitnick
+
+* Exploiting systems and their vulnerabilities
+* Modifying systems and/or applications
+* Steal intellectual property (Thats the only thing to transoform hacking ino a "evil" thing)
+
+___Hacking isn't always nefarious___
+
+### Types of hackers
+
+|Hackers|Definition|
+| - | - |
+|Black Hat|The evil ones|
+|White Hat|The hero one|
+|Gray Hats|A reformed Black hat </br>Their ethics are questionable|
+|Suicide Hacker|Carefree</br>The mission is the only thing that matters</br>Don't care about covering their tracks|
+|Script Kiddies|Clueless about hacking|
+|Spy hackers, Cyber terrorists and state-sponsored hackers|Organized crime and big corporations </br>Driven by political or religious agendas|
+
+
+The duference between a spy hacker and a government-sponsored hacker is that the spy hacker gets a payckeck from a rival business to steal intellectual property, while the state-sponsored hacker gets paid by the government or government agency. State-sponsored hacking makes it possible for states to get a hold of secrets from other countries,military organizations, multinational companies and organizations.
+
+
+
+
+### Who's a Hacker?
+
+___Anybody can be___
+
+* A excellent computer skills
+* Hobbyist
+* Curious
+
+### Hacktivism
+
+
+<details>
+	<summary>Drive</summary>
+	<p>
+	Is an individual attacker , as well as posibly a group and their drives include political, social, ideology, as well as vandalism, protesting, and to humiliate.
+	</p>
+</details>
+
+<details>
+	<summary>Political Agenda</summary>
+	<p>
+	When it comes to the political agenda, they'll typically look at doing things like defacing or disabling websites, and their targets.
+	</p>
+</details>
+
+<details>
+	<summary>Targets</summary>
+	<p>it could be a multinational corporations or any company or group that they consider to be wrong in their ideology.</p>
+</details>
+
+### Hacking
+
+Exploiting a systems vulnerabilities and security controls to gain access to system resources and features, outside the creator's original purpose.
+
+
+## Hacking cycle
+
+### Phase 1: Reconnaissance
+
+Technically, it's the most time-consuming pahse for attackers. Because the payoff is massive.
+
+
+In the future I will take a full course of Ethical Hacking: Reconnaissance /Footprinting
+
+
+Now, we can accomplish reconnaissance in two ways
+
+* Pasive
+	* No direct interaction with the target
+	* Research the company
+	
+* Active
+	* Direct interaction with the target
+	* Engage and scans the network
+
+Most of the time attackers won't do active reconnaissance unless they're pretty positive that the're goin to be discovered by their actions. 
+
+A type of reconnaissance that's passive and a little active depends on how we do it.
+
+#### Social Engineering
+
+Same as beafore i will insert a link to another course aboy Ethical Hacking: Social Enginering.
+
+___Masketers and advertisers are masters at social engineering___
+
+
+### Phase 2: Scanning
+
+This is where tech attacker goes throgh and tries to gather
+
+Appassive technique would be just a sniffing, seeling that gaus.
+
+
+he information that we can gather include like thr system:
+
++ ID Systems
++ Vulnerabilitid
+
+Gather Info
+
+Tools /Interface
+* Port scanners
+* Vulnerability scannets.
+
+### Phase 3: Gaining Access
+
+Mean that the attacker is able to gain acces to a network or an operating system or even applications.
+
+What's interesting is that attackers can create a lot of havoc for you without gaining access, through things like denial of service attacks. 
+
+So some of the goals that are involved when we try yo gain access includes:
+
+* Access data
+* Reconfigure or crash a system
+* Exhaust the resource
+
+As far as the path of gaining access, that can include doing it over the land or through the internet, and then we strat doing things like password cracking and buffer overflows, session hijacks, even DoS.
+
+Once we're able to gain access to a system, we start trying to escalate the privileges so that we can increase our footprint either by pivoting to other systems or just creating more havoc for you.
+
+### Phase 4: Maintaining Access
+
+Once we gain access, we then want to try yo maintaining access, and we di that through a cuople of different methods.
+
+First we're going to hide our tools that we utilize using things like rootkits.
+
+
+* PWNing the system
+
+* Use system as a launch pad
+
+* Inject backdoor/trojans
+	* Used to revisit
+	* Used to sniff/monitor network
+
+* Use resources
+
+* Harden up
+
+### Phase 5: Clearing Tracks
+
+Clearing the tracks is the fifth nd last stage of an attack. After getting into the system or getting it to do what they want, the next move is to cover their tracks. 
+
+Leave the place as neat or as clean as they found it or even better.
+
+Remember "These are not the drones that you were looking for"
+
+* <details>
+	<summary>Destroy proof</summary>
+	<p>Most attacker are going to get rid of their own log entries so there's no proof of them destroying anything. We do taht by clearing log files. </br> </br>And in the real world, most IT individuals, aren't looking at log files on a daily basis. They only look at thme when something seems weird,and by that point, I've already deleted my entries</p>
+</details>
+
+* <details>
+	<summary>Hide my stuff</summary>
+	<p>The next thing i'm going to is to install some type of root kit to hide my tools. We could also use things like stenography to hide our information.</p>
+</details>
+
+* <details>
+	<summary>Cyber blind</summary>
+	<p>And we will also want to set up a cyber blind, so you don't see anything that I'm doing, but 'm laying in wait for an ambush </p>
+</details>
+
+## So What's Ethical Hacking?
+
+So now we know about hacking, what about ethicla hacking?, It's exact the same process except for you have permission to od it.
+
+Involves the use of hacking methods and tools to dicover weaknesses for security system.
+
+Is commonly use as a penetration test to identify vulnerabilities, risks and identify loopholes in those systems.
+
+What skills should an ethical Hacker have?
+
+* Expert with programs and networks
+ 
+* Proficient with vulnerability research
+ 
+* Mastery with diverse hacking techniques
+ 
+* Follow a strict code of conduct
+ 
+* Explicit permissions in writting
+ 
+* Use the same tactics and strategies
+ 
+* Just because you can, doesn't mean you can
+
+* Report all of your results
+
+
+In few words, ethical hacking is the practice to guard sensitive data from attackers.
+
+
+## Lets talk about Labs
+
+Trough this course we complish activities, dont worry i will try to learn you step by step during the lab activities.
+
+Or you can follow to learn how to Build your own virtual hacking lab to make the activities
+
+## Learning Check
+
+So we went through and talked about the different classes of hackers that are out there.
+
+Wich one is described as an individual who's going to do anything they can to bring down a target regardless of anny consequence?
+
+
+<details>
+	<summary>Answer</summary>
+	<p>Suicide Hacker</p>
+</details>
+
+What avout an individual who fluctuates between the good side and the dark side?
+
+<details>
+	<summary>Answer</summary>
+	<p>Gray Hat</p>
+</details>
+
+What avout an individual that's really no all together a hacker, but finds a bunch of cool tools and tries to go at you.
+
+<details>
+	<summary>Answer</summary>
+	<p>Script kiddies</p>
+</details>
+
+And then we have individuals that have really, really good skills, as well as malicious purposes or malicious intent that are involved in malicious activities
+
+<details>
+	<summary>Answer</summary>
+	<p>Black Hat</p>
+</details>
+
+What about an attacker that hacks to increase awareness of their social or political agenda, don't care if they caught?
+
+<details>
+	<summary>Answer</summary>
+	<p>Hacktivist</p>
+</details>
+
+
+We the went through and talked about the diferent phases of an attack, so let's test our knowledge there.
+
+The first stateg was actually reconnaissace, and there were two different types.
+
+If a was just to go find some public records or look at your website, what type of reconnaissance would that be?
+
+<details>
+	<summary>Answer</summary>
+	<p>Passive</p>
+</details>
+
+And if i have direct interaction with the target, what is that?
+
+<details>
+	<summary>Answer</summary>
+	<p>Active</p>
+</details>
+
+
+Now, if an attacker doesn't want to be discovered or tracked after they maintin access, what's the next phase?
+
+<details>
+	<summary>Answer</summary>
+	<p>Clearing tracks</p>
+</details>
+
+What would be the phase be if I installed a rootkit or a back door of some sort?
+
+<details>
+	<summary>Answer</summary>
+	<p>Maintaining access</p>
+</details>
+
+What phase does an attacker escale their provilege?
+
+<details>
+	<summary>Answer</summary>
+	<p>Gaining Access</p>
+</details>
+
+# Describing Information Security Controls
+
+## Understanding the Attackers and their methods
+
+What we wnt to focus on right here is the information security controls.
+
+
+>I don't even call it violence when it's self-defense, i call it intelligence.
+>
+>-Malcom X
+
+And that's the whole concept when we look at information security tools. They are designed to help to protect or networks or the network we're evaluating.
+
+
+___Rapid Growth in Tech = Trouble___
+
+When we have a rapid pace in technology it adds to complexity and his combination create issues ofr us.
+
+### What Ethical Hacker Do
+
+* Review systems and infrastructure
+* Test current security
+* Create solutions
+
+
+We typically also need to be aware of both the <a href="#scope">scope</a> 
+
+The scope of the ethical hacking is part of our risk assessment, auditing, as well as fraud.
+
+There's also best practices that we can show them, possibly even <a href="#scope">governance</a>, As far as limitations are concerned with ethical hacking, typically, businesses really don't know what they're looking for, and tehy don't know that they have a problem until it's too late.
+
+Your job is to help the understand why they need this particular solution. And then afterwards, we retest to make sure that the things we've suggested and that they've implemented are actually working correctly. And able to answer questions like;
+
+* What can be seen?
+* What is being monitored?
+* What can be done?
+* Is there adequate protection?
+* Are compliances met
+
+
+<p id = "scope"> <b>Scope:</b> assests, networks and systems that can be targeted, and the limitations.</p>
+
+<p id = "governance"> <b>Governance:</b> assests, networks and systems that can be targeted, and the limitations.</p>
+
+So it is necessary?
+
+Is the fact that attackers are continally changig up and figuring out new mechanisms tacking advantages of new technologues that come out almost daily. There has to be someody that we can call or that can help us to counter these type of attacks.
+
+So yes, **Ethical hacking is necessary**.
+
+
+
+## What is "Defene in Depth"?
+
+Is that we're trying to manage the risk with diferent types of strategies.  And what this does for us is it allows us if one layer fails, another layer automatically kicks in. **Remeber our job is to slow attackers down**.
+
+It doesn't matter how many layers of security you have. Each leayer, you have to assume each one is the last stand. As you implement different devces throughout your infraestrucure, you need to have in your mindset what happens if the attacker get past this?, Whats next?.
+
+Now, there's an unfortunate side here, and there's a ton of software out there that's been designed or maybe even customized to applications that you may be writting ypur organization that leads to a total compromis when the firewall gets breached.
+
+That's not good enough. Just beacuse some defense mechanism have been compromised doesn't give you the right to simply put the white flag and surrender, and that is the essence of defense in depth. At some stage, you're going to be left alone, and you have to defend yourself.
+
+
+> Gentlemen. prepare to defend yourselves!
+> 
+> -Sergeant Major Plumley (We Were Soldiers 2002)
+
+
+## The levels of Defense in Depth
+
+We typically first start of with:
+
+<ol>
+	<li>
+		<details>
+			<summary>Policies, Processes and Awarness</summary></br>
+			<p>This is where we have things like password policies, data classification, policies on what is mission critical and what's not.</p>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Physical</summary></br>
+			<p>This is physical restrictions like locks, fences, security guards, CAC cards, biometrics, even cameras. </p>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Perimeter</summary></br>
+			<p>This is where we're looking at our firewall solutions, <a href="#vpn">VPN</a> solutions, packet filters, <a href="#ids">IDS</a> systems, anything that we place on the perimeter of our network, the perimeter being that area betwwen us and the internet, we also refer to like a <a href="#dmz">DMZ</a> area.</p>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Network</summary></br>
+			<p>The internal network, firewalls are going to be implemented here again sames like IDS, routers, diferent solutions for encryption.</p>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Host</summary></br>
+			<p>Here we're watching operating systems, patching those systems, difetent types of malware protection, those endpoints.</p>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Application</summary></br>
+			<p>Are we using authentication?, what are we using authorization, What are we usng for <a href="#sso">SSO</a>?, How are the application being patched, maintained, managed? I fwe have any sensitive application secrets, where are those actually stores?</p>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Data</summary></br>
+			<p>Where are we storing tha database?, stored in virtual machines, out in the cloud, locally? stored i a <a href="saas">SaaS</a> application?, we may also want to include encryption at this level as well</p>
+		</details>
+	</li>
+</ol>
+
+
+A couple of things that we need to consider when it comes to these diferent layers in our defesnse in depth strategy.
+
+Consider This
+
+* <details>
+	<summary>Never ignore the edge</summary>
+	<p>Just because we have these other lines of defenses behind us deeper wiyhin our infrastrucutre, doesn't mean that we should ignore the edge. The edge is where we want to stop the breach from.</p>
+</details>
+* <details>
+	<summary>Follow the workflow</summary>
+	<p>To determine your protection points.</p>
+</details>
+* <details>
+	<summary>Zero Trust Security posture</summary>
+	<p>And as final option, consider a zero trust security posture, these types of mechanisms are implemented in a default mode, where there is no connectivity allowed and less credentials have been validated.</p>
+</details>
+
+### Terminology
+
+<p id="vpn"><b>VPN:</b> Virtual private network</p>
+
+<p id="ids"><b>IDS:</b> Intrusion Detection System</p>
+
+<p id="dmz"><b>DMZ:</b> Demilitarized zone</p>
+
+<p id="soo"><b>SOO:</b> Single Sign On</p>
+
+<p id="saas"><b>SaaS:</b> Software as a Service</p>
+
+## What Is the Risk?
+
+The risk refers to the degree of uncertaintly or expectation that an event might cause damage to our systems. 
+
+Risk = Threats X Vulnerabilities X Impact
+
+<div class = "container">
+	<div>
+		<p class = "RL"><b>Risk Levels</b></p>
+		<table class = "Risk-Levels">
+			<tr>
+				<th>Level</th>
+				<th>Consequence</th>
+				<th>Action</th>
+			</tr>
+			<tr>
+				<td>Extreme / High</td>
+				<td>Serious</td>
+				<td>Immediate action is required</td>
+			</tr>
+			<tr>
+				<td>Medium</td>
+				<td>Moderate</td>
+				<td>Action should be prioritized</td>
+			</tr>
+			<tr>
+				<td>Level</td>
+				<td>Consequence</td>
+				<td>Action</td>
+			</tr>
+			<tr>
+				<td>Low</td>
+				<td>Negligible</td>
+				<td>Preventive steps</td>
+			</tr>
+		</table>
+		</br>
+		<p>
+			The risk level is simply an assessment of the result of the impact on your network, and the risks are categorized into different level. Now you have to remeber that control measures may decrease at the level of risk, but don't always eliminate the risk.
+		</p>
+		</br>
+	</div>
+	<div>
+		<p class = "RM"><b>Risk Matrix</b></p>
+		<table class="risk-matrix">
+			<thead>
+				<tr class = "cabeza">
+					<th colspan = "3">Probability</th>
+					<th colspan = "5">Consequences</th>
+				</tr>
+				<tr class = "cuello">
+					<th class = "space" colspan = "3"></th>
+					<th>Insignificant</th>
+					<th>Minor</th>
+					<th>Moderate</th>
+					<th>Major</th>
+					<th>Severe</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>81-100%</td>
+					<td class = "space"></td>
+					<td>Very High Probability</td>
+					<td class = "Low">Low</td>
+					<td class = "Medium">Medium</td>
+					<td class = "High">High</td>
+					<td class = "Extreme">Extreme</td>
+					<td class = "Extreme">Extreme</td>
+				</tr>
+				<tr>
+					<td>61-80%</td>
+					<td class = "space"></td>
+					<td>High Probability</td>
+					<td class = "Low">Low</td>
+					<td class = "Medium">Medium</td>
+					<td class = "High">High</td>
+					<td class = "High">High</td>
+					<td class = "Extreme">Extreme</td>
+				</tr>
+				<tr>
+					<td>41-60%</td>
+					<td class = "space"></td>
+					<td>Equal Probability</td>
+					<td class = "Low">Low</td>
+					<td class = "Medium">Medium</td>
+					<td class = "Medium">Medium</td>
+					<td class = "High">High</td>
+					<td class = "High">High</td>
+				</tr>
+				<tr>
+					<td>21-40%</td>
+					<td class = "space"></td>
+					<td>Low Probability</td>
+					<td class = "Low">Low</td>
+					<td class = "Low">Low</td>
+					<td class = "Medium">Medium</td>
+					<td class = "Medium">Medium</td>
+					<td class = "High">High</td>
+				</tr>
+				<tr>
+					<td>1-20%</td>
+					<td class = "space"></td>
+					<td>Vey Low Probability</td>
+					<td class = "Low">Low</td>
+					<td class = "Low">Low</td>
+					<td class = "Medium">Medium</td>
+					<td class = "Medium">Medium</td>
+					<td class = "High">High</td>
+				</tr>
+			</tbody>
+		</table>
+		<div style = "display: none;">
+			<style>
+				.risk-matrix{
+					width: 100%;
+					color: black;
+					border-collapse: collapse;
+				}
+				.cabeza th{
+					color: white;
+					background-color: #8063A4;
+				}
+				.cuello th{
+					color: black;
+					background-color: #DAEEF5;
+				}
+				.risk-matrix th, .risk-matrix td{
+					border: 1px solid white;
+				}
+				.space{
+					border: 0px;
+					border-bottom: 1px solid red;
+					background-color: #DAEEF5;
+				}
+				.Low{
+					background-color: #C8D8F0;
+				}
+				.Medium{
+					background-color: #D7E4BE;
+				}
+				.High{
+					background-color: #FDE9DB;
+				}
+				.Extreme{
+					background-color: #E6B8B8;
+				}
+				.risk-matrix tr:nth-child(even) {
+					background-color: #D8D3E2;
+				}
+				.risk-matrix tr{
+					background-color: #EEEBEE;
+				}
+			</style>
+		</div>
+	</div>
+	<style>
+		@media screen and (min-width: 1350px) {
+			.container{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin: 0 auto;
+				text-align: center;
+			}
+		}
+		@media screen and (max-width: 1349px) {
+			.RL{
+				padding-left: 15%;
+			}
+			.RM{
+				padding-left: 25%;
+			}
+		}
+	</style>
+	</br>
+		<p>
+			We also have the Risk Matrix, defines various levels of risks and then categorizes them for us as the product of negative probability and the negativity of severity. As far as your future is concerned, you won't see anything specific on the exam for these matrix and levels.
+		</p>
+		</br>
+</div>
+
+Be careful, when a breach happens, it's very easy to lose track of what is significant.
+
+
+## Threat Modeling
+
+Is simply risk assessment approach for looking at the security of applications, And we do this by capturing, organizing and analyzing all the data that affects those applcations.
+
+### Threat Modeling Adversary Capability
+
+The purpouse behind threat modeling helps us to;
+
+* Identify threats
+* Identify vulnerabilities
+* Improve your security designs
+
+
+Now when you use threat modeling, you need to be careful that you keep the following in mind 
+
+### Things to Keep in Mind
+
+* Try not to be to rigid about specific steps.
+</br>
+* Focus on the approach.
+</br>
+* Use existing design documents that you have access to. <small>Any type of documented use cases or use stories can help you out.</small>
+</br>
+* Start with white boarding before capturing information in those documents or getting lost in all the details that you're going to come across.
+</br>
+
+
+Now threat modeling itself, the process, involves a couple of different steps for us.
+
+
+### Adversary Capability
+
+<ol>
+	<li>
+		<details>
+			<summary>Indentify security objectives</summary>
+			<p style = "font-size: 14.5px;"></br>What data should be protected</br>Are there any quality of service requirements?</br>Are there any compliance issues that we're responsible for?</br>Are there any intagible assets that we need to amke sure we need to protect?</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Application Overview</summary>
+			<p style = "font-size: 14.5px;"></br>Identufy the components, the trust boundaries. We're going to be looking at end-to-end deployment typology. We'll look at the key services that are involved, logical layers, identities, and possibly even external dependencies, part of teh process you should also identify....</br></br><p align = "center"><b>Identify Roles</b></p>The administrator or ypu, as a security professionl, should identify people and the roles and actions that they are able to perform;</br><ul><li>Who is allowed to <b>Read</b>?</li><li>Who is allowed to <b>Update</b>?</li><li>Who is allowed to <b>Delete</b>?</li></ul></br>We should also be identifying technologies, you know, operating systems, web server software, database server software, anything that thouches the application. We then move into... </br></p>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Decompose the application</summary>
+			<p style = "font-size: 14.5px;"></br>Here, we typically break down the application to identify all the different trust boundaries, the entry point, the exit points, how the data flows in general, Does it flow outside of our infrastrucure maybe to a third party? After we do that we try to..</br></p>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Identify threats</summary>
+			<p style = "font-size: 14.5px;"></br>We try to identify the threats based off what we see, You may want to try bringing together the individuals of the development  team and tehe test teams to help identify potential threats. You should technically start off with a common list of threats and group them by the application vulnerability category. Then you'll want to ...</br></p>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Identify vulnerabilities</summary>
+			<p style = "font-size: 14.5px;"></br>The weaknesses in the application, then refer back to your risk matrix so you can categorize all your diferent findigs</br></p>
+		</details>
+	</li>
+</ol>
+
+## Incident Management
+
+
+### Think Outside the Box
+
+
+We need to come up with some preocesses to help us out to 
+
+1. Identify
+2. Analyze
+3. Prioritize
+4. Resolve
+
+Part of ifguring out our incident management procedure is coming up with the... 
+
+### The "Why" of Incident Management
+
+* Meets availability
+* Reduces impact
+* Better service quality
+* More efficient and productive
+* Customer/User satisfaction
+* Proactive
+
+## The Incident Handling and Response (IH&R)
+
+### IH&R Process
+
+Basically involves defining diferent;
+
+* policies
+* protocols
+* building an incident response team
+* Auditing assets
+* planning inidents
+
+#### Steps
+
+<ol>
+	<li>
+		<details>
+			<summary>Prepare for Event Handling and Reaction</summary>
+			<p></br>Meaning we're going to perform and audit of the resources, the assets to determine the purpose of the security rules and policies that help to drive the process itself.</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Incident Recording and Assigment</summary>
+			<p></br>Basically this is the initial reporting recording of the fact that an incident has taken place. We're going to go through and identify the incident, the proper identification communication plans for employees who may be involved, possibly also the communication methods for all the employees, depending on how widespread that breach is, the we do the</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Triage</summary>
+			<p></br>This helps us to identify the security incidents that are analyzed. We're going to go through and further analyze th compromised deviced, see if we can find any information such as:<ul><li>Type of attack</li><li>Its severity</li><li>The target</li><li>The impact</li><li>Vulnerabilities were used</li></ul></p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Notification</summary>
+			<p></br>This is where our IH&R team will inform all the stakeholders and maybe including; <ul><li>Upper management</li><li>Marketing, if somebody needs to do a press release</li><li>Any third-party vendors</li><li>Clients that may be part of the incident</li></ul></p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Containment</summary>
+			<p></br>This is going to help prevent the spread of the incident into other assets. It doesn't necessarily mean that we pull the plug, but we do want t contain it as much as we can, because of the next step, </p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Forensic Examination</summary>
+			<p></br>This is where we're going to going to go through and look at all possibe evidence that's related to the incident,and then we're going to submit that to the forensic department. Sometimes, the forensic department wants to see the system as it's running. That's why that containment, we don't just pull the plug.</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Eradication</summary>
+			<p></br>This is where we remove or eliminate the root cause and then close all the attack vectors to stop further or a future incident from taking place.</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>recovery</summary>
+			<p></br>After we get rid of the causes, we then start restoring any of the assets, the systems, the data, services.</p></br>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>Post-incident Acions</summary>
+			<p></br>We're going to condict a final review of the lessons we learned or important steps that we discovered. this process will inlude all of our documentation, our assessments, any updates to policies that we have, and then the disclosure of the incident.</p></br>
+		</details>
+	</li>
+</ol>
+
+## The role of AI/ML
