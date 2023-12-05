@@ -1675,7 +1675,7 @@ This one's a framework for data protection in the UK.
 
 ## Next Step
 
-Remeber this is only the begining, the next topic will cover is **Ethical hacking: Reconnaissance/footprinting** click and see you there.
+Remeber this is only the begining, the next topic will cover is [**Ethical hacking: Reconnaissance/footprinting**](https://github.com/LeoRZLanda/TimeToLearnAbout/tree/main/Ethical%20Hacking%20CEH%20Prep/Ethical%20Hacking-Reconnaissance_Footprinting) click and see you there.
 
 # Domain Summary
 
