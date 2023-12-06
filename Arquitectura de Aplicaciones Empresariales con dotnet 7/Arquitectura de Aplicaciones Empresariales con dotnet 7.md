@@ -367,4 +367,139 @@ Por último, destacar que todas las aplicaciones con cierta complejidad, deberí
 
 ## Capas
 
-###
+### Consideraciones iniciales
+
+* Localizar los cambios en una parte especifica de la solución minimiza el impacto en otras partes, reduce el trabajo requerido en arreglar defectos, facilita el mantenimiento de la aplicación y mejora la flexibilidad general de la aplicación.
+
+* La separación de responsabilidades entre componentes (por ejemplo, separar la interfaz de usuario de la lógica de negocio, y la lógica de negocio del acceso a la base de datos, etc.) aumenta la flexibilidad, la mantenibilidad y la escalabilidad.
+
+* Ciertos componentes deben ser reutilizables entre diferentes módulos de una aplicación o incluso entre diferentes aplicaciones.
+
+* Equipos diferentes deben poder trabajar en partes de la solución con mínimas dependencias, para ello, deben desarrollar contra interfaces bien definidas.
+
+* Los componentes individuales deben ser cohesivos.
+
+* Los componentes no relacionados directamente deben estar
+débilmente acoplados.
+
+* Los diferentes componentes de una solución deben poder ser
+desplegados de una forma independiente, e incluso mantenidos y
+actualizados en diferentes momentos.
+
+* Para asegurar estabilidad y calidad, cada capa debe contener sus propias pruebas unitarias.
+
+### Capas
+
+Las **capas** son agrupaciones horizontales lógicas de componentes de software que forman la aplicación.
+
+Nos ayudan a diferenciar entre los diferentes tipos de tareas a ser realizadas por los componentes, ofreciendo un diseño que maximiza la reutilización y, especialmente, la mantenibilidad.
+
+En definitiva, se trata de aplicar el principio de "Separación de Responsabilidades" (SoC - Separation of Concerns principle) dentro de una Arquitectura.
+
+El dividir una aplicación en capas separadas que desempeñan diferentes roles y funcionalidades, nos ayuda a mejorar el mantenimiento del código; nos permite también diferentes tipos de despliegue y, sobre todo, nos proporciona una clara delimitación y situación de dónde debe estar cada tipo de componente funcional e incluso cada tipo de tecnología.
+
+### Consideraciones relativas a pruebas
+
+Una aplicación basado en una Arquitectura N-Capas mejora considerablemente la capacidad de implementar pruebas de una forma apropiada:
+
+* Debido a que cada capa interactúa con otras capas solo mediante interfaces bien definidos, es fácil añadir implementaciones alternativas a cada capa (Mock y Stubs). Esto permite realizar pruebas unitarias de una capa incluso cuando las capas de las que depende no están finalizadas o, incluso, porque se quiera poder ejecutar mucho más rápido un conjunto muy grande de pruebas unitarias.
+
+* Es más fácil realizar pruebas sobre componentes individuales porque las dependencias entre ellos están limitadas de forma que los componentes de capas de alto nivel solo pueden interactuar con los de niveles inferiores. Esto ayuda a aislar componentes individuales para poder probarlos adecuadamente y nos facilita el poder cambiar unos componentes de capas inferiores por otros diferentes con un impacto muy pequeño en la aplicación (siempre y cuando cumplan los mismos interfaces).
+
+### Beneficios
+
+Beneficios del uso de una arquitectura N-Capas
+
+* El mantenimiento en una solución será mucho más fácil porque las funciones están localizadas. Además las capas deben estar débilmente acopladas entre ellas y con alta cohesión internamente, lo cual posibilita variar de una forma sencilla diferentes implementaciones de capas.
+
+* Otras soluciones deberían poder reutilizar funcionalidad expuesta por diferentes capas, especialmente si se han diseñado para ello.
+
+* Los desarrollos distribuidos son mucho más sencillos de implementar si el trabajo se ha distribuido previamente en diferentes capas lógicas.
+
+## Principios de Base de diseño a seguir
+
+### Principios de diseño SOLID
+
+#### S: Principio de Única Responsabilidad
+
+Una clase debe tener una única responsabilidad o característica. Dicho de otra manera, una clase
+debe de tener una única razón por la que está justificado realizar cambios sobre su código fuente. Una consecuencia de este principio es que, de forma general, las clases deberían tener pocas dependencias con otras clases/tipos.
+
+#### O: Principio Abierto Cerrado
+
+Una clase debe estar abierta para la extensión y cerrada para
+la modificación. Es decir, el comportamiento de una clase debe poder ser extendido necesidad de realizar modificaciones sobre el código de la misma.
+
+#### L: Principio de sustitución de Liskov
+
+Los subtipos deben poder ser sustituibles por sus tipos base (interfaz o clase base). Este hecho se deriva de que el comportamiento de un programa que trabaja con abstracciones (interfaces o clases base) no debe cambiar porque se sustituya una implementación concreta por otra. Los programas deben hacer referencia a las abstracciones, y no a las implementaciones.
+
+#### I:Principio de segregación de Interfaces
+
+Las implementaciones de las Interfaces en las clases no deben estar obligados a implementar métodos que no se usan. Es decir, los interfaces de clases deben ser específicos dependiendo de quién los consume y por lo tanto, tienen que estar granularizados / segregados en diferentes interfaces no debiendo crear nunca grandes interfaces.
+
+#### D: Principio de Inversión de dependencias
+
+Las abstracciones no deben depender de los detalles - Los detalles deben depender de las abstracciones. Las dependencias directas entre clases deben ser reemplazadas por abstracciones (interfaces) para permitir diseños top-down sin requerir primer el diseño de los niveles inferiores.
+
+### Otros Principios Clave de Diseño
+
+* **El diseño de componentes debe ser altamente cohesivo**: No sobrecargar los componentes añadiendo funcionalidad mezclada o no relacionada. Por ejemplo, evitar mezclar lógica de acceso a datos con lógica de negocio perteneciente al Modelo del Dominio.
+
+* **Mantener el código transversal abstraído de la lógica específica de la aplicación:** El código transversal se refiere a código de aspectos horizontales, cosas como la seguridad, gestión de operaciones, logging, instrumentalización, etc.
+
+* **Separación de Preocupaciones/Responsabilidades**: Dividir la aplicación en distintas partes minimizando las funcionalidades superpuestas ente dichas partes. El factor fundamental es minimizar los puntos de interacción para conseguir una alta cohesión y un bajo acoplamiento.
+
+• **No repetirse (DRY)**: Se debe especificar "la intención" en un único sitio en el sistema. Por ejemplo, en términos del diseño de una aplicación, una funcionalidad específica se debe implementar en un único componente; esta misma funcionalidad no debe estar implementada en otros componentes.
+
+## Principales Estilos de Arquitectura
+
+### Definición de Estilo de Arquitectura
+
+Un estilo de arquitectura es una familia de arquitecturas que comparten determinadas características.
+
+Por ejemplo, **de n niveles** es un estilo de arquitectura común. Últimamente, las **arquitecturas de microservicios** se han empezado a hacer más populares.
+
+Los estilos de arquitectura no requieren el uso de tecnologías concretas, pero algunas tecnologías son adecuadas para ciertas arquitecturas. Por ejemplo, los contenedores son una opción natural para los microservicios.
+
+### Principales Estilos de Arquitectura
+
+#### N-Niveles
+
+Es una arquitectura tradicional para aplicaciones empresariales. Las dependencias se administran mediante la división de la aplicación en capas que realizan funciones lógicas como presentaciones, lógica de negocios y acceso a datos. Una capa solo puede llamar a las capas que se encuentran por debajo de ella.
+
+#### Web-Queue-Work
+
+En este estilo, la aplicación tiene un Front-End web que controla las solicitudes HTTP y un trabajo de back-end que realiza tareas de uso intensivo de la CPU u operaciones de larga duración. El Front-End se comunica con el través de una cola de mensajes asincrónicos. 
+
+La arquitectura Web-Cola-Trabajo es adecuada para dominios relativamente sencillos con algunas tareas que consumen muchos recursos.
+
+#### Microservicios
+
+Una aplicación de microservicios se compone de muchos servicios pequeños e independientes. Cada servicio implementa una sola función empresarial. Los servicios están acoplados de forma flexible y se comunican a través de contratos de API.
+
+Una arquitectura de microservicios es más compleja a la hora de compilar y administrar.
+
+#### CQRS
+
+El estilo **CQRS** (Segregación de responsabilidades de consultas y comandos) separa las operaciones de lectura y escritura en modelos independientes. Esto permite aislar las partes del sistema que actualizan los datos de las leen los datos. 
+
+Se debería tenerlo en cuenta para dominios colaborativos en los que muchos usuarios acceden a los mismos datos.
+#### Arquitectura basada en eventos
+
+Usa un modelo de publicación-suscripción (pub-sub), en el que los productores publican eventos y los consumidores se suscriben a ellos. Los productores son independientes de los consumidores y estos, a su vez, son independientes entre sí.
+
+Se debería tenerlo en cuenta para aplicaciones que consumen y procesan un gran volumen de datos con una latencia muy baja.
+
+# Sección 3: Arquitectura N-Capas con Orientación al Dominio
+
+## Definición de Arquitectura con orientación al domino (DDD)
+
+### Definición
+
+Esta compuesta por tres niveles
+
+1. Vista
+2. Aplicación
+3. Modelo
+4. Infraestructura/ sistema
