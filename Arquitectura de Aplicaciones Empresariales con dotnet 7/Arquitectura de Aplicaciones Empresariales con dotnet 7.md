@@ -501,5 +501,179 @@ Esta compuesta por tres niveles
 
 1. Vista
 2. Aplicación
+	* Se realiza la transformaciones de objetos a través de DTO, control de excepciones, las transacciones  
 3. Modelo
-4. Infraestructura/ sistema
+	* La lógica del negocio 
+4. Infraestructura / sistema
+	* Respecto al Login, a la persistencia con una base de datos, la interacción con otros servicios.
+
+El objetivo de esta arquitectura marco es proporcionar una base consolidada para un tipo concreto de aplicaciones: **"Aplicaciones empresariales complejas"**. 
+
+Este tipo de aplicaciones se caracterizan por tener una vida relativamente larga y un volumen de cambios evolutivos considerable.
+
+Por lo tanto, en estas aplicaciones es muy importante todo lo relativo al mantenimiento de la aplicación, la facilidad de actualización, o la sustitución de tecnologías y frameworks/ORMs por otras versiones más modernas o incluso por otros diferentes, etc. 
+
+El **objetivo** es que todo esto se pueda realizar con el menor impacto posible sobre el resto de la aplicación.
+
+**Ejemplo:** En las aplicaciones complejas, el comportamiento de las reglas de negocio (lógica del Dominio/modelo) está sujeto a muchos cambios y es muy importante poder modificar, construir y realizar pruebas sobre dichas capas de lógica del dominio de una forma fácil e independiente. 
+
+Debido a esto, un objetivo importante es tener el mínimo acoplamiento entre el Modelo del Dominio (lógica y reglas de negocio) y el resto de capas del sistema (Capa de presentación, Capa de Aplicación, Capa de Infraestructura de persistencia de datos, etc.).
+
+### Diseño de un microservicio (DDD)
+
+El diseño guiado por el dominio (**DDD**) propone un modelado basado en la realidad de negocio con relación a sus casos de uso. 
+
+En el contexto de la creación de aplicaciones, DDD hace referencia a los problemas como dominios. Describe áreas con problemas independientes como contextos delimitados (cada contexto delimitado está correlacionado con un microservicio) y resalta un lenguaje común para hablar de dichos problemas.
+
+También sugiere muchos patrones y conceptos técnicos, pero lo importante no son los patrones en sí, sino organizar el código para que esté en línea con los problemas del negocio y utilizar los mismos términos empresariales (lenguaje ubicuo).
+
+La clave está en dónde situar los límites al diseñar y definir un microservicio. Los patrones de DDD le ayudan a comprender la complejidad del dominio. 
+
+Si dos microservicios necesitan colaborar mucho entre sí, probablemente sean el mismo microservicio.
+
+### Niveles en Microservicios de DDD
+
+* [Nivel de aplicación](#nivel-de-aplicación)
+* [Nivel de Modelo del Dominio](#nivel-de-modelo-del-dominio)
+* [Nivel de Infraestructura](#nivel-de-infraestructura)
+
+### Nivel de aplicación
+
+Define los trabajos que se supone que el software debe hacer y dirige los objetos de dominio expresivo para que resuelvan problemas. 
+
+Este nivel debe mantenerse estrecho. No contiene reglas de negocios ni conocimientos, sino que solo coordina tareas y delega trabajo a colaboraciones de objetos de dominio en el siguiente nivel.
+
+### Nivel de Modelo del Dominio
+
+Responsable de representar conceptos del negocio, información sobre la situación del negocio y reglas de negocios. El estado que refleja la situación empresarial está controlado y se usa aquí, aunque los detalles técnicos de su almacenaje se delegan a la infraestructura. Este nivel es el núcleo del software empresarial.
+### Nivel de Infraestructura
+
+El nivel de infraestructura es la forma en que los datos que inicialmente se conservan en las entidades de dominio (en la memoria) se guardan en bases de datos o en otro almacén permanente.
+
+## Arquetipo con Orientación al Dominio (DDD)
+
+### Diseñar arquetipo
+
+</br>
+
+* **Capa de Infraestructura de Datos**
+</br>
+	✔ **Data**
+		Conexión a la base de datos
+		</br>
+	✔ **Interface**
+		Definición de métodos CRUD
+		</br>
+	✔ **Reposiroty**
+		Implementación de las interfaces, métodos CRUD
+
+</br>
+
+
+* **Capa de Dominio**
+</br>
+	✔ **Entity**
+		Entidades de Negocio
+		Limites de Contexto (Microservicio)
+		</br>
+	✔ **Interface**
+		Definición de los métodos de negocio
+		</br>
+	✔ **Core**
+		Implementación de las interfaces, lógica de Negocio
+</br>
+
+* **Capa de Aplicación**
+</br>
+	✔ **DTO**
+		Objetos de Transferencia de Datos
+		</br>
+	✔ **Interface**
+		Definición de los métodos de aplicación
+		</br>
+	✔ **Main**
+		Implementación de las interfaces y gestión de cuestiones técnicas
+		Gestion de excepciones
+		Manejo de transacciones
+		Transformacón de Objetos
+</br>
+
+* **Capa de Servicio**
+</br>
+	✔ **Web API**
+		Servicios HTTP RESTful
+		CORS
+		Inyección de dependencias
+		Seguridad JSON Web Token
+		Swagger (Especificación openAPI)
+</br>
+
+* **Capa de Transversal**
+</br>
+	✔ **Common**
+		Clases base, interfaces y funciones comunes.
+		</br>
+	✔ **Mapper**
+		Mapeo de objetos (DTO / entidades y viceversa)
+		</br>
+	✔ **Logging**
+		Trazabilidad(stack trace)
+</br>
+
+
+### Definir tecnología por capa
+
+* **Capa de Infraestructura de datos**
+</br>
+	✔ NETStandard.Library
+	✔ Micro ORM Dapper
+	✔ Microsoft.Extensions.Configuration
+	✔ System.Data.SqlClient
+</br>
+
+* **Capa de Dominio**
+</br>
+	✔ NETStandard.Library
+</br>
+
+* **Capa de aplicación
+</br>
+	✔ NETStandard.Library
+	✔ AutoMapper
+</br>
+
+* **Capa de servicios**
+</br>
+	✔ Microsoft.AspNetCore.App
+	✔ Microsoft.NetCore.App
+	✔ AutoMapper
+	✔ AutoMapper.Extensions.Microsoft.DependencyInjection
+	✔ Swashbuckle.AspNetCore (Swagger)
+	✔ System.IdentityModel.Tokens.Jwt (JWT)
+</br>
+
+* **Capa Transversal**
+</br>
+	✔ NETStandard.Library
+	✔ AutoMapper
+</br>
+
+# Sección 4: Configuración del entorno de desarrollo
+
+La configuración del entorno en donde comenzare a desarrollar este proyecto son los siguientes:
+
+* Sistema Operativo
+	* Windows 10
+
+* Motor de base de datos
+	* MS SQL Server 19
+	* [Azure Data Studio]([Download and install Azure Data Studio - Azure Data Studio | Microsoft Learn](https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?view=sql-server-2017&tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall#download-azure-data-studio))
+
+* IDE
+	* Visual Studio 2019
+
+* Framework
+	* [.NET SDK 2.2]([Download .NET Core 2.2 (Linux, macOS, and Windows) (microsoft.com)](https://dotnet.microsoft.com/en-us/download/dotnet/2.2))
+
+
+PD: para que lo tengas en consideración más adelante se mostrara como ir actualizando el proyecto hasta .NET 8

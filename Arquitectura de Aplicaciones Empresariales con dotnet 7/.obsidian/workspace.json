@@ -11,14 +11,6 @@
             "id": "5c46dc817edad9dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "2a78726ea66be043",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
                 "file": "Arquitectura de Aplicaciones Empresariales con dotnet 7.md",
@@ -27,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -175,13 +166,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2a78726ea66be043",
+  "active": "5c46dc817edad9dc",
   "lastOpenFiles": [
+    "Nivel_de_aplicación.md",
+    "Arquitectura de Aplicaciones Empresariales con dotnet 7.md",
     "Apendix/Pasted image 20231205190609.png",
     "Apendix/Pasted image 20231205185232.png",
     "Apendix/Pasted image 20231205165450.png",
     "Apendix",
-    "Arquitectura de Aplicaciones Empresariales con dotnet 7.md",
     "assets/Risk-matrix.svg",
     "assets",
     "README.md",
@@ -204,7 +196,6 @@
     "Errores/Filtro fechas en detalles cuentas/ManejoPresupuesto/wwwroot/lib/jquery-ui/images/ui-icons_ffffff_256x240.png",
     "Errores/Filtro fechas en detalles cuentas/ManejoPresupuesto/wwwroot/lib/jquery-ui/images/ui-icons_cc0000_256x240.png",
     "Errores/Filtro fechas en detalles cuentas/ManejoPresupuesto/wwwroot/lib/jquery-ui/images/ui-icons_777777_256x240.png",
-    "Errores/Filtro fechas en detalles cuentas/ManejoPresupuesto/wwwroot/lib/jquery-ui/images/ui-icons_777620_256x240.png",
     "2023-11-22.md",
     "Aprende ASP.NET Core MVC 6.md",
     "Comandos.md",
