@@ -1133,7 +1133,19 @@ namespace DarkShop.Ecommerce.Infrastructure.Repository
 ## Construir la capa de Dominio 
 
 * Interface
-	Definición de los Méto
+	Definición de los Métodos de negocio
+* Core
+	Implementación de las interfaces y lógica de negocio
+
+* Entity
+	Entidades de Negocio
+	Limites de Contexto (Microservicio)
 
 ## Construcción de la capa de Dominio
+
+Como previamente mencionamos crearemos dos proyectos en la capa de dominio, interfaz y core en donde estarán sus implementaciones.
+
+Tendrá como nombre
+
+DarkShop.Ecommerce.Domain.Interface
 
