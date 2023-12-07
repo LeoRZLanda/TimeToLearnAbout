@@ -90,4 +90,3 @@ BEGIN
     WHERE CustomerID=@CustomerID
 
 END
-GO
