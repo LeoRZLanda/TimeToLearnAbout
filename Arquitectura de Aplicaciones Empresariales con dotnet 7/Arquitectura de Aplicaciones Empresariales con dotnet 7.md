@@ -1149,3 +1149,44 @@ Tendrá como nombre
 
 DarkShop.Ecommerce.Domain.Interface
 
+y su interface sera, no hay que olvidar de agregar la referencia a Domain.Entity
+
+ICostumersDomain.cs
+```CS
+using System;
+using System.Collections.Generic;
+using System.Text;
+using DarkShop.Ecommerce.Domain.Entity;
+using System.Threading.Tasks;
+
+namespace DarkShop.Ecommerce.Domain.Interface
+{
+    public interface ICostumersDomain
+    {
+        #region Métodos Sincronos
+        bool Insert(Customer customer);
+        bool Update(Customer customer);
+        bool Delete(string customerId);
+        Customer Get(string customerId);
+        IEnumerable<Customer> GetAll();
+        #endregion
+
+        #region Métodos Asincronos
+        Task<bool> InsertAsync(Customer customer);
+        Task<bool> UpdateAsync(Customer customer);
+        Task<bool> DeleteAsync(string customerId);
+        Task<Customer> GetAsync(string customerId);
+        Task<IEnumerable<Customer>> GetAllAsync();
+        #endregion
+    }
+}
+
+```
+
+Ahora crearemos el proyecto Core, con el siguiente nombre
+
+DarkShop.ecommerce.Domain.Core
+
+Como previamente mencionamos aquí se alojara la lógica y reglas del negocio.
+
+Y crear una clase con nombre CustomerDomain, y a continuación incorporarle las recencias de Domain.Entity  e Interface junto con Infrastructure.Iterface

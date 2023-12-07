@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace DarkShop.Ecommerce.Infrastructure.Repository
 {
-    public class CustomersRepository : ICostumersRepository
+    public class CustomersRepository : ICustomersRepository
     {
         private readonly IConnectionFactory _connectionFactory;
         public CustomersRepository(IConnectionFactory connectionFactory) {
