@@ -677,3 +677,256 @@ La configuración del entorno en donde comenzare a desarrollar este proyecto son
 
 
 PD: para que lo tengas en consideración más adelante se mostrara como ir actualizando el proyecto hasta .NET 8
+
+### Comenzemos 
+
+#### DB
+
+Al tener el entorno preparado empezaremos estableciendo conexión a sql server mediante Azure Data Studio. Al abrirlo tenremos una interfaz similar a esta 
+
+![[Pasted image 20231206154213.png]]
+
+
+Le daremos clic en nueva conexión y lo llenaremos con nuestras respectivas credenciales
+
+Al entablar conexión daremos clicc derecho a la conexión y le daremos a new query, copiamos y pegamos el documento sql llamado instnwnd y tendremos la base de datos con nombre northwind
+
+![[Pasted image 20231206160309.png]]
+
+# Sección 5: Capa de Infraestructura de Persistencia de Datos
+
+## Creación de Objetos en MS SQL Server
+
+Lo que vamos a realizar seran procesos almacenado que nos permita realizar CRUD ante la Customers de la DB Northwind
+
+
+Si quieres visualizar el codigo se encuentra en recursos con el nombre objects, simplemente ejecutalo en azure data studio y puedes validar si ves la carpeta programmability
+
+## Construcción de la Capa de Infraestructura de Persistencia de Datos
+
+En esta sección construiremos: 
+
+
+la Capa de Infraestructura de Datos
+* Data
+* Interface
+* Repository
+
+La capa Transversal
+* Common
+
+La capa de dominio
+* Entity
+
+Es hora de crear nuestro proyecto en visual studio
+
+Ya que empezaremos con la capa transversal, ya que quremos que nuestro proyecto sea reutilizable en cualquier .NET y xamarin utilizaremos .NET Standard, creando nuestra libreria.
+
+Solo para recordar que los proyectos de la capa de percistencia de datos, la capa transversal, dominio y aplicación usaran .NET Standard y solamente nuestro proyecto web API usara .NET Core.
+
+![[Pasted image 20231206162510.png]]
+
+
+
+Algo importante al colocar el nombre a una librería, se recomienda lo siguiente.
+
+Empresa.NombreDeAplicación.NombreDeLaCapa.Caacteristica.
+
+En este caso usaremos
+
+
+DarkShop.Ecommerce.Transversal.Common
+
+![[Pasted image 20231206164018.png]]
+
+
+![[Pasted image 20231206164041.png]]
+
+Al Terminar de crear el proyecto lo tendremos por defecto con Class1
+
+Y añadiremos una interface
+
+![[Pasted image 20231206164345.png]]
+
+
+Y la llamaremos IConnectionFactory.cs
+
+![[Pasted image 20231206164458.png]]
+
+Para empezar quedaría algo así
+
+IConnectionFactory.cs
+```CS
+using System.Data;
+
+namespace DarkShop.Ecommerce.Transversal.Common
+{
+    public interface IConnectionFactory
+    {
+        IDbConnection GetConnection { get; }
+    }
+}
+
+```
+
+Para organizar mejor nuestra solución vamos a crear carpetas de acuerdo a nuestras capas.
+
+Para ello le daremos clic derecho a nuestra solución y darle clic en añadir nueva carpeta, les pondremos como nombre Transversal, Aplicacion, Infraestructura y Servicio
+
+![[Pasted image 20231206165052.png]]
+
+Así para cuando desarrollemos nuevos proyectos los podamos incorporar en la carpeta de su capa respectiva para un mejor orden.
+
+Antes que nada arrastremos el proyecto previo a su carpeta respectiva.
+
+Ahora vamos a proceder a crear el proyecto que va implementar nuestra interfaz IConnectionFactory.
+
+En este caso como va a administrar la instancia de conexión a nuestra base de datos, lo vamos a colocar dentro de la capa de Infraestructura.
+
+Sera otra libreria .NET standard 2.0 con nombre
+
+y le crearemos la siguiente clase.
+
+El siguiente proyecto tiene como responsabilidad conectarse a la base de datos y devolver la instancia de la conexión.
+
+Para ello vamos a necesitar dos componentes adicionales que los consigueremos a travez de NuGet.
+
+El primero es System.Data.SqlClient que nos permite interacturar con SQL Server.
+
+Y el otro es Microsoft.Extension.Configuration, es un simil al .Configuration de .NET Framework que nos permite acceder a los archivos de configuración, como web.config o appsettings.
+
+Para ello le daremos clic derecho y clic en adnministrar paquetes NuGet.
+
+![[Pasted image 20231206171706.png]]
+
+Los buscamos e instalamos 
+
+![[Pasted image 20231206171951.png]]
+
+![[Pasted image 20231206172228.png]]
+
+Continuando, ahora implementaremos la referencia de IConnectionFactory a la capa de infraestrucura.
+
+![[Pasted image 20231206175642.png]]
+
+
+
+Y lo importamos en la siguiente clase
+
+ConnectionFactory.cs
+```CS
+using System;
+using DarkShop.Ecommerce.Transversal.Common;
+using Microsoft.Extensions.Configuration;
+using System.Data.SqlClient;
+using System.Data;
+
+namespace DarkShop.Ecommerce.Infraestructure.Data
+{
+    public class ConnectionFactory :IConnectionFactory
+    {
+        private readonly IConfiguration _configuration;
+
+        public ConnectionFactory(IConfiguration configuration) {
+            _configuration = configuration;
+        }
+
+        public IDbConnection GetConnection{
+            get {
+                var SqlConnection = new SqlConnection();
+                if (SqlConnection == null) return null;
+
+                SqlConnection.ConnectionString = _configuration.GetConnectionString("NorthwindConnection");
+                SqlConnection.Open();
+                return SqlConnection;
+            }
+        }
+
+    }
+}
+
+```
+
+Con esto ya tenemos el metodo que accede a nuestra DB y nos devuelve una conexión activa.
+
+Ahora vamos a crear el proyecto de interfacez e el proyecto de infraestructura en donde vamos a declarar todos los metodos CRUD
+
+Lo llamaremos DarkShop.Ecommerce.Infrastructure.Interface Y le añadiremos su interfaz IConstumersRepository.cs.
+
+Junto a ello crearemos el proyecto Domain.Entity en donde definiremos nuestra clase Customer.
+
+Procederemos a declarar cada un de los atributos de la clase:
+
+Customer.cs
+```CS
+namespace DarkShop.Ecommerce.Domain.Entity
+{
+    public class Customers
+    {
+        public string CustomerId { get; set; }
+        public string CompanyName { get; set; }
+        public string ContactName { get; set; }
+        public string ContactTitle { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string Region { get; set; }
+        public string PostalCode { get; set; }
+        public string Phone { get; set; }
+        public string Fax { get; set; }
+    }
+}
+
+```
+
+
+Agregáremos referencia en la capa infraestrucutra.interface sobre el proyecto anterior domain.entity
+
+Ahora si podremos continuar con
+
+ICostumersRepository.cs
+```CS
+using DarkShop.Ecommerce.Domain.Entity;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace DarkShop.Ecommerce.Infrastructure.Interface
+{
+    public interface IConstumersRepository
+    {
+        #region Métodos Sincronos
+        bool Insert(Customers customer);
+        bool Update(Customers customer);
+        bool Delete(string customerId);
+        Customers Get(string customerId);
+        IEnumerable<Customers> GetAll();
+        #endregion
+
+        #region Métodos Asincronos
+        Task<bool> InsertAsync(Customers customer);
+        Task<bool> UpdateAsync(Customers customer);
+        Task<bool> DeleteAsync(string customerId);
+        Task<Customers> GetAsync(string customerId);
+        Task<IEnumerable<Customers>> GetAllAsync();
+        #endregion
+
+    }
+}
+
+
+```
+
+Ahora vamos a crear el proyecto Repository que va a implementar la interfaz ICostumerRepository.cs
+
+Le incorporamos las referencias de Interface, Common y Data.
+
+Y renombramos el archivo class1.cs a CustomerRepository.cs
+
+
+Como hemos indicado previamente para acceder al motor de base de datos vamos a utilizar un Micro ORM, llamado Dapper, lo instalaremos mediante NuGet dentro del proyecto Repository.
+
+
+
+CustomerRepository.cs
+```CS
+
+```

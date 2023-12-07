@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.24" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DarkShop.Ecommerce.Infraestructure.Data\DarkShop.Ecommerce.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\DarkShop.Ecommerce.Infrastructure.Interface\DarkShop.Ecommerce.Infrastructure.Interface.csproj" />
+    <ProjectReference Include="..\DarkShop.Ecommerce.Transversal.Common\DarkShop.Ecommerce.Transversal.Common.csproj" />
+  </ItemGroup>
+
+</Project>
