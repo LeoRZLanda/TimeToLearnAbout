@@ -7,19 +7,19 @@ namespace DarkShop.Ecommerce.Infrastructure.Interface
     public interface ICostumersRepository
     {
         #region Métodos Sincronos
-        bool Insert(Customers customer);
-        bool Update(Customers customer);
+        bool Insert(Customer customer);
+        bool Update(Customer customer);
         bool Delete(string customerId);
-        Customers Get(string customerId);
-        IEnumerable<Customers> GetAll();
+        Customer Get(string customerId);
+        IEnumerable<Customer> GetAll();
         #endregion
 
         #region Métodos Asincronos
-        Task<bool> InsertAsync(Customers customer);
-        Task<bool> UpdateAsync(Customers customer);
+        Task<bool> InsertAsync(Customer customer);
+        Task<bool> UpdateAsync(Customer customer);
         Task<bool> DeleteAsync(string customerId);
-        Task<Customers> GetAsync(string customerId);
-        Task<IEnumerable<Customers>> GetAllAsync();
+        Task<Customer> GetAsync(string customerId);
+        Task<IEnumerable<Customer>> GetAllAsync();
         #endregion
 
     }

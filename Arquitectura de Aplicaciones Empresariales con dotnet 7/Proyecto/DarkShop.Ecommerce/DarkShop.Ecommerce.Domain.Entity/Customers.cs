@@ -1,6 +1,6 @@
 ﻿namespace DarkShop.Ecommerce.Domain.Entity
 {
-    public class Customers
+    public class Customer
     {
         public string CustomerId { get; set; }
         public string CompanyName { get; set; }
