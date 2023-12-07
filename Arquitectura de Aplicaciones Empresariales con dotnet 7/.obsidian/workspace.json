@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "8d1dabbdbc16ef7d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -86,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Arquitectura de Aplicaciones Empresariales con dotnet 7.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Arquitectura de Aplicaciones Empresariales con dotnet 7.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Arquitectura de Aplicaciones Empresariales con dotnet 7.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -166,20 +179,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5c46dc817edad9dc",
+  "active": "8d1dabbdbc16ef7d",
   "lastOpenFiles": [
+    "Arquitectura de Aplicaciones Empresariales con dotnet 7.md",
+    "conflict-files-obsidian-git.md",
     "Proyecto/DarkShop.Ecommerce/DarkShop.Ecommerce.Domain.Entity/yhwl5cnd.z2c~",
     "Proyecto/DarkShop.Ecommerce/DarkShop.Ecommerce.Infrastructure.Interface/ICostumersRepository.cs",
     "Proyecto/DarkShop.Ecommerce/DarkShop.Ecommerce.Infrastructure.Repository/CustomersRepository.cs",
     "Proyecto/DarkShop.Ecommerce/DarkShop.Ecommerce.Infrastructure.Repository/obj/1444e656-c167-4052-b957-6584aaea93a2.tmp",
-    "Arquitectura de Aplicaciones Empresariales con dotnet 7.md",
     "Proyecto/DarkShop.Ecommerce/DarkShop.Ecommerce.Infraestructure.Data/obj/DarkShop.Ecommerce.Infrastructure.Data.csproj.nuget.dgspec.json",
     "Proyecto/DarkShop.Ecommerce/DarkShop.Ecommerce.Infraestructure.Data/obj/DarkShop.Ecommerce.Infrastructure.Data.csproj.nuget.g.targets",
     "Proyecto/DarkShop.Ecommerce/DarkShop.Ecommerce.Infraestructure.Data/obj/DarkShop.Ecommerce.Infrastructure.Data.csproj.nuget.g.props",
     "Proyecto/DarkShop.Ecommerce/DarkShop.Ecommerce.Infraestructure.Data/obj/Debug/netstandard2.0/DarkShop.Ecommerce.Infrastructure.Data.AssemblyInfo.cs",
     "Proyecto/DarkShop.Ecommerce/DarkShop.Ecommerce.Infraestructure.Data/obj/Debug/netstandard2.0/DarkShop.Ecommerce.Infrastructure.Data.AssemblyInfoInputs.cache",
     "Proyecto/DarkShop.Ecommerce/DarkShop.Ecommerce.Infraestructure.Data/obj/Debug/netstandard2.0/DarkShop.Ecommerce.Infrastructure.Data.csproj.AssemblyReference.cache",
-    "Proyecto/DarkShop.Ecommerce/DarkShop.Ecommerce.Infraestructure.Data/obj/Debug/netstandard2.0/DarkShop.Ecommerce.Infrastructure.Data.assets.cache",
     "Apendix/Pasted image 20231206175642.png",
     "Apendix/Pasted image 20231206172228.png",
     "Apendix/Pasted image 20231206172026.png",
