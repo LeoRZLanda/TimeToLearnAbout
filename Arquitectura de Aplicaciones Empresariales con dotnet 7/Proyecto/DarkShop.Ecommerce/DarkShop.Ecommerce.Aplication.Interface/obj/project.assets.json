@@ -26,14 +26,14 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "DarkShop.Ecommerce.Aplication.DTO/1.0.0": {
+      "DarkShop.Ecommerce.Application.DTO/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "compile": {
-          "bin/placeholder/DarkShop.Ecommerce.Aplication.DTO.dll": {}
+          "bin/placeholder/DarkShop.Ecommerce.Application.DTO.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DarkShop.Ecommerce.Aplication.DTO.dll": {}
+          "bin/placeholder/DarkShop.Ecommerce.Application.DTO.dll": {}
         }
       },
       "DarkShop.Ecommerce.Transversal.Common/1.0.0": {
@@ -193,10 +193,10 @@
         "netstandard.library.nuspec"
       ]
     },
-    "DarkShop.Ecommerce.Aplication.DTO/1.0.0": {
+    "DarkShop.Ecommerce.Application.DTO/1.0.0": {
       "type": "project",
-      "path": "../DarkShop.Ecommerce.Aplication.DTO/DarkShop.Ecommerce.Aplication.DTO.csproj",
-      "msbuildProject": "../DarkShop.Ecommerce.Aplication.DTO/DarkShop.Ecommerce.Aplication.DTO.csproj"
+      "path": "../DarkShop.Ecommerce.Aplication.DTO/DarkShop.Ecommerce.Application.DTO.csproj",
+      "msbuildProject": "../DarkShop.Ecommerce.Aplication.DTO/DarkShop.Ecommerce.Application.DTO.csproj"
     },
     "DarkShop.Ecommerce.Transversal.Common/1.0.0": {
       "type": "project",
@@ -206,7 +206,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "DarkShop.Ecommerce.Aplication.DTO >= 1.0.0",
+      "DarkShop.Ecommerce.Application.DTO >= 1.0.0",
       "DarkShop.Ecommerce.Transversal.Common >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
@@ -219,9 +219,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Aplication.Interface\\DarkShop.Ecommerce.Aplication.Interface.csproj",
-      "projectName": "DarkShop.Ecommerce.Aplication.Interface",
-      "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Aplication.Interface\\DarkShop.Ecommerce.Aplication.Interface.csproj",
+      "projectUniqueName": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Aplication.Interface\\DarkShop.Ecommerce.Application.Interface.csproj",
+      "projectName": "DarkShop.Ecommerce.Application.Interface",
+      "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Aplication.Interface\\DarkShop.Ecommerce.Application.Interface.csproj",
       "packagesPath": "C:\\Users\\lramirez\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Aplication.Interface\\obj\\",
       "projectStyle": "PackageReference",
@@ -245,8 +245,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Aplication.DTO\\DarkShop.Ecommerce.Aplication.DTO.csproj": {
-              "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Aplication.DTO\\DarkShop.Ecommerce.Aplication.DTO.csproj"
+            "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Aplication.DTO\\DarkShop.Ecommerce.Application.DTO.csproj": {
+              "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Aplication.DTO\\DarkShop.Ecommerce.Application.DTO.csproj"
             },
             "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj": {
               "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj"
@@ -272,10 +272,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

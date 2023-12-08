@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DarkShop.Ecommerce.Aplication.DTO;
+using DarkShop.Ecommerce.Application.DTO;
 using DarkShop.Ecommerce.Transversal.Common;
 using System.Threading.Tasks;
 
-namespace DarkShop.Ecommerce.Aplication.Interface
+namespace DarkShop.Ecommerce.Application.Interface
 {
     public interface ICustomersApplication
     {

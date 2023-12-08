@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DarkShop.Ecommerce.Aplication.DTO
+namespace DarkShop.Ecommerce.Application.DTO
 {
     public class CustomerDTO
     {

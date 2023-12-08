@@ -27,13 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkShop.Ecommerce.Domain.I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkShop.Ecommerce.Domain.Core", "DarkShop.Ecommerce.Domain.Core\DarkShop.Ecommerce.Domain.Core.csproj", "{889ED0FD-E516-4E6D-A3C7-0E205A20393D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkShop.Ecommerce.Aplication.DTO", "DarkShop.Ecommerce.Aplication.DTO\DarkShop.Ecommerce.Aplication.DTO.csproj", "{F370364B-341E-4485-A68C-E427972E5AA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkShop.Ecommerce.Application.DTO", "DarkShop.Ecommerce.Aplication.DTO\DarkShop.Ecommerce.Application.DTO.csproj", "{F370364B-341E-4485-A68C-E427972E5AA7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkShop.Ecommerce.Transversal.Mapper", "DarkShop.Ecommerce.Transversal.Mapper\DarkShop.Ecommerce.Transversal.Mapper.csproj", "{F06E6CAC-43A1-4A73-A882-712A9F86E93C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkShop.Ecommerce.Aplication.Interface", "DarkShop.Ecommerce.Aplication.Interface\DarkShop.Ecommerce.Aplication.Interface.csproj", "{5A797461-9B7A-4052-A5F1-0DB5C06C18B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkShop.Ecommerce.Application.Interface", "DarkShop.Ecommerce.Aplication.Interface\DarkShop.Ecommerce.Application.Interface.csproj", "{5A797461-9B7A-4052-A5F1-0DB5C06C18B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkShop.Ecommerce.Application.Main", "..\DarkShop.Ecommerce.Application.Main\DarkShop.Ecommerce.Application.Main.csproj", "{A276D445-4ADD-48D8-A705-4BB535EDB026}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkShop.Ecommerce.Application.Main", "DarkShop.Ecommerce.Application.Main\DarkShop.Ecommerce.Application.Main.csproj", "{EAD7902A-F0F9-4CEF-AF2B-61DB9DF16FD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,10 +81,10 @@ Global
 		{5A797461-9B7A-4052-A5F1-0DB5C06C18B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A797461-9B7A-4052-A5F1-0DB5C06C18B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A797461-9B7A-4052-A5F1-0DB5C06C18B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A276D445-4ADD-48D8-A705-4BB535EDB026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A276D445-4ADD-48D8-A705-4BB535EDB026}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A276D445-4ADD-48D8-A705-4BB535EDB026}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A276D445-4ADD-48D8-A705-4BB535EDB026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAD7902A-F0F9-4CEF-AF2B-61DB9DF16FD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD7902A-F0F9-4CEF-AF2B-61DB9DF16FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD7902A-F0F9-4CEF-AF2B-61DB9DF16FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD7902A-F0F9-4CEF-AF2B-61DB9DF16FD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,7 +100,7 @@ Global
 		{F370364B-341E-4485-A68C-E427972E5AA7} = {D484485B-8403-4340-B95D-2929C19E6861}
 		{F06E6CAC-43A1-4A73-A882-712A9F86E93C} = {AABA221D-DEEB-4CC2-B9C4-036988B5077C}
 		{5A797461-9B7A-4052-A5F1-0DB5C06C18B5} = {D484485B-8403-4340-B95D-2929C19E6861}
-		{A276D445-4ADD-48D8-A705-4BB535EDB026} = {D484485B-8403-4340-B95D-2929C19E6861}
+		{EAD7902A-F0F9-4CEF-AF2B-61DB9DF16FD6} = {D484485B-8403-4340-B95D-2929C19E6861}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4680000-C7A1-4E30-871A-A7E8AEBC65BB}
