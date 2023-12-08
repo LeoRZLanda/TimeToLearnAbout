@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarkShop.Ecommerce.Domain.Interface
 {
-    public interface ICostumersDomain
+    public interface ICustomersDomain
     {
         #region Métodos Sincronos
         bool Insert(Customer customer);

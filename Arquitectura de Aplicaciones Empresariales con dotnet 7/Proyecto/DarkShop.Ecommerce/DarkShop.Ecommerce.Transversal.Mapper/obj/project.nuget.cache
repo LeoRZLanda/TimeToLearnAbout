@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "e8oM3H1CSECP9SDnap7zDw+OFiL4cajoMcLW8SOIr+bizsVzvEib+JfjC/6F1xbSelNMy1kyGNT48lfKjB4RBQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Mapper\\DarkShop.Ecommerce.Transversal.Mapper.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lramirez\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\lramirez\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\lramirez\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\lramirez\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\lramirez\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
+    "C:\\Users\\lramirez\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.7.0\\system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

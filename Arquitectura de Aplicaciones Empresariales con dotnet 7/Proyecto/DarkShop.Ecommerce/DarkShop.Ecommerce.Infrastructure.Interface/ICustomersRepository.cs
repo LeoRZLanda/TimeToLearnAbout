@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace DarkShop.Ecommerce.Infrastructure.Interface
 {
-    public interface ICostumersRepository
+    public interface ICustomersRepository
     {
         #region Métodos Sincronos
         bool Insert(Customer customer);

@@ -1190,3 +1190,274 @@ DarkShop.ecommerce.Domain.Core
 Como previamente mencionamos aquí se alojara la lógica y reglas del negocio.
 
 Y crear una clase con nombre CustomerDomain, y a continuación incorporarle las recencias de Domain.Entity  e Interface junto con Infrastructure.Iterface
+
+CustomersDomain.cs
+```CS
+using System;
+using DarkShop.Ecommerce.Domain.Entity;
+using DarkShop.Ecommerce.Domain.Interface;
+using DarkShop.Ecommerce.Infrastructure.Interface;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace DarkShop.Ecommerce.Domain.Core
+{
+    public class CustomersDomain : ICustomersDomain
+    {
+        private readonly ICustomersRepository _customersRepository;
+
+        public CustomersDomain(ICustomersRepository CustomersRepository)
+        {
+
+            _customersRepository = CustomersRepository;
+
+        }
+
+        #region Métodos Síncronos
+
+        public bool Insert(Customer customer){
+            return _customersRepository.Insert(customer);
+        }
+
+        public bool Update(Customer customer)
+        {
+            return _customersRepository.Update(customer);
+        }
+
+        public bool Delete(string customerId)
+        {
+            return _customersRepository.Delete(customerId);
+        }
+
+        public Customer Get(string customerId)
+        {
+            return _customersRepository.Get(customerId);
+        }
+
+        public IEnumerable<Customer> GetAll()
+        {
+            return _customersRepository.GetAll();
+        }
+
+
+        #endregion
+
+        #region Métodos Asincronos
+
+        public async Task<bool> InsertAsync(Customer customer)
+        {
+            return await  _customersRepository.InsertAsync(customer);
+        }
+
+        public async Task<bool> UpdateAsync(Customer customer)
+        {
+            return await _customersRepository.UpdateAsync(customer);
+        }
+
+        public async Task<bool> DeleteAsync(string customerId)
+        {
+            return await _customersRepository.DeleteAsync(customerId);
+        }
+
+        public async Task<Customer> GetAsync(string customerId)
+        {
+            return await _customersRepository.GetAsync(customerId);
+        }
+
+        public async Task<IEnumerable<Customer>> GetAllAsync()
+        {
+            return await _customersRepository.GetAllAsync();
+        }
+
+        #endregion
+    }
+}
+
+```
+
+# Sección 7: Capa de Aplicación
+
+## Construir la capa de aplicación
+
+* DTO
+	Objetos de transferencia de Datos
+
+*  Interface
+	Definición de los Métodos de aplicación
+
+* Main
+	* Implementación de las interfaces y gestión de cuestiones técnicas
+	* Gestión de excepciones
+	* Transformación de Objetos
+	* Manejo de Transacciones
+
+
+## Contrucción de la capa de Aplicación
+
+Comenzaremos creando el proyecto
+
+DarkShop.Ecommerce.Aplication.DTO
+
+Cuando una entidad de negocio tiene 50 campos y solo quieres mostrar 10 en la WebAPI para ello se usa DTO, donde se colocan los atributos expuestos.
+
+Renombraremos la clase Class1.cs a CustomerDTO.cs
+
+CustomerDTO.cs
+```CS
+using System;
+
+namespace DarkShop.Ecommerce.Aplication.DTO
+{
+    public class CustomerDTO
+    {
+        public string CustomerId { get; set; }
+        public string CompanyName { get; set; }
+        public string ContactName { get; set; }
+        public string ContactTitle { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string Region { get; set; }
+        public string PostalCode { get; set; }
+        public string Country { get; set; }
+        public string Phone { get; set; }
+        public string Fax { get; set; }
+    }
+}
+
+```
+
+Continuaremos con el proyecto mapper en la <a href="#CapaTransversal1">capa transversal</a>.
+
+Regresando a la capa de aplicación desarrollaremos el proyecto <p id ="Interface">Interface</p>.
+
+DarkShop.Ecommerce.Aplication.Interface
+
+Le brindamos las referencias de DTO y common
+
+Creamos la interfaz.
+
+ICustomersApplication.cs
+```CS
+using System;
+using System.Collections.Generic;
+using System.Text;
+using DarkShop.Ecommerce.Aplication.DTO;
+using DarkShop.Ecommerce.Transversal.Common;
+using System.Threading.Tasks;
+
+namespace DarkShop.Ecommerce.Aplication.Interface
+{
+    public interface ICustomersApplication
+    {
+        #region Métodos Sincronos
+        Response<bool> Insert(CustomerDTO customerDTO);
+        Response<bool> Update(CustomerDTO customerDTO);
+        Response<bool> Delete(string customerId);
+        Response<CustomerDTO> Get(string customerId);
+        Response<IEnumerable<CustomerDTO>> GetAll();
+        #endregion
+
+        #region Métodos Asincronos
+        Task<Response<bool>> InsertAsync(CustomerDTO customerDTO);
+        Task<Response<bool>> UpdateAsync(CustomerDTO customerDTO);
+        Task<Response<bool>> DeleteAsync(string customerId);
+        Task<Response<CustomerDTO>> GetAsync(string customerId);
+        Task<Response<IEnumerable<CustomerDTO>>> GetAllAsync();
+        #endregion
+    }
+}
+
+```
+
+Al terminar podremos construir Main, en donde se encontraran las implementaciones de la interfaz
+
+DarkShop.Ecommerce.Application.Main
+
+Ya que aqui es donde haremos los mapeos hay que instalar AutoMapper. Además bindarle las referencias requeridas ante DTO, application.Interface, Domain.Entity, Domain.Interface y common
+
+CustomersApplication.cs
+```CS
+
+```
+## Construir la capa Transversal
+
+* Common (Lista)
+	Clases base, interfaces y funciones comunes
+
+*  Mapper
+	Mapeo de objetos (DTO/Entidades y viceversa)
+
+* Logging
+	Trazabilidad (stack trace)
+
+## Construcción de la capa Transversal
+
+Al realizar el CustomerDTO continuaremos con el proyecto<p id="CapaTransversal1">Mapper</p>
+
+DarkShop.Ecommerce.Transversal.Mapper
+
+Recordar que esto nos permitirá realizar el mapeo de forma automática entre los objetos DTO y las entidades de negocio, o viceversa, siempre y cuando el nombre y tipo de dato sea el mismo.
+
+Intalemos AutoMapper mediante NuGet
+
+Y renombraremos la class1 que se creo a MappingsProfile.cs.
+
+No hay que olvidar hacer referencia a los proyectos que queremos mapear, en este caso DTO y entity
+
+MappingsProfile.cs
+```CS
+using System;
+using AutoMapper;
+using DarkShop.Ecommerce.Domain.Entity;
+using DarkShop.Ecommerce.Aplication.DTO;
+
+namespace DarkShop.Ecommerce.Transversal.Mapper
+{
+    public class MappingsProfile : Profile
+    {
+        
+        public MappingsProfile() {
+            // Si ambas perfiles tienen los mismos atributos
+            CreateMap<Customer, CustomerDTO>().ReverseMap();
+
+            // Si no
+            //CreateMap<Customer, CustomerDTO>().ReverseMap()
+            //    .ForMember(destination => destination.CustomerId, source => source.MapFrom(src => src.CustomerId))
+            //    .ForMember(destination => destination.CompanyName, source => source.MapFrom(src => src.CompanyName))
+            //    .ForMember(destination => destination.ContactName, source => source.MapFrom(src => src.ContactName))
+            //    .ForMember(destination => destination.ContactTitle, source => source.MapFrom(src => src.ContactTitle))
+            //    .ForMember(destination => destination.Address, source => source.MapFrom(src => src.Address))
+            //    .ForMember(destination => destination.City, source => source.MapFrom(src => src.City))
+            //    .ForMember(destination => destination.Region, source => source.MapFrom(src => src.Region))
+            //    .ForMember(destination => destination.PostalCode, source => source.MapFrom(src => src.PostalCode))
+            //    .ForMember(destination => destination.Country, source => source.MapFrom(src => src.Country))
+            //    .ForMember(destination => destination.Phone, source => source.MapFrom(src => src.Phone))
+            //    .ForMember(destination => destination.Fax, source => source.MapFrom(src => src.Fax));
+        }
+
+    }
+}
+
+```
+
+Ahora crearemos una entidad con nombre Response para nuestra WebAPI
+
+Response.cs
+```CS
+namespace DarkShop.Ecommerce.Transversal.Common
+{
+    public class Response<T>
+    {
+        public T Data { get; set; }
+        public bool IsSuccess { get; set; }
+        public string  Message { get; set; }
+    }
+}
+
+```
+
+
+La entidad response es la que contendrá toda la información que van a exponer los diversos recursos de nuestra web api, por ejemplo en el atributo data, genérico, tendrá la información de los diversos métodos de la capa de dominio, es decir tendrá la respuesta del método insert, etc, el atributo IsSuccess, guardara el estado de la ejecución y en messge se almacenara el tipo de error o validación de una correcta ejecución.
+
+
+Ahora continuremos con el proyecto <a href = "#Interface">Interface</a> en la capa de aplicación
