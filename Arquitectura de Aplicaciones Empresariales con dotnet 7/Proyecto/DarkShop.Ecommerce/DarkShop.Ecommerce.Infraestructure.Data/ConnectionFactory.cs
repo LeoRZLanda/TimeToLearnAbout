@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace DarkShop.Ecommerce.Infraestructure.Data
+namespace DarkShop.Ecommerce.Infrastructure.Data
 {
     public class ConnectionFactory :IConnectionFactory
     {

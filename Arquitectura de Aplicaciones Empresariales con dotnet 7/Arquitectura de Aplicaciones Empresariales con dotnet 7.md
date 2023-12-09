@@ -1680,11 +1680,293 @@ Ahora continuremos con el proyecto <a href = "#Interface">Interface</a> en la ca
 	* Inyección de dependencias
 	* Configurar appsettings.json
 
+</br>
+
 * Principios de diseño
-	* Las API REST se diseñan en función de los recursos (**cualquier tipo de objeto, datos o servicio a los que el cliente puede acceder**).
+	* Las API REST se diseñan en función de los recursos (**cualquier tipo de objeto, datos o servicio a los que el cliente puede acceder**). 
+	</br>
 	* Un recurso tiene un identificador, que es una URI que identifica de forma única al recurso (http://darkshop.com/api/Customers/GetAIl).
+	</br>
 	* Los clientes interactúan con el servicio intercambiando representaciones de recursos (JSON como formato de intercambio).
+	</br>	
 	* Las API REST utilizan un modelo de solicitud sin estado. Las solicitudes HTTP deben ser independientes y pueden ocurrir en cualquier orden, por lo que no es factible mantener información de estado transitoria entre solicitudes.
+	</br>
+
+* Tipos de Retorno de acciones del controlador
+	* Specific Type
+		```CS
+		public IEnumerable<Product> Get(){
+			return _repository.GetProducts();_
+		}
+		```
+	* IActionResult
+		```CS
+		public IActionResult GetById(){
+			if (!_repository.TryGetProduct(id, out var product)) {
+				return NotFound();
+			}
+			return Ok(product);
+		}
+		```
+	* ActionResult\<T>
+		```CS
+		public ActionResult<IEnumerable<Product>> Get(){
+			return _repository.GetProducts();_
+		}
+		```
 
 ## Construcción de la capa de Servicios <a id = "Sección-8:-Capa-de-servicios"> </a>
 
+Ahora como vamos a desarrollar nuestro proyecto web API, en la capa de servicio, hay que seleccionar .NET Core y ASP.NET Core Web Application.
+
+![[Pasted image 20231208162453.png]]
+
+
+Le pondremos el siguiente nombre
+
+DarkShop.Ecommerce.Services.WebApi
+
+Y como target framework usaremos .NET Core 2.2
+
+![[Pasted image 20231208162954.png]]
+
+Y añadiremos un nuevo controlador, clic derecho en la carpeta controllers y añadir 
+
+![[Pasted image 20231208163132.png]]
+
+
+No aseguramos que este vacio
+
+![[Pasted image 20231208163213.png]]
+
+y le pondremos el nombre CustomersController
+
+Empezaremos estableciendo la ruta de nuestro recurso, empezaremos con api, despues el nombre del controlador y al final el nombre de la acción, y con el decordor ApiController, indicamos que vamos a trabajar con recursos http.
+
+Tambien hay que añadirle las referencias a los archivo que dependa, como; Application.DTO e interface.
+
+
+
+CustomersController.cs
+```CS
+using DarkShop.Ecommerce.Application.DTO;
+using DarkShop.Ecommerce.Application.Interface;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+
+namespace DarkShop.Ecommerce.Services.WebApi.Controllers
+{
+    [Route("api/[controller]/[action]")]
+    [ApiController]
+    public class CustomersController : Controller
+    {
+        private readonly ICustomersApplication _customersApplicaton;
+        public CustomersController(ICustomersApplication customersApplication){
+            _customersApplicaton = customersApplication;
+        }
+
+        #region Métodos Sincronos
+        [HttpPost]
+        public IActionResult Insert([FromBody] CustomerDTO customerDTO)
+        {
+            if (customerDTO == null)
+            {
+                return BadRequest();
+            }
+            var response = _customersApplicaton.Insert(customerDTO);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response.Message);
+        }
+
+        [HttpPut]
+        public IActionResult Update([FromBody] CustomerDTO customerDTO)
+        {
+            if (customerDTO == null)
+            {
+                return BadRequest();
+            }
+            var response = _customersApplicaton.Update(customerDTO);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response.Message);
+        }
+
+        [HttpDelete("{customerId}")]
+        public IActionResult Delete(string customerId)
+        {
+            if (string.IsNullOrEmpty(customerId))
+            {
+                return BadRequest();
+            }
+            var response = _customersApplicaton.Delete(customerId);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response.Message);
+        }
+
+        [HttpGet("{customerId}")]
+        public IActionResult Get(string customerId)
+        {
+            if (string.IsNullOrEmpty(customerId))
+            {
+                return BadRequest();
+            }
+            var response = _customersApplicaton.Get(customerId);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response.Message);
+        }
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var response = _customersApplicaton.GetAll();
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response.Message);
+        }
+        #endregion
+
+        #region Métodos Asincronos
+        [HttpPost]
+        public async Task<IActionResult> InsertAsync([FromBody] CustomerDTO customerDTO)
+        {
+            if (customerDTO == null)
+            {
+                return BadRequest();
+            }
+            var response = await _customersApplicaton.InsertAsync(customerDTO);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response.Message);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateAsync([FromBody] CustomerDTO customerDTO)
+        {
+            if (customerDTO == null)
+            {
+                return BadRequest();
+            }
+            var response = await _customersApplicaton.UpdateAsync(customerDTO);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response.Message);
+        }
+
+        [HttpDelete("{customerId}")]
+        public async Task<IActionResult> DeleteAsync(string customerId)
+        {
+            if (string.IsNullOrEmpty(customerId))
+            {
+                return BadRequest();
+            }
+            var response = await _customersApplicaton.DeleteAsync(customerId);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response.Message);
+        }
+
+        [HttpGet("{customerId}")]
+        public async Task<IActionResult> GetAsync(string customerId)
+        {
+            if (string.IsNullOrEmpty(customerId))
+            {
+                return BadRequest();
+            }
+            var response = await _customersApplicaton.GetAsync(customerId);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response.Message);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllAsync()
+        {
+            var response = await _customersApplicaton.GetAllAsync();
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response.Message);
+        }
+        #endregion
+
+    }
+}
+
+```
+
+A continuación agregaremos la cadena de conexión en el archivo appsetings.json
+
+appsettings.json
+```JSON
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "NorthwindConnection": "server=.; database=Northwind; Integrated Security = true;"
+  }
+}
+
+```
+
+
+Para más adelante editaremos la clase de inicio startup.cs
+
+No hay que olvidar incorporar automapper en el proyecto y AutoMapper.Extensions.Microsoft.DependencyInjection.
+
+Y añadirle referencia a todos los proyectos de la app.
+
+Además hay que editar el método configuration ConfigureServices, extrayendo el comonente mappingprofile del proyecto transversal.mapper para incluir el mapeo de entidades de negocio a DTO.
+
+startup.cs
+```CS
+
+```
+
+
+AutoMapper 10.1.1 se usa en 
+
+app.main
+services.webapi
+transversall.mapper
+
+
+el usa automapper extensions
+6.0.0
+
+y automaper 8.0.0

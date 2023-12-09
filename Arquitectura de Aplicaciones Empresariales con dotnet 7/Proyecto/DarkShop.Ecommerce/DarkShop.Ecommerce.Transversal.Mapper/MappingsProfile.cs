@@ -1,7 +1,7 @@
 ﻿using System;
 using AutoMapper;
 using DarkShop.Ecommerce.Domain.Entity;
-using DarkShop.Ecommerce.Aplication.DTO;
+using DarkShop.Ecommerce.Application.DTO;
 
 namespace DarkShop.Ecommerce.Transversal.Mapper
 {
