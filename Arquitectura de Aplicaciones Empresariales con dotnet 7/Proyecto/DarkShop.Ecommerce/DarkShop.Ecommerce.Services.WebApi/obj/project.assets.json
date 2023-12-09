@@ -2,6 +2,32 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "AutoMapper/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -4463,6 +4489,75 @@
           "bin/placeholder/DarkShop.Ecommerce.Application.Interface.dll": {}
         }
       },
+      "DarkShop.Ecommerce.Application.Main/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "AutoMapper": "8.0.0",
+          "DarkShop.Ecommerce.Application.DTO": "1.0.0",
+          "DarkShop.Ecommerce.Application.Interface": "1.0.0",
+          "DarkShop.Ecommerce.Domain.Entity": "1.0.0",
+          "DarkShop.Ecommerce.Domain.Interface": "1.0.0",
+          "DarkShop.Ecommerce.Transversal.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DarkShop.Ecommerce.Application.Main.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DarkShop.Ecommerce.Application.Main.dll": {}
+        }
+      },
+      "DarkShop.Ecommerce.Domain.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "DarkShop.Ecommerce.Domain.Entity": "1.0.0",
+          "DarkShop.Ecommerce.Domain.Interface": "1.0.0",
+          "DarkShop.Ecommerce.Infrastructure.Interface": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DarkShop.Ecommerce.Domain.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DarkShop.Ecommerce.Domain.Core.dll": {}
+        }
+      },
+      "DarkShop.Ecommerce.Domain.Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/DarkShop.Ecommerce.Domain.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DarkShop.Ecommerce.Domain.Entity.dll": {}
+        }
+      },
+      "DarkShop.Ecommerce.Domain.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "DarkShop.Ecommerce.Domain.Entity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DarkShop.Ecommerce.Domain.Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DarkShop.Ecommerce.Domain.Interface.dll": {}
+        }
+      },
+      "DarkShop.Ecommerce.Infrastructure.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "DarkShop.Ecommerce.Domain.Entity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DarkShop.Ecommerce.Infrastructure.Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DarkShop.Ecommerce.Infrastructure.Interface.dll": {}
+        }
+      },
       "DarkShop.Ecommerce.Transversal.Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -4476,6 +4571,36 @@
     }
   },
   "libraries": {
+    "AutoMapper/8.0.0": {
+      "sha512": "px8ZMtIq84dxciB29V+ZYOtsRLZP4JlflDDMW13LyeRdwsnIInzlcSHSxpWmVD6U3bbOl2FeLlgomnVtm0jvXw==",
+      "type": "package",
+      "path": "automapper/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.8.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net461/AutoMapper.dll",
+        "lib/net461/AutoMapper.pdb",
+        "lib/net461/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/6.0.0": {
+      "sha512": "njWYKGM3FokOlo9nj8kVLYyvJrGbLItmNA2A00lDXJnxybfP7TuZEYjQRt8ne+Cp0OF4W0ZzgdgxMioHfDEpdA==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
+        "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.pdb"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
       "type": "package",
@@ -12158,6 +12283,31 @@
       "path": "../DarkShop.Ecommerce.Aplication.Interface/DarkShop.Ecommerce.Application.Interface.csproj",
       "msbuildProject": "../DarkShop.Ecommerce.Aplication.Interface/DarkShop.Ecommerce.Application.Interface.csproj"
     },
+    "DarkShop.Ecommerce.Application.Main/1.0.0": {
+      "type": "project",
+      "path": "../DarkShop.Ecommerce.Application.Main/DarkShop.Ecommerce.Application.Main.csproj",
+      "msbuildProject": "../DarkShop.Ecommerce.Application.Main/DarkShop.Ecommerce.Application.Main.csproj"
+    },
+    "DarkShop.Ecommerce.Domain.Core/1.0.0": {
+      "type": "project",
+      "path": "../DarkShop.Ecommerce.Domain.Core/DarkShop.Ecommerce.Domain.Core.csproj",
+      "msbuildProject": "../DarkShop.Ecommerce.Domain.Core/DarkShop.Ecommerce.Domain.Core.csproj"
+    },
+    "DarkShop.Ecommerce.Domain.Entity/1.0.0": {
+      "type": "project",
+      "path": "../DarkShop.Ecommerce.Domain.Entity/DarkShop.Ecommerce.Domain.Entity.csproj",
+      "msbuildProject": "../DarkShop.Ecommerce.Domain.Entity/DarkShop.Ecommerce.Domain.Entity.csproj"
+    },
+    "DarkShop.Ecommerce.Domain.Interface/1.0.0": {
+      "type": "project",
+      "path": "../DarkShop.Ecommerce.Domain.Interface/DarkShop.Ecommerce.Domain.Interface.csproj",
+      "msbuildProject": "../DarkShop.Ecommerce.Domain.Interface/DarkShop.Ecommerce.Domain.Interface.csproj"
+    },
+    "DarkShop.Ecommerce.Infrastructure.Interface/1.0.0": {
+      "type": "project",
+      "path": "../DarkShop.Ecommerce.Infrastructure.Interface/DarkShop.Ecommerce.Infrastructure.Interface.csproj",
+      "msbuildProject": "../DarkShop.Ecommerce.Infrastructure.Interface/DarkShop.Ecommerce.Infrastructure.Interface.csproj"
+    },
     "DarkShop.Ecommerce.Transversal.Common/1.0.0": {
       "type": "project",
       "path": "../DarkShop.Ecommerce.Transversal.Common/DarkShop.Ecommerce.Transversal.Common.csproj",
@@ -12166,8 +12316,14 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "AutoMapper >= 8.0.0",
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 6.0.0",
       "DarkShop.Ecommerce.Application.DTO >= 1.0.0",
       "DarkShop.Ecommerce.Application.Interface >= 1.0.0",
+      "DarkShop.Ecommerce.Application.Main >= 1.0.0",
+      "DarkShop.Ecommerce.Domain.Core >= 1.0.0",
+      "DarkShop.Ecommerce.Domain.Entity >= 1.0.0",
+      "DarkShop.Ecommerce.Domain.Interface >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0"
@@ -12212,6 +12368,18 @@
             },
             "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Aplication.Interface\\DarkShop.Ecommerce.Application.Interface.csproj": {
               "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Aplication.Interface\\DarkShop.Ecommerce.Application.Interface.csproj"
+            },
+            "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Application.Main\\DarkShop.Ecommerce.Application.Main.csproj": {
+              "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Application.Main\\DarkShop.Ecommerce.Application.Main.csproj"
+            },
+            "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Domain.Core\\DarkShop.Ecommerce.Domain.Core.csproj": {
+              "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Domain.Core\\DarkShop.Ecommerce.Domain.Core.csproj"
+            },
+            "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Domain.Entity\\DarkShop.Ecommerce.Domain.Entity.csproj": {
+              "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Domain.Entity\\DarkShop.Ecommerce.Domain.Entity.csproj"
+            },
+            "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Domain.Interface\\DarkShop.Ecommerce.Domain.Interface.csproj": {
+              "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Domain.Interface\\DarkShop.Ecommerce.Domain.Interface.csproj"
             }
           }
         }
@@ -12226,6 +12394,14 @@
       "netcoreapp2.2": {
         "targetAlias": "netcoreapp2.2",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[6.0.0, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
