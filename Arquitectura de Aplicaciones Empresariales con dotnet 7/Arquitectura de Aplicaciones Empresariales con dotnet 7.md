@@ -667,13 +667,13 @@ La configuración del entorno en donde comenzare a desarrollar este proyecto son
 
 * Motor de base de datos
 	* MS SQL Server 19
-	* [Azure Data Studio]([Download and install Azure Data Studio - Azure Data Studio | Microsoft Learn](https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?view=sql-server-2017&tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall#download-azure-data-studio))
+	* [Azure Data Studio](https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?view=sql-server-2017&tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall#download-azure-data-studio)
 
 * IDE
 	* Visual Studio 2019
 
 * Framework
-	* [.NET SDK 2.2]([Download .NET Core 2.2 (Linux, macOS, and Windows) (microsoft.com)](https://dotnet.microsoft.com/en-us/download/dotnet/2.2))
+	* [.NET SDK 2.2](https://dotnet.microsoft.com/en-us/download/dotnet/2.2)
 
 
 PD: para que lo tengas en consideración más adelante se mostrara como ir actualizando el proyecto hasta .NET 8
@@ -689,7 +689,7 @@ Al tener el entorno preparado empezaremos estableciendo conexión a sql server m
 
 Le daremos clic en nueva conexión y lo llenaremos con nuestras respectivas credenciales
 
-Al entablar conexión daremos clicc derecho a la conexión y le daremos a new query, copiamos y pegamos el documento sql llamado instnwnd y tendremos la base de datos con nombre northwind
+Al entablar conexión daremos clic derecho a la conexión y le daremos a new query, copiamos y pegamos el documento sql llamado instnwnd y tendremos la base de datos con nombre northwind
 
 ![[Pasted image 20231206160309.png]]
 
@@ -1715,6 +1715,18 @@ Ahora continuremos con el proyecto <a href = "#Interface">Interface</a> en la ca
 		}
 		```
 
+
+PD: De momento usaremos las siguientes versiones la algunas librerias
+
+automapper.extensions.Microsoft.DependencyIncetion 6.0.0
+
+automaper 8.0.0
+
+SqlClient 4.6.0
+
+Dapper 1.50.5
+
+
 ## Construcción de la capa de Servicios <a id = "Sección-8:-Capa-de-servicios"> </a>
 
 Ahora como vamos a desarrollar nuestro proyecto web API, en la capa de servicio, hay que seleccionar .NET Core y ASP.NET Core Web Application.
@@ -1955,18 +1967,45 @@ Además hay que editar el método configuration ConfigureServices, extrayendo el
 
 startup.cs
 ```CS
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using AutoMapper;
+using DarkShop.Ecommerce.Transversal.Mapper;
+using DarkShop.Ecommerce.Transversal.Common;
+using DarkShop.Ecommerce.Infrastructure.Data;
+using DarkShop.Ecommerce.Infrastructure.Repository;
+using DarkShop.Ecommerce.Infrastructure.Interface;
+using DarkShop.Ecommerce.Domain.Interface;
+using DarkShop.Ecommerce.Domain.Core;
+using DarkShop.Ecommerce.Application.Interface;
+using DarkShop.Ecommerce.Application.Main;
 
+// agregarlo dentro de la class startup
+
+public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddAutoMapper(x => x.AddProfile(new MappingsProfile()));
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions(options => { options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver(); });
+
+            services.AddSingleton<IConfiguration>(Configuration);
+            services.AddSingleton<IConnectionFactory, ConnectionFactory>();
+            services.AddScoped<ICustomersApplication, CustomersApplication>();
+            services.AddScoped<ICustomersDomain, CustomersDomain>();
+            services.AddScoped<ICustomersRepository, CustomersRepository>();
+        }
 ```
 
 
-AutoMapper 10.1.1 se usa en 
-
-app.main
-services.webapi
-transversall.mapper
 
 
-el usa automapper extensions
-6.0.0
 
-y automaper 8.0.0

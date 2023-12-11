@@ -1,0 +1,38 @@
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.deps.json
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.dll
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.pdb
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Entity.dll
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Entity.pdb
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.csproj.CoreCompileInputs.cache
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.AssemblyInfoInputs.cache
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.AssemblyInfo.cs
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.csproj.CopyComplete
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.dll
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.pdb
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.csprojAssemblyReference.cache
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.deps.json
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.dll
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.pdb
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Entity.dll
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Entity.pdb
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.csproj.AssemblyReference.cache
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.AssemblyInfoInputs.cache
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.AssemblyInfo.cs
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.csproj.CoreCompileInputs.cache
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.csproj.CopyComplete
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.dll
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.pdb
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.deps.json
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.dll
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.pdb
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Entity.dll
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Entity.pdb
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.csproj.AssemblyReference.cache
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.AssemblyInfoInputs.cache
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.AssemblyInfo.cs
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.csproj.CoreCompileInputs.cache
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.csproj.CopyComplete
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.dll
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Domain.Interface\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Domain.Interface.pdb

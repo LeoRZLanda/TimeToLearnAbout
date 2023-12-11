@@ -1,0 +1,38 @@
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.deps.json
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.dll
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.csprojAssemblyReference.cache
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.csproj.CoreCompileInputs.cache
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.AssemblyInfoInputs.cache
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.AssemblyInfo.cs
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.pdb
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Transversal.Common.dll
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Transversal.Common.pdb
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.csproj.CopyComplete
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.dll
+C:\Workspace\Arquitectura .NET\Student\Code\Pacagroup.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.pdb
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.deps.json
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.dll
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.pdb
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Transversal.Common.dll
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Transversal.Common.pdb
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.csproj.AssemblyReference.cache
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.AssemblyInfoInputs.cache
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.AssemblyInfo.cs
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.csproj.CoreCompileInputs.cache
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.csproj.CopyComplete
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.dll
+C:\Users\lramirez\5986\Pruebas\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.pdb
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.deps.json
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.dll
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.pdb
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Transversal.Common.dll
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\bin\Debug\netstandard2.0\Pacagroup.Ecommerce.Transversal.Common.pdb
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.csproj.AssemblyReference.cache
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.AssemblyInfoInputs.cache
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.AssemblyInfo.cs
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.csproj.CoreCompileInputs.cache
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.csproj.CopyComplete
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.dll
+C:\Users\lramirez\5986\GitHub\TimeToLearnAbout\Arquitectura de Aplicaciones Empresariales con dotnet 7\Proyecto\DarkShop.Ecommerce\Pacagroup.Ecommerce.Infrastructure.Data\obj\Debug\netstandard2.0\Pacagroup.Ecommerce.Infrastructure.Data.pdb
