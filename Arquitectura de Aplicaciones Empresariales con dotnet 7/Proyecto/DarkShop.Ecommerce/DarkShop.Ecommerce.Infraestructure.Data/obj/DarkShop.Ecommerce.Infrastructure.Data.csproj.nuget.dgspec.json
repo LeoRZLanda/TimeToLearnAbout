@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Infraestructure.Data\\DarkShop.Ecommerce.Infrastructure.Data.csproj": {}
+    "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Infraestructure.Data\\DarkShop.Ecommerce.Infrastructure.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Infraestructure.Data\\DarkShop.Ecommerce.Infrastructure.Data.csproj": {
+    "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Infraestructure.Data\\DarkShop.Ecommerce.Infrastructure.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Infraestructure.Data\\DarkShop.Ecommerce.Infrastructure.Data.csproj",
+        "projectUniqueName": "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Infraestructure.Data\\DarkShop.Ecommerce.Infrastructure.Data.csproj",
         "projectName": "DarkShop.Ecommerce.Infrastructure.Data",
-        "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Infraestructure.Data\\DarkShop.Ecommerce.Infrastructure.Data.csproj",
+        "projectPath": "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Infraestructure.Data\\DarkShop.Ecommerce.Infrastructure.Data.csproj",
         "packagesPath": "C:\\Users\\lramirez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Infraestructure.Data\\obj\\",
+        "outputPath": "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Infraestructure.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -33,8 +33,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj": {
-                "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj"
+              "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj": {
+                "projectPath": "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj"
               }
             }
           }
@@ -78,14 +78,14 @@
         }
       }
     },
-    "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj": {
+    "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj",
+        "projectUniqueName": "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj",
         "projectName": "DarkShop.Ecommerce.Transversal.Common",
-        "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj",
+        "projectPath": "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj",
         "packagesPath": "C:\\Users\\lramirez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\obj\\",
+        "outputPath": "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
