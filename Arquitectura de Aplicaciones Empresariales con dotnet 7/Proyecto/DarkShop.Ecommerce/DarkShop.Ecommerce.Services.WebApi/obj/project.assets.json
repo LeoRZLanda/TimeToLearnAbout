@@ -12324,6 +12324,7 @@
       "DarkShop.Ecommerce.Domain.Core >= 1.0.0",
       "DarkShop.Ecommerce.Domain.Entity >= 1.0.0",
       "DarkShop.Ecommerce.Domain.Interface >= 1.0.0",
+      "DarkShop.Ecommerce.Transversal.Common >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0"
@@ -12380,6 +12381,9 @@
             },
             "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Domain.Interface\\DarkShop.Ecommerce.Domain.Interface.csproj": {
               "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Domain.Interface\\DarkShop.Ecommerce.Domain.Interface.csproj"
+            },
+            "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj": {
+              "projectPath": "C:\\Users\\lramirez\\8496\\L\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj"
             }
           }
         }
