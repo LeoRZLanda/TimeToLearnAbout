@@ -2633,3 +2633,44 @@ namespace DarkShop.Ecommerce.Application.Main
 
 Con esto solo faltaría modificar la capa de servicio
 
+empezaremos realizando un cambio en:
+
+appsettings.json
+```JSON
+"Config": {
+    "OriginCors": "http://localhost:60468",
+    "Secret": "+_)(*&^%$#@!)(JJGGG$$##+____*",
+    "Issuer": "DarkShop.com",
+    "Audience":  "DarkShop.com"
+  }
+```
+
+
+añadiremo una nueva carpeta llamada helpers dentro del proyecto Web API y pondremos una clase llamada:
+
+AppSettings.cs
+```CS
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace DarkShop.Ecommerce.Services.WebApi.Helpers
+{
+    public class AppSettings
+    {
+        public string OriginCors { get; set; }
+        public string Secret { get; set; }
+        public string Issuer { get; set; }
+        public string Audience { get; set; }
+    }
+}
+
+```
+
+A partir de ahi crearemos un nuevo controlador:
+
+UserController.cs
+```CS
+
+```
