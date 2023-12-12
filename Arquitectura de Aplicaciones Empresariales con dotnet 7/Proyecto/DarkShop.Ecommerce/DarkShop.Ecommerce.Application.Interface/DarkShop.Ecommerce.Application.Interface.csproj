@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DarkShop.Ecommerce.Application.DTO\DarkShop.Ecommerce.Application.DTO.csproj" />
+    <ProjectReference Include="..\DarkShop.Ecommerce.Transversal.Common\DarkShop.Ecommerce.Transversal.Common.csproj" />
+  </ItemGroup>
+
+</Project>

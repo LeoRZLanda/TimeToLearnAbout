@@ -2009,3 +2009,23 @@ public void ConfigureServices(IServiceCollection services)
 
 
 
+Y listo, para poder validar que nuestra web api funciona correctamente haremos lo siguiente. 
+
+Le daremos clic derecho y seleccionaremos el proyecto de web api como inicio
+
+![[Pasted image 20231211171907.png]]
+
+de ahi le daremos la siguiente liga
+
+http://localhost:49327/api/Customers/Get/ANTON
+
+Y si todo funciona correctamente tendremos el siguiente resultado
+
+![[Pasted image 20231211172038.png]]
+
+Como podemos apreciar fue una consulta exitosa.
+
+Puedes validar si prefieres uno por uno los métodos mediante postman.
+
+
+
