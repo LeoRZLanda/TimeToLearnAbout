@@ -2029,3 +2029,607 @@ Puedes validar si prefieres uno por uno los métodos mediante postman.
 
 
 
+## Integración Web API con Swagger
+
+### Especificación Open API y Swagger
+
+⬛ ¿Qué es Open API?
+
+**La especificación Open API** es un formato de descripción de API para REST. Un archivo Open API permite describir una API de manera completa, incluyendo:
+
+* Endpoints disponibles (/api/Customers) y operaciones en cada Endpoint (GET/api/Customers/GetAll,POST /api/Customers/Insert)
+
+* Parametros de entrada y salida para cada operación
+
+* Métodos de autenticación
+
+* Información de contacto, licencia, términos de uso y otra información.
+
+⬛ ¿Qué es Swagger?
+
+**Swagger** es un conjunto de herramientas de código abierto creadas alrededor de la especificación Open API que ayuda a diseñar, construir, documentar y consumir **API REST**. Las principales herramientas de Swagger incluyen:
+
+• Swagger Editor: Editor basado en navegador donde se puede escribir especificaciones de Open API.
+
+* Swagger UI: Representa las especificaciones de Open API como la, documentación de API de manera interactiva.
+
+• Swagger Codegen: Genera Stubs de servidor y librerías de lado cliente a partir de la especificación de Open APL
+
+⬛ ¿Por qué usar Open API?
+
+La capacidad de las API para describir su propia estructura es la raíz de todo lo genial en **Open API**. Una vez escrito, una especificación Open API y herramientas Swagger pueden impulsar su desarrollo de API de varias maneras:
+
+• **Swagger Codegen** genera código auxiliar de servidor para la API. Lo único que queda es implementar la lógica del servidor, ¡y su API está lista para funcionar!
+
+• **Swagger Codegen** genera librerías cliente para la API en más de 4o lenguajes.
+
+• Se integra con otras herramientas por ejemplo con SOAP Ul para crear pruebas
+automatizadas.
+
+⬛ Componentes Swashbuckle
+
+**Swashbuckle.AspNetCore** permite agregar Swagger de manera
+sencilla a los proyectos Web API, consta de 3 componentes:
+
+* **Swashbuckle.AspNetCore.Swagger**: Modelo de objeto Swagger y middleware para exponer los objetos SwaggerDocument como Endpoints JSON.
+ 
+* **Swashbuckle.AspNetCore.SwaggerGen**: Generador Swagger que construye objetos SwaggerDocument directamente desde sus rutas, controladores y modelos. Genera Swagger JSON.
+
+* **Swashbuckle.AspNetCore.SwaggerUl**: Versión incrustada de la herramienta Swagger Ul. Interpreta Swagger JSON para crear una experiencia ruta y personalizable para describir la funcionalidad de la API web.
+
+⬛ Intgración Web API con Swagger
+
+Tendremos un resultado similar a este
+
+
+
+
+
+
+Para comenzar vamos a installar los en nuestro proyecto web api, en este caso usaremos la version 4.0.1.
+
+Despues de tenerlo instalado vamos a editar el archivo.
+
+Startup.cs
+```CS
+using Swashbuckle.AspNetCore.Swagger;
+using System.Reflection;
+using System.IO;
+
+
+// justo debajo de lo ultimo dentro de ConfigureServices
+//Register the swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Version = "v1",
+                    Title = "DarkShop Technology Services API Market",
+                    Description = "A simple example ASP.NET Core Web API",
+                    TermsOfService = "None",
+                    Contact = new Contact
+                    {
+                        Name = "Alex Espejo",
+                        Email = "alex.espejo@gmail.com",
+                        Url = "https://darkshop.com"
+                    },
+                    License = new License
+                    {
+                        Name = "Use under LICK",
+                        Url = "https://example.com/license"
+                    }
+                });
+                //Set the comments path for the Swagger JSON and UI
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
+
+
+// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            //Enable midleware to serve generated Swagger as a JSON endpoint
+            app.UseSwagger();
+
+            //Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.)
+            // Specigying the Swagger JSON endpoint
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API Ecomerce V1");
+            });
+
+            app.UseMvc();
+        }
+```
+
+Como podemos apreciar mediante una función lambda creamos el documento swagger.
+
+Swagger para construir la documentación, se basa en la documentación que genera el proyecto Web API en momento de la compilación.
+
+Para ello hay que darle clic derecho al proyecto, y darle en propedades.
+
+![[Pasted image 20231212101004.png]]
+
+
+
+De ahi nos iremos a Build/Compilación y marcaremos la opción de XML document File
+
+![[Pasted image 20231212101103.png]]
+
+Al terminar borraremos el controlador por defecto llamado ValuesController.cs
+
+
+De ahi regresaremos a la s propiedades y seleccionaremos depurar y a un costado de la marca Launch browser colocar api/Customers/GetAll
+
+![[Pasted image 20231212102318.png]]
+
+Ahora ejecutaremos el proyecto y veremos que realiza la consulta previa de forma predeterminada.
+
+![[Pasted image 20231212102517.png]]
+
+
+Ahora si colocamos la uri raiz con swagger
+
+localhost:49327/api/swagger
+
+![[Pasted image 20231212103351.png]]
+
+Como podemos apreciar ya tenemos documentada los métodos de nuestra Web API
+
+y si te gustaría editar y/o agregarle alguna descripción en especifico a cada método puede ir a [swagger editor](https://editor.swagger.io/)
+
+![[Pasted image 20231212104118.png]]
+
+
+## Habilitar Solicitudes de Origen Cruzado (CORS)
+
+### Contexto
+
+La seguridad del navegador impide que una página web realice solicitudes a un dominio **diferente**. Esta restricción se llama
+**política del mismo origen**.
+
+La **política del mismo origen** impide que un sitio malicioso lea datos confidenciales de otro sitio.
+
+En muchos casos, es posible que sea necesario permitir que otros sitios realicen solicitudes de origen cruzado a su aplicación (Ejemplo: Cuando se exponen APIs).
+
+### Intercambios de recursos de Orígenes Cruzados (CORS)
+
+⬛ CORS
+	✔ **CORS** es un estándar W3C que permite a un servidor flexibilizar la política del mismo origen.
+	✔ **CORS** permite que un servidor habilite explícitamente algunas solicitudes de origen cruzado mientras rechaza otras.
+	✔ **CORS** es más seguro y más flexible que las técnicas anteriores, como **JSONP**.
+	✔ **CORS** no es una característica de seguridad, **CORS** flexibiliza la seguridad. Una API no es más segura al permitir CORS.
+
+⬛ Política Mismo Origen
+	✔ Dos URL tienen el mismo origen si tienen esquemas, hosts y puertos idénticos.
+		https://example.com/foo.html
+		https://example.com/bar.html
+	✔ URLs que tienen orígenes diferentes
+		https://example.net - Dominio diferente
+		https://example.com/foo.html - Subdominio diferente
+		http://example.com/foo.html - Esquema diferente
+		https://example.com:9000/foo.html - puerto diferente
+
+
+### Opciones de políticas de CORS
+
+**Establecer Orígenes Permitidos**
+
+* **AllowAnyOrigin**: Permite solicitudes CORS desde todos los orígenes con cualquier esquema (http o https).
+
+* **AllowAnyOrigin** es inseguro porque cualquier sitio web puede realizar solicitudes de origen cruzado a la aplicación.
+
+* **WithOrigins**: Permite solicitudes CORS desde orígenes específicos.
+
+
+**Establecer los Métodos Permitidos**
+
+• **AllowAnyMethod**: Permite cualquier método HTTP(GET, POST, etc.)
+• **WithMethods**: Permite especificar método HTTP.
+
+**Establecer Encabezados de Solicitud Permitidos**
+
+• **AllowAnyHeader**: Permite todos los encabezados en la solicitud.
+• **WithHeaders**: Permite que se envíen encabezados específicos en una solicitud CORS.
+
+
+**Establecer Encabezados de Respuesta Expuesto**
+
+• Los encabezados de respuesta que están disponibles de forma predeterminada son (Cache-Control, Content-Language, Content-Type, Expires, Lost-Modified, Pragma).
+
+* **WithExposedHeaders**: Permite que otros encabezados esten disponibles  para la aplicación (por ejemplo: "x-customer-header").
+
+**Credenciales en Solicitudes de Origen Cruzado**
+
+* De forma predeterminada, el navegador no envía credenciales con una solicitud de origen cruzado.
+
+* **AllowCredentials**: Permite credenciales de origen cruzado.
+
+* NOTA: Permitir credenciales de origen cruzado es un riesgo de seguridad.
+
+### Implementar CORS en Web API
+
+Agregaremos lo siguiente en nuestro archivo
+
+```CS
+"Config": {
+    "OriginCors": "http://localhost:60468"
+  }
+```
+
+después añadiremos lo siguiente en.
+
+Startup.cs
+```CS
+readonly string myPolicy = "policyApiEcommerce";
+
+// dentro de configure services
+services.AddCors(options => options.AddPolicy(myPolicy, builder => builder.WithOrigins(Configuration["Config:OriginCors"])
+                                                                                        .AllowAnyHeader()
+                                                                                        .AllowAnyMethod()
+            ));
+
+// dentro de configure y antes de UseMvc
+app.UseCors(myPolicy);
+```
+
+
+## Definición de JSON Web Token (JWT)
+
+### ¿Que es un Token?
+
+Un **token** es una cadena alfanumérica con caracteres aparentemente aleatorios, como el siguiente:
+
+
+eyJhbGciOiJIUz/1NilsInR5cCI6|kpXVCJ9.eyJzdWIiOil×MjMONTY300kwliwibmFtZS|6|kpvaG4gRG9|liwiYW
+RtaW4iOnRydWV9.TJVA950rM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+
+o como el siguiente 123456
+
+
+Estas cadenas de texto, aparentemente no tienen un significado, sin embargo, tiene un significado real para el servidor o institución que lo emitió y además pueden entender y así, validar al usuario que intenta acceder a la información. Un token puede tener datos adicionales.
+
+### ¿Que son los JSOn Web Tokens (JWT)?
+
+Podemos decir que los JWT son un tipo de token el cual engloba una estructura, la cual puede ser desencriptada por el servidor y de esta forma, autenticarnos como usuario en la aplicación.
+
+
+**Estructura de un JWT** (3 secciones separadas por un punto)
+eyJhbGciOiJIUz/1NilsInR5cC|6|kpXVCJ9.eyJzdWIiOil×MjMONTY30DkwliwibmFtZSi6|kpvaG4gRG9|liwiYWRtaW4iOnRydWV9.TJVA950rM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+
+HEADER: Contiene el tipo de token y algoritmo de encriptamiento.
+
+PAYLOAD: Contiene los datos que identifican al usuario (id, nombre , etc.).
+
+FIRMA: Es la firma digital, la cual se genera con las secciones anteriores y sirve para validar que el contenido no haya sido alterado. (header y el payload en base64 y despues encriptado)
+
+
+### Como se utiliza los JWT
+
+* Los **JWT** se utilizan para autenticar a los usuarios, para ello, el usuario requiere de un login tradicional como es el usuario y password.
+
+* Una vez, que el sistema de Backend valida que el usuario y contraseña son correctos, este retorna un **token** al usuario.
+
+* El **token** lo deberá guardar el cliente, pues de aquí en adelante, todas las peticiones que realice al servidor, deberá llevar el token.
+
+Nota: El **token** es por lo general almacenado en Cookies o en el LocalStorage del navegador, y cuando se requiere enviar un request al servidor, se recupere y se envía como header.
+
+### Ciclo de Vida de un JWT
+
+1. El usuario requiere de una autenticación tradicional con el servidor, es decir usuario y password.
+2. El servidor validará que los datos introducidos sean correctos y generará un **Token**.
+3. El servidor enviará el token al usuario y este lo tendrá que almacenar de cualquier forma.
+4. Una vez con el **token**, el usuario realiza una petición al servidor, enviando en el header el token.
+5. El servidor validará que el **token** sea correcto, desencriptándolo mediante la misma llave que utilizo para encriptarlo.
+6. Si el **token** es correcto, entonces el servidor retornará los datos solicitados.
+
+
+## Habilitar seguridad en Web API utilizando JWT - Parte 1
+
+### Implementar JWT en WebAPI
+
+Para empezar vamos a necesitar en nuestra base de datos una tabla de ususarios.
+
+Users.sql
+```SQL
+SET ANSI_NULLS ON
+
+GO
+
+SET QUOTED_IDENTIFIER ON
+
+GO
+
+CREATE TABLE [dbo].[Users](
+
+    [UserId] [int] NOT NULL,
+
+    [FirstName] [varchar](50) NOT NULL,
+
+    [LastName] [varchar](50) NOT NULL,
+
+    [UserName] [varchar](50) NOT NULL,
+
+    [Password] [varchar](50) NOT NULL,
+
+CONSTRAINT [PK_Users] PRIMARY KEY NONCLUSTERED
+
+(
+
+    [UserId] ASC
+
+) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+) ON [PRIMARY]
+
+GO
+```
+
+Agregaremos un usuario
+
+Después realizaremos un procedimiento almacenado que le pasaremos el usuario y password para que lo valide y nos regrese la información del usuario.
+
+UsersGetByUserAndPassword.sql
+```SQL
+SET ANSI_NULLS ON
+
+GO
+
+SET QUOTED_IDENTIFIER ON
+
+GO
+
+  
+
+CREATE PROCEDURE [dbo].[UsersGetByUserAndPassword]
+
+(
+
+    @UserName VARCHAR(50),
+
+    @Password VARCHAR(50)
+
+)
+
+AS
+
+BEGIN
+
+  
+
+    SELECT UserID, FirstName, LastName, UserName, NULL AS PASSWORD
+
+    FROM Users
+
+    WHERE UserName = @UserName AND Password = @Password
+
+  
+
+END
+
+GO
+```
+
+Para continuar crearemos la entidad User en la carpeta domain.Entity
+
+User.cs
+```CS
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace DarkShop.Ecommerce.Domain.Entity
+{
+    class User
+    {
+        public int UserId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string Token { get; set; }
+    }
+}
+
+```
+
+Después desarrollaremos una interface en la capa de infraestructura
+
+IUserRepository.cs
+```CS
+using System;
+using System.Collections.Generic;
+using System.Text;
+using DarkShop.Ecommerce.Domain.Entity;
+
+namespace DarkShop.Ecommerce.Infrastructure.Interface
+{
+    public interface IUserRepository
+    {
+        User Authenticate(string username, string password);
+    }
+}
+
+```
+
+Ahora crearemos en Repository
+
+UserRepository.cs
+```CS
+using Dapper;
+using DarkShop.Ecommerce.Domain.Entity;
+using DarkShop.Ecommerce.Infrastructure.Interface;
+using DarkShop.Ecommerce.Transversal.Common;
+
+namespace DarkShop.Ecommerce.Infrastructure.Repository
+{
+    class UserRepository : IUserRepository
+    {
+
+        private readonly IConnectionFactory _connectionFactory;
+
+        public UserRepository(IConnectionFactory connectionFactory) {
+            _connectionFactory = connectionFactory;
+        }
+
+        public User Authenticate(string UserName, string password) {
+            using (var connection = _connectionFactory.GetConnection) {
+                var query = "UsersGetByUserAndPassword";
+                var parameters = new DynamicParameters();
+                parameters.Add("UserName", UserName);
+                parameters.Add("Password", password);
+
+                var user = connection.QuerySingle<User>(query, param: parameters, commandType: System.Data.CommandType.StoredProcedure);
+                return user;
+            }
+        }
+    }
+}
+
+```
+
+
+Después realizaremos otra interfaz en la capa Domain
+
+IUserDomain.cs
+```CS
+using DarkShop.Ecommerce.Domain.Entity;
+
+namespace DarkShop.Ecommerce.Domain.Interface
+{
+    public interface IUserDomain
+    {
+        User Authenticate(string username, string password);
+    }
+}
+
+```
+
+Ahora en Core agregaremos
+
+UserDomain.cs
+```CS
+using System;
+using System.Collections.Generic;
+using System.Text;
+using DarkShop.Ecommerce.Domain.Entity;
+using DarkShop.Ecommerce.Domain.Interface;
+using DarkShop.Ecommerce.Infrastructure.Interface;
+
+namespace DarkShop.Ecommerce.Domain.Core
+{
+    public class UserDomain : IUserDomain
+    {
+        private readonly IUserRepository _userRepository;
+
+        public UserDomain(IUserRepository userRepository) {
+            _userRepository = userRepository;
+        }
+
+        public User Authenticate(string username, string password) {
+            return _userRepository.Authenticate(username, password);
+        }
+    }
+}
+
+```
+
+Continuaremos con la capa de aplicación, creando un nuevo dto.
+
+UserDTO.cs
+```CS
+namespace DarkShop.Ecommerce.Application.DTO
+{
+    public class UserDTO
+    {
+        public int UserId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string Token { get; set; }
+    }
+}
+
+```
+
+
+desarrollaremos su interfaz
+
+IUserApplication.cs
+```CS
+using DarkShop.Ecommerce.Application.DTO;
+using DarkShop.Ecommerce.Transversal.Common;
+
+namespace DarkShop.Ecommerce.Application.Interface
+{
+    public interface IUserApplication
+    {
+        Response<UserDTO> Authenticate(string username, string password);
+    }
+}
+
+```
+
+Ahora implementaremos dicha interfaz.
+
+UserApplication.cs
+```CS
+using DarkShop.Ecommerce.Application.Interface;
+using DarkShop.Ecommerce.Application.DTO;
+using DarkShop.Ecommerce.Domain.Interface;
+using DarkShop.Ecommerce.Transversal.Common;
+using AutoMapper;
+using System;
+
+namespace DarkShop.Ecommerce.Application.Main
+{
+    class UserApplication : IUserApplication
+    {
+
+        private readonly IUserDomain _userDomain;
+        private readonly IMapper _mapper;
+
+        public UserApplication(IUserDomain userDomain, IMapper IMapper)
+        {
+            _userDomain = userDomain;
+            _mapper = IMapper;
+        }
+
+        public Response<UserDTO> Authenticate(string username, string password) {
+            var response = new Response<UserDTO>();
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                response.Message = "Parámetros no pueden ser vacios.";
+                return response;
+            }
+            try
+            {
+                var user = _userDomain.Authenticate(username, password);
+                response.Data = _mapper.Map<UserDTO>(user);
+                response.IsSuccess = true;
+                response.Message = "Autenticación exitosa!!!";
+            }
+            catch (InvalidOperationException) {
+                response.IsSuccess = true;
+                response.Message = "Usuario no existe";
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message;
+            }
+            return response;
+        }
+
+    }
+}
+
+```
+
+Con esto solo faltaría modificar la capa de servicio
+
