@@ -7,7 +7,7 @@ using System;
 
 namespace DarkShop.Ecommerce.Application.Main
 {
-    class UserApplication : IUserApplication
+    public class UserApplication : IUserApplication
     {
 
         private readonly IUserDomain _userDomain;

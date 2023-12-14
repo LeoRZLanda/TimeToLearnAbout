@@ -5,7 +5,7 @@ using DarkShop.Ecommerce.Transversal.Common;
 
 namespace DarkShop.Ecommerce.Infrastructure.Repository
 {
-    class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
 
         private readonly IConnectionFactory _connectionFactory;

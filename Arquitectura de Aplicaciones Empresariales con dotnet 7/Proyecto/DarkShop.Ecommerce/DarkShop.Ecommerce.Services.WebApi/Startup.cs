@@ -22,7 +22,10 @@ using DarkShop.Ecommerce.Application.Main;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Reflection;
 using System.IO;
-
+using DarkShop.Ecommerce.Services.WebApi.Helpers;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace DarkShop.Ecommerce.Services.WebApi
 {
@@ -52,11 +55,62 @@ namespace DarkShop.Ecommerce.Services.WebApi
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(options => { options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver(); });
 
+            var appSettingsSection = Configuration.GetSection("Config");
+            services.Configure<AppSettings>(appSettingsSection);
+
+            //configure jwt authentication
+            var appSettings = appSettingsSection.Get<AppSettings>();
+
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddSingleton<IConnectionFactory, ConnectionFactory>();
             services.AddScoped<ICustomersApplication, CustomersApplication>();
             services.AddScoped<ICustomersDomain, CustomersDomain>();
             services.AddScoped<ICustomersRepository, CustomersRepository>();
+            services.AddScoped<IUserApplication, UserApplication>();
+            services.AddScoped<IUserDomain, UserDomain>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+            var Issuer = appSettings.Issuer;
+            var Audience = appSettings.Audience;
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x => {
+                x.Events = new JwtBearerEvents
+                {
+                    OnTokenValidated = context =>
+                    {
+                        var userId = int.Parse(context.Principal.Identity.Name);
+                        return Task.CompletedTask;
+                    },
+
+                    OnAuthenticationFailed = context =>
+                    {
+                        if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                        {
+                            context.Response.Headers.Add("Token-Expired", "true");
+                        }
+                        return Task.CompletedTask;
+                    }
+                };
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = false;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = true,
+                    ValidIssuer = Issuer,
+                    ValidateAudience = true,
+                    ValidAudience = Audience,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
 
             //Register the swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
@@ -83,6 +137,18 @@ namespace DarkShop.Ecommerce.Services.WebApi
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
+
+                c.AddSecurityDefinition("Authorization", new ApiKeyScheme{
+                    Description = "Authorization by API Key",
+                    In = "header",
+                    Type = "apiKey",
+                    Name = "Authorization"
+                });
+
+                c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
+                {
+                    {"Authorization", new string[0]}
+                });
             });
         }
 
@@ -104,6 +170,7 @@ namespace DarkShop.Ecommerce.Services.WebApi
             });
 
             app.UseCors(myPolicy);
+            app.UseAuthentication();
 
             app.UseMvc();
         }

@@ -2672,5 +2672,219 @@ A partir de ahi crearemos un nuevo controlador:
 
 UserController.cs
 ```CS
+using DarkShop.Ecommerce.Application.DTO;
+using DarkShop.Ecommerce.Application.Interface;
+using DarkShop.Ecommerce.Services.WebApi.Helpers;
+using DarkShop.Ecommerce.Transversal.Common;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+
+namespace DarkShop.Ecommerce.Services.WebApi.Controllers
+{
+    [Authorize]
+    [Route("api/[controller]/[action]")]
+    [ApiController]
+    public class UserController : Controller
+    {
+        private readonly IUserApplication _userApplication;
+        private readonly AppSettings _appSettings;
+
+        public UserController(IUserApplication userApplication, IOptions<AppSettings> appSettings) {
+            _userApplication = userApplication;
+            _appSettings = appSettings.Value;
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public IActionResult Authenticate([FromBody] UserDTO userDTO) {
+            var response = _userApplication.Authenticate(userDTO.UserName, userDTO.Password);
+            if (response.IsSuccess) {
+                if (response.Data != null)
+                {
+                    response.Data.Token = BuildToken(response);
+                    return Ok(response);
+                }
+                else {
+                    return NotFound(response.Message);
+                }
+            }
+            return BadRequest(response.Message);
+        }
+
+        private string BuildToken(Response<UserDTO> userDTO) {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[] {
+                    new Claim(ClaimTypes.Name, userDTO.Data.UserId.ToString())
+                }),
+                Expires = DateTime.UtcNow.AddMinutes(1),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
+                Issuer = _appSettings.Issuer,
+                Audience = _appSettings.Audience
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            var tokenString = tokenHandler.WriteToken(token);
+            return tokenString;
+        }
+
+    }
+}
 
 ```
+
+
+y para finalizar hay que avisarle a startup.cs que se le incorporara un instrumento de seguridad
+
+Startup.cs
+```CS
+
+//Dentro de IConfiguration
+var appSettingsSection = Configuration.GetSection("Config");
+            services.Configure<AppSettings>(appSettingsSection);
+
+//Añdir las dependencias
+services.AddScoped<IUserApplication, UserApplication>();
+            services.AddScoped<IUserDomain, UserDomain>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
+//Debajo de UseCors()
+
+app.UseAuthentication();
+```
+
+
+
+Vamos a revisar su funcionamiento
+
+Si nos vamos a swagger veremos que ya estan incorporadas
+
+![[Pasted image 20231213180235.png]]
+
+
+y al intentar probar la nueva funcion authenticate
+
+![[Pasted image 20231213180547.png]]
+
+podemos apreciar su correcto funcionamiento y el token, ya con esto podríamos utilizarlo para llamar a los siguientes métodos, vamos a realizar la validación del token
+
+## Habilitar Seguridad en Web API utilizando JSOn Web Token (JWT) parte 2
+
+### Implementar JWT en WEB API
+
+⬛Crear API de Autenticación y generación de Token✔
+⬛ Crear validador de Token en la Web API
+
+
+### Implentación
+
+Comenzaremos modificando el nivel de autorización  nivel de clase en 
+
+CustomersController.cs
+```CS
+	[Authorize]
+    [Route("api/[controller]/[action]")]
+    [ApiController]
+    public class CustomersController : Controller
+```
+
+Continuando en
+
+Startup.cs
+```CS
+//debajo de la declarasción de appSettingsSection y su servicio
+
+//configure jwt authentication
+            var appSettings = appSettingsSection.Get<AppSettings>();
+
+// Debajo de los servicios
+
+var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+            var Issuer = appSettings.Issuer;
+            var Audience = appSettings.Audience;
+services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x => {
+                x.Events = new JwtBearerEvents
+                {
+                    OnTokenValidated = context =>
+                    {
+                        var userId = int.Parse(context.Principal.Identity.Name);
+                        return Task.CompletedTask;
+                    },
+
+                    OnAuthenticationFailed = context =>
+                    {
+                        if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                        {
+                            context.Response.Headers.Add("Token-Expired", "true");
+                        }
+                        return Task.CompletedTask;
+                    }
+                };
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = false;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = true,
+                    ValidIssuer = Issuer,
+                    ValidateAudience = true,
+                    ValidAudience = Audience,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
+
+//Ahora al final del metodo swagger
+c.AddSecurityDefinition("Authorization", new ApiKeyScheme{
+                    Description = "Authorization by API Key",
+                    In = "header",
+                    Type = "apikey",
+                    Name = "Authorization"
+                });
+
+                c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
+                {
+                    {"Authorization", new string[0]}
+                });
+
+```
+
+Ahora vayamos a probar la validación del token
+
+Si todo salio bien deberiamos de tener el siguiente error
+
+![[Pasted image 20231213184410.png]]
+
+indicando que necesitamos tener un token para poder realizar la petición.
+
+Para ello iremos a nuestra documentación en swagger realizaremos una petición al metodo authenticate.
+
+
+![[Pasted image 20231213184732.png]]
+
+
+Copiaremos el token y le daremos clic al nuevo boton en la esquina superior derecha 
+
+![[Pasted image 20231213184900.png]]
+
+de ahi nos solicitara ponerle el token, antes que nada poner Bearer ya que es un token por usuario
+
+![[Pasted image 20231213190241.png]]
+
+y si intentamos  ejecutar algún método podremos ver que ya nos responde
+
+![[Pasted image 20231213190344.png]]
+

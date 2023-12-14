@@ -2,9 +2,11 @@
 using DarkShop.Ecommerce.Application.DTO;
 using DarkShop.Ecommerce.Application.Interface;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DarkShop.Ecommerce.Services.WebApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class CustomersController : Controller
