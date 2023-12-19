@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gZ9O+EOiYtPfG46Zh3RghuFtYnRqozDfRiMhssS5tQvIuwzMM+UvDygjztHr/QP7S/AL/xE9twvP1pdJwEpm9Q==",
+  "dgSpecHash": "Jsc7ggfYnLakmk+TtiqiVd8auxiWaJcbIa10qctoAdTk7hKy/FQ7FP9Jex7+/yYCi3gpOZyuBa292nJV9yLqcg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Mapper\\DarkShop.Ecommerce.Transversal.Mapper.csproj",
+  "projectFilePath": "C:\\Users\\lramirez\\8636\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Transversal.Mapper\\DarkShop.Ecommerce.Transversal.Mapper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lramirez\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkShop.Ecommerce.Applicat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkShop.Ecommerce.Application.Main", "DarkShop.Ecommerce.Application.Main\DarkShop.Ecommerce.Application.Main.csproj", "{04BC0E91-5081-46DA-BB33-3CD4C80603D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkShop.Ecommerce.Transversal.Logging", "..\DarkShop.Ecommerce.Transversal.Logging\DarkShop.Ecommerce.Transversal.Logging.csproj", "{375B9F82-286C-4972-B824-CF64E76FC0DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{04BC0E91-5081-46DA-BB33-3CD4C80603D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04BC0E91-5081-46DA-BB33-3CD4C80603D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04BC0E91-5081-46DA-BB33-3CD4C80603D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{375B9F82-286C-4972-B824-CF64E76FC0DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375B9F82-286C-4972-B824-CF64E76FC0DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375B9F82-286C-4972-B824-CF64E76FC0DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375B9F82-286C-4972-B824-CF64E76FC0DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +114,7 @@ Global
 		{F779F1BD-F8F8-4C5F-8E78-BFDCEA9E5BE0} = {5ECD759F-013E-415D-BA74-48AD75B5A1E7}
 		{43DFC622-2E50-4397-A52E-C889BB9B2C56} = {5ECD759F-013E-415D-BA74-48AD75B5A1E7}
 		{04BC0E91-5081-46DA-BB33-3CD4C80603D4} = {5ECD759F-013E-415D-BA74-48AD75B5A1E7}
+		{375B9F82-286C-4972-B824-CF64E76FC0DA} = {09B0BD76-BB4D-4C6B-90C6-4E392C290F5F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3A67882-EA02-4925-ABDD-A7C9157A1C7D}

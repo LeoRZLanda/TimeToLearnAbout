@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UPPFQKjgmgXfmnAali3+afHStH7QaQcULwTrFaOEmT9M+Gxe2unJvgyzi9dTGbDDMyeifuJXlBv31p4Xap/iIQ==",
+  "dgSpecHash": "bm7W8lhItOo7ZiLnpkP4leOGfsxvIE5M7TFnFatnIrFqbSarXE4JMlxO08LEJTtIePMsLUNJ5hs0UcGL3dVgjA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Infrastructure.Data\\DarkShop.Ecommerce.Infrastructure.Data.csproj",
+  "projectFilePath": "C:\\Users\\lramirez\\8636\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Infrastructure.Data\\DarkShop.Ecommerce.Infrastructure.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lramirez\\.nuget\\packages\\microsoft.extensions.configuration\\2.0.0\\microsoft.extensions.configuration.2.0.0.nupkg.sha512",
     "C:\\Users\\lramirez\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.0.0\\microsoft.extensions.configuration.abstractions.2.0.0.nupkg.sha512",

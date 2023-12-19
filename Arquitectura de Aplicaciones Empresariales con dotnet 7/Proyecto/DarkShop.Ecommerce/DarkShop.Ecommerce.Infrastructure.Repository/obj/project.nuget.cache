@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z2OgXfeVNEJYb5LKT51HmWj77rmCVlWdkErKjX5RHrZJhkMchaT81iptgICdQuWpsoCOE9wjI5Ni8kGKdodZqA==",
+  "dgSpecHash": "nM7GUaYMHY/GAKdHfcCIowMuZGsdRNeCc3WDF1jGjbHyezmA2WXeUQ7/GquvG8xSqazmeyWeTllUdcAL4w1AtQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Infrastructure.Repository\\DarkShop.Ecommerce.Infrastructure.Repository.csproj",
+  "projectFilePath": "C:\\Users\\lramirez\\8636\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Infrastructure.Repository\\DarkShop.Ecommerce.Infrastructure.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lramirez\\.nuget\\packages\\dapper\\1.50.5\\dapper.1.50.5.nupkg.sha512",
     "C:\\Users\\lramirez\\.nuget\\packages\\microsoft.extensions.configuration\\2.0.0\\microsoft.extensions.configuration.2.0.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0k7+zXtMo6S4ycq1obuoFpF6F8X1eUIHkg8kN+kP63EBjWoqqB9u/V+0zl36bJeqLvof9cXQqwZAj6ltKsvptA==",
+  "dgSpecHash": "MHfWkQi0On5xo7Ff/f/yCfWDEOXr9ZIUyerq1FQtYoS8U+wDwb7hrT5H8nB+wsw8xKo6LJzwL4kXQGf5pX1Ckg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Services.WebApi\\DarkShop.Ecommerce.Services.WebApi.csproj",
+  "projectFilePath": "C:\\Users\\lramirez\\8636\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Services.WebApi\\DarkShop.Ecommerce.Services.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lramirez\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
     "C:\\Users\\lramirez\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\6.0.0\\automapper.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512",

@@ -2370,7 +2370,9 @@ CONSTRAINT [PK_Users] PRIMARY KEY NONCLUSTERED
 GO
 ```
 
-Agregaremos un usuario
+Agregaremos un usuario.
+
+
 
 Después realizaremos un procedimiento almacenado que le pasaremos el usuario y password para que lo valide y nos regrese la información del usuario.
 
@@ -2893,3 +2895,33 @@ y si intentamos  ejecutar algún método podremos ver que ya nos responde
 
 ## Construcción de la capa transversal
 
+* Common
+	Clases base, interfaces y funciones comunes.
+
+* Mapper
+	Mapeo de objetos (DTO/Entidades & viceversa)
+
+* Logging
+	Trazabiidad (stack trace)
+
+## Construyendo la capa transversal
+
+Empezaremos agregando una nueva interfaz de el proyecto transversal.common
+
+IAppLogger.cs
+```CS
+namespace DarkShop.Ecommerce.Transversal.Common
+{
+    public interface IAppLogger<T>
+    {
+        void LogInformation(string message, params object[] args);
+        void LogWarning(string message, params object[] args);
+        void LogError(string message, params object[] args);
+    }
+}
+
+```
+
+A continuación crearemos el proyecto Logging para poder realizar la implementación de la interfaz, no olvides realizar la referencia al proyecto .common.
+
+A razón de que en este proyecto se gestionara  la trazabilidad de las excepciones también es necesario descargar Microsoft.Extensions.Logging, en este caso instalare la version 2.2
