@@ -2889,4 +2889,7 @@ y si intentamos  ejecutar algún método podremos ver que ya nos responde
 ![[Pasted image 20231213190344.png]]
 
 
-# 
+# Section 9: Capa Transversal
+
+## Construcción de la capa transversal
+
