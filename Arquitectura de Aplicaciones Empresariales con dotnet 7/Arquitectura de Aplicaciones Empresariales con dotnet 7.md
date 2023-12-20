@@ -3235,7 +3235,10 @@ También se necesita actualizar la ultima versión de compatibilidad de ASP .NET
 
 Vamos a remplazar la porción de código para agregar los perfiles en auto mapper, la linea 49 
 
-Start.cs
+
+y borrar el metodo sumvc en configure linea 184
+
+Startup.cs
 ```CS
 var mappingConfig = new MapperConfiguration(mc =>
             {
@@ -3256,3 +3259,65 @@ MappingProfiles.cs
 ```CS
 CreateMap<User, UserDTO>().ReverseMap();
 ```
+
+
+Y dentro de 
+
+Program.cs
+```CS
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Hosting;
+
+namespace DarkShop.Ecommerce.Services.WebApi
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
+
+        //2.2
+        //public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        //    WebHost.CreateDefaultBuilder(args)
+        //        .UseStartup<Startup>();
+        //3.0
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder => {
+                    webBuilder.UseStartup<Startup>();
+                });
+    }
+}
+
+```
+
+ahora regresaremos a agregar en
+
+Startup.cs
+```CS
+public void Configure(IApplicationBuilder app, IHostingEnvironment env) //de IHostingEnvironment a IWebHostEnvironment
+
+
+app.UseRouting();
+
+//ariba de appp.UseSwagger();
+
+// abajo de app.UseAuthentication();
+app.UseAuthorization();
+app.UseEndpoints(endpoints => {
+	endpoints.MapControllers();
+});
+```
+
+
+
+## Actu

@@ -27,6 +27,7 @@ using DarkShop.Ecommerce.Services.WebApi.Helpers;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Hosting;
 
 namespace DarkShop.Ecommerce.Services.WebApi
 {
@@ -162,12 +163,14 @@ namespace DarkShop.Ecommerce.Services.WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseRouting();
 
             //Enable midleware to serve generated Swagger as a JSON endpoint
             app.UseSwagger();
@@ -180,8 +183,12 @@ namespace DarkShop.Ecommerce.Services.WebApi
 
             app.UseCors(myPolicy);
             app.UseAuthentication();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllers();
+            });
 
-            app.UseMvc();
+            //app.UseMvc();
         }
     }
 }
