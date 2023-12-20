@@ -14,7 +14,7 @@ using System.Text;
 namespace DarkShop.Ecommerce.Services.WebApi.Controllers
 {
     [Authorize]
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class UserController : Controller
     {
@@ -27,7 +27,7 @@ namespace DarkShop.Ecommerce.Services.WebApi.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost]
+        [HttpPost("Authenticate")]
         public IActionResult Authenticate([FromBody] UserDTO userDTO) {
             var response = _userApplication.Authenticate(userDTO.UserName, userDTO.Password);
             if (response.IsSuccess) {

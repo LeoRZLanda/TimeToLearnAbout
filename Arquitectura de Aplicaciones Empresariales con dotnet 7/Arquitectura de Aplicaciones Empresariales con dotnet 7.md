@@ -3320,4 +3320,165 @@ app.UseEndpoints(endpoints => {
 
 
 
-## Actu
+## Actualización de Swagger al Estandar OpenAPI
+
+### ¿Qué es OpenAPI?
+
+* **OpenAPI** es un estándar para definir contratos de API
+* El objetivo de **OpenAPI** es construir un estándar en la definición de las API para humanos, pero haciendo hincapié en la interfaz  para maquinas, facilitando que se configuren e integren de forma autónoma.
+
+
+### Actualizar swagger al estándar OpenAPI
+
+* Actualizar los endpoints de los controladores
+* Migrar los componentes de swagger al estándar OpenAPI
+
+
+actualizar los componentes swagger del proyecto web api
+
+Swashbuckle.AspNetCore.SwaggerGen 4.0.1 -> 5.0.0-rc4
+Swashbuckle.AspNetCore.SwaggerUI 4.0.1 -> 5.0.0-rc4
+Swashbuckle.AspNetCore.Swagger 4.0.1 -> 5.0.0-rc4
+
+ahora realizaremos cambios dentro de 
+
+UserController.cs
+```CS
+[Route("api/[controller]")] // eliminar la acción de la ruta porque en cada metodo ya se especifico
+
+
+```
+
+tambien hacer lo mismo en CustomerController.cs
+
+además mdificar
+
+Startup.cs
+```CS
+using Microsoft.OpenApi.Models;
+
+services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "DarkShop Technology Services API Market",
+                    Description = "A simple example ASP.NET Core Web API",
+                    TermsOfService = new Uri("https://DarkShop.com/rerms"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "LeoRZLanda",
+                        Email = "LeoRZLanda@gmail.com",
+                        Url = new Uri("https://DarkShop.com/contact")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Use under LICK",
+                        Url = new Uri("https://DarkShop.com/license")
+                    }
+                });
+                //Set the comments path for the Swagger JSON and UI
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme{
+                    Description = "Authorization by API Key",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Name = "Authorization"
+                });
+
+                //2.2
+                //c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
+                //{
+                //    {"Authorization", new string[0]}
+                //});
+
+                //3.0
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement{
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] { }
+                    }
+                });
+            });
+```
+
+# Sección 11: Métricas de Calidad de Código
+
+## Métricas de Calidad de Código con Visual Studio .NET
+
+* Las métricas de código son un conjunto de medidas de software que brindan a los desarrolladores una mejor comprensión del código que están desarrollando.
+
+• Al aprovechar las métricas de código, los desarrolladores pueden comprender qué clases y/o métodos deben refactorizar o realizar pruebas más a fondo.
+
+* Los equipos de desarrollo pueden identificar riesgos potenciales, comprender el estado actual de un proyecto y realizar un seguimiento del progreso durante el desarrollo de software.
+
+* Visual Studio .NET 2019 o superior calcula las siguientes métricas:
+	* Índice de mantenibilidad del código
+	* Complejidad ciclomatica
+	* Acoplamiento de clases
+	* Profundidad de herencia
+	* Líneas de código
+
+* Métricas
+
+	* Índice de mantenibilidad: Calcula un valor de índice entre 0 y 100, lo cual representa la relativa facilidad de mantener el código. Un valor alto significa una mejor  mantenibilidad del código.
+
+		* Umbrales
+			* 0-9 = rojo
+			* 10-19 = amarillo
+			* 20-100 = verde
+
+	* Complejidad Ciclomática: Mide la complejidad estructural del código. Se obtiene calculando el número de diferentes rutas de código en el flujo del programa. Un programa que tiene un flujo de control complejo requiere más pruebas para lograr una buena cobertura de código y es menos mantenible.
+
+		*  Umbrales
+			* Valores Bajos < 50
+
+	* Profundidad de la Herencia: Indica la cantidad de clases diferentes que se heredan entre sí, hasta la clase base. La profundidad de herencia es similar al acoplamiento de clases en que un cambio en una clase base puede afectar a cualquiera de sus clases heredadas. Cuanto mayor sea este número, mayor será la herencia y mayor será la posibilidad de que las modificaciones de la clase base produzcan un cambio radical.
+
+		* Umbrales
+			* Valores Bajos < 40
+
+	* Acoplamiento de Clases: Mide el acoplamiento a clases únicas a través de parámetros, variables locales, tipos de retorno, llamadas a métodos, etc. Un buen diseño de software dicta que los tipos y métodos deben tener una alta cohesión y un bajo acoplamiento. El alto acoplamiento indica un diseño que es difícil de reutilizar y mantener debido a sus muchas interdependencias con otros tipos.
+
+		* Umbrales
+			* Valores Bajos < 40
+
+	* Líneas de Código: Indica el número exacto de líneas de código fuente que están presentes en su archivo fuente, incluidas las líneas en blanco. Esta métrica está disponible a partir de Visual Studio 2019 versión 16.4 y Microsoft.CodeAnalysis.Metrics (2.9.5).
+
+		* Umbrales
+			* 30 líneas max por método
+
+## Demo
+
+Hay dos formas de analizar las métricas de código uno es a nivel de la solución y otro a nivel de cada proyecto.
+
+Recomendación: Realizarlo de forma global
+
+Dando clic derecho a la solución y seleccionar análisis y limpieza de código para después seleccionar la opción de calcular métricas de código
+
+![[Pasted image 20231220121826.png]]
+
+Y tendríamos un resultado similar al próximo
+
+![[Pasted image 20231220122023.png]]
+
+
+
+# Sección 12: Despliegue en Contenedores Docker
+
+## Construcción de la Imagen Docker
+
+* Construir la imagen Docker a partir del archivo Dockerfile
+
+
+Antes que nada hay que asegurarnos tener instalado [Docker](https://docs.docker.com/desktop/install/windows-install/) y una imagen de [.NET Core 3.0](https://hub.docker.com/_/microsoft-dotnet) ahi descargaremos en especifico el [.NET Core sdk]() y el [ASP.NET Core Runetime]()

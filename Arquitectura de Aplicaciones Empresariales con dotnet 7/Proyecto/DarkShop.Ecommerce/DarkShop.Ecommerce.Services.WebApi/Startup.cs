@@ -28,6 +28,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace DarkShop.Ecommerce.Services.WebApi
 {
@@ -125,22 +126,22 @@ namespace DarkShop.Ecommerce.Services.WebApi
             //Register the swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info
+                c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
                     Title = "DarkShop Technology Services API Market",
                     Description = "A simple example ASP.NET Core Web API",
-                    TermsOfService = "None",
-                    Contact = new Contact
+                    TermsOfService = new Uri("https://DarkShop.com/rerms"),
+                    Contact = new OpenApiContact
                     {
                         Name = "LeoRZLanda",
                         Email = "LeoRZLanda@gmail.com",
-                        Url = "https://darkshop.com"
+                        Url = new Uri("https://DarkShop.com/contact")
                     },
-                    License = new License
+                    License = new OpenApiLicense
                     {
                         Name = "Use under LICK",
-                        Url = "https://example.com/license"
+                        Url = new Uri("https://DarkShop.com/license")
                     }
                 });
                 //Set the comments path for the Swagger JSON and UI
@@ -148,16 +149,32 @@ namespace DarkShop.Ecommerce.Services.WebApi
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
 
-                c.AddSecurityDefinition("Authorization", new ApiKeyScheme{
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme{
                     Description = "Authorization by API Key",
-                    In = "header",
-                    Type = "apiKey",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
                     Name = "Authorization"
                 });
 
-                c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
-                {
-                    {"Authorization", new string[0]}
+                //2.2
+                //c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
+                //{
+                //    {"Authorization", new string[0]}
+                //});
+
+                //3.0
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement{
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] { }
+                    }
                 });
             });
         }
