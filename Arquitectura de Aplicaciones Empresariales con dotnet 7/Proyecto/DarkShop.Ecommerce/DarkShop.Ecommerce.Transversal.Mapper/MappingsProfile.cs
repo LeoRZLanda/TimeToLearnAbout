@@ -10,7 +10,7 @@ namespace DarkShop.Ecommerce.Transversal.Mapper
         public MappingsProfile()
         {
             CreateMap<Customers, CustomersDto>().ReverseMap();
-
+            CreateMap<User, UserDTO>().ReverseMap();
             //CreateMap<Customers, CustomersDto>().ReverseMap()
             //    .ForMember(destination => destination.CustomerId, source => source.MapFrom(src => src.CustomerId))
             //    .ForMember(destination => destination.CompanyName, source => source.MapFrom(src => src.CompanyName))

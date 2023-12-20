@@ -2924,4 +2924,335 @@ namespace DarkShop.Ecommerce.Transversal.Common
 
 A continuación crearemos el proyecto Logging para poder realizar la implementación de la interfaz, no olvides realizar la referencia al proyecto .common.
 
-A razón de que en este proyecto se gestionara  la trazabilidad de las excepciones también es necesario descargar Microsoft.Extensions.Logging, en este caso instalare la version 2.2
+A razón de que en este proyecto se gestionara  la trazabilidad de las excepciones también es necesario descargar Microsoft.Extensions.Logging, en este caso instalare la version 2.2.
+
+A continuación nos iremos a 
+
+CustomersApplication.cs
+```CS
+using System;
+using AutoMapper;
+using DarkShop.Ecommerce.Application.DTO;
+using DarkShop.Ecommerce.Application.Interface;
+using DarkShop.Ecommerce.Domain.Entity;
+using DarkShop.Ecommerce.Domain.Interface;
+using DarkShop.Ecommerce.Transversal.Common;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace DarkShop.Ecommerce.Application.Main
+{
+    public class CustomersApplication : ICustomersApplication
+    {
+        private readonly ICustomersDomain _customersDomain;
+        private readonly IMapper _mapper;
+        private readonly IAppLogger<CustomersApplication> _logger;
+        public CustomersApplication(ICustomersDomain customersDomain, IMapper mapper, IAppLogger<CustomersApplication> logger)
+        {
+            _customersDomain = customersDomain;
+            _mapper = mapper;
+            _logger = logger;
+        }
+
+        #region Métodos Síncronos
+
+        public Response<bool> Insert(CustomersDto customersDto)
+        {
+            var response = new Response<bool>();
+            try
+            {
+                var customer = _mapper.Map<Customers>(customersDto);
+                response.Data = _customersDomain.Insert(customer);
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Registro Exitoso!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message;
+            }
+            return response;
+        }
+
+        public Response<bool> Update(CustomersDto customersDto)
+        {
+            var response = new Response<bool>();
+            try
+            {
+                var customer = _mapper.Map<Customers>(customersDto);
+                response.Data = _customersDomain.Update(customer);
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Actualización Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message;
+            }
+            return response;
+        }
+
+        public Response<bool> Delete(string customerId)
+        {
+            var response = new Response<bool>();
+            try
+            {
+                response.Data = _customersDomain.Delete(customerId);
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Eliminación Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message;
+            }
+            return response;
+        }
+
+        public Response<CustomersDto> Get(string customerId)
+        {
+            var response = new Response<CustomersDto>();
+            try
+            {
+                var customer = _customersDomain.Get(customerId);
+                response.Data = _mapper.Map<CustomersDto>(customer);
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message;
+            }
+            return response;
+        }
+
+        public Response<IEnumerable<CustomersDto>> GetAll()
+        {
+            var response = new Response<IEnumerable<CustomersDto>>();
+            try
+            {
+                var customers = _customersDomain.GetAll();
+                response.Data = _mapper.Map<IEnumerable<CustomersDto>>(customers);
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta Exitosa!!!";
+                    _logger.LogInformation("Consulta Exitosa!!!");
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message;
+                _logger.LogError(e.Message);
+            }
+            return response;
+        }
+
+        #endregion
+
+        #region Métodos Asíncronos
+        public async Task<Response<bool>> InsertAsync(CustomersDto customersDto)
+        {
+            var response = new Response<bool>();
+            try
+            {
+                var customer = _mapper.Map<Customers>(customersDto);
+                response.Data = await _customersDomain.InsertAsync(customer);
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Registro Exitoso!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message;
+            }
+            return response;
+        }
+        public async Task<Response<bool>> UpdateAsync(CustomersDto customersDto)
+        {
+            var response = new Response<bool>();
+            try
+            {
+                var customer = _mapper.Map<Customers>(customersDto);
+                response.Data = await _customersDomain.UpdateAsync(customer);
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Actualización Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message;
+            }
+            return response;
+        }
+
+        public async Task<Response<bool>> DeleteAsync(string customerId)
+        {
+            var response = new Response<bool>();
+            try
+            {
+                response.Data = await _customersDomain.DeleteAsync(customerId);
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Eliminación Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message;
+            }
+            return response;
+        }
+
+        public async Task<Response<CustomersDto>> GetAsync(string customerId)
+        {
+            var response = new Response<CustomersDto>();
+            try
+            {
+                var customer = await _customersDomain.GetAsync(customerId);
+                response.Data = _mapper.Map<CustomersDto>(customer);
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message;
+            }
+            return response;
+        }
+        public async Task<Response<IEnumerable<CustomersDto>>> GetAllAsync()
+        {
+            var response = new Response<IEnumerable<CustomersDto>>();
+            try
+            {
+                var customers = await _customersDomain.GetAllAsync();
+                response.Data = _mapper.Map<IEnumerable<CustomersDto>>(customers);
+                if (response.Data != null)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Consulta Exitosa!!!";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Message = e.Message;
+            }
+            return response;
+        }
+        #endregion
+    }
+}
+
+```
+
+y como podemos ver solo agregamos el logger en el construcotr y en el método getAll síncrono
+
+Después nos iremos a 
+
+
+Startup.cs
+```CS
+//Solo agregamos lo siguiente en las dependencias
+            services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
+```
+
+No hay que olvidar de colocarle la dependencia de Logging
+
+Con esto puedes realizar una prueba 
+
+Para validar que esto funciono, deberemos que validar que al ejecutar get all tengamos el siguiente resultado en la terminal
+
+![[Pasted image 20231219155251.png]]
+
+Como se indica previamente ahí esta Consulta exitosa
+
+# Section 10: Actualización a .NET Core 3.0
+
+## Prerrequisitos
+
+* Visual Studio .NET 2019 Build 16.3.4 o superior
+* Framework .NET Core 3.0
+	* .NET Core SDK
+	* .NET Core Runtime
+
+## Actualización a .NET Core 3.0
+
+* Actualizar la versión de la plataforma del proyecto Web API a .NET Core 3.0
+* Descargar y actualizar librerías desde NuGet
+* Actualizar el código para la inyección de dependencias de la librería AutoMapper
+* Actualiza la clase program con las nuevas interfaces de .NET Core 3.0
+* Actualizar la clase Startup
+
+
+Empezando con actualizar nuestro proyecto web api, le damos clic derecho y le damos a propiedades y cambiaremos a .NET Core 3.0
+
+![[Pasted image 20231219161905.png]]
+
+
+
+Después vamos a descargar las librerias de JWT en NuGet
+
+intalaremos 
+
+Microsoft.IdentityModel.Tokens 5.6.0
+System.IdentityModel.Tokens.Jwt 5.6.0
+Microsoft.AspNetCore.Authentication.JwtBearer 3.0.0
+
+
+AHora vamos a actualizar las libreías o dependencias
+
+AutoMapper de 8.0.0 -> 9.0.0
+Microsoft.Extensions.Logging 2.2.0 -> 3.0.0
+Microsoft.Extensions.Configuration 2.0.0 -> 3.0.0
+System.Data.SqlClient 4.6.0 -> 4.7.0
+Dapper 1.50.5 -> 2.0.30
+AutoMapper.Extensions.Microsoft.DependencyInjection 6.0.0 -> 7.0.0
+Microsoft.VisualStudio.Web.CodeGeneration.Design 2.2.0 -> 3.0.0
+
+
+como cuarto cambio hay que quitar la dependencia de Newtonsoft.json de nuestro código, en NET core 3.0, el tema del serializado y desserializado, lo hace de forma nativa .
+En mi caso eliminaremos la linea 57.
+
+
+También se necesita actualizar la ultima versión de compatibilidad de ASP .NET Core MVC 3.0 para la aplicación
+
+Vamos a remplazar la porción de código para agregar los perfiles en auto mapper, la linea 49 
+
+Start.cs
+```CS
+var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingsProfile());
+            });
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+            services.AddCors(options => options.AddPolicy(myPolicy, builder => builder.WithOrigins(Configuration["Config:OriginCors"])
+                                                                                        .AllowAnyHeader()
+                                                                                        .AllowAnyMethod()
+            ));
+```
+
+Tambien le añadiremos a 
+
+MappingProfiles.cs
+```CS
+CreateMap<User, UserDTO>().ReverseMap();
+```

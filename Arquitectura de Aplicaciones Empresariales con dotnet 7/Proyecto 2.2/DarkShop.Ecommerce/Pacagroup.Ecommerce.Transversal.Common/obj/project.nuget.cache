@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "3sLYK9dCaVCdEjwrFWgbMGuy84kcrf0qhAsgs7A7/asRVP4PqaDWL5JjGtX3Tbef2kzuK8ufkUk3RvXuf25VDA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lramirez\\5986\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\Pacagroup.Ecommerce.Transversal.Common\\DarkShop.Ecommerce.Transversal.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

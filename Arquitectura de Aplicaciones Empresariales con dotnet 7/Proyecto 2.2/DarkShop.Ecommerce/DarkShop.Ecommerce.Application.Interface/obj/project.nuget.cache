@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "iI7aRo2nOk/oXbeEgzFfuJrm2ik5l8R3xFFthkVmb76kxDMwlIs98crRKgT0hkqIwI4+37AFX/kLBVgEEbe+7Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lramirez\\8636\\GitHub\\TimeToLearnAbout\\Arquitectura de Aplicaciones Empresariales con dotnet 7\\Proyecto\\DarkShop.Ecommerce\\DarkShop.Ecommerce.Application.Interface\\DarkShop.Ecommerce.Application.Interface.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

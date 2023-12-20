@@ -19,6 +19,7 @@ using DarkShop.Ecommerce.Domain.Interface;
 using DarkShop.Ecommerce.Domain.Core;
 using DarkShop.Ecommerce.Application.Interface;
 using DarkShop.Ecommerce.Application.Main;
+using DarkShop.Ecommerce.Transversal.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Reflection;
 using System.IO;
@@ -45,15 +46,22 @@ namespace DarkShop.Ecommerce.Services.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAutoMapper(x => x.AddProfile(new MappingsProfile()));
+            //NET 2.2 services.AddAutoMapper(x => x.AddProfile(new MappingsProfile()));
+
+            //NET 3.0
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingsProfile());
+            });
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
 
             services.AddCors(options => options.AddPolicy(myPolicy, builder => builder.WithOrigins(Configuration["Config:OriginCors"])
                                                                                         .AllowAnyHeader()
                                                                                         .AllowAnyMethod()
             ));
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
-                .AddJsonOptions(options => { options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver(); });
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             var appSettingsSection = Configuration.GetSection("Config");
             services.Configure<AppSettings>(appSettingsSection);
@@ -69,6 +77,7 @@ namespace DarkShop.Ecommerce.Services.WebApi
             services.AddScoped<IUserApplication, UserApplication>();
             services.AddScoped<IUserDomain, UserDomain>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
 
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
             var Issuer = appSettings.Issuer;
