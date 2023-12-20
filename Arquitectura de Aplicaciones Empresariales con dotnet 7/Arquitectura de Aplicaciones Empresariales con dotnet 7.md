@@ -3481,4 +3481,70 @@ Y tendríamos un resultado similar al próximo
 * Construir la imagen Docker a partir del archivo Dockerfile
 
 
-Antes que nada hay que asegurarnos tener instalado [Docker](https://docs.docker.com/desktop/install/windows-install/) y una imagen de [.NET Core 3.0](https://hub.docker.com/_/microsoft-dotnet) ahi descargaremos en especifico el [.NET Core sdk]() y el [ASP.NET Core Runetime]()
+Antes que nada hay que asegurarnos tener instalado [Docker](https://docs.docker.com/desktop/install/windows-install/) y una imagen de .NET Core 3.0, descargaremos en especifico el .NET Core sdk y el ASP.NET Core Runetime.
+
+Lo haremos con los siguientes comandos
+
+.NET Core SDK
+```CLI
+docker pull mcr.microsoft.com/dotnet/core/sdk:3.0
+```
+
+ASP.NET Core Runetime
+```CLI
+docker pull mcr.microsoft.com/dotnet/core/sdk:3.0
+```
+
+
+De ahi nos iremos a visual studio, le damos clic derecho a nuestro proyecto web API, para darle a supporte docker
+
+![[Pasted image 20231220130403.png]]
+
+Seleccionamos como SO destino linux
+
+![[Pasted image 20231220130445.png]]
+
+
+Seleccionamos a ISS Express para que la imagen no se genere
+
+![[Pasted image 20231220130550.png]]
+
+y como podemos apreciar en la carpeta del proyecto se creo un archivo dockerfile
+
+![[Pasted image 20231220130630.png]]
+
+
+Borraremos lo que tienes para realizarla de forma manual
+
+Dockerfile
+```DOCKERFILE
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build-env
+WORKDIR /src
+COPY . .
+WORKDIR /src/Darkshop.Ecommerce.Services.WebApi
+Run dotnet restore
+Run dotnet publish -c Release -o out
+
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.0
+WORKDIR /app
+COPY --from-build-env /src/Darkshop.Ecommerce.Services.WebApi/out ./
+
+ENTRYPOINT ["dotnet","Darkshop.Ecommerce.Services.WebApi.dll"]
+```
+
+Cambiamos a release
+
+![[Pasted image 20231220131655.png]]
+
+ir a las propiedades del proyecto y activar la opcion de xml
+
+![[Pasted image 20231220131758.png]]
+
+Para poder generar la documentación y se pueda visualizar en swagger
+
+Ahora ya estamos listos para crear nuestra imagen de docker
+
+vamos a una terminal y nos vamos al directorio en donde esta la solución
+
+
+
