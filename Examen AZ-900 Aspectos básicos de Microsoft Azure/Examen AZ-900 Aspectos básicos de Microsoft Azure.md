@@ -56,7 +56,7 @@ Después de completar este módulo, podrá:
 - Describir el modelo basado en el consumo.
 - Comparar los modelos de precios en la nube.
 
-## ¿Qué es la informática en la nube?
+### ¿Qué es la informática en la nube?
 
 La informática en la nube es la prestación de servicios informáticos a través de Internet.
 
@@ -72,7 +72,7 @@ Servicios informáticos comunes:
 
 A razón de que usa Internet para ofrecer estos servicios, no es necesario que la infraestructura física la limite, y pueda expandir rápidamente la infraestructura de TI.
 
-## Descripción del modelo de responsabilidad compartida
+### Descripción del modelo de responsabilidad compartida
 
 Comience con un centro de datos corporativo tradicional. La empresa es la responsable de mantener el espacio físico, garantizar la seguridad, y mantener o reemplazar los servidores si ocurre algo.
 
@@ -117,21 +117,21 @@ El modelo de servicio determinará la responsabilidad de cosas como lo siguiente
 - Identidad e infraestructura
 
 
-## Definición de modelos en la nube
+### Definición de modelos en la nube
 
 Los modelos en la nube definen el tipo de implementación de recursos en la nube. Los tres principales modelos en la nube son: privados, públicos e híbridos.
 
-### Nube privada
+#### Nube privada
 
 Nube que brinda servicios de TI a través de Internet y es utilizada por una sola entidad.
 
 Proporciona un control mucho mayor para la empresa, sin embargo incluye un mayor costo y menos ventajas que una implementación en la nube pública.
 
-### Nube pública 
+#### Nube pública 
 
 Un proveedor de nube de terceros crea, controla y mantiene una nube pública. Cualquier persona que quiera comprar servicios en la nube puede acceder a los recursos y usarlos. La disponibilidad pública general es una diferencia clave entre las nubes públicas y privadas.
 
-### Nube híbrida
+#### Nube híbrida
 
 Entorno informático que usa nubes públicas y privadas en un entorno interconectado. Permite el incremento de una nube privada y acomodarse al aumento de la demanda temporal mediante la implementación de recursos de nube pública. La nube híbrida se puede usar para proporcionar una capa adicional de seguridad.
 
@@ -144,21 +144,21 @@ En la tabla siguiente se resaltan algunos aspectos comparativos clave entre los 
 |Las organizaciones solo pagan por lo que usan.|Debe adquirirse hardware para la puesta en funcionamiento y el mantenimiento.|Las organizaciones controlan la seguridad, el cumplimiento o los requisitos legales.|
 |Las organizaciones no tienen un control total de los recursos y la seguridad.|Las organizaciones son responsables del mantenimiento y las actualizaciones del hardware.||
 
-### Nubes múltiples
+#### Nubes múltiples
 
 Se usan varios proveedores de nube pública.
 
 Quizás haya iniciado su recorrido en la nube con un proveedor y esté en proceso de migración a otro proveedor.
 
-### Azure Arc
+#### Azure Arc
 
 Conjunto de tecnologías que ayudan a administrar el entorno en la nube.
 
-### Azure VMware Solution
+#### Azure VMware Solution
 
 le permite ejecutar las cargas de trabajo de VMware en Azure con una integración y escalabilidad perfectas.
 
-## Descripción del modelo basado en el consumo
+### Descripción del modelo basado en el consumo
 
 Al comparar los modelos de infraestructura de TI, hay dos tipos de gastos que se deben tener en cuenta. Gastos de capital y gastos operativos.
 
@@ -184,7 +184,7 @@ La informática en la nube es la prestación de servicios informáticos a travé
 - Escalar a medida que cambien las necesidades empresariales.
 
 
-## Comprobación de conocimientos
+### Comprobación de conocimientos
 
 1. ¿Qué es la informática en la nube?
 
@@ -207,7 +207,7 @@ La informática en la nube es la prestación de servicios informáticos a travé
 	<p>IaaS sitúa la mayor responsabilidad en el consumidor y el proveedor de servicios en la nube es el responsable de los conceptos básicos de seguridad física, energía y conectividad.</p>
 </details>
 
-## Resumen
+### Resumen
 
 * Comprendimos lo que es la informática en la nube
 
@@ -217,7 +217,7 @@ La informática en la nube es la prestación de servicios informáticos a travé
 
 * Tipos de gastos en TI
 
-### Objetivos de aprendizaje
+#### Objetivos de aprendizaje
 
 Ahora debería ser capaz de hacer lo siguiente:
 
@@ -228,7 +228,7 @@ Ahora debería ser capaz de hacer lo siguiente:
 - Describir el modelo basado en el consumo.
 - Comparar los modelos de precios en la nube.
 
-### Recursos adicionales
+#### Recursos adicionales
 
 Los recursos siguientes proporcionan más información sobre los temas de este módulo o relacionados con este módulo.
 
@@ -236,13 +236,13 @@ Los recursos siguientes proporcionan más información sobre los temas de este m
 - [Introducción a Azure VMware Solution](https://learn.microsoft.com/es-es/learn/modules/intro-azure-vmware-solution/) es un curso de Microsoft Learn que profundiza en Azure VMware Solution.
 - [Introducción a los servicios en la nube híbrida de Azure](https://learn.microsoft.com/es-es/learn/modules/intro-to-azure-hybrid-services/) es un curso de Microsoft Learn que explica la nube híbrida con mayor detalle.
 
-# Descripción de las ventajas de usar servicios en la nube
+## Descripción de las ventajas de usar servicios en la nube
 
-## Introducción 
+### Introducción 
 
 Descubriremos cómo la informática en la nube puede ayudar a satisfacer la demanda variable al tiempo que proporciona una buena experiencia para el cliente. Aunado sobre la seguridad, la gobernanza y la capacidad de administración general en la nube.
 
-### Objetivos de aprendizaje
+#### Objetivos de aprendizaje
 
 Después de completar este módulo, podrá:
 
@@ -250,11 +250,11 @@ Después de completar este módulo, podrá:
 - Describir las ventajas de la confiabilidad y la previsibilidad en la nube.
 - Describir las ventajas de la seguridad y la gobernanza en la nube.
 - Describir las ventajas de la capacidad de administración en la nube.
-## Descripción de las ventajas de la alta disponibilidad y la escalabilidad en la nube
+### Descripción de las ventajas de la alta disponibilidad y la escalabilidad en la nube
 
 dos de las consideraciones más importantes son el tiempo de actividad (o la disponibilidad) y la capacidad de controlar la demanda (o escala).
 
-### Alta disponibilidad
+#### Alta disponibilidad
 
 Al implementar cualquier recurso de TI es importante que los recursos estén disponibles cuando sea necesario.
 
@@ -263,7 +263,7 @@ Al diseñar la solución, deberá tener en cuenta las garantías de disponibilid
 Azure es un entorno de nube de alta disponibilidad con garantías de tiempo de actividad en función del servicio. Estas garantías forman parte de los contratos de nivel de servicio, **SLA** service level agreement.
 
 
-### Escalabilidad
+#### Escalabilidad
 
 Hace referencia a la capacidad de ajustar los recursos para satisfacer la demanda.
 
@@ -280,31 +280,31 @@ Si necesitáramos desarrollar una aplicación y sea necesario más o menos poten
 
 Si de repente hay un salto elevado en la demanda, los recursos implementados se podrían escalar horizontalmente (ya sea de forma automática o manual). Por ejemplo, podríamos agregar o disminuir máquinas virtuales o contenedores adicionales.
 
-## Descripción de las ventajas de la confiabilidad y la previsibilidad en la nube
+### Descripción de las ventajas de la confiabilidad y la previsibilidad en la nube
 
 La confiabilidad y la previsibilidad son dos ventajas cruciales de la nube que le ayudan a desarrollar soluciones con confianza.
 
-### Confiabilidad
+#### Confiabilidad
 
 La confiabilidad es la capacidad de un sistema de recuperarse de los errores y seguir funcionando.
 
 La nube, debido a su diseño descentralizado, admite de forma natural una infraestructura confiable y resistente. Y gracias a ello, la nube le permite implementar recursos en regiones de todo el mundo.
 
-### Predicción
+#### Predicción
 
 La previsibilidad en la nube le permite avanzar con confianza. La previsibilidad se puede centrar en el rendimiento o los costos.
 
-### Rendimiento
+#### Rendimiento
 
 La previsibilidad del rendimiento se centra en predecir los recursos necesarios para ofrecer una experiencia positiva para los clientes. El escalado automático, el equilibrio de carga y la alta disponibilidad son solo algunos de los conceptos de nube que admiten la previsibilidad del rendimiento.
 
-### Coste
+#### Coste
 
 Con la nube, se puede realizar el seguimiento del uso de recursos en tiempo real.
 
 
 
-## Descripción de las ventajas de la seguridad y la gobernanza en la nube
+### Descripción de las ventajas de la seguridad y la gobernanza en la nube
 
 la nube admiten el cumplimiento y la **gobernanza**. Aspectos como las plantillas de conjunto ayudan a garantizar que todos los recursos implementados cumplan los estándares corporativos y los requisitos normativos de gobierno. 
 
@@ -319,11 +319,11 @@ Si quiere tener un control máximo de la seguridad, la infraestructura como serv
 Si quiere que las revisiones y el mantenimiento se administren automáticamente, las implementaciones de plataforma como servicio o software como servicio pueden ser las mejores estrategias en la nube.
 
 
-## Descripción de las ventajas de la capacidad de administración en la nube
+### Descripción de las ventajas de la capacidad de administración en la nube
 
 Una ventaja importante de la informática en la nube son las opciones de administración. Hay dos tipos de administración:
 
-### Administración de la nube
+#### Administración de la nube
 
 La administración de la nube trata sobre administrar los recursos en la nube. En la nube, puede hacer lo siguiente:
 
@@ -335,7 +335,7 @@ La administración de la nube trata sobre administrar los recursos en la nube. E
 
 - Recibir alertas automáticas basadas en métricas configuradas, de modo que esté informado del rendimiento en tiempo real.
 
-### Administración en la nube
+#### Administración en la nube
 
 La administración en la nube trata sobre cómo puede administrar el entorno y los recursos en la nube. Puede administrarlos de las siguientes maneras:
 
@@ -347,7 +347,7 @@ La administración en la nube trata sobre cómo puede administrar el entorno y l
 
 - Mediante PowerShell.
 
-## Prueba de conocimiento
+### Prueba de conocimiento
 
 1. ¿Qué tipo de escalado implica agregar o quitar recursos (como máquinas virtuales o contenedores) para satisfacer la demanda?
 
@@ -364,7 +364,7 @@ La administración en la nube trata sobre cómo puede administrar el entorno y l
 </details>
 
 
-## Resumen 
+### Resumen 
 
  * Ventajas de trabajar en la nube. 
  
@@ -374,7 +374,7 @@ La administración en la nube trata sobre cómo puede administrar el entorno y l
  
  * Como la nube proporciona un entorno muy administrable para los recursos.
 
-### Objetivos de aprendizaje
+#### Objetivos de aprendizaje
 
 Ahora debería ser capaz de hacer lo siguiente:
 
@@ -383,7 +383,7 @@ Ahora debería ser capaz de hacer lo siguiente:
 - Describir las ventajas de la seguridad y la gobernanza en la nube.
 - Describir las ventajas de la capacidad de administración en la nube.
 
-### Recursos adicionales
+#### Recursos adicionales
 
 Los recursos siguientes proporcionan más información sobre los temas de este módulo o relacionados con este módulo.
 
@@ -391,13 +391,13 @@ Los recursos siguientes proporcionan más información sobre los temas de este m
 
 
 
-# # Descripción de los tipos de servicio en la nube
+## Descripción de los tipos de servicio en la nube
 
-## Introducción
+### Introducción
 
 Se verán los distintos tipos de servicio en la nube y se comparten algunos de los casos de uso y las ventajas alineados con cada tipo de servicio.
 
-### Objetivos de aprendizaje
+#### Objetivos de aprendizaje
 
 Al finalizar este módulo:
 
@@ -406,7 +406,7 @@ Al finalizar este módulo:
 - Describir el software como servicio (SaaS).
 - Identificar los casos de uso adecuados para cada servicio en la nube (IaaS, PaaS, SaaS).
 
-## Descripción de la infraestructura como servicio (IaaS)
+### Descripción de la infraestructura como servicio (IaaS)
 
 Siendo la categoría más flexible de servicios en la nube, ya que proporciona el máximo control para los recursos en la nube.
 
@@ -416,14 +416,14 @@ Todo lo demás será responsabilidad nuestra: instalación, configuración y man
 
 básicamente es alquilar el hardware en un centro de datos en la nube, pero puedes hacer lo que quieras con ese hardware.
 
-### Modelo de responsabilidad compartida
+#### Modelo de responsabilidad compartida
 
 Como previamente se ha mencionado, se aplica a todos los tipos de servicio en la nube. IaaS sitúa la mayor parte de responsabilidad en nosotros. El proveedor de nube es el responsable de mantener la infraestructura física y su acceso a Internet. La instalación y configuración, la aplicación de revisiones y las actualizaciones y la seguridad serán responsabilidad nuestra.
 
 ![[Pasted image 20231221113147.png]]
 
 
-### Escenarios
+#### Escenarios
 
 Algunos escenarios comunes en los que IaaS puede tener sentido incluyen los siguientes:
 
@@ -432,6 +432,87 @@ Algunos escenarios comunes en los que IaaS puede tener sentido incluyen los sigu
 - Pruebas y desarrollo: has establecido configuraciones para entornos de desarrollo y pruebas que necesita para replicar rápidamente. Puedes poner en marcha o apagar rápidamente los diferentes entornos con una estructura IaaS, a la vez que mantiene un control total.
 
 
-## Descripción de la plataforma como servicio (PaaS)
+### Descripción de la plataforma como servicio (PaaS)
 
 es un punto intermedio entre alquilar espacio en un centro de datos (infraestructura como servicio) y pagar por una solución completa e implementada (software como servicio).
+
+PaaS es ideal para proporcionar un entorno de desarrollo completo sin el molesto de mantener toda la infraestructura de desarrollo.
+
+#### Modelo de responsabilidad compartida
+
+PaaS divide la responsabilidad entre usted y el proveedor de nube. El proveedor de nube es responsable de mantener la infraestructura física y su acceso a Internet, al igual que en IaaS. En el modelo PaaS, el proveedor de nube también mantendrá los sistemas operativos, las bases de datos y las herramientas de desarrollo. 
+
+Piense en PaaS como usar una máquina unida a un dominio: TI mantiene el dispositivo con actualizaciones y revisiones periódicas.
+
+En función de la configuración, usted o el proveedor de nube pueden ser responsables de la configuración de red y la conectividad dentro del entorno de nube, la seguridad de red y la aplicación y la infraestructura de directorios.
+
+![[Pasted image 20231221113147.png]]
+
+#### Escenarios
+
+Algunos escenarios comunes en los que PaaS pueden encajar incluyen:
+
+- Marco de desarrollo: PaaS ofrece un marco que los desarrolladores pueden usar para desarrollar o personalizar aplicaciones basadas en la nube. De una manera similar a como se crea una macro de Excel, PaaS permite que los desarrolladores creen aplicaciones a través de componentes de software integrados. Se incluyen características de la nube, como escalabilidad, alta disponibilidad y funcionalidad multiinquilino, lo que permite reducir la cantidad de codificación que deben realizar los desarrolladores.
+
+- Análisis o inteligencia empresarial: las herramientas proporcionadas como servicio con PaaS permiten a las organizaciones analizar y extraer sus datos, buscar información y patrones y predecir resultados para mejorar la previsión, las decisiones de diseño de productos, las devoluciones de inversión y otras decisiones empresariales.
+
+### Descripción del software como servicio (SaaS)
+
+Es el modelo de servicio en la nube más completo desde el punto de vista del producto. 
+
+Con SaaS, básicamente la que hace es alquilar o usar una aplicación totalmente desarrollada. El correo electrónico, el software financiero, las aplicaciones de mensajería y el software de conectividad son ejemplos comunes de una implementación de SaaS.
+
+Aunque el modelo de SaaS puede ser el menos flexible, también es el más sencillo de poner en marcha. Requiere la menor cantidad de conocimientos técnicos o experiencia para utilizarlo en toda su dimensión.
+
+#### Modelo de responsabilidad compartida
+
+SaaS es el modelo que sitúa la mayor responsabilidad en el proveedor de nube y la menor responsabilidad en el usuario.
+
+En un entorno de SaaS, serán responsabilidad suya los datos que ha puesto en el sistema, los dispositivos que le permiten conectarse al sistema y los usuarios que tienen acceso.
+
+De casi todo lo demás se encargará el proveedor de nube. Este será el responsable de la seguridad física de los centros de datos, la potencia, la conectividad de red, así como del desarrollo y la aplicación de revisiones.
+
+![[Pasted image 20231221113147.png]]
+
+#### Escenarios
+
+Algunos escenarios comunes para SaaS son los siguientes:
+
+- Correo electrónico y mensajería
+- Aplicaciones de productividad empresarial
+- Seguimiento de finanzas y gastos
+
+### Prueba de conocimientos
+
+1. ¿Qué tipo de servicio en la nube es más adecuado para una migración mediante lift-and-shift de un centro de datos local a una implementación en la nube?
+
+<Details>
+	<Summary>Respuesta</Summary>
+	<p>Con un tipo de servicio <b>IaaS</b>, puede aproximarse a su entorno local, lo que hace que realizar una transición a la nube mediante lift-and-shift sea relativamente sencillo.</p>
+</Details>
+
+2. ¿En qué tipo de servicio en la nube se encuentra normalmente una solución de seguimiento de finanzas y gastos?
+
+<Details>
+	<Summary>Respuesta</Summary>
+	<p><b>SaaS</b> proporciona acceso a soluciones de software, como el seguimiento de finanzas y gastos, el correo electrónico o los sistemas de vales.</p>
+</Details>
+
+
+### Resumen
+
+hemos aprendido sobre los tipos de servicio en la nube y algunos escenarios comunes para cada tipo. También ha reforzado la forma en que el modelo de responsabilidad compartida determina sus responsabilidades con diferentes tipos de servicios en la nube.
+
+#### Objetivos de aprendizaje
+
+Ahora debería ser capaz de hacer lo siguiente:
+
+- Describir la infraestructura como servicio (Iaas).
+- Describir la plataforma como servicio (Paas).
+- Describir el software como servicio (SaaS).
+- Identificar los casos de uso adecuados para cada servicio en la nube (IaaS, PaaS, SaaS).
+
+# Aspectos básicos de Microsoft Azure: Descripción de la arquitectura y los servicios de Azure
+
+## Describir los componentes arquitectónicos principales de Azure
+
