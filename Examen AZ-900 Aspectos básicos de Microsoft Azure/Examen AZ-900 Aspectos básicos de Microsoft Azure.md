@@ -516,3 +516,24 @@ Ahora debería ser capaz de hacer lo siguiente:
 
 ## Describir los componentes arquitectónicos principales de Azure
 
+### Introducción
+
+En este módulo, se presentarán los principales componentes arquitectónicos de Azure. Obtendrás información sobre la organización física de Azure: centros de datos, zonas de disponibilidad y regiones; y también sobre la estructura organizativa de Azure: recursos y grupos de recursos, suscripciones y grupos de administración.
+
+#### Objetivos de aprendizaje
+
+Después de completar este módulo, podrás:
+
+- Describir las regiones de Azure, los pares de regiones y las regiones soberanas.
+- Describir las zonas de disponibilidad.
+- Describir los centros de datos de Azure.
+- Describir los recursos y grupos de recursos de Azure.
+- Describir las suscripciones.
+- Describir los grupos de administración.
+- Describir la jerarquía de grupos de recursos, suscripciones y grupos de administración.
+
+
+
+
+### ¿Qué es Microsoft Azure?
+
