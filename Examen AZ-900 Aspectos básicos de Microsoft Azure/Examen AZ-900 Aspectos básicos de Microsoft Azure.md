@@ -166,3 +166,77 @@ Los gastos de capital suelen ser un gasto por adelantado único para comprar o p
 
 Los gastos operativos es gastar dinero en servicios o productos a lo largo del tiempo.
 
+La nube se encuentra en la partida de gastos operativos porque funciona en un modelo basado en el consumo.
+
+Este modelo aporta muchas ventajas, por ejemplo:
+
+- Sin costes por adelantado.
+- No es necesario comprar ni administrar infraestructuras costosas que es posible que los usuarios no aprovechen todo su potencial.
+- Se puede pagar para obtener más recursos cuando se necesiten.
+- Se puede dejar de pagar por los recursos que ya no se necesite
+
+### Comparación de los modelos de precios en la nube
+
+La informática en la nube es la prestación de servicios informáticos a través de Internet mediante un modelo de precios de pago por uso. Normalmente solo se paga por los servicios en la nube que se usan, lo que permite:
+
+- Planificar y administrar los costos operativos.
+- Ejecutar la infraestructura de forma más eficaz.
+- Escalar a medida que cambien las necesidades empresariales.
+
+
+## Comprobación de conocimientos
+
+1. ¿Qué es la informática en la nube?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>La información en la nube es la presentación de servicios informáticos a través de internet</p>
+</details>
+
+2. ¿Qué modelo de nube usa algunos centros de datos centrados en proporcionar servicios en la nube a cualquier persona que los quiera y algunos centros de datos centrados en un solo cliente?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>El modelo de nube híbrida es una combinación de la nube pública y la nube privada, con ambos centros de datos dedicados únicamente a un cliente y a centros de datos que se comparten con el público.</p>
+</details>
+
+3. Según el modelo de responsabilidad compartida, ¿qué tipo de servicio en la nube sitúa la mayor responsabilidad en el cliente?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>IaaS sitúa la mayor responsabilidad en el consumidor y el proveedor de servicios en la nube es el responsable de los conceptos básicos de seguridad física, energía y conectividad.</p>
+</details>
+
+## Resumen
+
+* Comprendimos lo que es la informática en la nube
+
+* Descubrir el modelo de responsabilidad compartida y cómo usted y su proveedor de nube comparten la responsabilidad de mantener protegida la información en la nube.
+
+* Las diferencias entre los modelos de nube. 
+
+* Tipos de gastos en TI
+
+### Objetivos de aprendizaje
+
+Ahora debería ser capaz de hacer lo siguiente:
+
+- Definir la informática en la nube.
+- Describir el modelo de responsabilidad compartida.
+- Definir modelos de nube, incluidos públicos, privados e híbridos.
+- Identificar los casos de uso adecuados para cada modelo de nube.
+- Describir el modelo basado en el consumo.
+- Comparar los modelos de precios en la nube.
+
+### Recursos adicionales
+
+Los recursos siguientes proporcionan más información sobre los temas de este módulo o relacionados con este módulo.
+
+- [Modelo de responsabilidad compartida](https://learn.microsoft.com/es-es/azure/security/fundamentals/shared-responsibility): el modelo de responsabilidad compartida es el uso compartido de responsabilidades para la nube entre usted y su proveedor de nube.
+- [Introducción a Azure VMware Solution](https://learn.microsoft.com/es-es/learn/modules/intro-azure-vmware-solution/) es un curso de Microsoft Learn que profundiza en Azure VMware Solution.
+- [Introducción a los servicios en la nube híbrida de Azure](https://learn.microsoft.com/es-es/learn/modules/intro-to-azure-hybrid-services/) es un curso de Microsoft Learn que explica la nube híbrida con mayor detalle.
+
+# Descripción de las ventajas de usar servicios en la nube
+
+## Introducción 
+
