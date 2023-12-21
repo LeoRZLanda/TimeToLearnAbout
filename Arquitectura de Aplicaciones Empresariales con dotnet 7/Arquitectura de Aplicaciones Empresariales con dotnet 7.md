@@ -3521,15 +3521,15 @@ Dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build-env
 WORKDIR /src
 COPY . .
-WORKDIR /src/Darkshop.Ecommerce.Services.WebApi
+WORKDIR /src/DarkShop.Ecommerce.Services.WebApi
 Run dotnet restore
 Run dotnet publish -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.0
 WORKDIR /app
-COPY --from-build-env /src/Darkshop.Ecommerce.Services.WebApi/out ./
+COPY --from=build-env /src/DarkShop.Ecommerce.Services.WebApi/out ./
 
-ENTRYPOINT ["dotnet","Darkshop.Ecommerce.Services.WebApi.dll"]
+ENTRYPOINT ["dotnet","DarkShop.Ecommerce.Services.WebApi.dll"]
 ```
 
 Cambiamos a release
@@ -3547,4 +3547,61 @@ Ahora ya estamos listos para crear nuestra imagen de docker
 vamos a una terminal y nos vamos al directorio en donde esta la solución
 
 
+
+de ahi ejecutaremos el siguiente comando
+
+```CLI
+docker image build -t DarkShop.Ecommerce:1.0.0 -f .\DarkShop.Ecommerce.Services.WebApi\Dockerfile .
+```
+
+y para validar que exista al ejecutar el siguiente comando 
+
+```CLI
+docker image ls
+```
+
+debemos tener el siguiente resultado
+![[Pasted image 20231220165658.png]]
+
+
+Si te interesaria borrarla seria con el siguiente comando
+
+```CLI
+docker image rm -f eb26e587c6b8
+```
+
+claro, selecciona el image id correspondiente para ti
+
+
+A continuación desarrollaremos el contenedor para desplegar la imagen
+
+## Creación del contenedor Docker
+
+Para crear nuestro contenedor ejecutaremos el siguiente comando 
+
+```CLI
+docker container run --name darkshop.ecommerce -d -p 8050:80 eb26e587c6b8
+```
+
+y para revisar que este en ejecución con el siguiente comando
+
+```CLI
+docker container ls
+```
+
+en donde validaremos lo siguiente 
+
+![[Pasted image 20231220172142.png]]
+
+ahora para validar su funcionamiento 
+
+entraremos en un navegador a la siguiente liga
+
+localhost:8050/swagger
+
+Por si hay algun error puedes visualizar los lgs con
+
+```CLI
+docker container logs ID
+```
 
