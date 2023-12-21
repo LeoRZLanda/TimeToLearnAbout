@@ -240,3 +240,198 @@ Los recursos siguientes proporcionan más información sobre los temas de este m
 
 ## Introducción 
 
+Descubriremos cómo la informática en la nube puede ayudar a satisfacer la demanda variable al tiempo que proporciona una buena experiencia para el cliente. Aunado sobre la seguridad, la gobernanza y la capacidad de administración general en la nube.
+
+### Objetivos de aprendizaje
+
+Después de completar este módulo, podrá:
+
+- Describir las ventajas de la alta disponibilidad y escalabilidad en la nube.
+- Describir las ventajas de la confiabilidad y la previsibilidad en la nube.
+- Describir las ventajas de la seguridad y la gobernanza en la nube.
+- Describir las ventajas de la capacidad de administración en la nube.
+## Descripción de las ventajas de la alta disponibilidad y la escalabilidad en la nube
+
+dos de las consideraciones más importantes son el tiempo de actividad (o la disponibilidad) y la capacidad de controlar la demanda (o escala).
+
+### Alta disponibilidad
+
+Al implementar cualquier recurso de TI es importante que los recursos estén disponibles cuando sea necesario.
+
+Al diseñar la solución, deberá tener en cuenta las garantías de disponibilidad del servicio.
+
+Azure es un entorno de nube de alta disponibilidad con garantías de tiempo de actividad en función del servicio. Estas garantías forman parte de los contratos de nivel de servicio, **SLA** service level agreement.
+
+
+### Escalabilidad
+
+Hace referencia a la capacidad de ajustar los recursos para satisfacer la demanda.
+
+La otra ventaja de la escalabilidad es que no está pagando de más por los servicios.
+
+
+El escalado suele tener dos variedades: vertical y horizontal. El escalado vertical se centra en aumentar o disminuir las capacidades de los recursos. El escalado horizontal agrega o resta el número de recursos.
+
+#### Escalado vertical
+
+Si necesitáramos desarrollar una aplicación y sea necesario más o menos potencia de procesamiento, podría escalar verticalmente para agregar o disminuir la CPU o RAM de la máquina virtual.
+
+#### Escalado horizontal
+
+Si de repente hay un salto elevado en la demanda, los recursos implementados se podrían escalar horizontalmente (ya sea de forma automática o manual). Por ejemplo, podríamos agregar o disminuir máquinas virtuales o contenedores adicionales.
+
+## Descripción de las ventajas de la confiabilidad y la previsibilidad en la nube
+
+La confiabilidad y la previsibilidad son dos ventajas cruciales de la nube que le ayudan a desarrollar soluciones con confianza.
+
+### Confiabilidad
+
+La confiabilidad es la capacidad de un sistema de recuperarse de los errores y seguir funcionando.
+
+La nube, debido a su diseño descentralizado, admite de forma natural una infraestructura confiable y resistente. Y gracias a ello, la nube le permite implementar recursos en regiones de todo el mundo.
+
+### Predicción
+
+La previsibilidad en la nube le permite avanzar con confianza. La previsibilidad se puede centrar en el rendimiento o los costos.
+
+### Rendimiento
+
+La previsibilidad del rendimiento se centra en predecir los recursos necesarios para ofrecer una experiencia positiva para los clientes. El escalado automático, el equilibrio de carga y la alta disponibilidad son solo algunos de los conceptos de nube que admiten la previsibilidad del rendimiento.
+
+### Coste
+
+Con la nube, se puede realizar el seguimiento del uso de recursos en tiempo real.
+
+
+
+## Descripción de las ventajas de la seguridad y la gobernanza en la nube
+
+la nube admiten el cumplimiento y la **gobernanza**. Aspectos como las plantillas de conjunto ayudan a garantizar que todos los recursos implementados cumplan los estándares corporativos y los requisitos normativos de gobierno. 
+
+Además, puede actualizar todos los recursos implementados a nuevos estándares a medida que estos cambien. La auditoría basada en la nube ayuda a marcar cualquier recurso que no cumpla los estándares corporativos y proporciona estrategias de mitigación. 
+
+En función del modelo operativo, las revisiones de software y las actualizaciones también se pueden aplicar automáticamente, lo que ayuda tanto a la gobernanza como a la seguridad.
+
+Aunado a esto, puede encontrar una solución en la nube que coincida con sus necesidades de **seguridad**. 
+
+Si quiere tener un control máximo de la seguridad, la infraestructura como servicio le proporciona recursos físicos, pero le permite administrar los sistemas operativos y el software instalado, incluidas las revisiones y el mantenimiento. 
+
+Si quiere que las revisiones y el mantenimiento se administren automáticamente, las implementaciones de plataforma como servicio o software como servicio pueden ser las mejores estrategias en la nube.
+
+
+## Descripción de las ventajas de la capacidad de administración en la nube
+
+Una ventaja importante de la informática en la nube son las opciones de administración. Hay dos tipos de administración:
+
+### Administración de la nube
+
+La administración de la nube trata sobre administrar los recursos en la nube. En la nube, puede hacer lo siguiente:
+
+- Escalar automáticamente la implementación de recursos en función de las necesidades.
+
+- Implementar recursos basados en una plantilla preconfigurada, lo que elimina la necesidad de realizar la configuración manual.
+
+- Supervisar el estado de los recursos y reemplazar automáticamente los recursos con errores.
+
+- Recibir alertas automáticas basadas en métricas configuradas, de modo que esté informado del rendimiento en tiempo real.
+
+### Administración en la nube
+
+La administración en la nube trata sobre cómo puede administrar el entorno y los recursos en la nube. Puede administrarlos de las siguientes maneras:
+
+- Mediante un portal web.
+
+- Con una interfaz de línea de comandos básica.
+
+- Mediante las API.
+
+- Mediante PowerShell.
+
+## Prueba de conocimiento
+
+1. ¿Qué tipo de escalado implica agregar o quitar recursos (como máquinas virtuales o contenedores) para satisfacer la demanda?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>El escalado horizontal agrega o resta el número de recursos.</p>
+</details>
+
+2. ¿Qué se describe como la capacidad de un sistema de recuperarse de los errores y seguir funcionando?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>La confiabilidad es la capacidad de un sistema para recuperarse de errores y seguir en funcionamiento y es uno de los pilares del Marco de buena arquitectura de Microsoft Azure.</p>
+</details>
+
+
+## Resumen 
+
+ * Ventajas de trabajar en la nube. 
+ 
+ * la alta disponibilidad y la fiabilidad, y cómo funcionan para mantener las aplicaciones en ejecución. 
+ 
+ * Un entorno más seguro, gracias a la nube. 
+ 
+ * Como la nube proporciona un entorno muy administrable para los recursos.
+
+### Objetivos de aprendizaje
+
+Ahora debería ser capaz de hacer lo siguiente:
+
+- Describir las ventajas de la alta disponibilidad y escalabilidad en la nube.
+- Describir las ventajas de la confiabilidad y la previsibilidad en la nube.
+- Describir las ventajas de la seguridad y la gobernanza en la nube.
+- Describir las ventajas de la capacidad de administración en la nube.
+
+### Recursos adicionales
+
+Los recursos siguientes proporcionan más información sobre los temas de este módulo o relacionados con este módulo.
+
+- [Creación de excelentes soluciones con el Marco de buena arquitectura de Microsoft Azure](https://learn.microsoft.com/es-es/learn/paths/azure-well-architected-framework/) es un curso de Microsoft Learn que presenta el Marco de buena arquitectura de Microsoft Azure.
+
+
+
+# # Descripción de los tipos de servicio en la nube
+
+## Introducción
+
+Se verán los distintos tipos de servicio en la nube y se comparten algunos de los casos de uso y las ventajas alineados con cada tipo de servicio.
+
+### Objetivos de aprendizaje
+
+Al finalizar este módulo:
+
+- Describir la infraestructura como servicio (IaaS).
+- Describir la plataforma como servicio (PaaS).
+- Describir el software como servicio (SaaS).
+- Identificar los casos de uso adecuados para cada servicio en la nube (IaaS, PaaS, SaaS).
+
+## Descripción de la infraestructura como servicio (IaaS)
+
+Siendo la categoría más flexible de servicios en la nube, ya que proporciona el máximo control para los recursos en la nube.
+
+El proveedor de nube es el responsable de mantener el hardware, la conectividad de red (a Internet) y la seguridad física.
+
+Todo lo demás será responsabilidad nuestra: instalación, configuración y mantenimiento del sistema operativo, configuración de red, configuración de base de datos y almacenamiento, etc.
+
+básicamente es alquilar el hardware en un centro de datos en la nube, pero puedes hacer lo que quieras con ese hardware.
+
+### Modelo de responsabilidad compartida
+
+Como previamente se ha mencionado, se aplica a todos los tipos de servicio en la nube. IaaS sitúa la mayor parte de responsabilidad en nosotros. El proveedor de nube es el responsable de mantener la infraestructura física y su acceso a Internet. La instalación y configuración, la aplicación de revisiones y las actualizaciones y la seguridad serán responsabilidad nuestra.
+
+![[Pasted image 20231221113147.png]]
+
+
+### Escenarios
+
+Algunos escenarios comunes en los que IaaS puede tener sentido incluyen los siguientes:
+
+- Migración mediante lift-and-shift: estás poniendo en marcha recursos en la nube similares al centro de datos local y, después, simplemente mover las cosas que se ejecutan localmente para que se ejecuten en la infraestructura IaaS.
+
+- Pruebas y desarrollo: has establecido configuraciones para entornos de desarrollo y pruebas que necesita para replicar rápidamente. Puedes poner en marcha o apagar rápidamente los diferentes entornos con una estructura IaaS, a la vez que mantiene un control total.
+
+
+## Descripción de la plataforma como servicio (PaaS)
+
+es un punto intermedio entre alquilar espacio en un centro de datos (infraestructura como servicio) y pagar por una solución completa e implementada (software como servicio).
