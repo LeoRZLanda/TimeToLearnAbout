@@ -15,3 +15,4 @@ Debe tener aptitudes y experiencia trabajando con un área de TI, como:
 - Desarrollo de software
 
 Si aprueba este examen de certificación, es posible que pueda optar al crédito universitario de ACE. Consulte [Crédito universitario de ACE para exámenes de certificación](https://learn.microsoft.com/es-es/credentials/certifications/college-credit) para obtener más información.
+
