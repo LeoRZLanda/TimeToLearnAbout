@@ -16,14 +16,6 @@
             }
           },
           {
-            "id": "ba4f65ce1a6479ee",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
             "id": "97257bc495212dc4",
             "type": "leaf",
             "state": {
@@ -36,7 +28,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -184,6 +176,8 @@
   },
   "active": "97257bc495212dc4",
   "lastOpenFiles": [
+    "Apendix/Pasted image 20231221113147.png",
+    "Apendix",
     "Examen AZ-900 Aspectos básicos de Microsoft Azure.md",
     "Apendix/Pasted image 20231127125802.png",
     "Apendix/Pasted.md",
@@ -200,7 +194,6 @@
     "WinFormsApp/WinFormsApp/axm5ciak.0jp~",
     "Apendix/Pasted image 20231128154646.png",
     "WinFormsApp/WinFormsApp/hfislujj.h1l~",
-    "WinFormsApp/WinFormsApp/t21wz4wt.spo~",
     "Apendix/Pasted image 20231128152300.png",
     "Apendix/Pasted image 20231128152132.png",
     "Apendix/Pasted image 20231128145644.png",
@@ -229,7 +222,6 @@
     "React/Inicio/Inicio.md",
     "React/Inicio/Que es React.md",
     "React/Inicio/Ventajas de React.md",
-    "React/Inicio/Que es una biblioteca.md",
     "Untitled.canvas"
   ]
 }
