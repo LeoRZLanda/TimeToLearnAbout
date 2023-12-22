@@ -1444,6 +1444,59 @@ Verás la regla predeterminada _default-allow-ssh_. Esta regla permite conexion
 De forma predeterminada, un grupo de seguridad de red de una máquina virtual de una máquina virtual Linux solo permite el acceso a la red en el puerto 22. Esto permite que los administradores accedan al sistema. También debe permitir las conexiones entrantes en el puerto 80, que permite el acceso a través de HTTP.
 
 
-## Tarea 3: Creación de la regla de seguridad de red
+### Tarea 3: Creación de la regla de seguridad de red
 
 En este caso, crearás una regla de seguridad de red que permita el acceso de entrada en el puerto 80 (HTTP).
+
+1. Ejecute el siguiente comando `az network nsg rule create` para crear una regla denominada _allow-http_ que permita el acceso entrante en el puerto 80:
+
+```AZURE LI
+az network nsg rule create --resource-group [sandbox resource group name] --nsg-name my-vmNSG --name allow-http --protocol tcp --priority 100 --destination-port-range 80 --access Allow
+```
+
+Con fines de aprendizaje, aquí establecerá la prioridad en 100. En este caso, la prioridad no importa. Tendriás que tener en cuenta la prioridad si tuvieras intervalos de puertos superpuestos.
+    
+2. Para comprobar la configuración, ejecuta `az network nsg rule list` para ver la lista actualizada de reglas:
+
+```AZURE CLI
+az network nsg rule list --resource-group [sandbox resource group name] --nsg-name my-vmNSG --query '[].{Name:name, Priority:priority, Port:destinationPortRange, Access:access}' --output table
+```
+
+Verás las dos reglas, _default-allow-ssh_ y la nueva regla _allow-http_:
+
+```RESULTADOS
+Name              Priority    Port    Access
+-----------------  ----------  ------  --------
+default-allow-ssh  1000        22      Allow
+allow-http        100        80      Allow
+```
+
+### Tarea 4: Nuevo acceso al servidor web
+
+Ahora que has configurado el acceso de red al puerto 80, vamos a intentar acceder al servidor web una segunda vez.
+
+1. Ejecuta el mismo comando `curl` que has ejecutado antes:
+
+```BASH
+curl --connect-timeout 5 http://$IPADDRESS
+```
+
+Veras lo siguiente
+
+```HTML
+<html><body><h2>Welcome to Azure! My name is my-vm.</h2></body></html>
+```
+
+2. Como paso opcional, actualiza la pestaña que apunta al servidor web.
+
+Verá lo siguiente:
+
+
+
+Buen trabajo. En la práctica, puedes crear un grupo de seguridad de red independiente que incluya las reglas de acceso de red entrantes y salientes que necesite. Si tienes varias máquinas virtuales que tienen el mismo propósito, puedes asignar ese grupo de seguridad de red a cada máquina virtual en el momento de crearla. Esta técnica permite controlar el acceso de red a varias máquinas virtuales en un único conjunto central de reglas.
+
+### Limpieza
+
+El espacio aislado limpia los recursos automáticamente cuando haya terminado con este módulo.
+
+Al trabajar en una suscripción propia, se recomienda identificar al final de un proyecto si aún necesita los recursos creados. Los recursos que dejas en ejecución pueden costar dinero. Puede eliminar los recursos de forma individual o eliminar el grupo de recursos para eliminar todo el conjunto de recursos.
