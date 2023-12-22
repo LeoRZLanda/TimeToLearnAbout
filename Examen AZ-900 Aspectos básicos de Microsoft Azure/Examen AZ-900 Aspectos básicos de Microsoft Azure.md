@@ -537,3 +537,155 @@ Después de completar este módulo, podrás:
 
 ### ¿Qué es Microsoft Azure?
 
+Azure es un conjunto de servicios en la nube en expansión constante que le ayudan a cumplir los desafíos empresariales actuales y futuros. Azure le ofrece la libertad de compilar, administrar e implementar aplicaciones en una red global masiva mediante sus herramientas y plataformas favoritas.
+
+
+#### ¿Qué ofrece azure?
+
+A continuación se enumeran algunas de las ventajas que proporciona Azure, para que inventar con un objetivo sea más sencillo:
+
+- **Prepararse para el futuro**: la innovación continua de Microsoft apoya el desarrollo actual y los proyectos de productos para el futuro.
+
+- **Crear según términos propios**: tienes varias opciones. Si mantiene un compromiso con el código abierto y admite todos los lenguajes y marcos, puede compilar como quiera e implementar donde quiera.
+
+- **Funcionamiento sin problemas en el entorno híbrido**: ya sea en el entorno local, en la nube o en el entorno perimetral, le apoyaremos donde esté.
+
+- **Confianza en la nube**
+
+
+#### ¿Qué puedo hacer con Azure?
+
+
+Azure proporciona más de 100 servicios que permiten hacer todo tipo de cosas: desde ejecutar las aplicaciones existentes en máquinas virtuales hasta explorar nuevos paradigmas de software, como bots inteligentes y realidad mixta.
+
+Azure proporciona servicios de inteligencia artificial (IA) y aprendizaje automático (ML) que pueden comunicarse de forma natural con los usuarios mediante la vista, el oído y la voz. También facilita soluciones de almacenamiento que crecen dinámicamente para dar cabida a grandes cantidades de datos. Los servicios de Azure permiten soluciones que no son factibles sin la potencia de la nube.
+
+## Introducción a las cuentas de Azure
+
+Para crear y usar los servicios de Azure, necesita una suscripción de Azure. Al completar los módulos de Microsoft Learn, la mayoría de las veces se crea una suscripción temporal de forma automática, que se ejecuta en un entorno denominado espacio aislado de Microsoft Learn.
+
+
+### Creación de una cuenta de Azure
+
+Para comprar el acceso a Azure directamente desde Microsoft, regístrate en el sitio web de Azure o hágalo a través de un representante de Microsoft. 
+
+### ¿Qué es la cuenta gratuita de Azure?
+
+La cuenta gratuita de Azure incluye lo siguiente:
+
+- Acceso gratuito a productos populares de Azure durante 12 meses.
+- Crédito para gastar durante los primeros 30 días.
+- Acceso a más de 25 productos que siempre son gratuitos.
+
+La [cuenta gratuita de Azure](https://azure.microsoft.com/free) ofrece de forma óptima un comienzo y exploración a los nuevos usuarios. Para registrarse, necesita un número de teléfono, una tarjeta de crédito y una cuenta de Microsoft o de GitHub. La información de la tarjeta de crédito solo se usa para la verificación de identidad. No se te cobrará por ningún servicio hasta que actualice a una suscripción de pago.
+
+### ¿Qué es la cuenta de estudiante gratuita de Azure?
+
+La oferta de la cuenta de estudiante gratuita de Azure incluye lo siguiente:
+
+- Acceso gratuito a determinados servicios de Azure durante 12 meses.
+- Un crédito para usar en los primeros 12 meses.
+- Acceso gratuito a determinadas herramientas de desarrollo de software.
+
+La [cuenta de estudiante gratuita de Azure](https://azure.microsoft.com/free/students/) es una oferta para estudiantes que ofrece 100 USD de crédito y herramientas de desarrollo gratuitas. Además, puedes registrarse sin tarjeta de crédito.
+
+
+### ¿Qué es el espacio aislado de Microsoft Learn?
+
+En muchos de los ejercicios de Learn se usa una tecnología denominada espacio aislado, que crea una suscripción temporal que se agrega a la cuenta de Azure. Esta suscripción temporal le permite crear recursos de Azure para la duración de un módulo de Learn. Learn limpia de forma automática los recursos temporales una vez que hayas completado el módulo.
+
+Cuando completas un módulo de Learn, puedes usar la suscripción personal para finalizar los ejercicios que incluye. Pero el espacio aislado es el método preferido, ya que permite crear y probar recursos de Azure sin costo alguno.
+
+## Ejercicio: Exploración del espacio aislado de Learn
+
+### Tarea 1: Uso de la CLI de PowerShell
+
+Una vez que se inicie el espacio aislado, la mitad de la pantalla estará en modo de interfaz de línea de comandos (CLI) de PowerShell. Si estás familiarizado con PowerShell, puedes administrar el entorno de Azure mediante comandos de PowerShell.
+
+Usa el comando Get-date de PowerShell para obtener la fecha y hora actuales.
+
+``` AZURE CLI
+Get-date
+```
+
+La mayoría de los comandos específicos de Azure comenzarán con las letras az. El comando Get-date que acaba de ejecutar es específico de PowerShell. Ahora se probará un comando de Azure para comprobar qué versión de la CLI usa en este momento.
+
+``` AZURE CLI
+az version
+```
+
+### Tarea 2: Uso de la CLI de BASH
+
+Si estás más familiarizado con BASH, puedes usar el comando BASH en su lugar mediante el cambio a la CLI de BASH.
+
+Escribe bash para cambiar a la CLI de BASH.
+
+```AZURE CLI
+bash
+```
+
+![[Pasted image 20231221182056.png]]
+
+De nuevo, usa el comando Get-date para obtener la fecha y hora actuales.
+
+``` AZURE CLI
+Get-date
+```
+
+Se produce un error porque Get-date es un comando específico de PowerShell.
+
+![[Pasted image 20231221182015.png]]
+
+Usa el comando date para obtener la fecha y hora actuales.
+
+``` BASH
+date
+```
+
+Al igual que en el modo PowerShell de la CLI, puedes usar las letras az para iniciar un comando de Azure en el modo BASH. Intenta ejecutar una actualización en la CLI con az upgrade.
+
+``` AZURE CLI
+az upgrade
+```
+
+Puedes volver al modo de PowerShell si escribe pwsh en la línea de comandos de BASH.
+
+### Tarea 3: Uso del modo interactivo de la CLI de Azure
+
+Otra manera de interactuar consiste en usar el modo interactivo de la CLI de Azure. Esto cambia el comportamiento de la CLI para parecerse más a un entorno de desarrollo integrado (IDE). El modo interactivo proporciona autocompletar, descripciones de comandos e incluso ejemplos. Si no estás familiarizado con BASH y PowerShell, pero quiere usar la línea de comandos, el modo interactivo puede ayudarte.
+
+``` AZURE CLI
+az interactive
+```
+
+Decide si quiere enviar datos de telemetría y escribe SÍ o NO.
+
+Es posible que tengas que esperar uno o dos minutos para permitir que el modo interactivo se inicialice por completo. Después, escribe la letra "a" y la finalización automática debería empezar a funcionar. Si la finalización automática no funciona, borra lo que has escrito, espera un poco más y vuelve a intentarlo.
+
+![[Pasted image 20231221182412.png]]
+
+``` AZURE CLI
+version
+```
+
+``` AZURE CLI
+upgrade
+```
+
+Los comandos deben haber funcionado igual que antes y generar los mismos resultados. Usa el comando exit para salir del modo interactivo.
+
+``` AZURE CLI
+exit
+```
+
+### Tarea 4: Uso de Azure Portal
+
+Durante los ejercicios del espacio aislado también tendrás la opción de usar Azure Portal. Debes usar el vínculo proporcionado en el ejercicio para acceder a Azure Portal. Con el vínculo proporcionado, en lugar de abrir el portal personalmente, se asegura de usar la suscripción correcta y poder completar el ejercicio como quieras.
+
+Inicie sesión en [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com) para comprobar la interfaz web de Azure. Una vez en el portal, puedes ver todos los servicios que ofrece Azure, así como echar un vistazo a los grupos de recursos, etc.
+
+### Continuar
+
+Todo listo por ahora. Volverás a este espacio aislado más adelante en este módulo y crearás un recurso real de Azure.
+
+## Descripción de la infraestructura física de Azure
