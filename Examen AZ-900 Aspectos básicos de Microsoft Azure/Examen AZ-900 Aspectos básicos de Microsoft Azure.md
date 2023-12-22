@@ -1107,3 +1107,343 @@ Eso es todo para este ejercicio. El espacio aislado seguirá ejecutándose y vol
 
 Otro tipo de máquina virtual es Azure Virtual Desktop. Azure Virtual Desktop es un servicio de virtualización de escritorios y aplicaciones que se ejecuta en la nube. Te permite usar una versión hospedada en la nube de Windows desde cualquier ubicación. Azure Virtual Desktop funciona en dispositivos y sistemas operativos, y funciona con aplicaciones que puede usar para acceder a escritorios remotos o a la mayoría de exploradores modernos.
 
+### Aumento de la seguridad
+
+Azure Virtual Desktop proporciona administración centralizada de seguridad para los escritorios de los usuarios con Microsoft Entra ID. Puedes habilitar la autenticación multifactor para proteger los inicios de sesión de los usuarios. También puedes proteger el acceso a los datos mediante la asignación a los usuarios de controles de acceso basados en roles (RBAC) detallados.
+
+Con Azure Virtual Desktop, los datos y las aplicaciones se separan del hardware local y El escritorio y las aplicaciones reales se ejecutan en la nube, lo que significa que se reduce el riesgo de dejar datos confidenciales en un dispositivo personal. Además, las sesiones de usuario están aisladas en entornos de una o varias sesiones.
+
+### Implementación de sesión múltiple de Windows 10 o Windows 11
+
+Azure Virtual Desktop permite usar la sesión múltiple de Windows 10 o Windows 11 Enterprise, el único sistema operativo basado en cliente de Windows que permite varios usuarios simultáneos en una sola máquina virtual. Azure Virtual Desktop también proporciona una experiencia más coherente gracias a la compatibilidad más amplia con las aplicaciones en comparación con los sistemas operativos basados en Windows Server.
+
+### Implementación de sesión múltiple de Windows 10 o Windows 11
+
+Azure Virtual Desktop permite usar la sesión múltiple de Windows 10 o Windows 11 Enterprise, el único sistema operativo basado en cliente de Windows que permite varios usuarios simultáneos en una sola máquina virtual. 
+
+
+Azure Virtual Desktop también proporciona una experiencia más coherente gracias a la compatibilidad más amplia con las aplicaciones en comparación con los sistemas operativos basados en Windows Server.
+
+## Descripción de contenedores de Azure
+
+A pesar de que las máquinas virtuales son una excelente manera de reducir los costos frente a las inversiones que son necesarias para el hardware físico, están limitadas a un solo sistema operativo por máquina virtual. Los contenedores son una excelente opción si quiere ejecutar varias instancias de una aplicación en un solo equipo host.
+
+### ¿Qué son los contenedores?
+
+Los contenedores son un entorno de virtualización. Al igual que la ejecución de varias máquinas virtuales en un solo host físico, **se pueden ejecutar varios contenedores en un solo host físico o virtual**. 
+
+A diferencia de las máquinas virtuales, no se administra el sistema operativo de un contenedor. Las máquinas virtuales son similares a una instancia de sistema operativo que se puede conectar y administrar.
+
+**Los contenedores son ligeros y se han diseñado para crearse, escalarse horizontalmente y detenerse de forma dinámica.**
+
+Los contenedores son ligeros y se han diseñado para crearse, escalarse horizontalmente y detenerse de forma dinámica. 
+
+Es posible crear e implementar máquinas virtuales a medida que aumenta la demanda de aplicaciones, pero los contenedores son un método más ligero y ágil. 
+
+Los contenedores están diseñados para permitirle responder a petición a los cambios. Con los contenedores puede reiniciar rápidamente en caso de bloqueo o interrupción del hardware.
+
+### Comparación de máquinas virtuales con contenedores
+
+|VM|Contenedores|
+| - | - |
+|Virtualizan el harware|virtualizan el sistema operativo|
+|Control competo|Portabilidad y rendimiento|
+
+### Azure Container Instances
+
+Azure Container Instances ofrece la forma más rápida y sencilla de ejecutar un contenedor en Azure sin tener que administrar máquinas virtuales o adoptar servicios adicionales. Azure Container Instances es una oferta de plataforma como servicio (PaaS). Azure Container Instances le permite **cargar los contenedores**. A continuación, el servicio ejecutará los contenedores por usted.
+
+### Azure Container Apps
+
+Azure Container Apps son similares de muchas maneras a una instancia de contenedor. Le permiten ponerse en marcha de inmediato, quitan la pieza de administración de contenedores y son una oferta de PaaS. Container Apps tienen ventajas adicionales, como la capacidad de **incorporar el equilibrio de carga y el escalado**. Estas otras funciones le permiten ser más elásticas en el diseño.
+
+### Azure Kubernetes Service
+
+Azure Kubernetes Service (AKS) es un servicio de orquestación de contenedores. Un servicio de orquestación **administra el ciclo de vida de los contenedores**. Al implementar una flota de contenedores, AKS puede hacer que la administración de flotas sea más sencilla y eficaz.
+
+### Uso de contenedores en las soluciones
+
+Los contenedores se usan normalmente para **crear soluciones mediante una arquitectura de microservicios**. Esta arquitectura es donde se dividen las soluciones en **partes más pequeñas e independientes**. 
+
+Por ejemplo, se puede dividir un sitio web en un contenedor que hospeda el front-end, otro que hospeda el back-end y un tercero para el almacenamiento. De esta forma, puede separar partes de la aplicación en secciones lógicas que se pueden mantener, escalar o actualizar independientemente.
+
+Imagine que el back-end de su sitio web ha alcanzado el límite de su capacidad, pero el front-end y el almacenamiento no están sobrecargados. Con los contenedores puede escalar el back-end por separado para mejorar el rendimiento. Si algo requiere este cambio, también puede optar por cambiar el servicio de almacenamiento o modificar el front-end sin afectar a ninguno de los otros componentes.
+
+## Descripción de Azure Functions
+
+Azure Functions es una opción de **proceso sin servidor controlada por eventos** que no necesita el mantenimiento de máquinas virtuales ni contenedores. Si compila una aplicación mediante máquinas virtuales o contenedores, esos recursos deben "ejecutarse" para que la aplicación funcione. 
+
+Con Azure Functions, un evento activa la función, lo que reduce la necesidad de mantener los recursos aprovisionados cuando no hay ningún evento.
+
+### Informática sin servidor en Azure (serverless computing)
+
+Aunque si se usen servidores, significa que nosotros no nos hacemos cargo de la responsabilidad de administrar los.
+
+En otras palabras, es una abstracción de los servidores para que podamos despreocuparnos de la infraestructura y centrarnos en las tareas de desarrollo.
+
+
+Hay tres grandes ventajas:
+
+* No hay administración de infraestructura
+* Escalabilidad
+* Solo pagas por lo que usas
+
+### Ventajas de Azure Functions
+
+El uso de Azure Functions es idóneo si solo le interesa el código que ejecuta el servicio y no la infraestructura o la plataforma subyacente. Las funciones se usan normalmente cuando se debe realizar un trabajo en respuesta a un evento (a menudo a través de una solicitud REST), un temporizador o un mensaje de otro servicio de Azure, y cuando ese trabajo puede completarse rápidamente, en segundos o en menos tiempo.
+
+Functions se **escala** automáticamente según la demanda, por lo que es una opción correcta cuando la demanda es variable.
+
+Azure Functions ejecuta el código cuando se desencadena y desasigna recursos automáticamente cuando la función finaliza. En este modelo, solo se le cobrará por el tiempo de CPU usado mientras se ejecuta la función.
+
+Las funciones pueden ser sin estado o con estado. Cuando son sin estado (valor predeterminado), se comportan como si se reiniciaran cada vez que responden a un evento.
+
+Cuando son con estado (denominado Durable Functions), se pasa un contexto a través de la función para realizar el seguimiento antes de la actividad.
+
+Las funciones son un componente clave de la informática sin servidor. También son una plataforma de proceso general para ejecutar cualquier tipo de código. Si cambian las necesidades de la aplicación del desarrollador, se puede implementar el proyecto en un entorno que no sea sin servidor. Esta flexibilidad permite administrar el escalado, ejecutar en redes virtuales e incluso aislar por completo las funciones.
+
+## Descripción de las opciones de hospedaje de aplicaciones
+
+Si necesita hospedar la aplicación en Azure, es posible que cambie inicialmente a una máquina virtual (VM) o a contenedores. 
+
+Tanto las máquinas virtuales como los contenedores proporcionan excelentes soluciones de hospedaje. Las **máquinas virtuales proporcionan el máximo control** del entorno de hospedaje y le permiten configurarlo exactamente como desea. Las máquinas virtuales también pueden ser el método de hospedaje más conocido si no está familiarizado con la nube. **Los contenedores, con la capacidad de aislar y administrar individualmente** diferentes aspectos de la solución de hospedaje, también pueden ser una opción sólida y atractiva.
+
+Hay otras opciones de hospedaje que puede usar con Azure, incluido Azure App Service.
+
+### Azure App Service
+
+App Service permite **crear y hospedar aplicaciones web, trabajos en segundo plano, back-ends móviles y API RESTful** en el lenguaje de programación que prefiera, sin tener que administrar la infraestructura. Ofrece **escalado automático y alta disponibilidad**. 
+
+App Service admite Windows y Linux. Permite implementaciones automatizadas desde GitHub, Azure DevOps o cualquier repositorio Git para admitir un modelo de implementación continua.
+
+Azure App Service es una opción de hospedaje sólida que puede usar para hospedar las aplicaciones en Azure. Azure App Service le permite **centrarse en la creación y el mantenimiento de la aplicación**, y Azure se centra en mantener el entorno en funcionamiento.
+
+Azure App Service es un servicio basado en HTTP para hospedar aplicaciones web, API de REST y back-ends para dispositivos móviles. Admite varios lenguajes, incluidos .NET, .NET Core, Java, Ruby, Node.js, PHP o Python. También admite entornos de Windows y Linux.
+
+### Tipos de servicios de aplicaciones
+
+Con App Service, puede hospedar la mayoría de los estilos de servicio de aplicación más comunes, como los siguientes:
+
+- Aplicaciones web
+- Aplicaciones de API
+- Trabajos web
+- Aplicaciones móviles
+
+App Service controla la mayoría de las decisiones sobre la infraestructura que se tratan en el hospedaje de aplicaciones accesibles desde la web:
+
+- La implementación y administración se integran en la plataforma.
+- Los puntos de conexión se pueden proteger.
+- Los sitios se pueden escalar rápidamente para controlar cargas de tráfico elevado.
+- El equilibrio de carga integrado y el administrador de tráfico proporcionan alta disponibilidad.
+
+Todos estos estilos de aplicación se hospedan en la misma infraestructura y comparten estas ventajas. Esto convierte a App Service en la elección ideal para hospedar aplicaciones orientadas a la web.
+
+#### Aplicaciones web
+
+App Service incluye compatibilidad completa para hospedar aplicaciones web mediante ASP.NET, ASP.NET Core, Java, Ruby, Node.js, PHP o Python. Puede elegir Windows o Linux como sistema operativo del host.
+
+#### Aplicaciones de API
+
+Al igual que al hospedar un sitio web, puede compilar API web basadas en REST mediante el lenguaje y el marco que prefiera. Se obtiene compatibilidad completa con Swagger y la posibilidad de empaquetar y publicar la API en Azure Marketplace. Las aplicaciones producidas se pueden consumir desde cualquier cliente basado en HTTP o HTTPS.
+
+#### Trabajos web
+
+Se puede usar la característica WebJobs para ejecutar un programa (.exe, Java, PHP, Python o Node.js) o un script (.cmd, .bat, PowerShell o Bash) en el mismo contexto que una aplicación web, aplicación de API o aplicación móvil. Los puede programar o ejecutar un desencadenador. Los trabajos web suelen usarse para ejecutar tareas en segundo plano como parte de la lógica de aplicación.
+
+#### Aplicaciones móviles
+
+Use la característica Mobile Apps de App Service a fin de compilar rápidamente un back-end para aplicaciones iOS y Android. Con unos pocos clics en el Portal de Azure, puede realizar lo siguiente:
+
+- Almacenar los datos de aplicaciones móviles en una base de datos SQL basada en la nube.
+- Autenticar a clientes con proveedores sociales comunes, como MSA, Google, Twitter y Facebook.
+- Enviar notificaciones de inserción.
+- Ejecutar lógica de back-end personalizada en C# o Node.js.
+
+En el lado de la aplicación móvil, hay compatibilidad con el SDK para aplicaciones nativas de iOS y Android, Xamarin y React.
+
+
+## Descripción de las redes virtuales de Azure
+
+**Las redes virtuales** y las subredes virtuales de Azure **permiten a los recursos de Azure**, como las máquinas virtuales, las aplicaciones web y las bases de datos, **comunicarse entre sí**, con los usuarios de Internet y con los equipos cliente en el entorno local. Una red de Azure se puede considerar una extensión de la red local con recursos que vinculan otros recursos de Azure.
+
+Las redes virtuales de Azure proporcionan las importantes funcionalidades de red siguientes:
+
+- Aislamiento y segmentación
+- Comunicación con Internet
+- Comunicación entre recursos de Azure
+- Comunicación con los recursos locales
+- Enrutamiento del tráfico de red
+- Filtrado del tráfico de red
+- Conexión de redes virtuales
+
+Las redes virtuales de Azure admiten puntos de conexión públicos y privados para permitir la comunicación entre recursos externos o internos con otros recursos internos.
+
+- Los puntos de conexión públicos tienen una dirección IP pública y son accesibles desde cualquier parte del mundo.
+- Los puntos de conexión privados existen dentro de una red virtual y tienen una dirección IP privada en el espacio de direcciones de esa red virtual.
+### Aislamiento y segmentación
+
+La red virtual de Azure **permite crear varias redes virtuales aisladas**.
+
+Al configurar una red virtual, se define un espacio de direcciones IP privadas con intervalos de direcciones IP públicas o privadas. El intervalo IP solo existe dentro de la red virtual y no es enrutable en Internet. 
+
+Después, puede dividir ese espacio de direcciones IP en subredes y asignar parte del espacio de direcciones definido a cada subred con nombre.
+
+Para la resolución de nombres, puede usar el servicio de resolución de nombres integrado en Azure. También puede configurar la red virtual para que use un servidor DNS interno o externo.
+
+### Comunicación con Internet
+
+Puede permitir conexiones entrantes desde Internet mediante la asignación de una dirección IP pública a un recurso de Azure o la colocación del recurso detrás de un equilibrador de carga público.
+
+### Comunicación entre los recursos de Azure
+
+Le interesará habilitar los recursos de Azure para que se comuniquen entre sí de forma segura. Puede hacerlo de dos maneras:
+
+- **Las redes virtuales no solo pueden conectar máquinas virtuales**, sino también otros recursos de Azure, como App Service Environment para Power Apps, Azure Kubernetes Service y conjuntos de escalado de máquinas virtuales de Azure.
+
+- **Los puntos de conexión de servicio se pueden conectar a otros tipos de recursos** de Azure, como cuentas de almacenamiento y bases de datos de Azure SQL. Este enfoque permite vincular varios recursos de Azure con las redes virtuales para mejorar la seguridad y proporcionar un enrutamiento óptimo entre los recursos.
+
+### Comunicación con recursos locales
+
+Las redes virtuales de Azure permiten vincular entre sí los recursos del entorno local y dentro de la suscripción de Azure. De hecho, puede crear una red que abarque tanto el entorno local como el entorno en la nube. Existen tres mecanismos para lograr esta conectividad:
+
+- Las conexiones de red privada virtual de **punto a sitio** se establecen desde un equipo ajeno a la organización a la red corporativa. En este caso, el equipo cliente inicia una conexión VPN cifrada para conectarse a la red virtual de Azure.
+
+- Las redes virtuales privadas de **sitio a sitio** vinculan el dispositivo o puerta de enlace de VPN local con la puerta de enlace de VPN de Azure en una red virtual. De hecho, puede parecer que los dispositivos de Azure están en la red local. La conexión se cifra y funciona a través de Internet.
+
+- **Azure ExpressRoute** proporciona una conectividad privada dedicada a Azure que no se desplaza por Internet. ExpressRoute es útil para los entornos donde se necesita más ancho de banda e incluso mayores niveles de seguridad.
+
+### Enrutamiento del tráfico de red
+
+De forma predeterminada, Azure enruta el tráfico entre las subredes de todas las redes virtuales conectadas, las redes locales e Internet. También puede **controlar el enrutamiento** e invalidar esa configuración del siguiente modo:
+
+- Las **tablas de rutas** permiten definir reglas sobre cómo se debe dirigir el tráfico. Puede crear tablas de rutas personalizadas que controlen cómo se enrutan los paquetes entre las subredes.
+- El Protocolo de puerta de enlace de borde (**BGP**) funciona con puertas de enlace de VPN de Azure, Azure Route Server o Azure ExpressRoute para propagar las rutas BGP locales a las redes virtuales de Azure.
+
+### Filtrado del tráfico de red
+
+Las redes virtuales de Azure **permiten filtrar el tráfico** entre las subredes mediante los métodos siguientes:
+
+- Los **grupos de seguridad** de red son recursos de Azure que pueden contener varias reglas de seguridad de entrada y salida. Estas reglas se pueden definir para permitir o bloquear el tráfico en función de factores como el protocolo, el puerto y las direcciones IP de destino y origen.
+
+- Las aplicaciones virtuales de red son máquinas virtuales especializadas que se pueden comparar con un dispositivo de red protegido. Una **aplicación virtual** de red ejerce una **función de red determinada**, como ejecutar un firewall o realizar la optimización de la red de área extensa (WAN).
+
+### Conexión de redes virtuales
+
+Puede vincular redes virtuales entre sí mediante el emparejamiento de red virtual. **El emparejamiento permite que dos redes virtuales se conecten directamente entre sí**. El tráfico de red entre redes emparejadas es privado y se desplaza por la red troncal de Microsoft, y nunca entra en la red pública de Internet. El emparejamiento permite que los recursos de cada red virtual se comuniquen entre sí. Estas redes virtuales pueden estar en regiones distintas, lo que permite crear una red global interconectada con Azure.
+
+Las rutas definidas por el usuario (**UDR**) permiten **controlar las tablas de enrutamiento** entre subredes dentro de una red virtual o entre redes virtuales. Esto permite un mayor control sobre el flujo de tráfico de red.
+
+## Configuración del acceso de red
+
+En este ejercicio, configurarás el acceso a la máquina virtual (VM) que has creado antes en este módulo.
+
+	 Importante
+	
+	El espacio aislado de Microsoft Learn debe seguir en ejecución. Si se ha agotado el tiempo de espera del espacio aislado, tendrá que repetir el ejercicio anterior (**Ejercicio: Creación de una máquina virtual de Azure**).
+
+Para comprobar que la máquina virtual que creó anteriormente todavía se está ejecutando, use el siguiente comando:
+
+``` AZURE CLI
+az vm list
+```
+
+Si recibe una respuesta vacía `[]`, debe completar de nuevo el primer ejercicio de este módulo. Si el resultado muestra la máquina virtual actual y su configuración, puede continuar.
+
+En este momento, la máquina virtual que ha creado y en la que ha instalado Nginx no es accesible desde Internet.
+
+Crearás un grupo de seguridad de red que lo cambiará y permitirá el acceso HTTP de entrada en el puerto 80.
+
+### Tarea 1: Acceso al servidor web
+
+En este procedimiento se obtiene la dirección IP de la máquina virtual y se intenta acceder a la página principal del servidor web.
+
+1. Ejecute el siguiente comando `az vm list-ip-addresses` para obtener la dirección IP de la máquina virtual y almacenar el resultado como una variable de Bash:
+
+```AZIRE CLI
+IPADDRESS="$(az vm list-ip-addresses --resource-group [sandbox resource group name] --name my-vm --query "[].virtualMachine.network.publicIpAddresses[*].ipAddress" --output tsv)"
+```
+
+2. Ejecuta el siguiente comando `curl` para descargar la página principal:
+
+``` BASH
+    curl --connect-timeout 5 http://$IPADDRESS
+```
+
+El argumento `--connect-timeout` especifica que se conceden hasta cinco segundos para que se produzca la conexión. Después de cinco segundos, verás un mensaje de error que indica que se ha agotado el tiempo de espera de la conexión:
+ 
+   
+```Resultado
+curl: (28) Connection timed out after 5001 milliseconds
+```
+
+Este mensaje significa que no se pudo acceder a la máquina virtual dentro del tiempo de espera.
+
+3. Como paso opcional, intenta acceder al servidor web desde un explorador: 
+
+	a. Ejecuta lo siguiente para imprimir la dirección IP de la máquina virtual en la consola:
+	```BASH
+	echo $IPADDRESS
+```
+
+	Verás una dirección IP, por ejemplo, 
+
+	b. Copia en el portapapeles la dirección IP que vea.
+    
+	c. Abre una nueva pestaña del explorador y vayas al servidor web. Transcurridos unos instantes, verás que la conexión no se está produciendo.
+    
+    Si esperas a que se agote el tiempo de espera del explorador, verás algo parecido a esto:
+
+	
+
+	d. Mantén la pestaña abierta para usarla más tarde.
+
+
+### Tarea 2: Enumeración de las reglas de grupo de seguridad de red actuales
+
+No se pudo acceder al servidor web. Para averiguar el motivo, vamos a examinar las reglas actuales del grupo de seguridad de red.
+
+1. Ejecuta el siguiente comando `az network nsg list` para que muestre los grupos de seguridad de red asociados a la máquina virtual:
+
+```AZURE CLI
+az network nsg list --resource-group [sandbox resource group name] --query '[].name' --output tsv
+```
+
+Veremos lo siguiente:
+
+```Resultado
+my-vmNSG
+```
+
+Cada máquina virtual de Azure está asociada a, al menos, un grupo de seguridad de red. En este caso, Azure te creó un grupo de seguridad de red denominado_my-vmNSG_.
+
+2. Ejecuta el siguiente comando `az network nsg rule list` mostrar las reglas asociadas al grupo de seguridad de red denominado _my-vmNSG_:
+
+```AZURE CLI
+az network nsg rule list --resource-group [sandbox resource group name] --nsg-name my-vmNSG
+```
+
+Verás un bloque grande de texto en formato JSON en la salida. En el paso siguiente, ejecutarás un comando similar que facilita la lectura de este resultado.
+
+3. Ejecuta por segunda vez el comando `az network nsg rule list`. Esta vez, use el argumento `--query` para recuperar solo el nombre, la prioridad, los puertos afectados y el acceso (**Permitir** o **Denegar**) para cada regla. El argumento `--output` da formato a la salida como una tabla para que sea fácil de leer.
+
+```AZURE CLI
+az network nsg rule list --resource-group [sandbox resource group name] --nsg-name my-vmNSG --query '[].{Name:name, Priority:priority, Port:destinationPortRange, Access:access}' --output table
+```
+
+Verá lo siguiente:
+
+```RESULTADO
+Name              Priority    Port    Access
+-----------------  ----------  ------  --------
+default-allow-ssh  1000        22      Allow
+```
+
+Verás la regla predeterminada _default-allow-ssh_. Esta regla permite conexiones entrantes a través del puerto 22 (SSH). SSH (Secure Shell) es un protocolo que se usa en Linux para permitir que los administradores accedan al sistema de forma remota. La prioridad de esta entrada es 1000. Las reglas se procesan en orden de prioridad, donde los números más bajos se procesan antes que los números más altos.
+    
+
+De forma predeterminada, un grupo de seguridad de red de una máquina virtual de una máquina virtual Linux solo permite el acceso a la red en el puerto 22. Esto permite que los administradores accedan al sistema. También debe permitir las conexiones entrantes en el puerto 80, que permite el acceso a través de HTTP.
+
+
+## Tarea 3: Creación de la regla de seguridad de red
+
+En este caso, crearás una regla de seguridad de red que permita el acceso de entrada en el puerto 80 (HTTP).
