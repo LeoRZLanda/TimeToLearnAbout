@@ -1022,6 +1022,24 @@ La extensión de script personalizado es una manera fácil de descargar y ejecut
     
 La máquina virtual tardará unos minutos en aparecer. Ha asignado el nombre **my-vm** a la máquina virtual. Use este nombre para hacer referencia a la máquina virtual en los pasos posteriores.
 
+Te respondera con algo por el estilo
+
+```AZURE CLI
+{
+  "fqdns": "",
+  "id": "/subscriptions/c9c4cc6e-2adb-4f59-bbd1-4f966e547bd0/resourceGroups/learn-e0401e2d-376b-4ff8-a3a5-f09c2c30ea72/providers/Microsoft.Compute/virtualMachines/my-vm",
+  "location": "westus",
+  "macAddress": "00-0D-3A-36-DD-74",
+  "powerState": "VM running",
+  "privateIpAddress": "10.0.0.4",
+  "publicIpAddress": "13.88.8.48",
+  "resourceGroup": "learn-e0401e2d-376b-4ff8-a3a5-f09c2c30ea72",
+  "zones": ""
+}
+```
+
+guardaremos la ip publica para después
+
 2. Ejecuta el siguiente comando `az vm extension set` para configurar Nginx en la máquina virtual:
 
 
@@ -1036,11 +1054,56 @@ az vm extension set \
   --protected-settings '{"commandToExecute": "./configure-nginx.sh"}'
 ```
 
-Este comando usa la extensión de script personalizado para ejecutar un script de Bash en la máquina virtual. El script se almacena en GitHub. Mientras se ejecuta el comando, puede optar por [examinar el script de Bash](https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh) en una pestaña independiente del explorador. Para resumir, el script: 
-	a. Ejecuta `apt-get update` para descargar la información más reciente del paquete desde Internet. Este paso ayuda a garantizar que el siguiente comando pueda encontrar la versión más reciente del paquete Nginx.
-	b. Instala Nginx.
+Nos respondera 
+
+```AZURE CLI
+{
+  "autoUpgradeMinorVersion": true,
+  "enableAutomaticUpgrade": null,
+  "forceUpdateTag": null,
+  "id": "/subscriptions/c9c4cc6e-2adb-4f59-bbd1-4f966e547bd0/resourceGroups/learn-e0401e2d-376b-4ff8-a3a5-f09c2c30ea72/providers/Microsoft.Compute/virtualMachines/my-vm/extensions/customScript",
+  "instanceView": null,
+  "location": "westus",
+  "name": "customScript",
+  "protectedSettings": null,
+  "protectedSettingsFromKeyVault": null,
+  "provisioningState": "Succeeded",
+  "publisher": "Microsoft.Azure.Extensions",
+  "resourceGroup": "learn-e0401e2d-376b-4ff8-a3a5-f09c2c30ea72",
+  "settings": {
+    "fileUris": [
+      "https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh"
+    ]
+  },
+  "suppressFailures": null,
+  "tags": null,
+  "type": "Microsoft.Compute/virtualMachines/extensions",
+  "typeHandlerVersion": "2.1",
+  "typePropertiesType": "customScript"
+}
+```
+
+
+Este comando usa la extensión de script personalizado para ejecutar un script de Bash en la máquina virtual. El script se almacena en GitHub. Mientras se ejecuta el comando, puede optar por [examinar el script de Bash](https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh) en una pestaña independiente del explorador. 
+
+Ahora nos conectaremos a la maquina virtual con, aqui usaremos la ip publica de nuestra VM
+
+```AZURE CLI
+ssh azureuser@13.88.8.48
+```
+
+Continuaremos con: 
+	a. Ejecutar `sudo apt-get update` para descargar la información más reciente del paquete desde Internet. Este paso ayuda a garantizar que el siguiente comando pueda encontrar la versión más reciente del paquete Nginx.
+	b. Instala Nginx con `sudo apt-get -y install nginx`.
 	c. Establece la página principal, _/var/www/html/index.html_, para que imprima un mensaje de bienvenida en el que se incluye el nombre de host de la máquina virtual.
 
-## Continuar
+Para el punto c nos dirigimos a dicho directrio y ejecutaremos `cat index.html` y veremos que incluye el mensaje solicitado
+
+##"" Continuar
 
 Eso es todo para este ejercicio. El espacio aislado seguirá ejecutándose y volverás a este punto en algunas unidades para actualizar la configuración de red para que puedas acceder al sitio web.
+
+## Descripción de Azure Virtual Desktop
+
+Otro tipo de máquina virtual es Azure Virtual Desktop. Azure Virtual Desktop es un servicio de virtualización de escritorios y aplicaciones que se ejecuta en la nube. Te permite usar una versión hospedada en la nube de Windows desde cualquier ubicación. Azure Virtual Desktop funciona en dispositivos y sistemas operativos, y funciona con aplicaciones que puede usar para acceder a escritorios remotos o a la mayoría de exploradores modernos.
+
