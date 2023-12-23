@@ -1088,7 +1088,7 @@ Este comando usa la extensión de script personalizado para ejecutar un script d
 
 Ahora nos conectaremos a la maquina virtual con, aqui usaremos la ip publica de nuestra VM
 
-```AZURE CLI
+```BASH
 ssh azureuser@13.88.8.48
 ```
 
@@ -1393,7 +1393,7 @@ Este mensaje significa que no se pudo acceder a la máquina virtual dentro del t
     
     Si esperas a que se agote el tiempo de espera del explorador, verás algo parecido a esto:
 
-	
+	![[Pasted image 20231222173510.png]]
 
 	d. Mantén la pestaña abierta para usarla más tarde.
 
@@ -1491,7 +1491,7 @@ Veras lo siguiente
 
 Verá lo siguiente:
 
-
+![[Pasted image 20231222173841.png]]
 
 Buen trabajo. En la práctica, puedes crear un grupo de seguridad de red independiente que incluya las reglas de acceso de red entrantes y salientes que necesite. Si tienes varias máquinas virtuales que tienen el mismo propósito, puedes asignar ese grupo de seguridad de red a cada máquina virtual en el momento de crearla. Esta técnica permite controlar el acceso de red a varias máquinas virtuales en un único conjunto central de reglas.
 
@@ -1500,3 +1500,147 @@ Buen trabajo. En la práctica, puedes crear un grupo de seguridad de red indepen
 El espacio aislado limpia los recursos automáticamente cuando haya terminado con este módulo.
 
 Al trabajar en una suscripción propia, se recomienda identificar al final de un proyecto si aún necesita los recursos creados. Los recursos que dejas en ejecución pueden costar dinero. Puede eliminar los recursos de forma individual o eliminar el grupo de recursos para eliminar todo el conjunto de recursos.
+
+## Descripción de redes privadas virtuales de Azure
+
+Una red privada virtual (VPN) **usa un túnel cifrado** en otra red. Normalmente, las VPN se implementan para conectar entre sí dos o más redes privadas de confianza a través de una red que no es de confianza (normalmente, la red pública de Internet). El tráfico se cifra mientras viaja por la red que no es de confianza para evitar ataques de interceptación o de otro tipo. Las VPN pueden permitir que las redes compartan información confidencial de forma segura.
+
+### Puertas de enlace de VPN
+
+Una puerta de enlace de VPN es un tipo de puerta de enlace de red virtual. Las instancias de Azure VPN Gateway se implementan en una subred dedicada de la red virtual y **permiten** la conectividad siguiente:
+
+- Conectar los centros de datos locales a redes virtuales a través de una conexión de **sitio a sitio**.
+- Conectar los dispositivos individuales a redes virtuales a través de una conexión de **punto a sitio**.
+- Conectar las redes virtuales a otras redes virtuales a través de una **conexión entre redes**.
+
+Todas las transferencias de datos se cifran en un túnel privado mientras atraviesan Internet. **Solo se puede implementar una única instancia de puerta de enlace de VPN en cada red virtual**. Sin embargo, se puede usar una puerta de enlace para conectarse a varias ubicaciones, que incluye otras redes virtuales o centros de datos locales.  
+
+Al configurar una instancia de VPN Gateway, debe **especificar el tipo de red privada virtual**, es decir, **basada en directivas o basada en rutas**. La distinción principal entre estos dos tipos es cómo determinan qué tráfico necesita cifrado. En Azure, independientemente del tipo de red privada virtual, el método de autenticación que se emplea es una clave previamente compartida.
+
+- Las instancias de VPN Gateway **basadas en directivas** **especifican de forma estática la dirección IP de los paquetes que se deben cifrar a través de cada túnel**. Este tipo de dispositivo evalúa cada paquete de datos en función de los conjuntos de direcciones IP para elegir el túnel a través del cual se va a enviar el paquete.
+
+- En las puertas de enlace **basadas en rutas**, los túneles IPSec se modelan **como una interfaz de red o una interfaz de túnel virtual**. El enrutamiento IP (ya sean rutas estáticas o protocolos de enrutamiento dinámico) decide cuál de estas interfaces de túnel se va a usar al enviar cada paquete. Las redes privadas virtuales basadas en rutas son el **método preferido para conectar dispositivos locales**. Son más resistentes a los cambios de la topología, como la creación de subredes.
+
+Si necesita alguno de los siguientes tipos de conectividad, use una instancia de VPN Gateway **basada en rutas**:
+
+- Conexiones entre redes virtuales
+- Conexiones de punto a sitio
+- Conexiones de varios sitios
+- Coexistencia con una puerta de enlace de Azure ExpressRoute
+
+### Escenarios de alta disponibilidad
+
+Si va a configurar una VPN para mantener la información segura, también querrá asegurarse de que es una configuración de VPN de alta disponibilidad y tolerante a errores. Hay varias maneras de maximizar la resistencia de la puerta de enlace de VPN.
+
+#### Configuración de activo-en espera
+
+De forma predeterminada, las instancias de VPN Gateway se implementan como dos instancias en una configuración de activo-en espera, incluso si solo ve un recurso de VPN Gateway en Azure. **Cuando el mantenimiento planeado o la interrupción imprevista afectan a la instancia activa, la instancia en espera asume de forma automática la responsabilidad** de las conexiones sin ninguna intervención del usuario. Durante esta conmutación por error, las conexiones se interrumpen, pero por lo general se restauran en cuestión de segundos si se trata del mantenimiento planeado y en un plazo de 90 segundos en el caso de las interrupciones imprevistas.
+
+#### Activo/activo
+
+Al incorporar compatibilidad con el protocolo de enrutamiento de BGP, también puede implementar puertas de enlace VPN en una configuración del tipo activo/activo. En esta configuración, **se asigna una IP pública única a cada instancia. Después, se crean túneles independientes desde el dispositivo local a cada dirección IP**. Se puede ampliar la alta disponibilidad mediante la implementación de un dispositivo VPN local adicional.
+
+#### Conmutación por error de ExpressRoute
+
+Otra opción de alta disponibilidad consiste en configurar una **instancia de VPN Gateway como una ruta segura de conmutación por error para las conexiones ExpressRoute**. Los circuitos ExpressRoute tienen resistencia integrada. Sin embargo, no son inmunes a los problemas físicos que afectan a los cables que entregan conectividad ni a las interrupciones que afectan a la ubicación completa de ExpressRoute. En escenarios de alta disponibilidad, en los que existe un riesgo asociado a una interrupción de un circuito ExpressRoute, también puede aprovisionar una instancia de VPN Gateway que usa Internet como un método alternativo de conectividad. De este modo, puede garantizar que siempre haya una conexión a las redes virtuales.
+
+#### Puertas de enlace con redundancia de zona
+
+En las regiones que admiten zonas de disponibilidad, se pueden implementar puertas de enlace VPN y ExpressRoute en una configuración con redundancia de zona. Esta configuración aporta una mayor disponibilidad, escalabilidad y resistencia a las puertas de enlace de red virtual. Implementar puertas de enlace en Azure Availability Zones **separa de forma física y lógica las puertas de enlace dentro de una región**, al mismo tiempo que protege la conectividad de red local en Azure de errores de nivel de zona. Estas puertas de enlace requieren diferentes referencias de almacén (SKU) de puerta de enlace y usan direcciones IP públicas estándar en lugar de direcciones IP públicas básicas.
+
+## Describir Azure ExpressRoute
+
+ExpressRoute le **permite ampliar las redes locales** a la nube de Microsoft mediante una conexión privada con la ayuda de un proveedor de conectividad. Esta conexión se denomina circuito ExpressRoute. Con ExpressRoute, puede establecer conexiones con servicios en la nube de Microsoft, como Microsoft Azure y Microsoft 365. Esto le permite conectar oficinas, centros de datos u otras instalaciones a la nube de Microsoft. Cada ubicación tendría su propio circuito ExpressRoute.
+
+La conectividad puede ser desde una red de conectividad universal (IP VPN), una red Ethernet de punto a punto o una conexión cruzada virtual a través de un proveedor de conectividad en una instalación de ubicación compartida. Las conexiones de ExpressRoute no pasan por la red pública de Internet. Esto permite a las conexiones de ExpressRoute ofrecer más confiabilidad, más velocidad, latencia coherentes y mayor seguridad que las conexiones normales a través de Internet.
+
+### Características y ventajas de ExpressRoute
+
+El uso de ExpressRoute como servicio de conexión entre Azure y las redes locales tiene varias ventajas.
+
+- Conectividad a servicios en la nube de Microsoft en todas las regiones dentro de la región geopolítica.
+- Conectividad global a los servicios de Microsoft en todas las regiones con Global Reach de ExpressRoute.
+- Enrutamiento dinámico entre la red y Microsoft a través del Protocolo de puerta de enlace de borde (BGP).
+- Redundancia integrada en todas las ubicaciones de configuración entre pares para una mayor confiabilidad.
+
+#### Conectividad con los Servicios en la nube de Microsoft
+
+ExpressRoute permite el acceso directo a los siguientes servicios en todas las regiones:
+
+- Microsoft Office 365
+- Microsoft Dynamics 365
+- Servicios de proceso de Azure, como Azure Virtual Machines
+- Servicios en la nube de Azure, como Azure Cosmos DB y Azure Storage
+
+#### Conectividad global
+
+Puede permitir que Global Reach de ExpressRoute intercambie datos entre los sitios locales si conecta los diferentes circuitos ExpressRoute. Por ejemplo, supongamos que tiene una oficina en Asia y un centro de datos en Europa, ambos con circuitos ExpressRoute que los conectan a la red de Microsoft. Puede usar Global Reach de ExpressRoute para conectar esas dos instalaciones, lo que les **permite comunicarse sin transferir datos a través de la red pública de Internet**.
+
+#### Enrutamiento dinámico
+
+ExpressRoute usa el BGP. BGP se usa para **intercambiar rutas entre las redes locales y los recursos que se ejecutan en Azure**. Este protocolo permite el enrutamiento dinámico entre la red local y los servicios que se ejecutan en la nube de Microsoft.
+
+#### Redundancia integrada
+
+Cada proveedor de conectividad usa dispositivos redundantes para garantizar que las conexiones establecidas con Microsoft tengan **alta disponibilidad**. Puede configurar varios circuitos para complementar esta característica.
+
+### Modelos de conectividad de ExpressRoute
+
+ExpressRoute admite cuatro modelos que puede usar para conectar la red local con la nube de Microsoft:
+
+- Ubicación de CloudExchange
+- Conexión Ethernet de punto a punto
+- Conexión universal
+- Directamente desde sitios de ExpressRoute
+
+#### Ubicación compartida en un intercambio en la nube
+
+La ubicación conjunta hace referencia al centro de datos, la oficina u otras instalaciones que se encuentran físicamente en un intercambio en la nube, como un ISP. Si la instalación tiene la ubicación compartida en un intercambio en la nube, puede solicitar una conexión cruzada virtual a la nube de Microsoft.
+
+#### Conexión Ethernet de punto a punto
+
+La conexión Ethernet de punto a punto hace referencia al uso de una conexión punto a punto para conectar la instalación a la nube de Microsoft.
+
+#### Redes universales
+
+Con la conectividad universal, puede integrar la red de área extensa (WAN) con Azure si proporciona conexiones a las oficinas y los centros de datos. Azure se integra con la conexión WAN para proporcionarle una conexión, como la que tendría entre el centro de datos y las sucursales.
+
+#### Directamente desde sitios de ExpressRoute
+
+Puede conectarse directamente a la red global de Microsoft en una ubicación de emparejamiento distribuida estratégicamente por todo el mundo. ExpressRoute Direct proporciona conectividad dual de 100 Gbps o 10 Gbps, que es compatible con la conectividad activa/activa a escala.
+
+### Consideraciones sobre la seguridad
+
+Con ExpressRoute **los datos no viajan a través de la red pública de Internet** y, por tanto, no se exponen a los posibles riesgos asociados a las comunicaciones de Internet. ExpressRoute es una conexión privada de la infraestructura local a la infraestructura de Azure. Incluso si tiene una conexión ExpressRoute, las consultas de DNS, la comprobación de la lista de revocación de certificados y las solicitudes de Azure Content Delivery Network se siguen enviando a través de la red pública de Internet.
+
+## Describir Azure DNS
+
+Azure DNS es un servicio de hospedaje para dominios DNS que ofrece resolución de nombres mediante la infraestructura de Microsoft Azure. Al hospedar dominios en Azure, puede administrar los registros DNS con las mismas credenciales, API, herramientas y facturación que con los demás servicios de Azure.
+
+### Ventajas de Azure DNS
+
+Azure DNS saca provecho del ámbito y la escala de Microsoft Azure para proporcionar numerosas ventajas, incluidas las siguientes:
+
+- Confiabilidad y rendimiento
+- Seguridad
+- Facilidad de uso
+- Redes virtuales personalizables
+- Registros de alias
+
+#### Confiabilidad y rendimiento
+
+Los dominios DNS de Azure DNS se hospedan en la red global de servidores de nombres DNS de Azure, y proporcionan resistencia y alta disponibilidad. Azure DNS usa **redes de difusión por proximidad** para que el servidor DNS más próximo disponible responda a cada consulta de DNS para proporcionar un mejor rendimiento y una mayor disponibilidad para el dominio.
+
+#### Seguridad
+
+Azure DNS se basa en Azure Resource Manager, que proporciona características tales como:
+
+- Control de acceso basado en rol de Azure (**Azure RBAC**) para controlar quién accede a acciones específicas en la organización.
+- **Registros de actividad**: para supervisar cómo un usuario de su organización modificó un recurso o para encontrar errores al solucionar problemas.
+- **Bloqueo de recursos** para bloquear una suscripción, un grupo de recursos o un recurso. Los bloqueos impiden que otros usuarios de la organización eliminen o modifiquen de forma accidental recursos críticos.
+
+#### Facilidad de uso
+
+Azure DNS puede administrar registros DNS para los servicios de Azure y también proporciona el servicio de nombres de dominio para los recursos externos. Azure DNS está integrado en Azure Portal y usa las mismas credenciales, la misma facturación y el mismo contrato de soporte técnico que los demás servicios de Azure.
+
+Como Azure DNS se ejecuta en Azure, significa que puede administrar los dominios y registros con Azure Portal, cmdlets de Azure PowerShell y la CLI de Azure multiplataforma. Las aplicaciones que requieren la administración automática de DNS se pueden integrar con el servicio mediante las API REST y los SDK.
