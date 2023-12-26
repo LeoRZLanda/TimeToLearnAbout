@@ -925,7 +925,7 @@ Después de completar este módulo, podrá:
 - Definir puntos de conexión públicos y privados.
 
 
-## Descripción de Azure Virtual Machines
+### Descripción de Azure Virtual Machines
 
 Con Azure Virtual Machines (VM), puedes crear y usar máquinas virtuales en la nube. Estas máquinas virtuales proporcionan una infraestructura como servicio (IaaS) en forma de un servidor virtualizado.
 
@@ -941,11 +941,11 @@ Incluso puedes crear o usar una imagen ya creada para aprovisionar rápidamente 
 
 Una imagen es una plantilla que se usa para crear una máquina virtual y puede que ya incluya un sistema operativo y otro software, como herramientas de desarrollo o entornos de hospedaje web.
 
-### Escalado de máquinas virtuales en Azure
+#### Escalado de máquinas virtuales en Azure
 
 Se pueden ejecutar máquinas virtuales únicas para pruebas, desarrollo o tareas secundarias. También se pueden agrupar las máquinas virtuales para proporcionar alta disponibilidad, escalabilidad y redundancia. Azure también puede administrar la agrupación de máquinas virtuales con características como conjuntos de escalado y conjuntos de disponibilidad.
 
-#### Conjuntos de escalado de máquinas virtuales
+##### Conjuntos de escalado de máquinas virtuales
 
 Los conjuntos de escalado de máquinas virtuales permiten crear y administrar un grupo de máquinas virtuales idénticas, de carga equilibrada.
 
@@ -956,7 +956,7 @@ En su lugar, con los conjuntos de escalado de máquinas virtuales, Azure automat
 El número de instancias de máquina virtual puede aumentar o disminuir automáticamente según la demanda, o bien puede establecerlo para que se escale en función de una programación definida. Los conjuntos de escalado de máquinas virtuales también **implementan automáticamente un equilibrador de carga** para asegurarse de que los recursos se usan de forma eficaz. Con los conjuntos de escalado de máquinas virtuales, puede crear servicios a gran escala para áreas como proceso, macrodatos y cargas de trabajo de contenedor.
 
 
-#### Conjuntos de disponibilidad de máquinas virtuales
+##### Conjuntos de disponibilidad de máquinas virtuales
 
 Los conjuntos de disponibilidad de máquinas virtuales son otra herramienta que le ayudará a crear un entorno más **resistente y de alta disponibilidad**. Los conjuntos de disponibilidad están diseñados para garantizar que las máquinas virtuales escalen las actualizaciones y tengan una conectividad de red y potencia variadas, lo que **evita que se pierdan** todas las máquinas virtuales **debido a un solo fallo de energía o de la red**.
 
@@ -968,7 +968,7 @@ Los conjuntos de disponibilidad lo hacen mediante la agrupación de las máquina
 
 Lo mejor de todo es que la configuración de un conjunto de disponibilidad no supone ningún costo adicional. Solo paga por las instancias de máquina virtual que cree.
 
-### Ejemplos de cuándo usar máquinas virtuales
+#### Ejemplos de cuándo usar máquinas virtuales
 
 Algunos ejemplos comunes o casos de uso para máquinas virtuales son los siguientes:
 
@@ -980,11 +980,11 @@ Algunos ejemplos comunes o casos de uso para máquinas virtuales son los siguien
 
 - **Durante la recuperación ante desastres**: como sucede con la ejecución de ciertos tipos de aplicaciones en la nube y la ampliación de una red local a la nube, puede obtener un ahorro considerable en costos si se usa un enfoque basado en IaaS para la recuperación ante desastres. Si se produce un error en un centro de datos principal, puede crear máquinas virtuales que se ejecuten en Azure para ejecutar las aplicaciones críticas y, después, puede apagarlas cuando el centro de datos principal vuelva a estar operativo.
 
-### Traslado a la nube con máquinas virtuales
+#### Traslado a la nube con máquinas virtuales
 
 Las máquinas virtuales también son una opción excelente cuando se mueve de un servidor físico a la nube (también conocido como Lift-and-shift). Puedes crear una imagen del servidor físico y hospedarla en una máquina virtual con pocos o ningún cambio. Al igual que un servidor local físico, debes mantener la máquina virtual: es responsable de mantener el sistema operativo y el software instalados.
 
-### Recursos de máquina virtual
+#### Recursos de máquina virtual
 
 Al aprovisionar una máquina virtual, también tendrás la oportunidad de elegir los recursos asociados a esa máquina virtual, como los siguientes:
 
@@ -992,7 +992,7 @@ Al aprovisionar una máquina virtual, también tendrás la oportunidad de elegir
 - Discos de almacenamiento (unidades de disco duro, unidades de estado sólido, etc.)
 - Redes (red virtual, dirección IP pública y configuración de puertos)
 
-## Ejercicio: Creación de una máquina virtual de Azure
+### Ejercicio: Creación de una máquina virtual de Azure
 
 En este ejercicio, crearemos una máquina virtual (VM) de Azure e instalar Nginx, un servidor web popular.
 
@@ -1000,7 +1000,7 @@ Por ejemplo, puedemos usar Azure Portal, la CLI de Azure, Azure PowerShell o una
 
 En este caso, usaremos la CLI de Azure.
 
-### Tarea 1: Creación de una máquina virtual Linux e instalación de Nginx
+#### Tarea 1: Creación de una máquina virtual Linux e instalación de Nginx
 
 Usa los siguientes comandos de la CLI de Azure para crear una máquina virtual Linux e instalar Nginx. Una vez creada la máquina virtual, usará la extensión de script personalizado para instalar Nginx. 
 
@@ -1103,32 +1103,32 @@ Para el punto c nos dirigimos a dicho directrio y ejecutaremos `cat index.html` 
 
 Eso es todo para este ejercicio. El espacio aislado seguirá ejecutándose y volverás a este punto en algunas unidades para actualizar la configuración de red para que puedas acceder al sitio web.
 
-## Descripción de Azure Virtual Desktop
+### Descripción de Azure Virtual Desktop
 
 Otro tipo de máquina virtual es Azure Virtual Desktop. Azure Virtual Desktop es un servicio de virtualización de escritorios y aplicaciones que se ejecuta en la nube. **Te permite usar una versión hospedada en la nube de Windows desde cualquier ubicación.** Azure Virtual Desktop funciona en dispositivos y sistemas operativos, y funciona con aplicaciones que puede usar para acceder a escritorios remotos o a la mayoría de exploradores modernos.
 
-### Aumento de la seguridad
+#### Aumento de la seguridad
 
 Azure Virtual Desktop proporciona administración centralizada de seguridad para los escritorios de los usuarios con Microsoft Entra ID. Puedes habilitar la autenticación multifactor para proteger los inicios de sesión de los usuarios. También puedes proteger el acceso a los datos mediante la asignación a los usuarios de controles de acceso basados en roles (RBAC) detallados.
 
 Con Azure Virtual Desktop, los datos y las aplicaciones se separan del hardware local y El escritorio y las aplicaciones reales se ejecutan en la nube, lo que significa que se reduce el riesgo de dejar datos confidenciales en un dispositivo personal. Además, las sesiones de usuario están aisladas en entornos de una o varias sesiones.
 
-### Implementación de sesión múltiple de Windows 10 o Windows 11
+#### Implementación de sesión múltiple de Windows 10 o Windows 11
 
 Azure Virtual Desktop permite usar la sesión múltiple de Windows 10 o Windows 11 Enterprise, el único sistema operativo basado en cliente de Windows que permite varios usuarios simultáneos en una sola máquina virtual. Azure Virtual Desktop también proporciona una experiencia más coherente gracias a la compatibilidad más amplia con las aplicaciones en comparación con los sistemas operativos basados en Windows Server.
 
-### Implementación de sesión múltiple de Windows 10 o Windows 11
+#### Implementación de sesión múltiple de Windows 10 o Windows 11
 
 Azure Virtual Desktop permite usar la sesión múltiple de Windows 10 o Windows 11 Enterprise, el único sistema operativo basado en cliente de Windows que permite varios usuarios simultáneos en una sola máquina virtual. 
 
 
 Azure Virtual Desktop también proporciona una experiencia más coherente gracias a la compatibilidad más amplia con las aplicaciones en comparación con los sistemas operativos basados en Windows Server.
 
-## Descripción de contenedores de Azure
+### Descripción de contenedores de Azure
 
 A pesar de que las máquinas virtuales son una excelente manera de reducir los costos frente a las inversiones que son necesarias para el hardware físico, están limitadas a un solo sistema operativo por máquina virtual. Los contenedores son una excelente opción si quiere ejecutar varias instancias de una aplicación en un solo equipo host.
 
-### ¿Qué son los contenedores?
+#### ¿Qué son los contenedores?
 
 Los contenedores son un entorno de virtualización. Al igual que la ejecución de varias máquinas virtuales en un solo host físico, **se pueden ejecutar varios contenedores en un solo host físico o virtual**. 
 
@@ -1142,26 +1142,26 @@ Es posible crear e implementar máquinas virtuales a medida que aumenta la deman
 
 Los contenedores están diseñados para permitirle responder a petición a los cambios. Con los contenedores puede reiniciar rápidamente en caso de bloqueo o interrupción del hardware.
 
-### Comparación de máquinas virtuales con contenedores
+#### Comparación de máquinas virtuales con contenedores
 
 |VM|Contenedores|
 | - | - |
 |Virtualizan el harware|virtualizan el sistema operativo|
 |Control competo|Portabilidad y rendimiento|
 
-### Azure Container Instances
+#### Azure Container Instances
 
 Azure Container Instances ofrece la forma más rápida y sencilla de ejecutar un contenedor en Azure sin tener que administrar máquinas virtuales o adoptar servicios adicionales. Azure Container Instances es una oferta de plataforma como servicio (PaaS). Azure Container Instances le permite **cargar los contenedores**. A continuación, el servicio ejecutará los contenedores por usted.
 
-### Azure Container Apps
+#### Azure Container Apps
 
 Azure Container Apps son similares de muchas maneras a una instancia de contenedor. Le permiten ponerse en marcha de inmediato, quitan la pieza de administración de contenedores y son una oferta de PaaS. Container Apps tienen ventajas adicionales, como la capacidad de **incorporar el equilibrio de carga y el escalado**. Estas otras funciones le permiten ser más elásticas en el diseño.
 
-### Azure Kubernetes Service
+#### Azure Kubernetes Service
 
 Azure Kubernetes Service (AKS) es un servicio de orquestación de contenedores. Un servicio de orquestación **administra el ciclo de vida de los contenedores**. Al implementar una flota de contenedores, AKS puede hacer que la administración de flotas sea más sencilla y eficaz.
 
-### Uso de contenedores en las soluciones
+#### Uso de contenedores en las soluciones
 
 Los contenedores se usan normalmente para **crear soluciones mediante una arquitectura de microservicios**. Esta arquitectura es donde se dividen las soluciones en **partes más pequeñas e independientes**. 
 
@@ -1169,13 +1169,13 @@ Por ejemplo, se puede dividir un sitio web en un contenedor que hospeda el front
 
 Imagine que el back-end de su sitio web ha alcanzado el límite de su capacidad, pero el front-end y el almacenamiento no están sobrecargados. Con los contenedores puede escalar el back-end por separado para mejorar el rendimiento. Si algo requiere este cambio, también puede optar por cambiar el servicio de almacenamiento o modificar el front-end sin afectar a ninguno de los otros componentes.
 
-## Descripción de Azure Functions
+### Descripción de Azure Functions
 
 Azure Functions es una opción de **proceso sin servidor controlada por eventos** que no necesita el mantenimiento de máquinas virtuales ni contenedores. Si compila una aplicación mediante máquinas virtuales o contenedores, esos recursos deben "ejecutarse" para que la aplicación funcione. 
 
 Con Azure Functions, un evento activa la función, lo que reduce la necesidad de mantener los recursos aprovisionados cuando no hay ningún evento.
 
-### Informática sin servidor en Azure (serverless computing)
+#### Informática sin servidor en Azure (serverless computing)
 
 Aunque si se usen servidores, significa que nosotros no nos hacemos cargo de la responsabilidad de administrar los.
 
@@ -1188,7 +1188,7 @@ Hay tres grandes ventajas:
 * Escalabilidad
 * Solo pagas por lo que usas
 
-### Ventajas de Azure Functions
+#### Ventajas de Azure Functions
 
 El uso de Azure Functions es idóneo si solo le interesa el código que ejecuta el servicio y no la infraestructura o la plataforma subyacente. Las funciones se usan normalmente cuando se debe realizar un trabajo en respuesta a un evento (a menudo a través de una solicitud REST), un temporizador o un mensaje de otro servicio de Azure, y cuando ese trabajo puede completarse rápidamente, en segundos o en menos tiempo.
 
@@ -1202,7 +1202,7 @@ Cuando son con estado (denominado Durable Functions), se pasa un contexto a trav
 
 Las funciones son un componente clave de la informática sin servidor. También son una plataforma de proceso general para ejecutar cualquier tipo de código. Si cambian las necesidades de la aplicación del desarrollador, se puede implementar el proyecto en un entorno que no sea sin servidor. Esta flexibilidad permite administrar el escalado, ejecutar en redes virtuales e incluso aislar por completo las funciones.
 
-## Descripción de las opciones de hospedaje de aplicaciones
+### Descripción de las opciones de hospedaje de aplicaciones
 
 Si necesita hospedar la aplicación en Azure, es posible que cambie inicialmente a una máquina virtual (VM) o a contenedores. 
 
@@ -1210,7 +1210,7 @@ Tanto las máquinas virtuales como los contenedores proporcionan excelentes solu
 
 Hay otras opciones de hospedaje que puede usar con Azure, incluido Azure App Service.
 
-### Azure App Service
+#### Azure App Service
 
 App Service permite **crear y hospedar aplicaciones web, trabajos en segundo plano, back-ends móviles y API RESTful** en el lenguaje de programación que prefiera, sin tener que administrar la infraestructura. Ofrece **escalado automático y alta disponibilidad**. 
 
@@ -1220,7 +1220,7 @@ Azure App Service es una opción de hospedaje sólida que puede usar para hosped
 
 Azure App Service es un servicio basado en HTTP para hospedar aplicaciones web, API de REST y back-ends para dispositivos móviles. Admite varios lenguajes, incluidos .NET, .NET Core, Java, Ruby, Node.js, PHP o Python. También admite entornos de Windows y Linux.
 
-### Tipos de servicios de aplicaciones
+#### Tipos de servicios de aplicaciones
 
 Con App Service, puede hospedar la mayoría de los estilos de servicio de aplicación más comunes, como los siguientes:
 
@@ -1238,19 +1238,19 @@ App Service controla la mayoría de las decisiones sobre la infraestructura que 
 
 Todos estos estilos de aplicación se hospedan en la misma infraestructura y comparten estas ventajas. Esto convierte a App Service en la elección ideal para hospedar aplicaciones orientadas a la web.
 
-#### Aplicaciones web
+##### Aplicaciones web
 
 App Service incluye compatibilidad completa para hospedar aplicaciones web mediante ASP.NET, ASP.NET Core, Java, Ruby, Node.js, PHP o Python. Puede elegir Windows o Linux como sistema operativo del host.
 
-#### Aplicaciones de API
+##### Aplicaciones de API
 
 Al igual que al hospedar un sitio web, puede compilar API web basadas en REST mediante el lenguaje y el marco que prefiera. Se obtiene compatibilidad completa con Swagger y la posibilidad de empaquetar y publicar la API en Azure Marketplace. Las aplicaciones producidas se pueden consumir desde cualquier cliente basado en HTTP o HTTPS.
 
-#### Trabajos web
+##### Trabajos web
 
 Se puede usar la característica WebJobs para ejecutar un programa (.exe, Java, PHP, Python o Node.js) o un script (.cmd, .bat, PowerShell o Bash) en el mismo contexto que una aplicación web, aplicación de API o aplicación móvil. Los puede programar o ejecutar un desencadenador. Los trabajos web suelen usarse para ejecutar tareas en segundo plano como parte de la lógica de aplicación.
 
-#### Aplicaciones móviles
+##### Aplicaciones móviles
 
 Use la característica Mobile Apps de App Service a fin de compilar rápidamente un back-end para aplicaciones iOS y Android. Con unos pocos clics en el Portal de Azure, puede realizar lo siguiente:
 
@@ -1262,7 +1262,7 @@ Use la característica Mobile Apps de App Service a fin de compilar rápidamente
 En el lado de la aplicación móvil, hay compatibilidad con el SDK para aplicaciones nativas de iOS y Android, Xamarin y React.
 
 
-## Descripción de las redes virtuales de Azure
+### Descripción de las redes virtuales de Azure
 
 **Las redes virtuales** y las subredes virtuales de Azure **permiten a los recursos de Azure**, como las máquinas virtuales, las aplicaciones web y las bases de datos, **comunicarse entre sí**, con los usuarios de Internet y con los equipos cliente en el entorno local. Una red de Azure se puede considerar una extensión de la red local con recursos que vinculan otros recursos de Azure.
 
@@ -1280,7 +1280,7 @@ Las redes virtuales de Azure admiten puntos de conexión públicos y privados pa
 
 - Los puntos de conexión públicos tienen una dirección IP pública y son accesibles desde cualquier parte del mundo.
 - Los puntos de conexión privados existen dentro de una red virtual y tienen una dirección IP privada en el espacio de direcciones de esa red virtual.
-### Aislamiento y segmentación
+#### Aislamiento y segmentación
 
 La red virtual de Azure **permite crear varias redes virtuales aisladas**.
 
@@ -1290,11 +1290,11 @@ Después, puede dividir ese espacio de direcciones IP en subredes y asignar part
 
 Para la resolución de nombres, puede usar el servicio de resolución de nombres integrado en Azure. También puede configurar la red virtual para que use un servidor DNS interno o externo.
 
-### Comunicación con Internet
+#### Comunicación con Internet
 
 Puede permitir conexiones entrantes desde Internet mediante la asignación de una dirección IP pública a un recurso de Azure o la colocación del recurso detrás de un equilibrador de carga público.
 
-### Comunicación entre los recursos de Azure
+#### Comunicación entre los recursos de Azure
 
 Le interesará habilitar los recursos de Azure para que se comuniquen entre sí de forma segura. Puede hacerlo de dos maneras:
 
@@ -1302,7 +1302,7 @@ Le interesará habilitar los recursos de Azure para que se comuniquen entre sí 
 
 - **Los puntos de conexión de servicio se pueden conectar a otros tipos de recursos** de Azure, como cuentas de almacenamiento y bases de datos de Azure SQL. Este enfoque permite vincular varios recursos de Azure con las redes virtuales para mejorar la seguridad y proporcionar un enrutamiento óptimo entre los recursos.
 
-### Comunicación con recursos locales
+#### Comunicación con recursos locales
 
 Las redes virtuales de Azure permiten vincular entre sí los recursos del entorno local y dentro de la suscripción de Azure. De hecho, puede crear una red que abarque tanto el entorno local como el entorno en la nube. Existen tres mecanismos para lograr esta conectividad:
 
@@ -1312,14 +1312,14 @@ Las redes virtuales de Azure permiten vincular entre sí los recursos del entorn
 
 - **Azure ExpressRoute** proporciona una conectividad privada dedicada a Azure que no se desplaza por Internet. ExpressRoute es útil para los entornos donde se necesita más ancho de banda e incluso mayores niveles de seguridad.
 
-### Enrutamiento del tráfico de red
+#### Enrutamiento del tráfico de red
 
 De forma predeterminada, Azure enruta el tráfico entre las subredes de todas las redes virtuales conectadas, las redes locales e Internet. También puede **controlar el enrutamiento** e invalidar esa configuración del siguiente modo:
 
 - Las **tablas de rutas** permiten definir reglas sobre cómo se debe dirigir el tráfico. Puede crear tablas de rutas personalizadas que controlen cómo se enrutan los paquetes entre las subredes.
 - El Protocolo de puerta de enlace de borde (**BGP**) funciona con puertas de enlace de VPN de Azure, Azure Route Server o Azure ExpressRoute para propagar las rutas BGP locales a las redes virtuales de Azure.
 
-### Filtrado del tráfico de red
+#### Filtrado del tráfico de red
 
 Las redes virtuales de Azure **permiten filtrar el tráfico** entre las subredes mediante los métodos siguientes:
 
@@ -1327,13 +1327,13 @@ Las redes virtuales de Azure **permiten filtrar el tráfico** entre las subredes
 
 - Las aplicaciones virtuales de red son máquinas virtuales especializadas que se pueden comparar con un dispositivo de red protegido. Una **aplicación virtual** de red ejerce una **función de red determinada**, como ejecutar un firewall o realizar la optimización de la red de área extensa (WAN).
 
-### Conexión de redes virtuales
+#### Conexión de redes virtuales
 
 Puede vincular redes virtuales entre sí mediante el emparejamiento de red virtual. **El emparejamiento permite que dos redes virtuales se conecten directamente entre sí**. El tráfico de red entre redes emparejadas es privado y se desplaza por la red troncal de Microsoft, y nunca entra en la red pública de Internet. El emparejamiento permite que los recursos de cada red virtual se comuniquen entre sí. Estas redes virtuales pueden estar en regiones distintas, lo que permite crear una red global interconectada con Azure.
 
 Las rutas definidas por el usuario (**UDR**) permiten **controlar las tablas de enrutamiento** entre subredes dentro de una red virtual o entre redes virtuales. Esto permite un mayor control sobre el flujo de tráfico de red.
 
-## Configuración del acceso de red
+### Ejercicio: Configuración del acceso de red
 
 En este ejercicio, configurarás el acceso a la máquina virtual (VM) que has creado antes en este módulo.
 
@@ -1353,7 +1353,7 @@ En este momento, la máquina virtual que ha creado y en la que ha instalado Ngin
 
 Crearás un grupo de seguridad de red que lo cambiará y permitirá el acceso HTTP de entrada en el puerto 80.
 
-### Tarea 1: Acceso al servidor web
+#### Tarea 1: Acceso al servidor web
 
 En este procedimiento se obtiene la dirección IP de la máquina virtual y se intenta acceder a la página principal del servidor web.
 
@@ -1398,7 +1398,7 @@ Este mensaje significa que no se pudo acceder a la máquina virtual dentro del t
 	d. Mantén la pestaña abierta para usarla más tarde.
 
 
-### Tarea 2: Enumeración de las reglas de grupo de seguridad de red actuales
+#### Tarea 2: Enumeración de las reglas de grupo de seguridad de red actuales
 
 No se pudo acceder al servidor web. Para averiguar el motivo, vamos a examinar las reglas actuales del grupo de seguridad de red.
 
@@ -1444,7 +1444,7 @@ Verás la regla predeterminada _default-allow-ssh_. Esta regla permite conexion
 De forma predeterminada, un grupo de seguridad de red de una máquina virtual de una máquina virtual Linux solo permite el acceso a la red en el puerto 22. Esto permite que los administradores accedan al sistema. También debe permitir las conexiones entrantes en el puerto 80, que permite el acceso a través de HTTP.
 
 
-### Tarea 3: Creación de la regla de seguridad de red
+#### Tarea 3: Creación de la regla de seguridad de red
 
 En este caso, crearás una regla de seguridad de red que permita el acceso de entrada en el puerto 80 (HTTP).
 
@@ -1471,7 +1471,7 @@ default-allow-ssh  1000        22      Allow
 allow-http        100        80      Allow
 ```
 
-### Tarea 4: Nuevo acceso al servidor web
+#### Tarea 4: Nuevo acceso al servidor web
 
 Ahora que has configurado el acceso de red al puerto 80, vamos a intentar acceder al servidor web una segunda vez.
 
@@ -1495,17 +1495,17 @@ Verá lo siguiente:
 
 Buen trabajo. En la práctica, puedes crear un grupo de seguridad de red independiente que incluya las reglas de acceso de red entrantes y salientes que necesite. Si tienes varias máquinas virtuales que tienen el mismo propósito, puedes asignar ese grupo de seguridad de red a cada máquina virtual en el momento de crearla. Esta técnica permite controlar el acceso de red a varias máquinas virtuales en un único conjunto central de reglas.
 
-### Limpieza
+#### Limpieza
 
 El espacio aislado limpia los recursos automáticamente cuando haya terminado con este módulo.
 
 Al trabajar en una suscripción propia, se recomienda identificar al final de un proyecto si aún necesita los recursos creados. Los recursos que dejas en ejecución pueden costar dinero. Puede eliminar los recursos de forma individual o eliminar el grupo de recursos para eliminar todo el conjunto de recursos.
 
-## Descripción de redes privadas virtuales de Azure
+### Descripción de redes privadas virtuales de Azure
 
 Una red privada virtual (VPN) **usa un túnel cifrado** en otra red. Normalmente, las VPN se implementan para conectar entre sí dos o más redes privadas de confianza a través de una red que no es de confianza (normalmente, la red pública de Internet). El tráfico se cifra mientras viaja por la red que no es de confianza para evitar ataques de interceptación o de otro tipo. Las VPN pueden permitir que las redes compartan información confidencial de forma segura.
 
-### Puertas de enlace de VPN
+#### Puertas de enlace de VPN
 
 Una puerta de enlace de VPN es un tipo de puerta de enlace de red virtual. Las instancias de Azure VPN Gateway se implementan en una subred dedicada de la red virtual y **permiten** la conectividad siguiente:
 
@@ -1528,33 +1528,33 @@ Si necesita alguno de los siguientes tipos de conectividad, use una instancia de
 - Conexiones de varios sitios
 - Coexistencia con una puerta de enlace de Azure ExpressRoute
 
-### Escenarios de alta disponibilidad
+#### Escenarios de alta disponibilidad
 
 Si va a configurar una VPN para mantener la información segura, también querrá asegurarse de que es una configuración de VPN de alta disponibilidad y tolerante a errores. Hay varias maneras de maximizar la resistencia de la puerta de enlace de VPN.
 
-#### Configuración de activo-en espera
+##### Configuración de activo-en espera
 
 De forma predeterminada, las instancias de VPN Gateway se implementan como dos instancias en una configuración de activo-en espera, incluso si solo ve un recurso de VPN Gateway en Azure. **Cuando el mantenimiento planeado o la interrupción imprevista afectan a la instancia activa, la instancia en espera asume de forma automática la responsabilidad** de las conexiones sin ninguna intervención del usuario. Durante esta conmutación por error, las conexiones se interrumpen, pero por lo general se restauran en cuestión de segundos si se trata del mantenimiento planeado y en un plazo de 90 segundos en el caso de las interrupciones imprevistas.
 
-#### Activo/activo
+##### Activo/activo
 
 Al incorporar compatibilidad con el protocolo de enrutamiento de BGP, también puede implementar puertas de enlace VPN en una configuración del tipo activo/activo. En esta configuración, **se asigna una IP pública única a cada instancia. Después, se crean túneles independientes desde el dispositivo local a cada dirección IP**. Se puede ampliar la alta disponibilidad mediante la implementación de un dispositivo VPN local adicional.
 
-#### Conmutación por error de ExpressRoute
+##### Conmutación por error de ExpressRoute
 
 Otra opción de alta disponibilidad consiste en configurar una **instancia de VPN Gateway como una ruta segura de conmutación por error para las conexiones ExpressRoute**. Los circuitos ExpressRoute tienen resistencia integrada. Sin embargo, no son inmunes a los problemas físicos que afectan a los cables que entregan conectividad ni a las interrupciones que afectan a la ubicación completa de ExpressRoute. En escenarios de alta disponibilidad, en los que existe un riesgo asociado a una interrupción de un circuito ExpressRoute, también puede aprovisionar una instancia de VPN Gateway que usa Internet como un método alternativo de conectividad. De este modo, puede garantizar que siempre haya una conexión a las redes virtuales.
 
-#### Puertas de enlace con redundancia de zona
+##### Puertas de enlace con redundancia de zona
 
 En las regiones que admiten zonas de disponibilidad, se pueden implementar puertas de enlace VPN y ExpressRoute en una configuración con redundancia de zona. Esta configuración aporta una mayor disponibilidad, escalabilidad y resistencia a las puertas de enlace de red virtual. Implementar puertas de enlace en Azure Availability Zones **separa de forma física y lógica las puertas de enlace dentro de una región**, al mismo tiempo que protege la conectividad de red local en Azure de errores de nivel de zona. Estas puertas de enlace requieren diferentes referencias de almacén (SKU) de puerta de enlace y usan direcciones IP públicas estándar en lugar de direcciones IP públicas básicas.
 
-## Describir Azure ExpressRoute
+### Describir Azure ExpressRoute
 
 ExpressRoute le **permite ampliar las redes locales** a la nube de Microsoft mediante una conexión privada con la ayuda de un proveedor de conectividad. Esta conexión se denomina circuito ExpressRoute. Con ExpressRoute, puede establecer conexiones con servicios en la nube de Microsoft, como Microsoft Azure y Microsoft 365. Esto le permite conectar oficinas, centros de datos u otras instalaciones a la nube de Microsoft. Cada ubicación tendría su propio circuito ExpressRoute.
 
 La conectividad puede ser desde una red de conectividad universal (IP VPN), una red Ethernet de punto a punto o una conexión cruzada virtual a través de un proveedor de conectividad en una instalación de ubicación compartida. Las conexiones de ExpressRoute no pasan por la red pública de Internet. Esto permite a las conexiones de ExpressRoute ofrecer más confiabilidad, más velocidad, latencia coherentes y mayor seguridad que las conexiones normales a través de Internet.
 
-### Características y ventajas de ExpressRoute
+#### Características y ventajas de ExpressRoute
 
 El uso de ExpressRoute como servicio de conexión entre Azure y las redes locales tiene varias ventajas.
 
@@ -1563,7 +1563,7 @@ El uso de ExpressRoute como servicio de conexión entre Azure y las redes locale
 - Enrutamiento dinámico entre la red y Microsoft a través del Protocolo de puerta de enlace de borde (BGP).
 - Redundancia integrada en todas las ubicaciones de configuración entre pares para una mayor confiabilidad.
 
-#### Conectividad con los Servicios en la nube de Microsoft
+##### Conectividad con los Servicios en la nube de Microsoft
 
 ExpressRoute permite el acceso directo a los siguientes servicios en todas las regiones:
 
@@ -1572,19 +1572,19 @@ ExpressRoute permite el acceso directo a los siguientes servicios en todas las r
 - Servicios de proceso de Azure, como Azure Virtual Machines
 - Servicios en la nube de Azure, como Azure Cosmos DB y Azure Storage
 
-#### Conectividad global
+##### Conectividad global
 
 Puede permitir que Global Reach de ExpressRoute intercambie datos entre los sitios locales si conecta los diferentes circuitos ExpressRoute. Por ejemplo, supongamos que tiene una oficina en Asia y un centro de datos en Europa, ambos con circuitos ExpressRoute que los conectan a la red de Microsoft. Puede usar Global Reach de ExpressRoute para conectar esas dos instalaciones, lo que les **permite comunicarse sin transferir datos a través de la red pública de Internet**.
 
-#### Enrutamiento dinámico
+##### Enrutamiento dinámico
 
 ExpressRoute usa el BGP. BGP se usa para **intercambiar rutas entre las redes locales y los recursos que se ejecutan en Azure**. Este protocolo permite el enrutamiento dinámico entre la red local y los servicios que se ejecutan en la nube de Microsoft.
 
-#### Redundancia integrada
+##### Redundancia integrada
 
 Cada proveedor de conectividad usa dispositivos redundantes para garantizar que las conexiones establecidas con Microsoft tengan **alta disponibilidad**. Puede configurar varios circuitos para complementar esta característica.
 
-### Modelos de conectividad de ExpressRoute
+#### Modelos de conectividad de ExpressRoute
 
 ExpressRoute admite cuatro modelos que puede usar para conectar la red local con la nube de Microsoft:
 
@@ -1593,31 +1593,31 @@ ExpressRoute admite cuatro modelos que puede usar para conectar la red local con
 - Conexión universal
 - Directamente desde sitios de ExpressRoute
 
-#### Ubicación compartida en un intercambio en la nube
+##### Ubicación compartida en un intercambio en la nube
 
 La ubicación conjunta hace referencia al centro de datos, la oficina u otras instalaciones que se encuentran físicamente en un intercambio en la nube, como un ISP. Si la instalación tiene la ubicación compartida en un intercambio en la nube, puede solicitar una conexión cruzada virtual a la nube de Microsoft.
 
-#### Conexión Ethernet de punto a punto
+##### Conexión Ethernet de punto a punto
 
 La conexión Ethernet de punto a punto hace referencia al uso de una conexión punto a punto para conectar la instalación a la nube de Microsoft.
 
-#### Redes universales
+##### Redes universales
 
 Con la conectividad universal, puede integrar la red de área extensa (WAN) con Azure si proporciona conexiones a las oficinas y los centros de datos. Azure se integra con la conexión WAN para proporcionarle una conexión, como la que tendría entre el centro de datos y las sucursales.
 
-#### Directamente desde sitios de ExpressRoute
+##### Directamente desde sitios de ExpressRoute
 
 Puede conectarse directamente a la red global de Microsoft en una ubicación de emparejamiento distribuida estratégicamente por todo el mundo. ExpressRoute Direct proporciona conectividad dual de 100 Gbps o 10 Gbps, que es compatible con la conectividad activa/activa a escala.
 
-### Consideraciones sobre la seguridad
+#### Consideraciones sobre la seguridad
 
 Con ExpressRoute **los datos no viajan a través de la red pública de Internet** y, por tanto, no se exponen a los posibles riesgos asociados a las comunicaciones de Internet. ExpressRoute es una conexión privada de la infraestructura local a la infraestructura de Azure. Incluso si tiene una conexión ExpressRoute, las consultas de DNS, la comprobación de la lista de revocación de certificados y las solicitudes de Azure Content Delivery Network se siguen enviando a través de la red pública de Internet.
 
-## Describir Azure DNS
+### Describir Azure DNS
 
 Azure DNS es un servicio de hospedaje para dominios DNS que ofrece resolución de nombres mediante la infraestructura de Microsoft Azure. Al hospedar dominios en Azure, puede administrar los registros DNS con las mismas credenciales, API, herramientas y facturación que con los demás servicios de Azure.
 
-### Ventajas de Azure DNS
+#### Ventajas de Azure DNS
 
 Azure DNS saca provecho del ámbito y la escala de Microsoft Azure para proporcionar numerosas ventajas, incluidas las siguientes:
 
@@ -1627,11 +1627,11 @@ Azure DNS saca provecho del ámbito y la escala de Microsoft Azure para propor
 - Redes virtuales personalizables
 - Registros de alias
 
-#### Confiabilidad y rendimiento
+##### Confiabilidad y rendimiento
 
 Los dominios DNS de Azure DNS se hospedan en la red global de servidores de nombres DNS de Azure, y proporcionan resistencia y alta disponibilidad. Azure DNS usa **redes de difusión por proximidad** para que el servidor DNS más próximo disponible responda a cada consulta de DNS para proporcionar un mejor rendimiento y una mayor disponibilidad para el dominio.
 
-#### Seguridad
+##### Seguridad
 
 Azure DNS se basa en Azure Resource Manager, que proporciona características tales como:
 
@@ -1639,17 +1639,17 @@ Azure DNS se basa en Azure Resource Manager, que proporciona características ta
 - **Registros de actividad**: para supervisar cómo un usuario de su organización modificó un recurso o para encontrar errores al solucionar problemas.
 - **Bloqueo de recursos** para bloquear una suscripción, un grupo de recursos o un recurso. Los bloqueos impiden que otros usuarios de la organización eliminen o modifiquen de forma accidental recursos críticos.
 
-#### Facilidad de uso
+##### Facilidad de uso
 
 Azure DNS puede administrar registros DNS para los servicios de Azure y también proporciona el servicio de nombres de dominio para los recursos externos. Azure DNS está integrado en Azure Portal y usa las mismas credenciales, la misma facturación y el mismo contrato de soporte técnico que los demás servicios de Azure.
 
 Como Azure DNS se ejecuta en Azure, significa que puede administrar los dominios y registros con Azure Portal, cmdlets de Azure PowerShell y la CLI de Azure multiplataforma. Las aplicaciones que requieren la administración automática de DNS se pueden integrar con el servicio mediante las API REST y los SDK.
 
-#### Redes virtuales personalizables con dominios privados
+##### Redes virtuales personalizables con dominios privados
 
 Azure DNS es compatible con dominios DNS privados. Esta característica permite usar nombres de dominio personalizados propios en las redes virtuales privadas, en lugar de limitarse a los nombres proporcionados por Azure.
 
-#### Registros de alias
+##### Registros de alias
 
 Azure DNS también admite conjuntos de registros de alias. Puede usar un conjunto de registros de alias que haga referencia a un recurso de Azure, como una dirección IP pública de Azure, un perfil de Azure Traffic Manager o un punto de conexión de Azure Content Delivery Network (CDN). Si cambia la dirección IP del recurso subyacente, el conjunto de registros de alias se actualiza sin problemas durante la resolución DNS. El conjunto de registros de alias apunta a la instancia de servicio, y la instancia de servicio está asociada con una dirección IP.
 
@@ -1658,7 +1658,7 @@ Azure DNS también admite conjuntos de registros de alias. Puede usar un conjun
 	No se puede usar Azure DNS para comprar un nombre de dominio. Por una tarifa anual, puede comprar un nombre de dominio mediante dominios de App Service o un registrador de nombres de dominio de terceros. Después de comprarlos, los dominios se pueden hospedar en Azure DNS para la administración de registros.
 
 
-## Prueba de conocimientos
+### Prueba de conocimientos
 
 1. ¿Qué característica de máquina virtual de Azure escalona las actualizaciones en todas las máquinas virtuales en función de sus dominios de actualización y error?
 
@@ -1674,7 +1674,7 @@ Azure DNS también admite conjuntos de registros de alias. Puede usar un conjun
 	<p><b>Azure Virtual Desktop</b> proporciona acceso a una versión hospedada en la nube de Windows y funciona con la mayoría de los exploradores modernos.</p>
 </Details>
 
-## Resumen
+### Resumen
 
 En este módulo hemos visto información sobre algunos de los servicios de proceso y red que forman parte de Azure.
 
@@ -1682,7 +1682,7 @@ Hemos aprendido sobre las máquinas virtuales y las distintas opciones que se as
 
 También se han presentado algunas de las funcionalidades de red, incluidas las redes virtuales, ExpressRoute y las redes privadas virtuales.
 
-### Objetivos de aprendizaje
+#### Objetivos de aprendizaje
 
 Ahora deberíamos ser capaces de hacer lo siguiente:
 
@@ -1693,12 +1693,426 @@ Ahora deberíamos ser capaces de hacer lo siguiente:
 - Describir las redes virtuales, incluido el propósito de Azure Virtual Networks, las subredes virtuales de Azure, el emparejamiento, Azure DNS, VPN Gateway y ExpressRoute.
 - Definición de puntos de conexión públicos y privados.
 
-### Recursos adicionales
+#### Recursos adicionales
 
 Los siguientes recursos adicionales están diseñados para proporcionar más información sobre los temas de este módulo o sobre temas adicionales relacionados con este módulo.
 
 - [Hospedaje de una aplicación web con Azure App Service](https://learn.microsoft.com/es-es/learn/modules/host-a-web-app-with-azure-app-service/) es un módulo de Microsoft Learn que explora el proceso de hospedaje de una aplicación web en Azure.
 - [Introducción a los servicios de base de red de Azure](https://learn.microsoft.com/es-es/learn/paths/intro-to-azure-network-foundation-services/) es un curso de Microsoft Learn que proporciona más información sobre las redes con Azure.
 
+## Descripción de los servicios de almacenamiento de Azure
+
+### Introducción
+
+En este módulo, **veremos los servicios de Azure Storage**. 
+
+Información sobre la cuenta de Azure Storage y cómo se relaciona con los distintos servicios de almacenamiento que hay disponibles. También descubrirá los niveles de almacenamiento de blobs, las opciones de redundancia de datos y las formas de mover datos o incluso infraestructuras completas a Azure.
+
+#### Objetivos de aprendizaje
+
+Después de completar este módulo, podrá:
+
+- Comparación de los servicios de almacenamiento de Azure.
+- Describir los niveles de almacenamiento.
+- Describir las opciones de redundancia.
+- Describir las opciones de la cuenta de almacenamiento y los tipos de almacenamiento.
+- Identificar opciones para mover archivos, incluidos AzCopy, Explorador de Azure Storage y Azure File Sync.
+- Descripción de las opciones de migración, incluidas Azure Migrate y Azure Data Box
+
+### Descripción de las cuentas de almacenamiento de Azure
+
+**Una cuenta de almacenamiento proporciona un espacio de nombres único para los datos de Azure Storage** al que se puede acceder desde cualquier lugar del mundo a través de HTTP o HTTPS. Los datos de esta cuenta son seguros, de alta disponibilidad, duraderos y escalables de forma masiva.
+
+Al crear la cuenta de almacenamiento, primero seleccionará el **tipo de cuenta de almacenamiento**. El tipo de cuenta **determina los servicios de almacenamiento y las opciones de redundancia**, y afecta a los casos de uso. A continuación se muestra una lista de opciones de redundancia que se describirán más adelante en este módulo:
+
+- Almacenamiento con redundancia local (LRS)
+- Almacenamiento con redundancia geográfica (GRS)
+- Almacenamiento con redundancia geográfica con acceso de lectura (RA-GRS).
+- Almacenamiento con redundancia de zona (ZRS)
+- Almacenamiento con redundancia de zona geográfica (GZRS)
+- Almacenamiento con redundancia de zona geográfica con acceso de lectura (RA-GZRS)
+
+|**Tipo**|**Servicios admitidos**|**Opciones de redundancia**|**Uso**|
+|---|---|---|---|
+|De uso general estándar, v2|Blob Storage (incluido Data Lake Storage), Queue Storage, Table Storage y Azure Files|LRS, GRS, RA-GRS, ZRS, GZRS, RA-GZRS|Tipo de cuenta de almacenamiento estándar para blobs, archivos, colas y tablas. Se recomienda para la mayoría de los escenarios con Azure Storage. Si desea compatibilidad con el sistema de archivos de red (NFS) en Azure Files, utilice el tipo de cuenta de recursos compartidos de archivos Premium.|
+|Blobs en bloques Premium|Blob Storage (incluido Data Lake Storage)|LRS, ZRS|Tipo de cuenta de almacenamiento Prémium para blobs en bloques y blobs en anexos. Se recomiendan para escenarios con altas tasas de transacciones, que utilizan objetos más pequeños o que requieren una latencia de almacenamiento constantemente baja.|
+|Recursos compartidos de archivos Prémium|Azure Files|LRS, ZRS|Tipo de cuenta de almacenamiento Prémium solo para recursos compartidos de archivos. Se recomienda para empresas y aplicaciones de escalado de alto rendimiento. Use este tipo de cuenta si desea una cuenta de almacenamiento que admita recursos compartidos de archivos de Bloque de mensajes del servidor (SMB) y NFS.|
+|Blobs en páginas Premium|Solo blobs en páginas|LRS|Tipo de cuenta de almacenamiento prémium solo para blobs en páginas.|
+
+#### Puntos de conexión de cuenta de almacenamiento
+
+Una de las ventajas de usar una cuenta de Azure Storage es tener un espacio de nombres único en Azure para los datos. Para ello, todas las cuentas de almacenamiento de Azure deben tener un nombre de cuenta único en Azure. La combinación del nombre de la cuenta y el punto de conexión del servicio de Azure Storage forma los puntos de conexión de su cuenta de almacenamiento.
+
+Cuando especifique un nombre para la cuenta de almacenamiento, tenga en cuenta estas reglas:
+
+- Los nombres de las cuentas de almacenamiento deben tener entre 3 y 24 caracteres, y solo pueden incluir números y letras en minúscula.
+- El nombre de la cuenta de almacenamiento debe ser único dentro de Azure. No puede haber dos cuentas de almacenamiento con el mismo nombre. Esto admite la capacidad de tener un espacio de nombres único y accesible en Azure.
+
+En la tabla siguiente se muestra el formato de punto de conexión para los servicios de Azure Storage.
+
+|**Servicio de Storage**|**Punto de conexión**|
+|---|---|
+|Blob Storage|https://\<storage-account-name\>.blob.core.windows.net|
+|Data Lake Storage Gen2|https://\<storage-account-name\>.dfs.core.windows.net|
+|Azure Files|https://\<storage-account-name\>.file.core.windows.net|
+|Queue Storage|https://\<storage-account-name\>.queue.core.windows.net|
+|Table Storage|https://\<storage-account-name\>.table.core.windows.net|
+#### Servicios de almacenamiento
+
+##### Azure Blob storage
+
+Es una solución de almacenamiento de objetos que se puede usar para almacenar grandes cantidades de datos no estructurados, como texto o datos binarios.
+
+Ideal para enviar imágenes o documentos directamente a un explorador, almacenar datos para archivos o el acceso distribuido, emitir video y audio y escenarios de recuperación ante desastres.
+
+##### Azure File Storage
+
+Ofrece recursos compartidos de archivos totalmente administrados en la nube, a los que se pueden acceder mediante protocolos de red estándar del sector.
 
 
+Supervisar recursos compartidos de Azure es como conectarse a recursos compartidos de la red local.
+
+##### Azure Disk Storage 
+
+Proporciona discos para que las maquinas virtuales y las aplicaciones accedan a ellos y los usen cuando sea necesario, igual que harían con discos locales.
+
+Azure ofrece unidades de estado sólido para cargas de trabajo de más alto rendimiento y discos duros convencionales para escenarios empresariales menos críticos.
+
+
+
+##### Azure Table Storage
+
+Ofrece un almacén de datos NoSQL para pares clave-valor con conjuntos de datos a gran escala.
+
+puedes usarlo para almacenar petabytes de datos semiestructurados y reducir los costos.
+
+##### Azure Queue Storage
+
+Proporciona una puesta en cola de mensajes asincrónicos para la comunicación entre los componentes de las aplicaciones, independientemente de su se ejecutan en la nube, escritorio, de forma local o dispositivos móviles.
+
+
+#### Niveles de acceso
+
+Puedes usar tres niveles de acceso de Azure para equilibrar los costos: 
+
+|Nivel|Descripción |
+| - | - |
+|Frecuenta|Esta optimizado para datos que se consultan con frecuencia, como las imágenes de su sitio web|
+|Esporadico|Para datos a los que se accede con poca frecuencia y que se guardan al menos durante 30 días, como facturas de clientes.|
+|Archivo|Adecuado para datos a los que rara vez se accede y que se guardan durante al menos 180 días, como copias de seguridad a largo plazo.|
+
+### Descripción de la redundancia de almacenamiento de Azure
+
+Azure Storage siempre almacena varias copias de los datos, con el fin de protegerlos de eventos planeados y no planeados, lo que incluye errores transitorios del hardware, interrupciones del suministro eléctrico o cortes de la red, y desastres naturales. **La redundancia garantiza** que la cuenta de almacenamiento cumple sus objetivos de **disponibilidad y durabilidad**, aunque se produzcan errores.  
+
+A la hora de decidir qué opción de redundancia es la más adecuada para su escenario, intente buscar un equilibrio entre bajo costo y alta disponibilidad. Entre los factores que ayudan a determinar qué opción de redundancia debe elegir se incluye:
+
+- Cómo se replican los datos en la región primaria.
+- Si los datos se replican en una segunda ubicación que está alejada geográficamente de la región primaria, para protegerse frente a desastres regionales.
+- Si la aplicación necesita acceso de lectura a los datos replicados en la región secundaria en caso de que la región primaria deje de estar disponible.
+
+#### Redundancia en la región primaria
+
+Los datos de una cuenta de **Azure Storage siempre se replican tres veces en la región primaria**. **Azure Storage ofrece** dos opciones para replicar los datos en la región primaria, el almacenamiento con redundancia local (LRS) y el almacenamiento con redundancia de zona (ZRS).
+
+##### Almacenamiento con redundancia local
+
+El almacenamiento con redundancia local (LRS) replica los datos tres veces dentro de un único centro de datos en la región primaria. LRS ofrece una durabilidad mínima de 11 nueves (99,999999999 %) de los objetos en un año determinado.
+
+![[Pasted image 20231226113724.png]]
+
+LRS es la opción de redundancia de costo más bajo y ofrece la menor durabilidad en comparación con otras opciones. LRS protege los datos frente a errores en la estantería de servidores y en la unidad. No obstante, si se produce un desastre como un incendio o una inundación en el centro de datos, es posible que todas las réplicas de una cuenta de almacenamiento con LRS se pierdan o no se puedan recuperar. Para mitigar este riesgo, Microsoft recomienda el uso del almacenamiento con redundancia de zona (ZRS), el almacenamiento con redundancia geográfica (GRS) o el almacenamiento con redundancia de zona geográfica (GZRS).
+
+##### Almacenamiento con redundancia de zona
+
+Para las regiones con zona de disponibilidad habilitada, el almacenamiento con redundancia de zona (ZRS) **replica los datos de Azure Storage sincrónicamente en tres zonas de disponibilidad de Azure en la región primaria**. ZRS proporciona a los objetos de datos de Azure Storage una durabilidad de al menos 12 nueves (99,9999999999 %) durante un año determinado.
+
+![[Pasted image 20231226114014.png]]
+
+Con ZRS, **los datos son accesibles para las operaciones de escritura y lectura incluso si una zona deja de estar disponible**. No es necesario volver a montar los recursos compartidos de archivos de Azure de los clientes conectados. Si alguna zona deja de estar disponible, Azure realiza las actualizaciones de la red, como el redireccionamiento de DNS. Estas actualizaciones pueden afectar a la aplicación si se accede a los datos antes de que se completen dichas actualizaciones.
+
+Microsoft recomienda usar ZRS en la región primaria para **escenarios que requieren de alta disponibilidad**. También se recomienda ZRS para **restringir la replicación** de datos dentro de un país o región para cumplir los requisitos de gobernanza de datos.
+
+#### Redundancia en una región secundaria
+
+En el caso de las aplicaciones que requieren de **alta durabilidad**, puede optar por copiar los datos de la cuenta de almacenamiento **en una región secundaria** que esté a cientos de kilómetros de distancia de la región primaria. Si los datos de la cuenta de almacenamiento se copian en una región secundaria, los datos serán duraderos incluso en caso de un error catastrófico que impida que se recuperen los datos de la región primaria.
+
+Al crear una cuenta de almacenamiento, seleccione la región principal de la cuenta. La región secundaria emparejada **se determina en función de los Pares de regiones de Azure** y no se puede cambiar.
+
+Azure Storage ofrece dos **opciones para copiar** los datos en una región secundaria: almacenamiento con redundancia geográfica (**GRS**) y almacenamiento con redundancia de zona geográfica (**GZRS**). **GRS es similar a ejecutar LRS en dos regiones, y GZRS es similar a ejecutar ZRS en la región primaria y LRS en la región secundaria.**
+
+**De manera predeterminada, los datos de la región secundaria no están disponibles para el acceso de lectura o escritura a menos que haya una conmutación por error a la región secundaria**. Si la región primaria deja de estar disponible, puede conmutar por error a la región secundaria. Una vez completada la conmutación por error, la región secundaria se convierte en la región primaria y se pueden leer y escribir datos de nuevo.
+
+#### Almacenamiento con redundancia geográfica
+
+**GRS copia los datos de manera sincrónica tres veces dentro de una ubicación física única en la región primaria mediante LRS.  Luego copia los datos de forma asincrónica en una única ubicación física en la región secundaria (el par de regiones) mediante LRS.** GRS proporciona a los objetos de datos de Azure Storage una durabilidad de al menos 16 nueves (99,99999999999999 %) durante un año determinado.
+
+![[Pasted image 20231226115447.png]]
+
+#### Almacenamiento con redundancia de zona geográfica
+
+**GZRS combina la alta disponibilidad que proporciona la redundancia entre zonas (ZRS) de disponibilidad con la protección frente a interrupciones regionales que proporciona la replicación geográfica (GRS)**. Los datos de una cuenta de almacenamiento de GZRS se almacenan en tres zonas de disponibilidad de Azure en la región primaria (de manera similar a ZRS) y también se replican en una región geográfica secundaria para protegerlos frente a desastres regionales. Microsoft recomienda el uso de GZRS en aplicaciones que requieran de coherencia, durabilidad y disponibilidad máximas, además de rendimiento excelente y resistencia para la recuperación ante desastres.
+
+![[Pasted image 20231226120152.png]]
+
+GZRS está diseñado para proporcionar una durabilidad mínima de 16 nueves (99,99999999999999 %) de los objetos en un año determinado.
+
+#### Acceso de lectura a los datos de la región secundaria
+
+El almacenamiento con redundancia geográfica (con GRS o GZRS) replica los datos en otra ubicación física de la región secundaria para protegerlos frente a los apagones regionales. **Sin embargo, los datos están disponibles para su lectura solo si el cliente o Microsoft inician una conmutación por error de la región primaria** a la secundaria. Sin embargo, si habilita el acceso de lectura a la región secundaria, los datos siempre están disponibles, incluso cuando la región primaria se ejecuta de forma óptima. **Para obtener acceso de lectura a la región secundaria, habilite** el almacenamiento con redundancia geográfica con acceso de lectura **(RA-GRS**) **o** el almacenamiento con redundancia de zona geográfica con acceso de lectura (**RA-GZRS**).
+
+	 Importante
+
+	Recuerde que es posible que los datos de la región secundaria no estén actualizados debido al RPO.
+
+### Descripción de los servicios de almacenamiento de Azure
+
+La plataforma de Azure Storage incluye los servicios de datos siguientes:
+
+|Servicio|Descripción|
+| - | - |
+|**Blobs de Azure**|un almacén de objetos que se puede escalar de forma masiva para datos de texto y binarios. También incluye compatibilidad con el análisis de macrodatos a través de Data Lake Storage Gen2.|
+|**Azure Files**|recursos compartidos de archivos administrados para implementaciones locales y en la nube.|
+|**Colas de Azure**|un almacén de mensajería para mensajería confiable entre componentes de aplicación.|
+|**Azure Disks**|volúmenes de almacenamiento en el nivel de bloque para máquinas virtuales de Azure.|
+|**Tablas de Azure**|Opción tabla NoSQL para datos estructurados y no relacionales.|
+
+#### Ventajas de Azure Storage
+
+Los servicios de Azure Storage ofrecen las siguientes ventajas para desarrolladores de aplicaciones y profesionales de TI:
+
+|Ventaja|Justificación|
+| - | - |
+|**Duradero y altamente disponible**|**La redundancia garantiza** que los datos estén seguros en caso de producirse errores de hardware transitorios. También puede optar por replicar datos entre centros de datos o regiones geográficas para **obtener protección adicional frente a catástrofes locales o desastres naturales**. Los datos replicados de esta manera permanecen con una alta disponibilidad en caso de que se produzca una interrupción inesperada.|
+|**Seguro**|Todos los datos escritos en una cuenta de Azure Storage **se cifran mediante el servicio**. Azure Storage proporciona un control pormenorizado sobre quién tiene acceso a los datos.|
+|**Escalable**|Azure Storage está diseñado para poderse escalar de forma masiva para satisfacer las necesidades de rendimiento y almacenamiento de datos de las aplicaciones de hoy en día.|
+|**Administrado**|Azure controla automáticamente el mantenimiento, las actualizaciones y los problemas críticos del hardware.|
+|**Accesible**|Es posible acceder a los datos de Azure Storage desde cualquier parte del mundo a través de HTTP o HTTPS. Microsoft proporciona bibliotecas cliente para Azure Storage en diversos lenguajes, incluidos .NET, Java, Node.js, Python, PHP, Ruby, Go y otros, así como una API REST consolidada. Azure Storage admite la escritura en Azure PowerShell o la CLI de Azure. Y Azure Portal y el Explorador de Azure Storage ofrecen soluciones visuales sencillas para trabajar con los datos.|
+
+#### Servicios de almacenamiento de azure
+
+##### Blobs de Azure
+
+Azure Blob Storage es una solución de almacenamiento de objetos para la nube. **Puede almacenar** grandes cantidades de datos, como **datos de texto o binarios**. Azure Blob Storage **no está estructurada**, lo que significa que no hay ninguna restricción en cuanto a los tipos de datos que puede contener. Blob Storage puede administrar miles de cargas simultáneas, cantidades enormes de datos de vídeo, archivos de registro en constante crecimiento y es accesible desde cualquier lugar con conexión a Internet.
+
+Los blobs no están limitados a formatos de archivo comunes. Un blob podría contener gigabytes de datos binarios transmitidos desde un instrumento científico, un mensaje cifrado para otra aplicación o datos en un formato personalizado para una aplicación que se está desarrollando. Una **ventaja del almacenamiento en blobs** con respecto al almacenamiento en disco es que **no requiere que los desarrolladores piensen en discos o los administren**. Los datos se cargan como blobs y Azure se encarga de las necesidades de almacenamiento físico.
+
+Blob Storage resulta muy conveniente para lo siguiente:
+
+- Visualización de imágenes o documentos directamente en un explorador.
+- Almacenamiento de archivos para acceso distribuido.
+- Streaming de audio y vídeo.
+- Almacenamiento de datos para copia de seguridad y restauración, recuperación ante desastres y archivado.
+- Almacenamiento de datos para el análisis en local o en un servicio hospedado de Azure.
+
+###### Acceso a Blob Storage
+
+Se puede acceder a los objetos de Blob Storage desde cualquier parte del mundo a través de HTTP o HTTPS. Los usuarios o las aplicaciones cliente pueden acceder a los blobs mediante direcciones URL, la API REST de Azure Storage, Azure PowerShell, la CLI de Azure o una biblioteca cliente de Azure Storage. Las bibliotecas de cliente de almacenamiento están disponibles para varios lenguajes, como .NET, Java, Node.js, Python, PHP y Ruby.
+
+###### Niveles de Blob Storage
+
+Los datos almacenados en la nube pueden crecer a un ritmo exponencial. **Para administrar los costos** de las crecientes necesidades de almacenamiento, resulta útil organizar los datos en función de atributos como **la frecuencia de acceso y el período de retención planeada**. Los datos almacenados en la nube se pueden controlar de forma distinta según la forma en que se generan, se procesan y se accede a ellos a lo largo de su vigencia. Se puede acceder y modificar ciertos datos de forma activa a lo largo de su duración. Se accede con frecuencia a ciertos datos al inicio de su vida útil hasta que el acceso cae drásticamente a medida que envejecen. Algunos datos permanecen inactivos en la nube y, después de que se almacenan, no se accede a ellos prácticamente nunca. Para dar cabida a estas diferentes necesidades de acceso, Azure proporciona varios niveles de acceso, que puede usar para **equilibra**r **los costos de almacenamiento con sus necesidades de acceso**.
+
+Azure Storage ofrece diferentes niveles de acceso para el almacenamiento de blobs, lo que le ayuda a almacenar datos de objetos de la manera más rentable. **Entre los niveles de acceso disponibles se incluyen**:
+
+- **Nivel de acceso frecuente**: optimizado para almacenar datos a los que se accede con frecuencia (por ejemplo, imágenes para el sitio web).
+- **Nivel de acceso esporádico**: optimizado para datos a los que se accede con poca frecuencia y que se almacenan al menos durante 30 días (por ejemplo, las facturas de los clientes).
+- **Nivel de acceso aislados**: está optimizado para almacenar datos a los que se accede con poca frecuencia y al menos durante 90 días.
+- **Nivel de acceso de archivo**: conveniente para datos a los que raramente se accede y que se almacenan durante al menos 180 días con requisitos de latencia flexibles (por ejemplo, copias de seguridad a largo plazo).
+
+
+Las siguientes **consideraciones** se aplican a los distintos niveles de acceso:
+
+- Los niveles de **acceso frecuente y esporádico** se pueden **establece**r **en el nivel de cuenta**. Los niveles de acceso **aislados y de archivo no** están disponibles en el nivel de cuenta.
+- **Los niveles** frecuente, esporádico, aislados y de archivo **se** pueden **establece**r **en el nivel de blob** durante la carga o después de esta.
+- Los datos de los niveles de **acceso esporádico y aislado** pueden **tolera**r **una disponibilidad ligeramente inferior**, pero aun así requieren una gran durabilidad y latencia de recuperación, y unas características de rendimiento similares a las de los datos de acceso frecuente. En el caso de los datos de acceso esporádico y aislado, un contrato de nivel de servicio (SLA) con una disponibilidad ligeramente inferior y unos costes de acceso mayores, en comparación con los datos de acceso frecuente, es aceptable a cambio de unos costes de almacenamiento menores.
+- El almacenamiento de archivo almacena datos sin conexión y ofrece los menores costos de almacenamiento, pero los mayores costos de acceso y rehidratación de datos.
+
+##### Azure Files
+
+El almacenamiento de Azure Files **ofrece recursos compartidos** de archivos totalmente administrados en la nube a los **que se puede acceder mediante** los protocolos Bloque de mensajes del servidor (**SMB**) o Sistema de archivos en red (**NFS**) estándar del sector. Los recursos compartido de archivos de Azure Files se pueden montar simultáneamente mediante implementaciones locales o en la nube. 
+
+A los recursos compartidos de archivos SMB de Azure se puede acceder desde clientes Windows, Linux y macOS. A los recursos compartidos de archivos NFS de Azure Files se puede acceder desde clientes Linux y macOS. Además, los recursos compartidos de archivos SMB de Azure Files se pueden almacenar en la caché de los servidores de Windows Server con Azure File Sync, lo que permite un acceso rápido allí donde se utilizan los datos.
+
+
+###### Ventajas de Azure Files
+
+- **Acceso compartido**: los recursos compartidos de Azure Files admiten los protocolos SMB y NFS estándar del sector, lo que significa que puede **reemplazar perfectamente los recursos compartidos de archivos en local** por recursos compartidos de archivos de Azure **sin preocuparse de compatibilidad de aplicaciones**.
+- **Totalmente administrado**: los recursos compartidos de Azure Files **pueden crearse sin necesidad de administrar ni el hardware ni un sistema operativo**. Esto significa que no tiene que tratar con la aplicación de actualizaciones de seguridad críticas en el sistema operativo del servidor ni ocuparse de reemplazar discos duros defectuosos.
+- **Scripts y herramientas**: se pueden usar cmdlets de PowerShell y la CLI de Azure para crear, montar y administrar recursos compartidos de archivos de Azure como parte de la administración de las aplicaciones de Azure. Los recursos compartidos de archivos de Azure se pueden crear y administrar mediante Azure Portal y el Explorador de Azure Storage.
+- **Resistencia**: Azure Files se creó desde sus orígenes para estar siempre disponible. Reemplazar los recursos compartidos de archivos en el entorno local por Azure Files significa que ya no tendrá que levantarse en mitad de la noche para tratar con problemas de red o interrupciones del suministro eléctrico local.
+- **Capacidad de programación intuitiva**: las aplicaciones que se ejecutan en Azure pueden tener acceso a los datos en el recurso compartido mediante las API de E/S del sistema de archivos. Por tanto, los desarrolladores pueden aprovechar el código y los conocimientos que ya tienen para migrar las aplicaciones actuales. Además de las API de E/S del sistema, puede usar las Bibliotecas de cliente de Azure Storage o la API de REST de Azure Storage.
+
+
+##### Colas de Azure
+
+Azure Queue Storage es un servicio para almacenar grandes cantidades de mensajes, Una vez que están almacenados, se puede acceder a los mensajes desde cualquier lugar del mundo mediante llamadas autenticadas con HTTP o HTTPS. Una cola puede contener tantos mensajes como el espacio que tenga la cuenta de almacenamiento (pueden ser millones). **Cada mensaje individual** de la cola **puede** llegar a **tener un tamaño máximo de 64 KB**. Las colas **se utilizan** normalmente **para crear un trabajo pendiente del trabajo que se va a procesar de forma asincrónica**.
+
+Queue Storage se puede combinar con funciones de proceso como Azure Functions para realizar una acción cuando se recibe un mensaje. Por ejemplo, supongamos que quiere realizar una acción después de que un cliente cargue un formulario en el sitio web. Podría hacer que el botón enviar en el sitio web desencadene un mensaje en Queue Storage. Después, podría usar Azure Functions para desencadenar una acción una vez recibido el mensaje.
+
+
+##### Tablas de Azure
+
+Azure Table Storage permite almacenar una gran cantidad de datos estructurados. Las tablas de Azure son un almacén de datos NoSQL que acepta llamadas autenticadas desde dentro y fuera de la nube de Azure. Esto le permite usar tablas de Azure para compilar la solución híbrida o de varias nubes y hacer que los datos estén siempre disponibles. **Las tablas de Azure son ideales para el almacenamiento de datos estructurados no relacionales**.
+
+### Ejercicio: Creación de un blob de almacenamiento
+
+#### Crear una cuenta de almacenamiento
+
+En esta tarea, creará una cuenta de almacenamiento.
+
+1. Inicie sesión en Azure Portal en [https://portal.azure.com](https://portal.azure.com/learn.docs.microsoft.com).
+    
+2. Seleccione **Crear un recurso**.
+    
+3. En Categorías, seleccione **Almacenamiento**.
+    
+4. En Cuenta de almacenamiento, seleccione **Crear**.
+    
+5. En la pestaña **Aspectos básicos** del panel Crear cuenta de almacenamiento, rellene la siguiente información. Deje los valores predeterminados para todo lo demás.
+
+|**Configuración**|**Valor**|
+|---|---|
+|Subscription|Suscripción de Concierge|
+|Grupo de recursos|Seleccione el grupo de recursos que comienza por **learn**.|
+|Nombre de la cuenta de almacenamiento|Cree un nombre de cuenta de almacenamiento único|
+|Region|Deje el valor predeterminado|
+|Rendimiento|Estándar|
+|Redundancia|Almacenamiento con redundancia local (LRS)|
+
+6. En la pestaña **Opciones avanzadas** del panel Crear cuenta de almacenamiento, rellene la siguiente información. Deje los valores predeterminados para todo lo demás.
+
+
+|**Configuración**|**Valor**|
+|---|---|
+|Permitir la habilitación del acceso anónimo en contenedores individuales|Activada|
+
+![[Pasted image 20231226130811.png]]
+
+7. Seleccione **Revisar** para revisar la configuración de su cuenta de almacenamiento y permitir que Azure valide la configuración.
+    
+8. Una vez validada, seleccione **Crear**. Espere la notificación de que la cuenta se creó correctamente.
+    
+9. Haga clic en **Go to resource** (Ir al recurso).
+
+
+#### Uso con Blob Storage
+
+En esta sección, creará un contenedor de blobs y cargará una imagen.
+
+1. En **Almacenamiento de datos,** seleccione **Contenedores**.
+
+![[Pasted image 20231226131109.png]]
+
+
+2. Seleccione **+ Contenedor** y complete la información.
+
+|**Configuración**|**Valor**|
+|---|---|
+|Nombre|Escriba un nombre para el contenedor.|
+|Nivel de acceso anónimo|Privado (sin acceso anónimo)|
+
+3. Seleccione Crear
+
+PD: 
+
+El Paso 4 necesitará una imagen. Si quiere cargar una imagen que ya tiene en el equipo, continúe con el Paso 4. De lo contrario, abra una nueva ventana del explorador y busque la imagen de una flor en Bing. Guarde la imagen en el equipo.
+
+4. 1. De nuevo en Azure Portal, seleccione el contenedor que ha creado y luego Cargar.
+
+5. Explore el archivo de la imagen que quiere cargar. Selecciónelo y, luego, seleccione Cargar.
+
+PD: 
+
+Puede cargar tantos blobs como quiera de esta manera. Los nuevos blobs se enumerarán dentro del contenedor.
+
+6. Seleccione el blob (archivo) que acaba de cargar. Debe estar en la pestaña de propiedades.
+   
+7. Copie la dirección URL del campo URL y péguela en una nueva pestaña.   
+
+Debe recibir un mensaje de error similar al siguiente:
+
+```RESULTADO
+<Error>
+  <Code>ResourceNotFound</Code>
+  <Message>The specified resource does not exist. RequestId:4a4bd3d9-101e-005a-1a3e-84bd42000000</Message>
+</Error>
+```
+
+![[Pasted image 20231226133224.png]]
+#### Cambie el nivel de acceso del blob.
+
+1. Vuelva a Azure Portal.
+
+2. Seleccione Cambiar nivel de acceso.
+
+3. Establezca el Nivel de acceso anónimo en Blob (acceso de lectura anónimo solo para blobs).
+
+
+![[Pasted image 20231226132214.png]]
+
+4. Seleccione Aceptar.
+
+5. Actualice la pestaña en la que ha intentado acceder al archivo anteriormente.
+
+![[Pasted image 20231226133337.png]]
+
+Enhorabuena, ha completado este ejercicio. Ha creado una cuenta de almacenamiento, ha agregado un contenedor a esta cuenta y, después, ha cargado blobs (archivos) en el contenedor. Luego ha cambiado el nivel de acceso para que pudiera acceder al archivo desde Internet.
+
+#### Limpieza
+
+El espacio aislado limpia los recursos automáticamente cuando haya terminado con este módulo.
+
+Al trabajar en una suscripción propia, se recomienda identificar al final de un proyecto si aún necesita los recursos creados. Los recursos que dejas en ejecución pueden costar dinero. Puede eliminar los recursos de forma individual o eliminar el grupo de recursos para eliminar todo el conjunto de recursos.
+
+### Identificación de las opciones de migración de datos de Azure
+
+Ahora que comprende las distintas opciones de almacenamiento dentro de Azure, es importante comprender también cómo obtener los datos y la información en Azure. **Azure admite la migración en tiempo real de la infraestructura, las aplicaciones y los datos mediante Azure Migrate, así como la migración asincrónica de datos mediante Azure Data Box.**
+
+#### Azure Migrate
+
+Azure Migrate es un servicio que le ayuda a migrar desde un entorno local a la nube. Azure Migrate funciona como centro para ayudarle a administrar la valoración y la migración del centro de datos local a Azure. Ofrece lo siguiente:
+
+- **Plataforma de migración unificada**: un único portal para iniciar, ejecutar y realizar un seguimiento de la migración a Azure.
+- **Rango de herramientas**: Rango de herramientas para la evaluación y migración Las herramientas de Azure Migrate incluyen Azure Migrate: Discovery y assessment y Azure Migrate: Server Migration. Azure Migrate también se integra con otros servicios y herramientas de Azure, así como con ofertas de proveedores de software independientes (ISV).
+- **Assessment and migration** (Evaluación y migración): en el centro de Azure Migrate, puede evaluar y migrar la infraestructura local a Azure.
+
+##### Herramientas integradas
+
+Además de trabajar con herramientas de ISV, el centro de Azure Migrate también incluye las siguientes herramientas para ayudar con la migración:
+
+- **Azure Migrate: Discovery and assessment** (Azure Migrate: detección y evaluación). Detecte y evalúe servidores locales que se ejecutan en VMware, Hyper-V y servidores físicos para preparar la migración a Azure.
+- **Azure Migrate: Server Migration** (Azure Migrate: migración del servidor). Migre máquinas virtuales de VMware, máquinas virtuales de Hyper-V, servidores físicos, otros servidores virtualizados y máquinas virtuales de la nube pública a Azure.
+- **Data Migration Assistant**. Data Migration Assistant es una herramienta independiente para evaluar servidores de SQL Server. Ayuda a identificar posibles problemas que bloquean la migración. Identifica características no admitidas, nuevas características que puede aprovechar después de la migración y la ruta de acceso correcta para la migración de la base de datos.
+- **Azure Database Migration Service**. Migre bases de datos locales a máquinas virtuales de Azure en las que se ejecutan SQL Server, Azure SQL Database o instancias administradas de SQL.
+- **Azure App Service Migration Assistant**. Azure App Service Migration Assistant es una herramienta independiente utilizada para evaluar sitios web locales para la migración a Azure App Service. Use Migration Assistant para migrar aplicaciones web de .NET y PHP a Azure.
+- **Azure Data Box**. Use los productos de Azure Data Box para trasladar grandes cantidades de datos sin conexión a Azure.
+
+#### Azure Data Box
+
+Azure Data Box es un servicio de migración física que **ayuda a transferir grandes cantidades de datos de forma rápida**, económica y confiable. La transferencia de datos segura se acelera mediante el envío de un dispositivo de almacenamiento propietario de Data Box que tiene una **capacidad** de almacenamiento utilizable **máxima de 80 terabytes**. Data Box se transporta hacia y desde el centro de datos a través de un transportista regional. Una caja resistente asegura y protege Data Box de daños durante el trayecto.
+
+Puede pedir el dispositivo Data Box a través de Azure Portal para importar o exportar datos desde Azure. Una vez recibido el dispositivo, puede configurarlo rápidamente mediante la interfaz de usuario web local y conectarlo a la red. Una vez que haya terminado de transferir los datos (ya sea dentro o fuera de Azure), simplemente devuelva Data Box. Si va a transferir datos a Azure, los datos se cargan de forma automática una vez que Microsoft vuelve a recibir Data Box. El servicio de Data Box se encarga de realizar el seguimiento de todo el proceso en Azure Portal.
+
+##### Casos de uso
+
+Data Box es ideal para transferir tamaños de datos con más de 40 TB en escenarios sin conectividad de red limitada. El movimiento de datos puede ser único, periódico o una transferencia de datos masiva inicial seguida de transferencias periódicas.
+
+Estos son los **distintos escenarios** donde se puede usar Data Box para importar datos en Azure.
+
+- **Migración única**: cuando se mueve gran cantidad de datos locales a Azure.
+- Traslade una biblioteca multimedia de cintas sin conexión a Azure para crear una biblioteca multimedia en línea.
+- Migre la granja de máquinas virtuales, SQL Server y las aplicaciones a Azure.
+- Traslade los datos históricos a Azure para un análisis exhaustivo y generar informes con HDInsight.
+**- Transferencia masiva inicial**: cuando se realiza una transferencia masiva inicial con Data Box (inicialización) seguida de transferencias incrementales a través de la red.
+- **Cargas periódicas**: cuando se genera periódicamente una gran cantidad de datos y es necesario moverlos a Azure.
+
+Estos son los distintos escenarios donde se puede usar Data Box para exportar datos a Azure.
+
+- **Recuperación ante desastres**: cuando se restaura una copia de los datos de Azure en una red local. En un escenario de recuperación ante desastres habitual, se exporta una gran cantidad de datos de Azure se exporta a Data Box. Microsoft luego los envía a Data Box y, en poco tiempo, los datos se restauran en un entorno local.
+- **Requisitos de seguridad**: cuando necesita poder exportar datos de Azure debido a los requisitos de seguridad o de la administración pública.
+- **Migración de vuelta al entorno local o a otro proveedor de servicios en la nube**: cuando quiera mover todos los datos de vuelta al entorno local o a otro proveedor de servicios en la nube, exporte los datos a través de Data Box para migrar las cargas de trabajo.
+
+Una vez que los datos del pedido de importación se cargan en Azure, los discos del dispositivo se limpian, según las normas NIST 800-88r1. Si el pedido es de exportación, los discos se borran una vez que el dispositivo llega al centro de datos de Azure.
+
+### Identificación de las opciones de movimiento de archivos de Azure
