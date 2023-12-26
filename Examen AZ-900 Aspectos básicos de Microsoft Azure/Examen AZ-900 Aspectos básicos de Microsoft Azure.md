@@ -560,16 +560,16 @@ Azure proporciona más de 100 servicios que permiten hacer todo tipo de cosas: 
 
 Azure proporciona servicios de inteligencia artificial (IA) y aprendizaje automático (ML) que pueden comunicarse de forma natural con los usuarios mediante la vista, el oído y la voz. También facilita soluciones de almacenamiento que crecen dinámicamente para dar cabida a grandes cantidades de datos. Los servicios de Azure permiten soluciones que no son factibles sin la potencia de la nube.
 
-## Introducción a las cuentas de Azure
+### Introducción a las cuentas de Azure
 
 Para crear y usar los servicios de Azure, necesita una suscripción de Azure. Al completar los módulos de Microsoft Learn, la mayoría de las veces se crea una suscripción temporal de forma automática, que se ejecuta en un entorno denominado espacio aislado de Microsoft Learn.
 
 
-### Creación de una cuenta de Azure
+#### Creación de una cuenta de Azure
 
 Para comprar el acceso a Azure directamente desde Microsoft, regístrate en el sitio web de Azure o hágalo a través de un representante de Microsoft. 
 
-### ¿Qué es la cuenta gratuita de Azure?
+#### ¿Qué es la cuenta gratuita de Azure?
 
 La cuenta gratuita de Azure incluye lo siguiente:
 
@@ -579,7 +579,7 @@ La cuenta gratuita de Azure incluye lo siguiente:
 
 La [cuenta gratuita de Azure](https://azure.microsoft.com/free) ofrece de forma óptima un comienzo y exploración a los nuevos usuarios. Para registrarse, necesita un número de teléfono, una tarjeta de crédito y una cuenta de Microsoft o de GitHub. La información de la tarjeta de crédito solo se usa para la verificación de identidad. No se te cobrará por ningún servicio hasta que actualice a una suscripción de pago.
 
-### ¿Qué es la cuenta de estudiante gratuita de Azure?
+#### ¿Qué es la cuenta de estudiante gratuita de Azure?
 
 La oferta de la cuenta de estudiante gratuita de Azure incluye lo siguiente:
 
@@ -590,15 +590,15 @@ La oferta de la cuenta de estudiante gratuita de Azure incluye lo siguiente:
 La [cuenta de estudiante gratuita de Azure](https://azure.microsoft.com/free/students/) es una oferta para estudiantes que ofrece 100 USD de crédito y herramientas de desarrollo gratuitas. Además, puedes registrarse sin tarjeta de crédito.
 
 
-### ¿Qué es el espacio aislado de Microsoft Learn?
+#### ¿Qué es el espacio aislado de Microsoft Learn?
 
 En muchos de los ejercicios de Learn se usa una tecnología denominada espacio aislado, que crea una suscripción temporal que se agrega a la cuenta de Azure. Esta suscripción temporal le permite crear recursos de Azure para la duración de un módulo de Learn. Learn limpia de forma automática los recursos temporales una vez que hayas completado el módulo.
 
 Cuando completas un módulo de Learn, puedes usar la suscripción personal para finalizar los ejercicios que incluye. Pero el espacio aislado es el método preferido, ya que permite crear y probar recursos de Azure sin costo alguno.
 
-## Ejercicio: Exploración del espacio aislado de Learn
+### Ejercicio: Exploración del espacio aislado de Learn
 
-### Tarea 1: Uso de la CLI de PowerShell
+#### Tarea 1: Uso de la CLI de PowerShell
 
 Una vez que se inicie el espacio aislado, la mitad de la pantalla estará en modo de interfaz de línea de comandos (CLI) de PowerShell. Si estás familiarizado con PowerShell, puedes administrar el entorno de Azure mediante comandos de PowerShell.
 
@@ -614,7 +614,7 @@ La mayoría de los comandos específicos de Azure comenzarán con las letras az.
 az version
 ```
 
-### Tarea 2: Uso de la CLI de BASH
+#### Tarea 2: Uso de la CLI de BASH
 
 Si estás más familiarizado con BASH, puedes usar el comando BASH en su lugar mediante el cambio a la CLI de BASH.
 
@@ -650,7 +650,7 @@ az upgrade
 
 Puedes volver al modo de PowerShell si escribe pwsh en la línea de comandos de BASH.
 
-### Tarea 3: Uso del modo interactivo de la CLI de Azure
+#### Tarea 3: Uso del modo interactivo de la CLI de Azure
 
 Otra manera de interactuar consiste en usar el modo interactivo de la CLI de Azure. Esto cambia el comportamiento de la CLI para parecerse más a un entorno de desarrollo integrado (IDE). El modo interactivo proporciona autocompletar, descripciones de comandos e incluso ejemplos. Si no estás familiarizado con BASH y PowerShell, pero quiere usar la línea de comandos, el modo interactivo puede ayudarte.
 
@@ -678,29 +678,29 @@ Los comandos deben haber funcionado igual que antes y generar los mismos resulta
 exit
 ```
 
-### Tarea 4: Uso de Azure Portal
+#### Tarea 4: Uso de Azure Portal
 
 Durante los ejercicios del espacio aislado también tendrás la opción de usar Azure Portal. Debes usar el vínculo proporcionado en el ejercicio para acceder a Azure Portal. Con el vínculo proporcionado, en lugar de abrir el portal personalmente, se asegura de usar la suscripción correcta y poder completar el ejercicio como quieras.
 
 Inicie sesión en [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com) para comprobar la interfaz web de Azure. Una vez en el portal, puedes ver todos los servicios que ofrece Azure, así como echar un vistazo a los grupos de recursos, etc.
 
-### Continuar
+#### Continuar
 
 Todo listo por ahora. Volverás a este espacio aislado más adelante en este módulo y crearás un recurso real de Azure.
 
-## Descripción de la infraestructura física de Azure
+### Descripción de la infraestructura física de Azure
 
 A lo largo del recorrido con Microsoft Azure, escucharás y usarás términos como regiones, zonas de disponibilidad, recursos, suscripciones, etc. Este módulo se centra en los principales componentes arquitectónicos de Azure. Los componentes arquitectónicos principales de Azure se pueden dividir en dos grandes grupos: la infraestructura física y la infraestructura de administración.
 
 La infraestructura física de Azure comienza con los centros de datos. Conceptualmente, los centros de datos son iguales que los grandes centros de datos corporativos. Son instalaciones con recursos organizados en bastidores, con potencia dedicada, refrigeración e infraestructura de red.
 
-### Regions
+#### Regions
 
 Una región es un área geográfica del planeta que contiene al menos un centro de datos, aunque podrían ser varios cercanos y conectados mediante una red de baja latencia. Azure asigna y controla los recursos de forma inteligente dentro de cada región para garantizar que las cargas de trabajo están bien compensadas.
 
 Al implementar un recurso en Azure, es habitual tener que elegir la región en la que quiere que se implemente el recurso.
 
-### Availability Zones
+#### Availability Zones
 
 Las zonas de disponibilidad son centros de datos separados físicamente dentro de una región de Azure. Cada zona de disponibilidad consta de uno o varios centros de datos equipados con alimentación, refrigeración y redes independientes. Una zona de disponibilidad se configura para constituir un límite de aislamiento. Si una zona deja de funcionar, la otra continúa trabajando. Las zonas de disponibilidad están conectadas a través de redes de fibra óptica de alta velocidad privadas.
 
@@ -720,20 +720,20 @@ Las zonas de disponibilidad son principalmente para las máquinas virtuales, los
 
 Incluso con la resistencia adicional que proporcionan las zonas de disponibilidad, es posible que un evento pueda ser tan grande que afecte a varias zonas de disponibilidad en una sola región. Para proporcionar una mayor resistencia, Azure tiene pares de regiones.
 
-### Pares de región
+#### Pares de región
 
 La mayoría de las regiones de Azure se emparejan con otra región de la misma zona geográfica (por ejemplo, EE. UU., Europa o Asia) que se encuentre como mínimo a 500 km de distancia. Este enfoque permite la replicación de recursos en una zona geográfica que ayuda a reducir la probabilidad de que se produzcan interrupciones provocadas por eventos como desastres naturales, disturbios sociales, cortes del suministro eléctrico o interrupciones de la red física que afecten a una región completa. Por ejemplo, si una región de un par se ve afectada por un desastre natural, los servicios conmutarán por error automáticamente a la otra región de su par de regiones.
 
 Algunos pares de regiones de ejemplo en Azure son Oeste de EE. UU. y Este de EE. UU., y Sudeste Asiático y Asia Pacífico. Como las dos regiones están directamente conectadas y lo suficientemente lejos como para estar aisladas contra desastres regionales, puede usarlas para proporcionar redundancia de datos y servicios de confianza.
 
-#### Ventajas adicionales de los pares de región:
+##### Ventajas adicionales de los pares de región:
 
 - Si se produce una gran interrupción de Azure, se da prioridad a una región de cada par para asegurarse de que al menos una se restaure lo más rápido posible para las aplicaciones hospedadas en ese par de regiones.
 
 - Las actualizaciones planeadas de Azure se implementan una a una en regiones emparejadas para minimizar el tiempo de inactividad y el riesgo de interrupción de la aplicación.
 
 - Los datos siguen residiendo en la misma zona geográfica que su pareja (excepto Sur de Brasil) con fines de jurisdicción fiscal y de aplicación de la ley.
-### Regiones soberanas
+#### Regiones soberanas
 
 Además de las regiones normales, Azure también tiene regiones soberanas. Las regiones soberanas son instancias de Azure que están aisladas de la instancia principal de Azure. Es posible que tenga que usar una región soberana con fines legales o de cumplimiento.
 
@@ -742,11 +742,11 @@ Entre las regiones soberanas de Azure se incluyen las siguientes:
 - US DoD (centro), US Gov Virginia, US Gov Iowa y más: Estas regiones son instancias físicas y lógicas con aislamiento de red de Azure para asociados y agencias de la administración pública de EE. UU. Estos centros de datos están operados por personal estadounidense sometido a evaluación e incluyen certificaciones de cumplimiento adicionales.
 - Este de China, Norte de China y más: Estas regiones están disponibles gracias a una asociación exclusiva entre Microsoft y 21Vianet, por la cual Microsoft no mantiene directamente los centros de datos.
 
-## Descripción de la infraestructura de administración de Azure
+### Descripción de la infraestructura de administración de Azure
 
 La infraestructura de administración incluye recursos de Azure y grupos de recursos, suscripciones y cuentas. Comprender la organización jerárquica le ayudará a planear los proyectos y productos dentro de Azure.
 
-### Recursos y grupos de recursos de Azure
+#### Recursos y grupos de recursos de Azure
 
 Un recurso es el bloque de creación básico de Azure. Todo lo que cree, aprovisione, implemente, etc., es un recurso;
 
@@ -770,7 +770,7 @@ Por ejemplo, si vas a configurar un entorno de desarrollo temporal, agrupar todo
 No hay reglas rígidas sobre cómo se usan los grupos de recursos, por lo que debe tener en cuenta cómo configurarlos para maximizar su utilidad.
 
 
-### Suscripciones de Azure
+#### Suscripciones de Azure
 
 En Azure, las suscripciones son una unidad de administración, facturación y escala. Al igual que los grupos de recursos son una manera de organizar lógicamente los recursos, las suscripciones permiten organizar lógicamente los grupos de recursos y facilitar la facturación.
 
@@ -781,20 +781,20 @@ Hay dos tipos de límites de suscripción que puede utilizar:
 - **Límite de facturación**: Este tipo de suscripción determina cómo se factura una cuenta de Azure por el uso de Azure. Puede crear varias suscripciones para diferentes tipos de requisitos de facturación. Azure genera facturas e informes de facturación independientes para cada suscripción, de modo que pueda organizar y administrar los costos.
 
 - **Límite de control de acceso**: Azure aplica las directivas de administración de acceso en el nivel de suscripción, por lo que puede crear suscripciones independientes para reflejar distintas estructuras organizativas. Por ejemplo, dentro de una empresa hay diferentes departamentos a los que se pueden aplicar directivas de suscripción de Azure distintas. Este modelo de facturación le permite administrar y controlar el acceso a los recursos que los usuarios aprovisionan con suscripciones específicas.
-### Creación de una suscripción de Azure adicional
+#### Creación de una suscripción de Azure adicional
 
 De forma similar al uso de grupos de recursos para separar los recursos por función o acceso, es posible que quiera crear suscripciones adicionales con fines de administración de recursos o facturación. Por ejemplo, puedes optar por crear suscripciones adicionales para separar lo siguiente:
 
 - **Entornos**: puedes optar por crear suscripciones con el fin de configurar entornos independientes para el desarrollo y las pruebas, para seguridad o para aislar los datos por motivos de cumplimiento. Este diseño es especialmente útil porque el control de acceso a los recursos se produce en el nivel de suscripción.
 - **Estructuras organizativas**: puedes crear suscripciones para reflejar las distintas estructuras organizativas. Por ejemplo, podría limitar un equipo a recursos de bajo costo, al tiempo que permite que el departamento de TI tenga un alcance completo. Este diseño permite administrar y controlar el acceso a los recursos que los usuarios aprovisionan en cada suscripción.
 - **Facturación**: puedes crear suscripciones adicionales con fines de facturación. Dado que los costos se agregan primero en el nivel de suscripción, es posible que quieras crear suscripciones para administrar y realizar un seguimiento de los costos en función de sus necesidades. Por ejemplo, puede que quieras crear una suscripción para las cargas de trabajo de producción, y otra suscripción para las cargas de trabajo de desarrollo y pruebas.
-### Grupos de administración de Azure
+#### Grupos de administración de Azure
 
 La última pieza es el grupo de administración. Los recursos se recopilan en grupos de recursos y los grupos de recursos se recopilan en suscripciones. Si acaba de empezar en Azure, podría parecer una jerarquía suficiente para mantener las cosas organizadas. Pero imagine que trabaja con varias aplicaciones, varios equipos de desarrollo, en varias zonas geográficas.
 
 Si tienes muchas suscripciones, es posible que necesite una forma de administrar con eficacia el acceso, las directivas y el cumplimiento para esas suscripciones. Los grupos de administración de Azure proporcionan un nivel de ámbito por encima de las suscripciones. Las suscripciones se organizan en contenedores llamados grupos de administración, a los que se aplican condiciones de gobernanza. Todas las suscripciones de un grupo de administración heredan automáticamente las condiciones que tenga aplicadas, de la misma manera que los grupos de recursos heredan la configuración de las suscripciones y los recursos heredan de los grupos de recursos. Los grupos de administración proporcionan capacidad de administración de nivel empresarial a gran escala con independencia del tipo de suscripciones que tenga. Los grupos de administración se pueden anidar.
 
-### Jerarquía de grupo de administración, suscripciones y grupo de recursos
+#### Jerarquía de grupo de administración, suscripciones y grupo de recursos
 
 Puede compilar una estructura flexible de grupos de administración y suscripciones para organizar los recursos en una jerarquía para una administración unificada de las directivas y el acceso. El diagrama siguiente muestra un ejemplo de creación de una jerarquía para la gobernanza mediante grupos de administración.
 
@@ -814,9 +814,9 @@ Datos importantes sobre los grupos de administración:
 
 - Cada grupo de administración y suscripción solo puede admitir un elemento primario.
 
-## Ejercicio: Creación de un recurso de Azure
+### Ejercicio: Creación de un recurso de Azure
 
-### Tarea 1: Creación de una máquina virtual
+#### Tarea 1: Creación de una máquina virtual
 
 En esta tarea, creará una máquina virtual mediante Azure Portal.
 
@@ -848,7 +848,7 @@ En esta tarea, creará una máquina virtual mediante Azure Portal.
 |Confirmación de la contraseña|Vuelve a escribir la contraseña personalizada|
 |Puertos de entrada públicos|Ninguno|
 
-### Tarea 2: Comprobación de los recursos creados
+#### Tarea 2: Comprobación de los recursos creados
 
 Una vez que se cree la implementación, puedes comprobar que Azure ha creado no solo una máquina virtual, sino todos los recursos asociados que necesita la máquina virtual.
 
@@ -861,14 +861,14 @@ Deberías ver una lista de recursos en el grupo de recursos. La cuenta de almace
 
 Felicidades. Has creado un recurso en Azure y ha tenido la oportunidad de ver cómo se agrupan los recursos en la creación.
 
-### Limpieza
+#### Limpieza
 
 El espacio aislado limpia los recursos automáticamente cuando haya terminado con este módulo.
 
 Al trabajar en una suscripción propia, se recomienda identificar al final de un proyecto si aún necesita los recursos creados. Los recursos que dejas en ejecución pueden costar dinero. Puede eliminar los recursos de forma individual o eliminar el grupo de recursos para eliminar todo el conjunto de recursos.
 
 
-## Prueba de conocimientos
+### Prueba de conocimientos
 
 1. ¿En cuántos grupos de recursos puede estar un recurso al mismo tiempo?
 
@@ -891,11 +891,11 @@ Al trabajar en una suscripción propia, se recomienda identificar al final de un
 	<p>La mayoría de las regiones de Azure se emparejan con otra región de la misma zona geográfica (por ejemplo, EE. UU., Europa o Asia) que esté como mínimo a 300 millas de distancia.</p>
 </Details>
 
-## Resumen
+### Resumen
 
 En este módulo, ha obtenido información sobre la estructura física y de administración de Microsoft Azure. Se le han presentado la relación entre los centros de datos, las zonas de disponibilidad y las regiones. Ha explorado cómo la infraestructura admite las ventajas de la nube, como la alta disponibilidad y la confiabilidad. También ha obtenido información sobre la infraestructura de administración de Azure. Ha explorado cómo se relacionan los recursos y los grupos de recursos, y cómo las suscripciones y los grupos de administración pueden ayudar a administrar los recursos.
 
-## Objetivos de aprendizaje
+#### Objetivos de aprendizaje
 
 Ahora debería ser capaz de hacer lo siguiente:
 
@@ -907,13 +907,13 @@ Ahora debería ser capaz de hacer lo siguiente:
 - Describir los grupos de administración.
 - Describir la jerarquía de grupos de recursos, suscripciones y grupos de administración.
 
-# Descripción de los servicios de proceso y redes de Azure
+## Descripción de los servicios de proceso y redes de Azure
 
-## Introducción 
+### Introducción 
 
 En este módulo, se le presentarán los servicios de proceso y redes de Azure. Obtendrá información sobre tres de las opciones de proceso (máquinas virtuales, contenedores y funciones de Azure). También obtendrá información sobre algunas de las características de red, como redes virtuales de Azure, Azure DNS y Azure ExpressRoute.
 
-### Objetivos de aprendizaje
+#### Objetivos de aprendizaje
 
 Después de completar este módulo, podrá:
 
@@ -945,7 +945,7 @@ Una imagen es una plantilla que se usa para crear una máquina virtual y puede q
 
 Se pueden ejecutar máquinas virtuales únicas para pruebas, desarrollo o tareas secundarias. También se pueden agrupar las máquinas virtuales para proporcionar alta disponibilidad, escalabilidad y redundancia. Azure también puede administrar la agrupación de máquinas virtuales con características como conjuntos de escalado y conjuntos de disponibilidad.
 
-### Conjuntos de escalado de máquinas virtuales
+#### Conjuntos de escalado de máquinas virtuales
 
 Los conjuntos de escalado de máquinas virtuales permiten crear y administrar un grupo de máquinas virtuales idénticas, de carga equilibrada.
 
@@ -956,7 +956,7 @@ En su lugar, con los conjuntos de escalado de máquinas virtuales, Azure automat
 El número de instancias de máquina virtual puede aumentar o disminuir automáticamente según la demanda, o bien puede establecerlo para que se escale en función de una programación definida. Los conjuntos de escalado de máquinas virtuales también **implementan automáticamente un equilibrador de carga** para asegurarse de que los recursos se usan de forma eficaz. Con los conjuntos de escalado de máquinas virtuales, puede crear servicios a gran escala para áreas como proceso, macrodatos y cargas de trabajo de contenedor.
 
 
-### Conjuntos de disponibilidad de máquinas virtuales
+#### Conjuntos de disponibilidad de máquinas virtuales
 
 Los conjuntos de disponibilidad de máquinas virtuales son otra herramienta que le ayudará a crear un entorno más **resistente y de alta disponibilidad**. Los conjuntos de disponibilidad están diseñados para garantizar que las máquinas virtuales escalen las actualizaciones y tengan una conectividad de red y potencia variadas, lo que **evita que se pierdan** todas las máquinas virtuales **debido a un solo fallo de energía o de la red**.
 
@@ -1105,7 +1105,7 @@ Eso es todo para este ejercicio. El espacio aislado seguirá ejecutándose y vol
 
 ## Descripción de Azure Virtual Desktop
 
-Otro tipo de máquina virtual es Azure Virtual Desktop. Azure Virtual Desktop es un servicio de virtualización de escritorios y aplicaciones que se ejecuta en la nube. Te permite usar una versión hospedada en la nube de Windows desde cualquier ubicación. Azure Virtual Desktop funciona en dispositivos y sistemas operativos, y funciona con aplicaciones que puede usar para acceder a escritorios remotos o a la mayoría de exploradores modernos.
+Otro tipo de máquina virtual es Azure Virtual Desktop. Azure Virtual Desktop es un servicio de virtualización de escritorios y aplicaciones que se ejecuta en la nube. **Te permite usar una versión hospedada en la nube de Windows desde cualquier ubicación.** Azure Virtual Desktop funciona en dispositivos y sistemas operativos, y funciona con aplicaciones que puede usar para acceder a escritorios remotos o a la mayoría de exploradores modernos.
 
 ### Aumento de la seguridad
 
@@ -1644,3 +1644,61 @@ Azure DNS se basa en Azure Resource Manager, que proporciona características ta
 Azure DNS puede administrar registros DNS para los servicios de Azure y también proporciona el servicio de nombres de dominio para los recursos externos. Azure DNS está integrado en Azure Portal y usa las mismas credenciales, la misma facturación y el mismo contrato de soporte técnico que los demás servicios de Azure.
 
 Como Azure DNS se ejecuta en Azure, significa que puede administrar los dominios y registros con Azure Portal, cmdlets de Azure PowerShell y la CLI de Azure multiplataforma. Las aplicaciones que requieren la administración automática de DNS se pueden integrar con el servicio mediante las API REST y los SDK.
+
+#### Redes virtuales personalizables con dominios privados
+
+Azure DNS es compatible con dominios DNS privados. Esta característica permite usar nombres de dominio personalizados propios en las redes virtuales privadas, en lugar de limitarse a los nombres proporcionados por Azure.
+
+#### Registros de alias
+
+Azure DNS también admite conjuntos de registros de alias. Puede usar un conjunto de registros de alias que haga referencia a un recurso de Azure, como una dirección IP pública de Azure, un perfil de Azure Traffic Manager o un punto de conexión de Azure Content Delivery Network (CDN). Si cambia la dirección IP del recurso subyacente, el conjunto de registros de alias se actualiza sin problemas durante la resolución DNS. El conjunto de registros de alias apunta a la instancia de servicio, y la instancia de servicio está asociada con una dirección IP.
+
+	Importante
+	
+	No se puede usar Azure DNS para comprar un nombre de dominio. Por una tarifa anual, puede comprar un nombre de dominio mediante dominios de App Service o un registrador de nombres de dominio de terceros. Después de comprarlos, los dominios se pueden hospedar en Azure DNS para la administración de registros.
+
+
+## Prueba de conocimientos
+
+1. ¿Qué característica de máquina virtual de Azure escalona las actualizaciones en todas las máquinas virtuales en función de sus dominios de actualización y error?
+
+<Details>
+	<summary>Respuesta</summary>
+	<p><b>Los conjuntos de disponibilidad</b> escalonan las actualizaciones de máquina virtual en función de sus dominios de actualización y error.</p>
+</Details>
+
+2. ¿Qué servicio de Azure permite a los usuarios utilizar una versión hospedada en la nube de Windows desde cualquier ubicación y conectarse desde los exploradores más modernos?
+
+<Details>
+	<summary>Respuesta</summary>
+	<p><b>Azure Virtual Desktop</b> proporciona acceso a una versión hospedada en la nube de Windows y funciona con la mayoría de los exploradores modernos.</p>
+</Details>
+
+## Resumen
+
+En este módulo hemos visto información sobre algunos de los servicios de proceso y red que forman parte de Azure.
+
+Hemos aprendido sobre las máquinas virtuales y las distintas opciones que se asocian a ellas (como Virtual Machine Scale Sets y conjuntos de disponibilidad de máquinas virtuales).
+
+También se han presentado algunas de las funcionalidades de red, incluidas las redes virtuales, ExpressRoute y las redes privadas virtuales.
+
+### Objetivos de aprendizaje
+
+Ahora deberíamos ser capaces de hacer lo siguiente:
+
+- Comparación de los tipos de proceso, incluidas las instancias de contenedor, las máquinas virtuales y las funciones.
+- Describir las opciones de máquina virtual, incluidas las máquinas virtuales (VM), los conjuntos de escalado de máquinas virtuales, los conjuntos de disponibilidad de máquinas virtuales y Azure Virtual Desktop.
+- Describir los recursos necesarios para las máquinas virtuales.
+- Describir las opciones de hospedaje de aplicaciones, incluidos Azure Web Apps, contenedores y máquinas virtuales.
+- Describir las redes virtuales, incluido el propósito de Azure Virtual Networks, las subredes virtuales de Azure, el emparejamiento, Azure DNS, VPN Gateway y ExpressRoute.
+- Definición de puntos de conexión públicos y privados.
+
+### Recursos adicionales
+
+Los siguientes recursos adicionales están diseñados para proporcionar más información sobre los temas de este módulo o sobre temas adicionales relacionados con este módulo.
+
+- [Hospedaje de una aplicación web con Azure App Service](https://learn.microsoft.com/es-es/learn/modules/host-a-web-app-with-azure-app-service/) es un módulo de Microsoft Learn que explora el proceso de hospedaje de una aplicación web en Azure.
+- [Introducción a los servicios de base de red de Azure](https://learn.microsoft.com/es-es/learn/paths/intro-to-azure-network-foundation-services/) es un curso de Microsoft Learn que proporciona más información sobre las redes con Azure.
+
+
+
