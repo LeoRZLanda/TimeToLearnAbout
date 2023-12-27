@@ -3258,3 +3258,204 @@ Este ejercicio requiere que tenga su propia suscripción, lo que significa que d
 Para obtener ayuda para registrar una cuenta de Azure, consulte el módulo [Creación de una cuenta de Azure](https://learn.microsoft.com/es-es/learn/modules/create-an-azure-account/).
 
 Una vez que haya creado su cuenta gratuita, siga los pasos que se indican a continuación. Si no tiene una cuenta de Azure, puede revisar los pasos para ver el proceso para agregar un bloqueo de recursos simple a un recurso.
+
+#### Tarea 1: Creación de un recurso
+
+Para aplicar un bloqueo de recursos, debe tener un recurso creado en Azure. La primera tarea se centra en la creación de un recurso que, a continuación, puede bloquear en las tareas posteriores.
+
+1. Inicie sesión en Azure Portal en [https://portal.azure.com](https://portal.azure.com/).
+    
+2. Seleccione Crear un recurso.
+    
+3. En Categorías, seleccione Almacenamiento.
+    
+4. En Cuenta de almacenamiento, seleccione Crear.
+    
+5. En la pestaña Aspectos básicos del panel Crear cuenta de almacenamiento, rellene la siguiente información. Deje los valores predeterminados para todo lo demás.
+
+|**Configuración**|**Valor**|
+|---|---|
+|Resource group|Crear nuevo|
+|Nombre de la cuenta de almacenamiento|Escriba un nombre de cuenta de almacenamiento único.|
+|Ubicación|default|
+|Rendimiento|Estándar|
+|Redundancia|Almacenamiento con redundancia local (LRS)|
+
+6. Seleccione Revisar y crear para revisar la configuración de su cuenta de almacenamiento y permitir que Azure valide la configuración.
+    
+7. Una vez validada, seleccione Crear. Espere la notificación de que la cuenta se creó correctamente.
+    
+8. Seleccione Ir al recurso.
+
+
+#### Tarea 2: Aplicación de un bloqueo de recursos de solo lectura
+
+En esta tarea, aplicará un bloqueo de solo lectura a la cuenta de almacenamiento. ¿Qué impacto cree que tendrá en la cuenta de almacenamiento?
+
+1. Desplácese hacia abajo hasta que encuentre la sección Configuración del panel de la izquierda de la pantalla.
+    
+2. Seleccione Bloqueos.
+    
+3. Seleccione +Agregar.
+
+![[Pasted image 20231227134756.png]]
+
+4. Escriba el nombre del bloqueo.
+    
+5. Compruebe que el tipo de bloqueo está establecido en Solo lectura.
+    
+6. Seleccione Aceptar.
+
+#### Tarea 3: Agregación de un contenedor a una cuenta de almacenamiento
+
+En esta tarea, agregará un contenedor a la cuenta de almacenamiento; este contenedor es donde puede almacenar los blob.
+
+1. Desplácese hacia arriba hasta que encuentre la sección Almacenamiento de datos del panel de la izquierda de la pantalla.
+    
+2. Seleccione Contenedores.
+    
+3. Seleccione + Contenedor.
+
+![[Pasted image 20231227135037.png]]
+
+
+4. Escriba el nombre del contenedor y seleccione Crear.
+    
+5. Deberá recibir un mensaje de error: No se pudo crear el contenedor de almacenamiento.
+
+![[Pasted image 20231227135055.png]]
+
+
+	 Nota
+
+	El mensaje de error le informa de que no se pudo crear un contenedor de almacenamiento porque hay un bloqueo establecido. El bloqueo de solo lectura impide realizar cualquier operación de creación o actualización en la cuenta de almacenamiento, por lo que no puede crear un contenedor de almacenamiento.
+
+#### Tarea 4: Modificación del bloqueo de recursos y creación de un contenedor de almacenamiento
+
+1. Desplácese hacia abajo hasta que encuentre la sección Configuración del panel de la izquierda de la pantalla.
+    
+2. Seleccione Bloqueos.
+    
+3. Seleccione el bloqueo de recursos de solo lectura que ha creado.
+    
+4. Cambie el tipo de bloqueo a Eliminar y seleccione Aceptar.
+![[Pasted image 20231227135200.png]]
+
+5. Desplácese hacia arriba hasta que encuentre la sección Almacenamiento de datos del panel de la izquierda de la pantalla.
+    
+6. Seleccione Contenedores.
+    
+7. Seleccione + Contenedor.
+    
+8. Escriba el nombre del contenedor y seleccione Crear.
+    
+9. El contenedor de almacenamiento debe aparecer en la lista de contenedores.
+    
+
+Ahora puede comprender cómo el bloqueo de solo lectura le impedía agregar un contenedor a la cuenta de almacenamiento. Una vez que se cambió el tipo de bloqueo (podría haberla quitado en su lugar), pudo agregar un contenedor.
+
+#### Tarea 5: Eliminación de la cuenta de almacenamiento
+
+En realidad, hará esta última tarea dos veces. Recuerde que hay un bloqueo de eliminación en la cuenta de almacenamiento, por lo que aún no podrá eliminar la cuenta de almacenamiento.
+
+1. Desplácese hacia arriba hasta que encuentre Información general en la parte superior del panel de la izquierda de la pantalla.
+    
+2. Seleccione Información general.
+    
+3. Seleccione Eliminar.
+![[Pasted image 20231227135249.png]]
+
+Debería recibir una notificación que le informa de que no puede eliminar el recurso porque tiene un bloqueo de eliminación. Para eliminar la cuenta de almacenamiento, deberá quitar el bloqueo de eliminación.
+
+![[Pasted image 20231227135302.png]]
+
+#### Tarea 6: Eliminación del bloqueo de eliminación y eliminación de la cuenta de almacenamiento
+
+En la tarea final, quitará el bloqueo de recursos y eliminará la cuenta de almacenamiento de la cuenta de Azure. Este paso es importante. Querrá asegurarse de que no tiene ningún recurso inactivo en su cuenta.
+
+1. Seleccione el nombre de la cuenta de almacenamiento en la ruta de navegación de la parte superior de la pantalla.
+    
+2. Desplácese hacia abajo hasta que encuentre la sección Configuración del panel de la izquierda de la pantalla.
+    
+3. Seleccione Bloqueos.
+    
+4. Seleccione Eliminar.
+    
+5. Seleccione Inicio en la ruta de navegación de la parte superior de la pantalla.
+    
+6. Seleccione Cuentas de almacenamiento.
+    
+7. Seleccione la cuenta de almacenamiento que usó para este ejercicio.
+    
+8. Seleccione Eliminar.
+    
+9. Para evitar la eliminación accidental, Azure le pide que escriba el nombre de la cuenta de almacenamiento que quiere eliminar. Escriba el nombre de la cuenta de almacenamiento y seleccione Eliminar.
+![[Pasted image 20231227135330.png]]
+
+10. Deberá recibir un mensaje que indica que se eliminó la cuenta de almacenamiento. Si va a Inicio > Cuentas de almacenamiento, debería ver que la cuenta de almacenamiento que creó para este ejercicio ha desaparecido.
+    
+
+¡Enhorabuena! Ha completado la configuración, actualización y eliminación de un bloqueo de recursos en un recurso de Azure.
+
+	 Importante
+	
+	Asegúrese de completar la tarea 6, la eliminación de la cuenta de almacenamiento. Usted es el único responsable de los recursos de su cuenta de Azure. Asegúrese de limpiar la cuenta después de completar este ejercicio.
+
+### Descripción de las ventajas del portal de confianza de servicios
+
+El Portal de confianza de servicios de Microsoft es un portal que proporciona contenido, herramientas y otros recursos sobre las **prácticas de seguridad, privacidad y cumplimiento de Microsoft**.
+
+El Portal de confianza de servicios contiene detalles sobre la **implementación de controles y procesos** de Microsoft que protegen nuestros servicios en la nube y los datos de los clientes que contienen. Para acceder a algunos de los recursos del Portal de confianza de servicios, debe iniciar sesión con un usuario autenticado con su cuenta de Servicios en la nube de Microsoft (cuenta de organización de Microsoft Entra). Deberá revisar y aceptar el acuerdo de no divulgación de Microsoft para acceder a los materiales de cumplimiento.
+
+#### Acceso al Portal de confianza de servicios
+
+Puede acceder al Portal de confianza de servicios en [https://servicetrust.microsoft.com/](https://servicetrust.microsoft.com/).
+
+![[Pasted image 20231227135740.png]]
+
+Las características y el contenido del Portal de confianza de servicios son accesibles desde el menú principal. Las categorías del menú principal son:
+
+- El **Portal de confianza de servicios** proporciona un hipervínculo de acceso rápido para volver a la página principal del Portal de confianza de servicios.
+- **Mi biblioteca** le permite guardar (o fijar) documentos para acceder rápidamente a ellos en la página Mi biblioteca. También puede establecer una configuración para recibir notificaciones cuando se actualicen los documentos en Mi biblioteca.
+- **Todos los documentos** es un único lugar de aterrizaje para documentos del portal de confianza de servicios. En **Todos los documentos** se pueden anclar documentos para que aparezcan en **Mi biblioteca**.
+
+	 Nota
+
+	Los informes y documentos del Portal de confianza de servicios están disponibles para descargarse durante al menos 12 meses después de la publicación o hasta que haya disponible una nueva versión del documento.
+
+### Prueba de conocimientos
+
+1. ¿Cómo puede evitar la creación de recursos no compatibles sin tener que evaluar manualmente cada recurso?
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Azure Policy</b> le permite crear directivas e iniciativas (grupos de directivas) que impiden la creación de recursos no compatibles.</p>
+</details>
+
+2. ¿Cuál es la mejor manera de evitar la eliminación involuntaria de un recurso?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Se puede usar un <b>bloqueo de recursos</b> para evitar que se elimine accidentalmente un recurso.</p>
+</details>
+
+### Resumen
+
+En este módulo, hemos aprendido algunas de las características y herramientas que puede usar para ayudar con la gobernanza de nuestro entorno de Azure. También sobre las herramientas que podemos usar para ayudar a mantener los recursos conformes a los requisitos corporativos o normativos.
+
+#### Objetivos de aprendizaje
+
+Ahora deberíamos ser capaces de hacer lo siguiente:
+
+- Describir el propósito de Microsoft Purview.
+- Describir el propósito de Azure Policy
+- Describir el propósito de bloqueos de recursos
+- Describur las ventajas del portal de confianza de servicios
+
+#### Recursos adicionales
+
+Los recursos siguientes proporcionan más información sobre los temas de este módulo o relacionados con este módulo.
+
+- [Introducción a Azure Policy](https://learn.microsoft.com/es-es/learn/modules/intro-to-azure-policy/) es un módulo de Microsoft Learn que le da más información sobre Azure Policy.
+
+## Descripción de las características y herramientas para administrar e implementar recursos de Azure
