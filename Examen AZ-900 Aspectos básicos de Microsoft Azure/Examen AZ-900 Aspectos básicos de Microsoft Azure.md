@@ -2821,3 +2821,440 @@ En la práctica, definiría sus requisitos con mayor detalle. Pero estos son alg
 - La máquinas virtuales y la base de datos se ejecutan de forma constante (730 horas por mes).
 - La red procesa aproximadamente 1 TB de datos al mes.
 - No es necesario configurar la base de datos para cargas de trabajo de alto rendimiento y no se requieren más de 32 GB de almacenamiento.
+
+#### Explorar la calculadora de precios
+
+Comencemos con un paseo rápido por la calculadora de precios.
+
+1. Vaya a la [calculadora de precios](https://azure.microsoft.com/pricing/calculator/).
+    
+2. Observe las pestañas siguientes:
+![[Pasted image 20231227113513.png]]
+
+- **Productos** Aquí es donde elige los servicios de Azure que quiere incluir en la estimación. Probablemente pasará la mayor parte del tiempo aquí.
+- **Escenarios de ejemplo** Aquí encontrará varias _arquitecturas de referencia_, o soluciones comunes basadas en la nube, que puede usar como punto de partida.
+- **Estimaciones guardadas** Aquí encontrará las estimaciones que ha guardado antes.
+- **Preguntas más frecuentes** Aquí encontrará respuestas a las preguntas más frecuentes sobre la calculadora de precios.
+
+Aquí agregará a la calculadora cada servicio de Azure que necesite. A continuación, configure cada servicio para que se ajuste a sus necesidades.
+
+	 Sugerencia
+	
+	Asegúrese de que la calculadora esté limpia, es decir, que no se muestre nada en la cotización. Puede restablecer la estimación seleccionando el icono de la papelera junto a cada elemento.
+
+##### Agregar servicios a la estimación
+
+1. En la pestaña **Productos**, seleccione el servicio de cada una de estas categorías:
+
+|**Categoría**|**Servicio**|
+|---|---|
+|Compute|**Máquinas virtuales**|
+|Bases de datos|**Azure SQL Database**|
+|Redes|**Application Gateway**|
+2. Desplácese hasta la parte inferior de la página. Cada servicio aparece con su configuración predeterminada.
+
+##### Configurar los servicios para que coincidan con los requisitos
+
+1. En **Virtual Machines**, establezca estos valores:
+
+|**Configuración**|**Valor**|
+|---|---|
+|Region|**Oeste de EE. UU.**|
+|Sistema operativo|**Windows**|
+|Tipo|**(Solo sistema operativo)**|
+|Nivel|**Estándar**|
+|Instancia|**D2 v3**|
+|Máquinas virtuales|**2** x **730 horas**|
+
+Deje las opciones restantes en sus valores actuales.
+  
+2. En **Azure SQL Database**, establezca estos valores:
+
+|**Configuración**|**Valor**|
+|---|---|
+|Region|**Oeste de EE. UU.**|
+|Tipo|**Base de datos única**|
+|Capa de almacenamiento de copia de seguridad|**RA-GRS**|
+|Modelo de compra|**vCore**|
+|Nivel de servicio|**Uso general**|
+|Nivel de proceso|**aprovisionado**|
+|Generation|**Gen 5**|
+|Instancia|**8 núcleo virtual**|
+
+Deje las opciones restantes en sus valores actuales.
+  
+3. En **Application Gateway**, establezca estos valores:
+
+|**Configuración**|**Valor**|
+|---|---|
+|Region|**Oeste de EE. UU.**|
+|Nivel|**Firewall de aplicaciones web**|
+|Size|**Mediano**|
+|Horas de puerta de enlace|**2** x **730 horas**|
+|Datos procesados|**1 TB**|
+|Transferencia de datos de salida|**5 GB**|
+
+Deje las opciones restantes en sus valores actuales.
+
+
+###### Revisar, compartir y guardar la estimación
+
+En la parte inferior de la página, verá el costo total estimado de ejecutar la solución. Si lo desea, puede cambiar el tipo de moneda.
+
+En este punto, tiene algunas opciones:
+
+- Seleccione **Exportar** para guardar la estimación como documento de Excel.
+- Seleccione **Guardar** o **Guardar como** para guardar la estimación en la pestaña **Estimaciones guardadas** para más adelante.
+- Seleccione **Compartir** para generar una dirección URL de modo que pueda compartir la estimación con su equipo.
+
+Ahora tiene una estimación de costos que puede compartir con su equipo. Puede realizar ajustes a medida que detecta cualquier cambio en sus requisitos.
+
+Experimente con algunas de las opciones con las que ha trabajado aquí o cree un plan de compra para una carga de trabajo que quiera ejecutar en Azure.
+
+	Nota
+
+		Pudes comparar con el estimado dentro de la carpeta recursos
+
+### Ejercicio: Comparación de los costos de carga de trabajo mediante la calculadora de TCO
+
+En este ejercicio, usará la calculadora de costo total de propiedad (TCO) para **comparar el costo de ejecutar una carga de trabajo** de ejemplo en el centro de datos en lugar de en Azure.
+
+Imagine que planea mover algunas de las cargas de trabajo locales a la nube. Pero primero, debe saber más sobre cómo trasladar de una estructura de costos relativamente fija a una estructura de costos mensual en curso.
+
+Tendrá que investigar si existe algún ahorro potencial de costos en el traslado del centro de datos a la nube durante los próximos tres años. Debe tener en cuenta todos los costos potencialmente ocultos que participan en el funcionamiento local y en la nube.
+
+En lugar de recopilar manualmente todo lo que piense que podría estar incluido, use la calculadora de TCO como punto de partida. Ajuste las proyecciones de costos proporcionadas para que coincidan con el entorno local.
+
+	 Nota
+	
+	Recuerde que no se necesita una suscripción a Azure para trabajar con la calculadora de TCO.
+
+Supongamos que:
+
+- Ejecuta dos conjuntos, o bancos, de 50 máquinas virtuales (VM) en cada banco.
+- El primer banco de máquinas virtuales ejecuta Windows Server en la virtualización de Hyper-V.
+- El segundo banco de máquinas virtuales ejecuta Linux en la virtualización de VMware.
+- También hay una red de área de almacenamiento (SAN) con 60 TB de almacenamiento en disco.
+- Debe usar un ancho de banda de red de salida estimado de 15 TB cada mes.
+- También hay varias bases de datos implicadas, pero por ahora omitirá esos detalles.
+
+Recuerde que la calculadora de TCO involucra tres pasos:
+
+![[Pasted image 20231227120403.png]]
+
+#### Definir las cargas de trabajo
+
+Escriba las especificaciones de la infraestructura local en la calculadora de TCO.
+
+1. Vaya a [Calculadora de TCO](https://azure.microsoft.com/pricing/tco/calculator).
+    
+2. En **Definir las cargas de trabajo**, seleccione **Agregar carga de trabajo del servidor** para crear una fila para el banco de VM de Windows Server.
+    
+3. En **Servidores**, establezca el valor para cada una de estas opciones:
+
+|**Configuración**|**Valor**|
+|---|---|
+|Nombre|**Servidores: VM Windows**|
+|Carga de trabajo|**Servidor de Windows/Linux**|
+|Entorno|**Máquinas virtuales**|
+|Sistema operativo|**Windows**|
+|Licencia del sistema operativo|**Centro de datos**|
+|Máquinas virtuales|**50**|
+|Virtualización|**Hyper-V**|
+|Núcleos|**8**|
+|RAM (GB)|**16**|
+|Optimizar por|**CPU**|
+|Windows Server 2008/2008 R2|**Desactivado**|
+
+4. Seleccione **Agregar carga de trabajo del servidor** para crear una segunda fila para el banco de VM Linux. Luego, especifique la configuración de estos parámetros:
+
+
+|**Configuración**|**Valor**|
+|---|---|
+|Nombre|**Servidores: VM Linux**|
+|Carga de trabajo|**Servidor de Windows/Linux**|
+|Entorno|**Máquinas virtuales**|
+|Sistema operativo|**Linux**|
+|Máquinas virtuales|**50**|
+|Virtualización|**VMware**|
+|Núcleos|**8**|
+|RAM (GB)|**16**|
+|Optimizar por|**CPU**|
+
+5. En **Almacenamiento**, seleccione **Agregar almacenamiento**. Luego, especifique la configuración de estos parámetros:
+
+|**Configuración**|**Valor**|
+|---|---|
+|Nombre|**Almacenamiento en servidor**|
+|Tipo de almacenamiento|**Disco local/SAN**|
+|Tipo de disco|**HDD**|
+|Capacity|**60 TB**|
+|Backup|**120 TB**|
+|Archivar|**0 TB**|
+
+
+6. En **Redes**, establezca **Ancho de banda de salida** en **15 TB**.
+    
+7. Seleccione **Next** (Siguiente).
+
+#### Ajustar supuestos
+
+Aquí, especifique la moneda. Para mayor brevedad, deje los campos restantes con sus valores predeterminados.
+
+En la práctica, ajustaría cualquier proyección de costos y realizaría ajustes para que coincidan con el entorno local actual.
+
+1. En la parte superior de la página, seleccione la moneda. En este ejemplo se usa **Dólar estadounidense (USD)**.
+2. Seleccione **Next** (Siguiente).
+
+#### Visualización del informe
+
+Dedique un momento a revisar el informe generado.
+
+Recuerde que se le ha encargado investigar el ahorro de costos para el centro de datos europeo en los próximos tres años.
+
+Para realizar estos ajustes:
+
+1. Establezca **Período de tiempo** en **3 años**.
+2. Establezca **Región** en **Norte de Europa**.
+
+Desplácese hasta el resumen en la parte inferior. Verá una comparación de la ejecución de las cargas de trabajo en el centro de datos en lugar de en Azure.
+
+Seleccione **Descargar** para descargar o imprimir una copia del informe en formato PDF.
+
+Excelente trabajo. Ahora tiene la información que puede compartir con su director financiero. Si necesita realizar ajustes, puede volver a consultar la calculadora de TCO para generar un informe nuevo.
+
+
+	Nota
+		Puedes visualizar el reporte generado en la carpeta de recursos/estimaciones
+
+
+### Describir la herramienta Microsoft Cost Management
+
+Microsoft Azure es un proveedor de nube global, lo que significa que puede aprovisionar recursos en cualquier parte del mundo. Puede aprovisionar recursos rápidamente para satisfacer una demanda repentina, para probar una nueva característica o en caso de accidente. Si aprovisiona accidentalmente nuevos recursos, es posible que no lo sepa hasta que le llegue la factura. Cost Management es un servicio que ayuda a evitar esas situaciones.
+
+#### ¿Qué es Cost Management?
+
+Cost Management proporciona la **capacidad de comprobar rápidamente los costos de los recursos de Azure, crear alertas basadas en el gasto de recursos y crear presupuestos que se pueden usar para automatizar la administración de recursos**.
+
+El análisis de costos es un subconjunto de Cost Management que proporciona una vista rápida de los costos de Azure. Con el análisis de costos, puede ver rápidamente el costo total de varias maneras diferentes, incluido por ciclo de facturación, región, recurso, etc.
+
+![[Pasted image 20231227123248.png]]
+
+Los análisis de costos **se usan para explorar y analizar los costos de su organización**. Puede ver los costos agregados por organización para saber dónde se acumulan estos e identificar las tendencias de gasto. Además, puede ver los costos acumulados con el tiempo para estimar las tendencias de costos mensual, trimestral o incluso anualmente con respecto a un presupuesto.
+
+#### Alertas sobre los costos
+
+Las alertas de costos proporcionan una única ubicación para comprobar rápidamente todos los diferentes tipos de alertas que pueden aparecer en el servicio Cost Management. Los tres tipos de alertas que pueden aparecer son las siguientes:
+
+- Alertas de presupuesto
+- Alertas de crédito
+- Alertas de cuota de gasto de departamento
+
+##### Alertas de presupuesto
+
+Las alertas de presupuesto le envían una notificación **cuando el gasto, en función del uso o coste, alcanza o supera la cantidad definida** en la condición de alerta del presupuesto. Los presupuestos de Cost Management se crean mediante Azure Portal o la API de consumo de Azure.
+
+En Azure Portal, los presupuestos se definen por el costo. Al usar Azure Consumption API, los presupuestos se definen por costo o por uso de consumo. Las alertas de presupuesto admiten presupuestos basado en costes o en uso. Las alertas de presupuesto se generan automáticamente cada vez que se cumplen las condiciones de alerta de presupuesto. Puede ver todas las alertas de costes en Azure Portal. Cada vez que se genera una alerta, aparece en las alertas de costo. También se envía un correo electrónico de alerta a los usuarios de la lista de destinatarios de alertas del presupuesto.
+
+##### Alertas de crédito
+
+Las alertas de crédito le avisan **cuando se consumen los compromisos monetarios de crédito** de Azure. Los compromisos monetarios son para organizaciones con contratos Enterprise (EA). Las alertas de crédito se generan de forma automática al 90 % y al 100 % del saldo de crédito de Azure. Cada vez que se genera una alerta, se refleja en las alertas sobre los costos y en el correo electrónico que se envía a los propietarios de la cuenta.
+
+##### Alertas de cuota de gasto de departamento
+
+Las alertas de cuota de gasto de departamento notifican **cuándo el gasto del departamento alcanza un umbral fijo de la cuota**. Las cuotas de gasto se configuran en el portal de EA. Cada vez que se alcanza un umbral, se genera un correo electrónico para los propietarios del departamento y se muestra en las alertas sobre los costos. Por ejemplo, el 50 % o el 75 % de la cuota.
+
+#### Presupuestos
+
+Un presupuesto es **donde se establece un límite de gasto** para Azure. Puede establecer presupuestos basados en una suscripción, un grupo de recursos, un tipo de servicio u otros criterios. Al establecer un presupuesto, también establecerá una alerta de presupuesto. Cuando el presupuesto alcanza el nivel de alerta de presupuesto, desencadenará una alerta de presupuesto que se muestra en el área de alertas de costos. Si se configuran, las alertas de presupuesto también enviarán una notificación por correo electrónico de que se ha desencadenado un umbral de alerta de presupuesto.
+
+Un uso más avanzado de los presupuestos permite que las condiciones presupuestarias desencadenen la automatización que suspende o modifica los recursos una vez que se haya producido la condición del desencadenador.
+
+### Descripción de la finalidad de las etiquetas
+
+A medida que el uso que hacemos de la nube va en aumento, es cada vez más **importante mantenerse organizado**. Una buena estrategia de organización **nos ayudará a conocer cuál es nuestro uso** de la nube, así como a administrar los costos.
+
+Un método para organizar los recursos relacionados es **colocarlos en sus propias suscripciones**. También se pueden usar grupos de recursos para administrarlos. Las etiquetas de recursos son otra forma de organizar recursos. Las etiquetas proporcionan información extra, o metadatos, sobre los recursos. Estos metadatos son útiles para lo siguiente:
+
+- **Administración de recursos**: las etiquetas **permiten localizar recursos** asociados a cargas de trabajo, entornos, unidades de negocio y propietarios específicos y actuar al respecto.
+- **Optimización y administración de costes:** las etiquetas permiten agrupar recursos para que podamos informar sobre los costes, asignar centros de costes internos, mantener los presupuestos a raya y predecir costes estimados.
+- **Administración de operaciones:** las etiquetas permiten **agrupar recursos según la importancia** que tiene su disponibilidad para nuestro negocio. Esta agrupación nos ayuda a formular acuerdos de nivel de servicio (SLA), que constituyen una garantía de rendimiento o de tiempo de actividad entre nosotros y nuestros usuarios.
+- **Seguridad**: las etiquetas permiten clasificar los datos según su nivel de seguridad, por ejemplo, públicos o confidenciales.
+- **Gobernanza y cumplimiento normativo:** las etiquetas permiten identificar los recursos que cumplen con los requisitos de gobernanza o cumplimiento normativo, como la norma ISO 27001. Las etiquetas también pueden formar parte de nuestros esfuerzos de aplicación de estándares. Así, podríamos exigir que todos los recursos se etiqueten con un nombre de departamento o propietario.
+- **Automatización y optimización de las cargas de trabajo:** las etiquetas pueden servir para ver todos los recursos que participan en implementaciones complejas. Por ejemplo, podemos etiquetar un recurso con su nombre de aplicación o carga de trabajo asociado y usar un software como Azure DevOps para realizar tareas automatizadas en esos recursos.
+
+#### ¿Cómo se administran las etiquetas de recursos?
+
+Puede agregar, modificar o eliminar etiquetas de recursos mediante Windows PowerShell, la CLI de Azure, plantillas de Azure Resource Manager, la API REST o Azure Portal.
+
+Puede usar **Azure Policy para aplicar reglas de etiquetado** y convenciones. Así, podemos requerir que se agreguen determinadas etiquetas a los nuevos recursos a medida que se aprovisionan. Asimismo, podemos definir reglas que vuelvan a aplicar etiquetas que se han quitado. Los recursos no heredan etiquetas de suscripciones y grupos de recursos, lo que significa que puede aplicar etiquetas en un nivel y no hacer que se muestren automáticamente en otro nivel, lo que le permite crear esquemas de etiquetado personalizados que cambien según el nivel (recurso, grupo de recursos, suscripción, etc.).
+
+##### Ejemplo de una estructura de etiquetado
+
+Una etiqueta de recurso se compone de un nombre y un valor. Podemos asignar una o más etiquetas a cada recurso de Azure.
+
+|**Nombre**|**Valor**|
+|---|---|
+|AppName|Nombre de la aplicación de la que forma parte el recurso|
+|CostCenter|Código interno del centro de costes|
+|Propietario|Nombre del propietario de empresa responsable del recurso|
+|Entorno|Nombre de entorno, como "Prod.", "Dev." o "Prueba".|
+|Impacto|Importancia del recurso para las operaciones empresariales, como "Crítico", "Gran impacto" o "Bajo impacto".|
+
+Recordemos que no es necesario requerir que una etiqueta específica esté presente en todos los recursos. Por ejemplo, podemos decidir que solo los recursos críticos tengan la etiqueta Impact. De este modo, todos aquellos recursos que no estén etiquetados no se considerarán como críticos.
+
+### Prueba de Conocimientos
+
+1. ¿Qué característica de Azure puede ayudar a mantener la organización y a realizar el seguimiento del uso en función de los metadatos asociados a los recursos?
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Las etiquetas</b> permiten asociar metadatos a un recurso para ayudar a realizar el seguimiento de la administración de recursos, los costos y la optimización, la seguridad, etc.</p>
+</details>
+
+2. ¿Cuál es el mejor método para calcular el costo de la migración a la nube mientras se incurre en costos mínimos?
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>La calculadora de costo total de propiedad (TCO)</b> permite introducir la infraestructura y los requisitos actuales, y proporciona una estimación para la ejecución en la nube.</p>
+</details>
+
+
+### Resumen
+
+En este módulo, hemos obtenido información sobre los factores que afectan a los costos en Azure y las herramientas para ayudar a predecir los costos potenciales y supervisar y controlar los costos.
+
+#### Objetivos de aprendizaje
+
+Ahora deberíamos ser capaces de hacer lo siguiente:
+
+- Describir los factores que pueden afectar a los costos en Azure.
+- Comparar de la calculadora de precios de Azure y la calculadora del coste total de propiedad (TCO).
+- Describir la herramienta Microsoft Cost Management.
+- Describir de la finalidad de las etiquetas.
+
+#### Recursos adicionales
+
+Los recursos siguientes proporcionan más información sobre los temas de este módulo o relacionados con este módulo.
+
+- [Control del gasto de Azure y administración de facturas con Microsoft Cost Management + Billing](https://learn.microsoft.com/es-es/learn/paths/control-spending-manage-bills/) es una ruta de aprendizaje diseñada para proporcionarle una comprensión más profunda de las herramientas y estrategias de administración de costos en Azure.
+
+## Descripción de las características y herramientas de Azure para la gobernanza y el cumplimiento
+
+### Introducción 
+
+En este módulo, se nos presentará algunas de las características y herramientas que podremos usar para ayudar con la gobernanza dentro del entorno de Azure. También información sobre las herramientas para ayudar a mantener los recursos de acuerdo con los requisitos corporativos o normativos.
+
+#### Objetivos de aprendizaje
+
+Después de completar este módulo, seremos capaces de realizar:
+
+- Descripción del propósito de Microsoft Purview.
+- Descripción del propósito de Azure Policy
+- Descripción del propósito de bloqueos de recursos
+- Descripción de las ventajas del portal de confianza de servicios
+
+### Descripción del propósito de Microsoft Purview
+
+Microsoft Purview es una **familia de soluciones de gobernanza, riesgo y cumplimiento** de datos que le ayudan a obtener una sola visión unificada de los datos. Microsoft Purview reúne información sobre los datos locales, multinube y software como servicio.
+
+Con Microsoft Purview, puede mantenerse al día en su entorno de datos gracias a:
+
+- Detección de datos automatizada
+- Clasificación de datos confidenciales
+- Linaje de datos de un extremo a otro
+
+Dos áreas de solución principales comprenden Microsoft Purview: **el riesgo y el cumplimiento** y **la gobernanza unificada de datos**.
+
+![[Pasted image 20231227130821.png]]
+
+#### Soluciones de riesgo y cumplimiento de Microsoft Purview  
+
+Características de Microsoft 365 como componente principal de las soluciones de cumplimiento y riesgos de Microsoft Purview. **Microsoft Teams, OneDrive y Exchange** son solo algunos de los **servicios** de Microsoft 365 **que Microsoft Purview usa para ayudar a administrar y supervisar los datos**. Microsoft Purview, mediante la administración y supervisión de los datos, puede ayudar a su organización a:
+
+- Proteger datos confidenciales en nubes, aplicaciones y dispositivos.
+- Identificar los riesgos de datos y administrar los requisitos de cumplimiento normativo.
+- Comenzar a usar el cumplimiento normativo.
+
+#### Gobernanza unificada de datos  
+
+Microsoft Purview proporciona una solución unificada de gobernanza de datos que le ayuda a administrar y gobernar los datos locales, de varias nubes y de software como servicio (SaaS). Las sólidas funcionalidades de gobernanza de datos de Microsoft Purview le **permiten administrar los datos almacenados en bases de datos de Azure, SQL y Hive, localmente e incluso en otras nubes, como Amazon S3**.
+
+La gobernanza unificada de datos de Microsoft Purview ayuda a su organización a:
+
+- Crear un **mapa actualizado de todo el patrimonio** de datos que incluya la clasificación de datos y el linaje de un extremo a otro.
+- **Identificar** dónde se almacenan **los datos confidenciales** en su patrimonio.
+- Crear un **entorno seguro** para que los consumidores de datos encuentren datos valiosos.
+- Generar información sobre cómo se almacenan y usan los datos.
+- **Administrar** el **acceso** a los datos de su patrimonio de forma segura y a gran escala.
+
+### Descripción del propósito de Azure Policy
+
+¿Cómo puede asegurarse de que estos recursos mantengan su cumplimiento? ¿Puede recibir un aviso cuando la configuración de un recurso cambie?
+
+Azure Policy es un servicio de Azure que **permite crear, asignar y administrar directivas que controlan o auditan los recursos**. Dichas directivas aplican distintas reglas en las configuraciones de los recursos para que esas configuraciones sigan cumpliendo con los estándares corporativos.
+
+#### ¿Cómo se definen directivas en Azure Policy?
+
+Azure Policy **permite definir** tanto directivas individuales como grupos de directivas relacionadas, lo que se conoce como **iniciativas**. Azure Policy **evalúa los recursos y resalta los que no cumplen** las directivas que hemos creado. Azure Policy también **puede impedir que se creen recursos no conformes**.
+
+Las directivas de Azure **se pueden establecer en cada nivel**, lo que le permite establecer directivas en un recurso específico, un grupo de recursos, una suscripción, etc. Además, las directivas de Azure **se heredan**, por lo que si establece una directiva de nivel alto, se aplicará automáticamente a todas las agrupaciones que se encuentran dentro del elemento primario. Por ejemplo, si establece una directiva de Azure en un grupo de recursos, todos los recursos creados en ese grupo de recursos recibirán automáticamente la misma directiva.
+
+Azure Policy **incluye definiciones de iniciativas y directivas integradas para categorías** como Almacenamiento, Redes, Proceso, Centro de Seguridad y Supervisión. Por ejemplo, si define una directiva que permite usar exclusivamente un determinado tamaño para las máquinas virtuales (VM) en el entorno, esa directiva se invoca al crear una nueva máquina virtual y cada vez que se cambia el tamaño de las ya existentes. Azure Policy también evalúa y supervisa todas las máquinas virtuales actuales del entorno, incluidas las máquinas virtuales que se crearon antes de crear la directiva.
+
+En algunos casos, Azure Policy **puede corregir automáticamente los recursos y configuraciones no conformes** para garantizar la integridad del estado de los recursos. Por ejemplo, si todos los recursos de un determinado grupo de recursos deben etiquetarse con la etiqueta AppName y un valor de "SpecialOrders", Azure Policy aplicará automáticamente esa etiqueta si se ha quitado. Sin embargo, sigue conservando el control total del entorno. Si tiene un recurso específico que no desea que Azure Policy corrija automáticamente, puede marcar ese recurso como una excepción y la directiva no corregirá automáticamente ese recurso.
+
+Azure Policy **se integra con Azure DevOps aplicando directivas de integración continua** y canalización de entrega que competen a las fases de implementación anterior y posterior de las aplicaciones.
+
+#### ¿Qué son las iniciativas Azure Policy?
+
+Una iniciativa de Azure Policy es una **forma de agrupar las directivas relacionadas**. La definición de iniciativa contiene todas las definiciones de directiva para facilitar el seguimiento del estado de cumplimiento de cara a un objetivo mayor.
+
+Por ejemplo, Azure Policy incluye una iniciativa denominada Habilitar la supervisión en Azure Security Center, Su objetivo es supervisar todas las recomendaciones de seguridad disponibles para todos los tipos de recursos de Azure en Azure Security Center.
+
+En esta iniciativa se incluyen las siguientes definiciones de directiva:
+
+- **Supervisar base de datos SQL sin cifrar en Security Center:** esta directiva supervisa servidores y bases de datos SQL sin cifrar.
+- **Supervisión de los puntos vulnerables del sistema operativo en Security Center:** esta directiva supervisa los servidores que no cumplen la línea base de la vulnerabilidad del sistema operativo configurada.
+- **Supervisar la falta de Endpoint Protection en Security Center:** esta directiva supervisa los servidores que no tienen instalado un agente de Endpoint Protection.
+
+La iniciativa Habilitar la supervisión en Azure Security Center contiene más de 100 definiciones de directiva independientes, de hecho.
+
+
+### Descripción del propósito de bloqueos de recursos
+
+Los bloqueos de recursos **impiden que se eliminen o modifiquen recursos por error**.
+
+Aun cuando haya directivas de control de acceso basado en roles de Azure (RBAC de Azure) en vigor, sigue existiendo el riesgo de que alguien con el nivel de acceso adecuado elimine recursos de nube críticos. Los bloqueos de recursos impiden que los recursos se eliminen o actualicen, según el tipo de bloqueo. Los bloqueos de recursos se pueden aplicar a recursos individuales, grupos de recursos o incluso a una suscripción completa. Los bloqueos de recursos **se heredan**, lo que significa que si coloca un bloqueo de recursos en un grupo de recursos, también se aplicará el bloqueo a todos los recursos dentro del grupo.
+
+#### Tipos de bloqueos de recursos
+
+Hay dos tipos de bloqueos de recursos, **uno que impide que los usuarios eliminen un recurso y otro que impide que los usuarios lo cambien o eliminen**.
+
+- Eliminar significa que los usuarios autorizados pueden leer y modificar un recurso, pero no eliminarlo.
+- ReadOnly significa que los usuarios autorizados solo pueden leer recursos, pero no actualizarlos ni eliminarlos. Aplicar este bloqueo es similar a restringir todos los usuarios autorizados a los permisos concedidos por el rol Lector.
+
+#### ¿Cómo se administran los bloqueos de recursos?
+
+Los bloqueos de recursos se pueden administrar en Azure Portal, PowerShell, la CLI de Azure o con una plantilla de Azure Resource Manager.
+
+Para ver, agregar o eliminar bloqueos en Azure Portal, vaya a la sección Configuración del panel Configuración de cualquier recurso en Azure Portal.
+
+![[Pasted image 20231227132913.png]]
+
+
+#### ¿Cómo se elimina o cambia un recurso bloqueado?
+
+Aunque los bloqueos impiden que se produzcan cambios por error, se pueden seguir realizando cambios realizando un proceso de dos pasos.
+
+Para modificar un recurso bloqueado, primero hay que quitar el bloqueo. Tras quitarlo, podemos aplicar cualquier acción que podamos realizar de acuerdo a nuestros permisos. Los bloqueos de recursos se aplican con independencia de los permisos RBAC. Es decir, aun siendo el propietario del recurso, tendremos que quitar el bloqueo antes de poder realizar la actividad bloqueada.
+
+### Ejercicio: Configuración de un bloqueo de recurso
+
+En este ejercicio, crearemos un recurso y configuraremos un bloqueo de recursos. Las cuentas de almacenamiento son uno de los tipos más fáciles de bloqueos de recursos para ver rápidamente el impacto, por lo que usaremos una cuenta de almacenamiento para este ejercicio.
+
+Este ejercicio requiere que tenga su propia suscripción, lo que significa que deberá utilizar su suscripción de Azure para completar el ejercicio. Sin embargo, no se preocupe, todo el ejercicio se puede completar de forma gratuita con los servicios gratuitos durante 12 meses al registrarse para obtener una cuenta de Azure.
+
+Para obtener ayuda para registrar una cuenta de Azure, consulte el módulo [Creación de una cuenta de Azure](https://learn.microsoft.com/es-es/learn/modules/create-an-azure-account/).
+
+Una vez que haya creado su cuenta gratuita, siga los pasos que se indican a continuación. Si no tiene una cuenta de Azure, puede revisar los pasos para ver el proceso para agregar un bloqueo de recursos simple a un recurso.
