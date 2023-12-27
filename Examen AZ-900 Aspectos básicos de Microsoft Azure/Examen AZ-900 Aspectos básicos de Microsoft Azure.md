@@ -2762,3 +2762,37 @@ Azure Marketplace le **permite comprar soluciones y servicios basados en Azure**
 Todas las soluciones disponibles en Azure Marketplace están certificadas y son compatibles con las directivas y los estándares de Azure. Las directivas de certificación pueden variar en función del tipo de servicio o solución, y del servicio de Azure implicado. [Las directivas de certificación de Marketplace comercial](https://learn.microsoft.com/es-es/legal/marketplace/certification-policies) tienen información adicional sobre las certificaciones de Azure Marketplace.
 
 ### Comparación de las calculadoras de precios y costo total de propiedad
+
+Las calculadoras de precios y de costo total de propiedad (TCO) le ayudan a comprender los posibles gastos de Azure. Las dos calculadoras son accesibles desde Internet y permiten crear una configuración. Pero las dos calculadoras tienen propósitos muy diferentes.
+
+#### Calculadora de precios
+
+La calculadora de precios está **diseñada para proporcionarle un costo estimado** para el aprovisionamiento de recursos en Azure. Puede obtener una estimación de recursos individuales, crear una solución o usar un escenario de ejemplo para ver una estimación del gasto de Azure. La calculadora de precios se centra en el costo de los recursos aprovisionados en Azure.
+
+	 Nota
+	
+	La calculadora de precios solo tiene fines informativos. Los precios son solo una estimación. No se aprovisiona nada al agregar recursos a la calculadora de precios y no se le cobrará por ningún servicio que seleccione.
+
+Con la calculadora de precios, puede calcular los costos de cualquier recurso aprovisionado, incluidos los de proceso, almacenamiento y red asociados. Incluso puede tener en cuenta diferentes opciones de almacenamiento, como el tipo de almacenamiento, el nivel de acceso y la redundancia.
+
+![[Pasted image 20231227092502.png]]
+
+
+#### Calculadora de TCO
+
+La calculadora de TCO está **diseñada para ayudarle a comparar los costos de ejecución** de una infraestructura local en comparación con una infraestructura en la nube de Azure. Con la calculadora de TCO, se especifica la configuración de infraestructura actual, incluidos los servidores, las bases de datos, el almacenamiento y el tráfico de red saliente. Después, la calculadora de TCO compara los costos previstos del entorno actual con un entorno de Azure que admite los mismos requisitos de infraestructura.
+
+Con la calculadora de TCO, escribe la configuración, agrega suposiciones como los costos de mano de obra de TI y de energía, y obtiene una estimación de la diferencia de costos para ejecutar el mismo entorno en el centro de datos actual o en Azure.
+
+![[Pasted image 20231227092758.png]]
+
+### Ejercicio: Estimación de los costos de la carga de trabajo con la calculadora de precios
+
+En este ejercicio, usará la calculadora de precios para **calcular el costo de ejecutar una aplicación web básica en Azure**.
+
+Para empezar se definirán los servicios de Azure que necesita.
+
+	 Nota
+	
+	La calculadora de precios solo tiene fines informativos. Los precios son solo una estimación y no se le cobrará por ningún servicio que seleccione.
+
