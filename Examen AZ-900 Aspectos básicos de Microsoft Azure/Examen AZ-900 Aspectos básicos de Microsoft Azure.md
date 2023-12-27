@@ -3459,3 +3459,169 @@ Los recursos siguientes proporcionan más información sobre los temas de este m
 - [Introducción a Azure Policy](https://learn.microsoft.com/es-es/learn/modules/intro-to-azure-policy/) es un módulo de Microsoft Learn que le da más información sobre Azure Policy.
 
 ## Descripción de las características y herramientas para administrar e implementar recursos de Azure
+
+### Introducción
+
+Este módulo presenta **características y herramientas para administrar e implementar recursos de Azure**. Obtendremos información sobre Azure Portal (una interfaz gráfica para administrar recursos de Azure), la línea de comandos y las herramientas de scripting que ayudan a implementar o configurar recursos. También información sobre los servicios de Azure que ayudan a administrar los entornos locales y multinube en Azure.
+
+#### Objetivos de aprendizaje
+
+Después de completar este módulo, seremos capaces de realizar:
+
+- Describir Azure Portal.
+- Describir Azure Cloud Shell, incluida la CLI de Azure y Azure PowerShell.
+- Describir el propósito de Azure Arc.
+- Describir Azure Resource Manager (ARM), plantillas de ARM y Bicep.
+
+### Descripción de las herramientas para interactuar con Azure
+
+Para sacar el máximo partido de Azure, necesita una manera de interactuar con el entorno de Azure, los grupos de administración, las suscripciones, los grupos de recursos, los recursos, etc. Azure proporciona varias herramientas para administrar el entorno, lo que incluye:
+
+- Azure portal
+- Azure PowerShell
+- Interfaz de la línea de comandos (CLI) de Azure
+
+#### ¿Qué es Azure Portal?
+
+Azure Portal es una **consola unificada basada en web** que proporciona una alternativa a las herramientas de línea de comandos. Con Azure Portal, puedes administrar la suscripción de Azure mediante una interfaz gráfica de usuario. Puede:
+
+- **Construir, administrar y supervisar todo**, desde aplicaciones web sencillas hasta complejas implementaciones en la nube
+- **Crear paneles personalizados** para una visualización organizada de los recursos
+- **Configurar opciones de accesibilidad** para una experiencia óptima
+
+
+Azure Portal está diseñado para proporcionar resistencia y disponibilidad continua. Mantiene una presencia en todos los centros de datos de Azure. Esta configuración hace que Azure Portal sea resistente a los errores de centros de datos individuales y evita que se ralentice la red al estar cerca de los usuarios. Azure Portal no deja de actualizarse y no requiere tiempo de inactividad para las actividades de mantenimiento.
+
+
+##### Azure Cloud Shell
+
+Azure Cloud Shell es una herramienta de Shell basada en explorador que permite crear, configurar y administrar recursos de Azure mediante un Shell. Azure Cloud Shell admite tanto Azure PowerShell como la interfaz de la línea de comandos (CLI) de Azure, que es un Shell de Bash.
+
+Puede acceder a Azure Cloud Shell desde el Portal de Azure seleccionando el icono de Cloud Shell:
+
+Azure Cloud Shell tiene varias características que lo convierten en una oferta única que le proporciona asistencia para administrar Azure. Algunas de esas características son:
+
+- Es una experiencia de Shell basada en explorador, que **no requiere instalación** ni configuración local.
+- Se **autentica con las credenciales de Azure**, por lo que cuando inicia sesión en él, sabe de forma inherente quién es y qué permisos tiene.
+- Se elige el Shell con el que se está más familiarizado; Azure Cloud Shell **admite** tanto **Azure PowerShell** como la **CLI** de Azure (que usa Bash).
+
+#### ¿Qué es la CLI de Azure?
+
+La CLI de Azure es funcionalmente equivalente a Azure PowerShell, y la **diferencia principal es la sintaxis de los comandos**. Azure PowerShell usa comandos de PowerShell y la **CLI de Azure usa comandos de Bash**.
+
+La CLI de Azure proporciona las mismas ventajas de controlar tareas discretas u organizar operaciones complejas a través del código. También se puede instalar en plataformas Windows, Linux y Mac, así como a través de Azure Cloud Shell.
+
+Debido a las similitudes en las funcionalidades y el acceso entre Azure PowerShell y la CLI de Azure basada en Bash, la elección entre uno y otra depende básicamente del lenguaje con el que esté más familiarizado.
+
+### Descripción del propósito de Azure Arc
+
+La administración de entornos híbridos y de varias nubes puede complicarse rápidamente. Azure proporciona una serie de herramientas para aprovisionar, configurar y supervisar recursos de Azure. ¿Qué ocurre con los recursos locales en una configuración híbrida o los recursos de nube en una configuración de varias nubes?
+
+Al usar Azure Resource Manager (ARM), Arc le **permite ampliar el cumplimiento y la supervisión de Azure a las configuraciones híbridas y de varias nubes**. Azure Arc simplifica el gobierno y la administración al ofrecer una plataforma de administración local y multinube coherente.
+
+Azure Arc proporciona una manera centralizada y unificada de:
+
+- Administrar todo el entorno mediante la proyección de los recursos existentes que no son de Azure en ARM.
+- Administrar las máquinas virtuales híbridas y de varias nubes, los clústeres de Kubernetes y las bases de datos como si se ejecutaran en Azure.
+- Usar los servicios y funcionalidades de administración de Azure que conozca, independientemente de dónde se encuentren.
+- Seguir usando ITOps tradicionales al tiempo que se incorporan procedimientos de DevOps para admitir en el entorno patrones nuevos y nativos de nube.
+- Configurar ubicaciones personalizadas como una capa de abstracción a partir del clúster de Kubernetes habilitado para Azure Arc y las extensiones de clúster.
+
+#### ¿Qué puede hacer Azure Arc fuera de Azure?
+
+Actualmente, Azure Arc le permite administrar los siguientes tipos de recursos hospedados fuera de Azure:
+
+- Servidores
+- Clústeres de Kubernetes
+- Servicios de datos de Azure
+- SQL Server
+- Máquinas virtuales (versión preliminar)
+
+### Descripción de las plantillas de Azure Resource Manager y Azure ARM
+
+Azure Resource Manager (ARM) es el servicio de implementación y administración de Azure. Proporciona una capa de administración que le **permite crear, actualizar y eliminar recursos de la cuenta de Azure**. Cada vez que haga algo con los recursos de Azure, ARM está implicado.
+
+**Cuando un usuario envía una solicitud** de cualquiera de las herramientas, API o SDK de Azure, ARM la recibe. **ARM autentica y autoriza la solicitud**. Después, ARM envía la solicitud al servicio de Azure, que lleva a cabo la acción solicitada. Verá resultados y funcionalidades coherentes en todas las herramientas, ya que todas las solicitudes se controlan mediante la misma API.
+
+#### Ventajas de Azure Resource Manager
+
+Con Azure Resource Manager, puede realizar lo siguiente:
+
+- Administrar la infraestructura mediante plantillas declarativas en lugar de scripts. Una plantilla de Resource Manager es un archivo JSON que define lo que quiere implementar en Azure.
+- Implementar, administrar y supervisar todos los recursos de la solución en grupo, en lugar de controlarlos individualmente.
+- Vuelva a implementar la solución a lo largo del ciclo de vida de desarrollo y tenga la seguridad de que los recursos se implementan en un estado coherente.
+- Defina las dependencias entre recursos de modo que se implementen en el orden correcto.
+- Aplique control de acceso a todos los servicios, puesto que RBAC se integra de forma nativa en la plataforma de administración.
+- Aplicar etiquetas a los recursos para organizar de manera lógica todos los recursos de la suscripción.
+- Comprenda la facturación de la organización viendo los costos de un grupo de recursos que comparten la misma etiqueta.
+
+
+#### Infraestructura como código
+
+La infraestructura como código es un concepto en el que la **infraestructura se administra como líneas de código**. En un nivel introductorio, es como usar Azure Cloud Shell, Azure PowerShell o la CLI de Azure para administrar y configurar los recursos. A medida que se sienta más cómodo en la nube, puede usar la infraestructura como concepto de código para administrar implementaciones completas mediante plantillas repetibles y configuraciones. Las plantillas de ARM y Bicep son dos ejemplos de uso de la infraestructura como código con Azure Resource Manager para mantener el entorno.
+
+##### Plantillas de ARM
+
+Al usar **plantillas** de ARM, puede describir los recursos que quiere usar **en un formato JSON declarativo**. Con una plantilla de ARM, el código de implementación se comprueba antes de que se ejecute cualquier código. Esto garantiza que los recursos se crearán y se conectarán correctamente. A continuación, la plantilla organiza la creación de esos recursos en paralelo. Es decir, si necesita 50 instancias del mismo recurso, se crean las 50 instancias al mismo tiempo.  
+
+Por último, el desarrollador, profesional de DevOps o profesional de TI solo tiene que definir el estado y la configuración de cada recurso en la plantilla de Resource Manager, y la plantilla hace el resto. Las plantillas pueden incluso ejecutar scripts de PowerShell y Bash antes o después de configurar el recurso.
+
+###### Ventajas del uso de plantillas de ARM
+
+Las plantillas de ARM proporcionan muchas ventajas al planear la implementación de recursos de Azure. Algunas de esas ventajas son las siguientes:
+
+- **Sintaxis declarativa**: las plantillas de Resource Manager permiten crear e implementar una infraestructura de Azure completa de forma declarativa. La sintaxis declarativa significa que declara lo que quiere implementar, pero **no es necesario escribir los comandos** de programación y la secuencia reales para implementar los recursos.
+- **Resultados repetibles**: Implemente repetidamente la infraestructura a lo largo del ciclo de vida del desarrollo y tenga la seguridad de que los recursos se implementan de forma coherente. Puede usar la misma plantilla de ARM para implementar varios entornos de desarrollo y pruebas, sabiendo que todos los entornos son los mismos.
+- **Orquestación**: No tiene que preocuparse por la complejidad de las operaciones de ordenación. Azure Resource Manager orquesta la implementación de recursos interdependientes para que se creen en el orden correcto. Siempre que sea posible, Azure Resource Manager implementa los recursos en paralelo para que las implementaciones finalicen más rápido que las implementaciones en serie. La plantilla se implementa mediante un comando, en lugar de hacerlo con varios comandos imperativos.
+- **Archivos modulares**: Puede dividir las plantillas en componentes más pequeños y reutilizables y vincularlos en el momento de la implementación. También puede anidar una plantilla dentro de otra. Por ejemplo, podría crear una plantilla para una pila de máquinas virtuales y, después, anidar esa plantilla dentro de las que implementan entornos completos, y esa pila de máquinas virtuales se implementará de forma coherente en cada una de las plantillas de entorno.
+- **Extensibilidad**: con los scripts de implementación, puede agregar scripts de PowerShell o Bash a las plantillas. Los scripts de implementación amplían su capacidad para configurar recursos durante la implementación. Un script se puede incluir en la plantilla, o bien almacenarse en un origen externo y hacerle referencia en la plantilla. Los scripts de implementación le ofrecen la posibilidad de completar la configuración del entorno integral en una sola plantilla de ARM.
+
+##### Bicep
+
+Bicep es un **lenguaje que usa sintaxis declarativa** para implementar recursos de Azure. Un archivo de Bicep define la infraestructura y la configuración. A continuación, ARM implementa ese entorno en función del archivo Bicep. Aunque es similar a una plantilla de ARM, que está escrita en JSON, los archivos de Bicep tienden a usar un estilo más sencillo y conciso.
+
+Algunas ventajas de Bicep son:
+
+- **Compatibilidad con todos los tipos de recursos y versiones de API:** Bicep admite inmediatamente todas las versiones preliminares y de GA para los servicios de Azure. Tan pronto como un proveedor de recursos introduzca nuevos tipos de recursos y versiones de API, podrás utilizarlos en el archivo Bicep. No tiene que esperar a que se actualicen las herramientas antes de usar los nuevos servicios.
+- **Sintaxis simple**: En comparación con la plantilla JSON equivalente, los archivos de Bicep son **más concisos y fáciles de leer**. Bicep no requiere ningún conocimiento previo de los lenguajes de programación. La sintaxis de Bicep es declarativa y especifica qué recursos y propiedades de recursos quiere implementar.
+- **Resultados repetibles**: Implemente repetidamente la infraestructura a lo largo del ciclo de vida del desarrollo y tenga la seguridad de que los recursos se implementan de forma coherente. Los archivos de Bicep son idempotentes, lo que significa que puede implementar el mismo archivo varias veces y obtener los mismos tipos de recursos en el mismo estado. Puede desarrollar un archivo que represente el estado deseado, en lugar de desarrollar muchos archivos independientes para representar las actualizaciones.
+- **Orquestación**: No tiene que preocuparse por la complejidad de las operaciones de ordenación. Resource Manager se encarga de gestionar la implementación de recursos interdependientes para que se creen en el orden correcto. Cuando es posible, Resource Manager implementa los recursos en paralelo para que las implementaciones finalicen más rápido que las implementaciones en serie. El archivo se implementa mediante un comando, en lugar de hacerlo con varios comandos imperativos.
+- **Modularidad**: puede dividir el código de Bicep en elementos administrables mediante los módulos. El módulo implementa un conjunto de recursos relacionados. Los módulos permiten reutilizar el código y simplificar el desarrollo. Agregue el módulo a un archivo de Bicep cada vez que necesite implementar esos recursos.
+
+### Prueba de Conocimiento 
+
+1. ¿Qué servicio le ayuda a administrar los entornos de Azure, locales y multinube?
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Azure Arc</b>, junto con Azure Resource Manager, le permite ampliar el cumplimiento y la supervisión de Azure a las configuraciones híbridas y de varias nubes.</p>
+</details>
+
+2. ¿Qué dos componentes podría usar para implementar una implementación de "infraestructura como código"?
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Las plantillas de Bicep y ARM</b> permiten implementar el recurso como código.</p>
+</details>
+
+### Resumen
+
+En este módulo, se han presentado características y herramientas para administrar e implementar recursos de Azure. Hemos obtenido información sobre Azure Portal (una interfaz gráfica para administrar recursos de Azure), la línea de comandos y las herramientas de scripting que ayudan a implementar o configurar recursos. También ha obtenido información sobre los servicios de Azure que nos ayudan a administrar el entorno local y multinube desde Azure.
+
+#### Objetivos de aprendizaje
+
+Ahora deberíamos ser capaces de hacer lo siguiente:
+
+- Describir Azure Portal.
+- Describir Azure Cloud Shell, incluida la CLI de Azure y Azure PowerShell.
+- Describir el propósito de Azure Arc.
+- Describir Azure Resource Manager (ARM), plantillas de ARM y Bicep.
+
+#### Recursos adicionales
+
+Los recursos siguientes proporcionan más información sobre los temas de este módulo o relacionados con este módulo.
+
+- [Implementación de la seguridad de administración de recursos](https://learn.microsoft.com/es-es/learn/paths/implement-resource-mgmt-security/) en Azure es una ruta de aprendizaje de Microsoft Learn que proporciona más información sobre la administración de recursos de Azure.
+
+## Descripción de las herramientas de supervisión de Azure
+
