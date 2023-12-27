@@ -26,9 +26,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "4604d02450fdc3b0",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.3"
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -152,7 +162,9 @@
             "state": {
               "type": "all-properties",
               "state": {
-                "sortOrder": "frequency"
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           }
@@ -173,7 +185,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ef5c1a8333247e27",
+  "active": "4604d02450fdc3b0",
   "lastOpenFiles": [
     "ISO 27001.md",
     "Apendix/Pasted image 20231127125802.png",

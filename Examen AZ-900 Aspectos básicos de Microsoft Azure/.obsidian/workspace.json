@@ -26,6 +26,16 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "53043dd16ac41c8a",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.3"
+              }
+            }
           }
         ],
         "currentTab": 1
@@ -154,7 +164,9 @@
             "state": {
               "type": "all-properties",
               "state": {
-                "sortOrder": "frequency"
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           }
@@ -177,6 +189,7 @@
   },
   "active": "97257bc495212dc4",
   "lastOpenFiles": [
+    "Apendix/Pasted image 20231227111901.png",
     "Apendix/Pasted image 20231227092758.png",
     "Apendix/Pasted image 20231227092502.png",
     "Apendix/Pasted image 20231226190504.png",
@@ -187,7 +200,6 @@
     "Apendix/Pasted image 20231226172527.png",
     "Apendix/Pasted image 20231226171213.png",
     "Apendix/Pasted image 20231226165710.png",
-    "Apendix/Pasted image 20231226164733.png",
     "Recursos/Blob/template.zip",
     "Recursos/Blob",
     "Recursos/Nueva carpeta",

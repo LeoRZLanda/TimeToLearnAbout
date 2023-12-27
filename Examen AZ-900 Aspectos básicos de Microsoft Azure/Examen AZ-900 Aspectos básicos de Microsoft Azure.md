@@ -2796,3 +2796,28 @@ Para empezar se definirán los servicios de Azure que necesita.
 	
 	La calculadora de precios solo tiene fines informativos. Los precios son solo una estimación y no se le cobrará por ningún servicio que seleccione.
 
+#### Definición de los requisitos
+
+Antes de ejecutar la calculadora de precios, debe hacerse una idea de los **servicios de Azure que necesita**.
+
+En el caso de una aplicación web básica hospedada en el centro de datos, podría ejecutar una configuración similar a la siguiente.
+
+Una aplicación web ASP.NET que se ejecuta en Windows. La aplicación web proporciona información sobre el inventario de productos y los precios. Hay dos máquinas virtuales que se conectan mediante un equilibrador de carga central. La aplicación web se conecta a una base de datos de SQL Server que contiene información de inventario y de precios.
+
+Para migrar a Azure, podría:
+
+- Usar instancias de Azure **Virtual Machines**, de forma similar a las máquinas virtuales que se usan en el centro de datos.
+- Usar Azure **Application Gateway** para el equilibrio de carga.
+- Usar Azure **SQL Database** para almacenar información de inventario y de precios.
+
+En este diagrama se muestra la configuración básica:
+
+![[Pasted image 20231227111901.png]]
+
+En la práctica, definiría sus requisitos con mayor detalle. Pero estos son algunos hechos básicos y requisitos para empezar:
+
+- La aplicación se usa internamente. No es accesible para los clientes.
+- Esta aplicación no requiere una gran cantidad de potencia informática.
+- La máquinas virtuales y la base de datos se ejecutan de forma constante (730 horas por mes).
+- La red procesa aproximadamente 1 TB de datos al mes.
+- No es necesario configurar la base de datos para cargas de trabajo de alto rendimiento y no se requieren más de 32 GB de almacenamiento.
