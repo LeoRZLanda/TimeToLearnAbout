@@ -725,3 +725,174 @@ Tailwind Traders está migrando sus necesidades de almacenamiento a Azure. Ha im
 #### Diagrama de la arquitectura
 
 La primera implementación de disco en el grupo de recursos az104-**03a**-rg1 está completa. Tiene previsto personalizar la plantilla y usarla para implementar otro disco en el grupo de recursos az104-**03b**-rg1.
+
+#### Tareas
+
+**Tarea 1**: Revisar una plantilla de ARM para la implementación de un disco administrado de Azure.
+
+**Tarea 2**:Creación de un disco administrado de Azure mediante una plantilla de ARM.
+
+**Tarea 3:** Revisión de la implementación del disco administrado basada en la plantilla de ARM.
+
+	Nota
+	
+	Haga clic en la imagen en miniatura para iniciar la simulación de laboratorio. Cuando haya terminado, asegúrese de volver a esta página para continuar con el aprendizaje.
+
+[AZ-104 Exam Guide - Microsoft Azure Administrator Exercise 5 (cloudguides.com)](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)
+
+
+### Prueba de conocimientos
+
+1. ¿Qué es una plantilla de Azure Resource Manager?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Un archivo de notación de objetos JavaScript (JSON) que define la infraestructura y la configuración de la implementación.</p>
+	<small>Una plantilla de Resource Manager es un archivo JSON que define la infraestructura y la configuración de la implementación.</small>
+</details>
+
+2. ¿Cuál de los parámetros siguientes es un elemento del esquema de plantilla?
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Salidas</b>Outputs forma parte del esquema de plantilla. Outputs se usa para devolver valores de los recursos implementados.</p>
+</details>
+
+
+3. ¿Qué ocurre si la misma plantilla se ejecuta una segunda vez?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure Resource Manager no cambia los recursos implementados.</p>
+	<small>Si el recurso ya existe y no se detecta ningún cambio en las propiedades, no se realizará ninguna acción. Si el recurso ya existe y se produce un cambio en alguna propiedad, el recurso se actualiza. Si el recurso no existe, se creará.</small>
+</details>
+
+### Resumen y recursos
+
+Para implementar la infraestructura como código para las soluciones de Azure, use las plantillas de Azure Resource Manager. La plantilla es un archivo de notación de objetos JavaScript (JSON) que contiene la infraestructura y la configuración del proyecto. La plantilla usa sintaxis declarativa, lo que permite establecer lo que pretende implementar sin tener que escribir la secuencia de comandos de programación para crearla. En la plantilla se especifican los recursos que se van a implementar y las propiedades de esos recursos.
+
+Ahora deberíamos poder realizar las siguientes acciones:
+
+- Mostrar una lista de las ventajas de las plantillas de Azure.
+- Identificar los componentes del esquema de plantillas de Azure.
+- Especificar los parámetros de las plantillas de Azure.
+- Buscar y usar plantillas de inicio rápido de Azure.
+
+#### Más información
+
+Si desea obtener más información, revise los siguientes recursos. Un _espacio aislado_ indica un ejercicio práctico.
+
+- [Documentación sobre plantillas de Azure Resource Manager](https://learn.microsoft.com/es-es/azure/azure-resource-manager/templates/)
+- [Plantillas de inicio rápido de Azure](https://azure.microsoft.com/resources/templates/)
+- [Implementación de la infraestructura de Azure mediante plantillas de Resource Manager JSON (espacio aislado)](https://learn.microsoft.com/es-es/training/modules/build-azure-vm-templates/)
+- [crear recursos de Azure mediante las plantillas de Azure Resource Manager;](https://learn.microsoft.com/es-es/training/modules/create-azure-resources-using-azure-resource-manager-templates/)
+- [Compilación de la primera plantilla de Bicep (espacio aislado)](https://learn.microsoft.com/es-es/training/modules/build-first-bicep-template/)
+
+## Automatización de tareas de Azure mediante scripts con PowerShell
+
+### Introducción
+
+La creación de scripts de administración es una **manera eficaz de optimizar el flujo de trabajo**. Puede automatizar tareas comunes y repetitivas. Una vez que se haya comprobado un script, se ejecutará sistemáticamente, lo que reducirá los errores.
+
+Supongamos que trabaja en una empresa en la que se usa Azure Virtual Machines (VM) para probar el software de administración de las relaciones con el cliente (CRM). Las máquinas virtuales se crean a partir de imágenes que incluyen una front-end web, un servicio web que implementa la lógica de negocios y una base de datos SQL.
+
+Ha estado ejecutando varias series de pruebas en una sola máquina virtual, pero ha notado que los cambios en la base de datos y los archivos de configuración pueden causar resultados incoherentes. En un caso, un error creó un registro de llamada telefónica sin un cliente correspondiente en la base de datos. El registro huérfano ocasionó que las pruebas de integración posteriores no se realizaran incluso después de corregir el error. Piensa resolver este problema mediante la implementación de una nueva máquina virtual para cada ciclo de pruebas. Quiere automatizar la instalación de la creación de máquina virtual porque se ejecutará muchas veces por semana.
+
+Aquí, verá cómo administrar recursos de Azure mediante Azure PowerShell. Usará Azure PowerShell de forma interactiva para tareas aisladas y escribirá scripts para automatizar tareas repetitivas.
+
+#### Objetivos de aprendizaje
+
+En este módulo, aprenderá a:
+
+- Decidir si Azure PowerShell es la herramienta adecuada para sus tareas de administración de Azure.
+- Instalar Azure PowerShell en Linux, macOS o Windows.
+- Conectarse a una suscripción de Azure con Azure PowerShell.
+- Crear recursos de Azure con Azure PowerShell.
+
+#### Requisitos previos
+
+- Experiencia con una interfaz de línea de comandos como PowerShell o Bash
+- Conocimiento de conceptos básicos de Azure como grupos de recursos y máquinas virtuales
+- Experiencia con la administración de recursos de Azure mediante Azure Portal
+
+### Decisión sobre la idoneidad de Azure PowerShell para las tareas
+
+Supongamos que necesita elegir una herramienta para administrar los recursos de Azure que se usarán para probar el sistema de administración de las relaciones con el cliente (CRM). Las pruebas exigen que cree grupos de recursos y aprovisione máquinas virtuales (VM).
+
+Quiere algo que a los administradores les resulte fácil de aprender, pero con la suficiente eficacia como para automatizar la instalación y configuración de varias máquinas virtuales o crear scripts para un entorno de aplicación completo. Hay varias herramientas disponibles y debe encontrar la mejor para su personal y sus tareas.
+
+#### ¿Qué herramientas están disponibles?
+
+Azure proporciona tres herramientas de administración:
+
+- Azure Portal
+- La CLI de Azure
+- Azure PowerShell
+
+Estas herramientas ofrecen prácticamente el mismo nivel de control; cualquier tarea que pueda hacer con una de las herramientas, probablemente también podrá realizarla con las otras dos. Las tres son multiplataforma, es decir, que se ejecutan en Windows, macOS y Linux. Se diferencian en la sintaxis, los requisitos de configuración y la compatibilidad con la automatización.
+
+En este caso, vamos a describir cada una de las tres opciones y ofrecemos algunos consejos sobre cómo decidir entre ellas.
+
+##### ¿Qué es Azure Portal?
+
+Azure Portal es un **sitio web que le permite crear, configurar y modificar los recursos** de su suscripción de Azure. El portal es una interfaz gráfica de usuario (GUI) que resulta conveniente para localizar el recurso que necesite y ejecutar todos los cambios necesarios. También ofrece orientación para tareas administrativas complejas con asistentes e información sobre herramientas.
+
+**El portal no proporciona ninguna forma de automatizar tareas repetitivas**. Por ejemplo, para configurar quince máquinas virtuales, necesitaría crearlas una a una completando el asistente para cada una de ellas. Este método puede llevar mucho tiempo y ser propenso a errores si se trata de tareas complejas.
+
+##### ¿Qué es la CLI de Azure?
+
+La CLI de Azure es un **programa de línea de comandos multiplataforma** para conectarse a Azure y ejecutar comandos administrativos en recursos de Azure. Por ejemplo, para crear una máquina virtual, puede usar el siguiente comando:
+
+```Azure CLI
+az vm create --resource-group CrmTestingResourceGroup --name CrmUnitTests --image Ubuntu2204
+  ...
+```
+
+La CLI de Azure está disponible de dos formas: dentro de un explorador mediante Azure Cloud Shell o con una instalación local en Linux, Mac o Windows. En ambos casos, **puede usarlo de forma interactiva o usarlo con scripts para automatizar tareas**. Para un uso interactivo, inicie primero un shell (como `cmd.exe` en Windows o Bash en Linux o macOS) y, posteriormente, emita el comando en el símbolo del shell. Para automatizar tareas repetitivas, combine los comandos en un script de shell con la sintaxis de script del shell elegido y, después, ejecute el script.
+
+##### ¿Qué es Azure PowerShell?
+
+Azure PowerShell **es un módulo** que se agrega a PowerShell que le permite conectarse a la suscripción de Azure y administrar recursos. Azure PowerShell requiere PowerShell para funcionar. PowerShell proporciona servicios como la ventana de shell, análisis de comandos y mucho más. El módulo Azure Az de PowerShell agrega los comandos específicos de Azure.
+
+Por ejemplo, Azure PowerShell proporciona el comando **New-AzVM** que crea de forma automática una máquina virtual en la suscripción de Azure. Para usarlo, se inicia la aplicación de PowerShell y se emite el siguiente comando:
+
+```PowerShell
+New-AzVm `
+    -ResourceGroupName "CrmTestingResourceGroup" `
+    -Name "CrmUnitTests" `
+    -Image "UbuntuLTS"
+    ...
+```
+
+Azure PowerShell también está disponible de dos formas: dentro de un explorador mediante Azure Cloud Shell o con una instalación local en Linux, Mac o Windows. En ambos casos, tiene dos modos para elegir. Puede usarlo en modo interactivo, en el que emite manualmente un comando a la vez, o bien en modo de scripting, en el que ejecuta un script que consta de varios comandos.
+
+#### Elección de una herramienta administrativa
+
+Existe una similitud aproximada entre Azure Portal, la CLI de Azure y Azure PowerShell con respecto a los objetos de Azure que pueden administrar y las configuraciones que pueden crear. Todas son también multiplataforma. Normalmente, tendrá en cuenta otros factores diversos al realizar la elección:
+
+- **Automatización**: ¿necesita automatizar un conjunto de tareas repetitivas o complejas? Azure PowerShell y la CLI de Azure admiten la automatización, pero Azure Portal no.
+    
+- **Curva de aprendizaje**: ¿necesita completar una tarea rápidamente sin aprender nuevos comandos o sintaxis? Azure Portal no requiere el aprendizaje de sintaxis o la memorización de comandos. En Azure PowerShell y en la CLI de Azure, debe conocer la sintaxis detallada de cada comando que use.
+    
+- **Conjunto de aptitudes del equipo**: ¿el equipo tiene experiencia? Por ejemplo, el equipo puede haber usado PowerShell para administrar Windows. En su caso, sus miembros se familiarizarán rápidamente con el uso de Azure PowerShell.
+
+#### Ejemplo
+
+Recuerde que ha elegido una herramienta administrativa para crear los entornos de prueba para la aplicación de CRM. Los administradores tienen dos tareas de Azure específicas que deberán completar:
+
+1. Crear un grupo de recursos para cada categoría de prueba (unidad, integración y aceptación).
+2. Crear varias máquinas virtuales en cada grupo de recursos antes de cada ronda de pruebas.
+
+Para crear los grupos de recursos, Azure Portal es una opción razonable. Estas son tareas de ejecución única, por lo que no necesita scripts para llevarlas a cabo.
+
+Buscar la mejor herramienta para crear las máquinas virtuales es una decisión más complicada. Deberá crear varias máquinas virtuales y necesita hacerlo repetidamente, probablemente varias veces a la semana. Para estas tareas precisará de automatización, por lo que Azure Portal no es una buena opción. En este caso, Azure PowerShell o la CLI de Azure satisfarán sus necesidades. Si los miembros del equipo tienen algunos conocimientos de PowerShell, Azure PowerShell es probablemente la mejor opción. Azure PowerShell está disponible en los sistemas operativos que su equipo de administración utiliza, admite la automatización y a su equipo le debe resultar rápido de aprender.
+
+La primera experiencia que la mayoría de los administradores tienen con Azure es en Azure Portal. Es un excelente lugar para comenzar, ya que proporciona una interfaz gráfica limpia y bien estructurada, pero proporciona opciones limitadas para la automatización. Si necesita automatización, Azure le ofrece dos opciones: Azure PowerShell para administradores con experiencia en PowerShell y la CLI de Azure para todos los demás.
+
+En la práctica, las empresas suelen tener una combinación de tareas puntuales y repetitivas, por lo que es habitual usar Azure Portal y una solución de scripting. En nuestro ejemplo de CRM, es conveniente crear los grupos de recursos en Azure Portal y automatizar la creación de máquinas virtuales con PowerShell.
+
+El resto de este módulo se centra en la instalación y el uso de Azure PowerShell.
+
+### Instale PowerShell.
+
+Supongamos que ha elegido Azure PowerShell como solución de automatización. Los administradores prefieren ejecutar sus scripts localmente en lugar de en Azure Cloud Shell. El equipo usa máquinas que ejecutan Windows, macOS y Linux. Es preciso que la CLI de Azure funcione en todos los dispositivos.
