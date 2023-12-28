@@ -599,3 +599,67 @@ En un par de regiones, una región se empareja con otra en la misma [elegir resp
 	</small>
 </details>
 
+56. ¿Qué capa de administración acepta solicitudes de cualquier herramienta o API de Azure y le permite crear, actualizar y eliminar recursos en una cuenta de Azure?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure Resource Manager (ARM)</p>
+	<small>ARM es el servicio de implementación y mantenimiento para Azure. Proporciona una capa de administración que le permite crear, actualizar y eliminar recursos de la cuenta de Azure.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-manage-deploy-azure-resources/">Descripción de características y herramientas para administrar e implementar recursos de Azure: Formación | Microsoft Learn</a>
+	</small>
+</details>
+
+57. ¿Qué se puede usar para administrar servidores entre entornos locales y plataformas en la nube de terceros?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure Arc</p>
+	<small>Azure Arc simplifica el gobierno y la administración al ofrecer una plataforma de administración local y multinube coherente.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-manage-deploy-azure-resources/">Descripción de características y herramientas para administrar e implementar recursos de Azure: Formación | Microsoft Learn</a>
+	<a href = "https://learn.microsoft.com/training/modules/describe-features-tools-manage-deploy-azure-resources/3-describe-purpose-of-azure-arc">Descripción del propósito de Azure Arc: Formación | Microsoft Learn</a>
+	</small>
+</details>
+
+58. Seleccione la respuesta que complete correctamente la oración.
+
+[Elija la respuesta] son centros de datos separados físicamente dentro de una región de Azure.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Zonas de disponibilidad</p>
+	<small>Las zonas de disponibilidad son centros de datos separados físicamente dentro de una región de Azure. Cada zona de disponibilidad consta de uno o varios centros de datos equipados con alimentación, refrigeración y redes independientes.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/">Descripción de los principales componentes arquitectónicos de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+59. ¿Qué puede usar para proporcionar a los usuarios de Mac y Android acceso a un entorno de Windows que ejecutará aplicaciones basadas en Windows?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure Virtual Desktop</p>
+	<small>Azure Virtual Desktop es un servicio de virtualización de escritorios y aplicaciones que se ejecuta en la nube. Permite que los usuarios usen una versión hospedada en la nube de Windows desde cualquier ubicación. Azure Virtual Desktop funciona en dispositivos como Windows, Mac, iOS, Android y Linux. Funciona con aplicaciones que se pueden usar para acceder a aplicaciones y Escritorios remotos. También puede usar la mayoría de los exploradores modernos para acceder a experiencias hospedadas en Azure Virtual Desktop.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-compute-networking-services/">Descripción de los servicios de proceso y redes de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+60. ¿Qué puede usar para proporcionar a los usuarios de Mac y Android acceso a un entorno de Windows que ejecutará aplicaciones basadas en Windows?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure Container Instances y Azure Kubernetes Service (AKS)</p>
+	<small>Los contenedores son un entorno de virtualización. Al igual que la ejecución de varias máquinas virtuales en un solo host físico, se pueden ejecutar varios contenedores en un solo host físico o virtual. A diferencia de las máquinas virtuales, no se administra el sistema operativo de un contenedor.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-compute-networking-services/">Descripción de los servicios de proceso y redes de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+61. ¿Qué nivel de almacenamiento de blobs de Azure almacena los datos sin conexión y ofrece los costos de almacenamiento más bajos y los costos más altos para acceder a los datos?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Archivar</p>
+	<small>El nivel de almacenamiento de archivo almacena datos sin conexión y ofrece los menores costos de almacenamiento, pero los mayores costos de acceso y rehidratación de datos.
+	El nivel de almacenamiento de acceso frecuente está optimizado para almacenar datos a los que se accede con frecuencia.
+	Los datos del nivel de acceso esporádico pueden tolerar una disponibilidad ligeramente inferior, pero aun así requieren una gran durabilidad, una latencia de recuperación y unas características de rendimiento similares a las de los datos de acceso frecuente.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-storage-services/">Descripción de los servicios de almacenamiento de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
