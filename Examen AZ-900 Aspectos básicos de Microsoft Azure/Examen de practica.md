@@ -663,3 +663,140 @@ En un par de regiones, una región se empareja con otra en la misma [elegir resp
 	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-storage-services/">Descripción de los servicios de almacenamiento de Azure: aprendizaje | Microsoft Learn</a>
 	</small>
 </details>
+
+62. ¿Qué tipo de estrategia usa una serie de mecanismos para ralentizar el avance de un ataque que pretende obtener acceso no autorizado a los datos?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>defensa en profundidad</p>
+	<small>Una estrategia de defensa en profundidad usa una serie de mecanismos para ralentizar el avance de un ataque dirigido a adquirir acceso no autorizado a los datos. El principio de privilegios mínimos significa restringir el acceso a la información solo al nivel que los usuarios necesitan para realizar su trabajo. Un ataque DDoS intenta sobrecargar y agotar los recursos de una aplicación. La capa perimetral trata sobre la protección de los recursos de su organización frente a ataques basados en la red.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/">Descripción de la identidad, el acceso y la seguridad en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+63. ¿Qué característica de Microsoft Entra se puede usar para configurar la autenticación de seguridad que requiere que los usuarios usen su teléfono móvil para iniciar sesión?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>autenticación multifactor (MFA)</p>
+	<small>La MFA es el concepto de requerir algo más que una contraseña para iniciar sesión en una aplicación. Puede usar el teléfono móvil para recibir una llamada telefónica, un mensaje de texto o un código para autenticarse.
+	<a href = "https://learn.microsoft.com/training/modules/secure-aad-users-with-mfa/2-azure-multi-factor-authentication">Descripción de la identidad, el acceso y la seguridad en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+64. ¿Qué dos servicios proporciona Microsoft Entra? Cada respuesta correcta presenta una solución completa.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>autenticación y inicio de sesión único (SSO)</p>
+	<small>Azure AD proporciona servicios para comprobar la identidad y el acceso a las aplicaciones y los recursos. El inicio de sesión único le permite recordar un único nombre de usuario y una contraseña para acceder a varias aplicaciones y está disponible en Azure AD.
+	<a href = "https://learn.microsoft.com/training/modules/secure-aad-users-with-mfa/2-azure-multi-factor-authentication">Descripción de la identidad, el acceso y la seguridad en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+65. ¿Qué se puede usar para sincronizar identidades desde un dominio de Active Directory Domain Services (AD DS) local con Microsoft Entra?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Microsoft Entra Connect</p>
+	<small>Microsoft Entra Connect sincroniza las identidades de usuario desde un dominio de Active Directory Domain Services (AD DS) local a Microsoft Entra. Microsoft Entra Connect permite usar características, como el inicio de sesión único (SSO), la MFA y el autoservicio de restablecimiento de contraseña (SSPR) en ambos sistemas. SSPR impide que los usuarios usen contraseñas en peligro conocidas.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/">Descripción de la identidad, el acceso y la seguridad en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+66. ¿Qué dos características son beneficios comunes de la informática en la nube? Cada respuesta correcta presenta una solución completa.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>distribución geográfica y alta disponibilidad</p>
+	<small>Las aplicaciones basadas en la nube pueden proporcionar una experiencia de usuario continua sin tiempo de inactividad aparente, incluso cuando las cosas van mal. puede implementar aplicaciones y datos en centros de datos regionales de todo el mundo, lo que garantiza que sus clientes siempre tendrán el mejor rendimiento de su región. Las aplicaciones de informática en la nube se pueden escalar vertical y horizontalmente. En un modelo de nube pública, no obtiene acceso físico a los servidores, ya que los administra el proveedor de nube.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/">Descripción de la informática en la nube: formación | Microsoft Learn</a>
+	</small>
+</details>
+
+67. ¿Qué modelo de implementación en la nube usa si tiene servidores ubicados físicamente en el centro de datos del sitio de su organización y migra algunos de los servidores a la nube?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>nube híbrida</p>
+	<small>Una nube híbrida es un entorno informático que combina una nube pública y una nube privada, lo que permite compartir datos y aplicaciones entre ellas.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/">Descripción de la informática en la nube: formación | Microsoft Learn</a>
+	</small>
+</details>
+
+68. ¿De qué depende la alta disponibilidad de un entorno en la nube pública?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>el contrato de nivel de servicio (SLA) que elija</p>
+	<small>Los diferentes servicios tienen distintos Acuerdos de Nivel de Servicio. A veces, diferentes niveles del mismo servicio ofrecerán contratos de nivel de servicio diferentes, lo que puede aumentar o disminuir la disponibilidad prometida.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/">Descripción de las ventajas de usar servicios en la nube: formación | Microsoft Learn</a>
+	</small>
+</details>
+
+69. Seleccione la respuesta que complete correctamente la oración.
+
+En la informática en la nube, [elija la respuesta] permite implementar aplicaciones en centros de datos regionales de todo el mundo.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>geoubicación</p>
+	<small>puede implementar aplicaciones y datos en centros de datos regionales de todo el mundo, lo que garantiza que sus clientes siempre tendrán el mejor rendimiento de su región. Esto se conoce como distribución geográfica.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/">Descripción de las ventajas de usar servicios en la nube: formación | Microsoft Learn</a>
+	</small>
+</details>
+
+70. Seleccione la respuesta que complete correctamente la oración.
+
+El aumento de la capacidad de una aplicación mediante la adición de una máquina virtual adicional se denomina [elija la respuesta].
+
+<details>
+	<summary>Respuesta</summary>
+	<p>escalado horizontal</p>
+	<small>El escalado horizontal aumenta la capacidad de proceso mediante la adición de instancias de recursos, como la incorporación de máquinas virtuales a la configuración.
+	Escale verticalmente para aumentar la capacidad de proceso mediante la incorporación de RAM o CPU adicionales a una máquina virtual. 
+	Agilidad hace referencia a la capacidad de implementar rápidamente nuevas aplicaciones y servicios.
+	La alta disponibilidad minimiza el tiempo de inactividad cuando las cosas salen mal.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/">Descripción de las ventajas de usar servicios en la nube: formación | Microsoft Learn</a>
+	</small>
+</details>
+
+71. ¿En qué dos modelos de implementación son los clientes responsables de administrar sistemas operativos que hospedan aplicaciones? Cada respuesta correcta presenta una solución completa.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>infraestructura como servicio (IaaS) y entorno local</p>
+	<small>Los clientes administran los sistemas operativos cuando se usan IaaS o implementaciones locales. Los sistemas operativos no son accesibles en las implementaciones de PaaS y SaaS.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-service-types/">Descripción de los tipos de servicio en la nube: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+72. ¿Qué modelo de servicio en la nube proporciona el mayor control sobre el hardware que ejecuta aplicaciones?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>infraestructura como servicio (IaaS)/p>
+	<small>IaaS es la categoría más flexible de servicios en la nube. Su objetivo es ofrecer un control completo sobre el hardware que ejecuta las aplicaciones. Los usuarios no controlan el sistema operativo y no configuran los servidores subyacentes en las PaaS. Con el SaaS, está usando el software tal como está hospedado en la nube, en lugar de crear una plataforma para hospedar un software usted mismo.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-service-types/">Descripción de los tipos de servicio en la nube: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+73. ¿Qué tipo de modelo de servicio en la nube normalmente se licencia a través de una suscripción mensual o anual?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>software como servicio (SaaS)/p>
+	<small>SaaS es software que se hospeda y administra de forma centralizada para usted y sus usuarios o clientes. Normalmente se usa una versión de la aplicación para todos los clientes y la licencia se obtiene mediante una suscripción mensual o anual. PaaS e IaaS usan un modelo basado en el consumo, por lo que solo se paga por lo que se usa.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-service-types/">Descripción de los tipos de servicio en la nube: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+74. ¿Qué modelo de servicio en la nube usa Microsoft Office 365?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>software como servicio (SaaS)/p>
+	<small>El software como servicio (SaaS) permite que los usuarios se conecten y usen aplicaciones basadas en la nube a través de Internet. Algunos ejemplos comunes son el correo electrónico, el calendario y las herramientas de Office, como Office 365.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-service-types/">Descripción de los tipos de servicio en la nube: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
