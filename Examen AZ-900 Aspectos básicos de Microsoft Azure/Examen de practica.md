@@ -545,3 +545,57 @@ En un par de regiones, una región se empareja con otra en la misma [elegir resp
 	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/">Descripción de la identidad, el acceso y la seguridad en Azure: aprendizaje | Microsoft Learn</a>
 	</small>
 </details>
+
+51. ¿Qué dos características están disponibles mediante Azure Cost Management + Billing? Cada respuesta correcta presenta una solución completa.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Creación y administración de presupuestos, y Genere informes históricos y previsión del uso futuro.</p>
+	<small>Azure Cost Management le permite crear y administrar presupuestos de costos y uso mediante la supervisión de tendencias de demanda de recursos, tasas de consumo y patrones de costos. También le permite usar datos históricos para generar informes y predecir el uso y los gastos futuros.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cost-management-azure/">Descripción de la administración de costos en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+52. Tiene una máquina virtual de Azure a la que solo se accede entre las 9:00 y las 17:00 cada día.
+
+¿Qué debe hacer para minimizar los costos, pero conservar los discos duros y los datos asociados?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Desasignar la máquina virtual cuando no se necesite.</p>
+	<small>Si tiene cargas de trabajo de máquina virtual que solo se usan durante determinados periodos, pero las ejecuta cada hora de cada día, está perdiendo dinero. Estas máquinas virtuales son excelentes candidatas para desasignar cuando no están en uso y de empezar de nuevo cuando sea necesario para ahorrar costos de proceso mientras se desasignan las máquinas virtuales.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cost-management-azure/">Descripción de la administración de costos en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+53. ¿Qué se puede aplicar a un recurso para evitar la eliminación accidental?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>un bloqueo de recursos</p>
+	<small>Los bloqueos de recursos impiden que se eliminen o modifiquen recursos por error. Las etiquetas de recursos ofrecen agrupación personalizada de recursos. Dichas directivas aplican distintas reglas en todas las configuraciones de los recursos para que esas configuraciones sigan cumpliendo con los estándares corporativos. Una iniciativa es una forma de agrupar las directivas relacionadas.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-azure-for-governance-compliance/">Descripción de las características y las herramientas de Azure para la gobernanza y el cumplimiento: Formación | Microsoft Learn</a>
+	</small>
+</details>
+
+54. ¿Qué puede usar para restringir la implementación de una máquina virtual a una ubicación específica?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure Policy</p>
+	<small>Azure Policy puede ayudar a crear una directiva para las regiones permitidas, lo que le permite restringir la implementación de máquinas virtuales a una ubicación específica.
+	<a href = "https://learn.microsoft.com/azure/governance/policy/overview">Información general de Azure Policy: Azure Policy | Microsoft Learn</a>
+	<a href = "https://learn.microsoft.com/training/modules/describe-features-tools-azure-for-governance-compliance/3-describe-purpose-of-azure-policy">Descripción del propósito de Azure Policy: Formación | Microsoft Learn</a>
+	</small>
+</details>
+
+55. ¿Qué puede usar para definir los recursos que desea aprovisionar en un formato JSON declarativo?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Plantillas de Azure Resource Manager (ARM)</p>
+	<small>Al usar plantillas de ARM, puede describir los recursos que quiere usar en un formato JSON declarativo.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-manage-deploy-azure-resources/">Descripción de características y herramientas para administrar e implementar recursos de Azure: Formación | Microsoft Learn</a>
+	</small>
+</details>
+
