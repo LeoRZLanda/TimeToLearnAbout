@@ -69,16 +69,126 @@
 	<summary>Respuesta</summary>
 	<p>PowerShell en Azure Cloud Shell y Azure Portal</p>
 	<small>Azure Portal se puede ejecutar en dispositivos que tengan instalado el sistema operativo Android. El explorador puede ser de cualquier tipo, como Internet Explorer 11, Chrome, Firefox o Safari (todas las versiones más recientes). Al visitar el portal, verá Cloud Shell. Los usuarios pueden acceder a Bash y PowerShell desde Cloud Shell. Puede usar Bash y PowerShell para crear máquinas virtuales de Azure.
-	<a href = "https://learn.microsoft.com/azure/virtual-desktop/users/connect-android-chrome-os" ></a>
-	<a href = "" ></a>
+	<a href = "https://learn.microsoft.com/azure/virtual-desktop/users/connect-android-chrome-os" >Conexión a Azure Virtual Desktop con el cliente de Escritorio remoto para los sistemas operativos Android y Chrome: Azure Virtual Desktop | Microsoft Learn</a>
+	<a href = "https://learn.microsoft.com/training/modules/describe-features-tools-manage-deploy-azure-resources/" >Descripción de características y herramientas para administrar e implementar recursos de Azure: Formación | Microsoft Learn</a>
 	</small>
 </details>
 
-[Conexión a Azure Virtual Desktop con el cliente de Escritorio remoto para los sistemas operativos Android y Chrome: Azure Virtual Desktop | Microsoft Learn]()
+9. ¿Qué proporciona recomendaciones para reducir el costo de los recursos de Azure?
 
-[Descripción de características y herramientas para administrar e implementar recursos de Azure: Formación | Microsoft Learn](https://learn.microsoft.com/training/modules/describe-features-tools-manage-deploy-azure-resources/)
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure Advisor</p>
+	<small>Azure Advisor analiza el uso de la cuenta y realiza recomendaciones basadas en sus reglas establecidas y configuradas.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-monitoring-tools-azure/">Descripción de las herramientas de supervisión en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
 
-9. s
+10. Tiene un equipo de administradores de Linux que necesitan administrar los recursos en Azure. El equipo quiere usar el shell de Bash para realizar la administración.
+
+¿Qué debería recomendar?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>CLI de Azure</p>
+	<small>La CLI de Azure permite usar el shell de Bash para realizar tareas administrativas. Bash se usa en entornos de Linux, por lo que un administrador de Linux probablemente estará más cómodo realizando la administración de línea de comandos desde la CLI de Azure.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-manage-deploy-azure-resources/">Descripción de características y herramientas para administrar e implementar recursos de Azure: Formación | Microsoft Learn</a>
+	</small>
+</details>
+
+11. Debe revisar el informe de análisis de causa principal (RCA) para ver una interrupción del servicio que se produjo la semana pasada.
+
+¿Dónde debe buscar el informe?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure Service Health</p>
+	<small>Después de una interrupción, Service Health proporciona informes de incidentes oficiales, llamados análisis de la causa principal (RCA), que puede compartir con las partes interesadas.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-monitoring-tools-azure/">Descripción de las herramientas de supervisión en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+12. Debe crear una solución personalizada que use umbrales para desencadenar la funcionalidad de escalado automático para escalar o reducir verticalmente una aplicación para satisfacer la demanda del usuario.
+
+¿Qué debe incluir en la solución?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure Monitor</p>
+	<small>Azure Monitor es una plataforma que recopila datos de métricas y de registro, como porcentajes de CPU. Los datos se pueden usar para desencadenar el escalado automático.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-monitoring-tools-azure/">Descripción de las herramientas de supervisión en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+13. ¿Qué puede usar para detectar automáticamente anomalías de rendimiento en las aplicaciones web?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure Application Insights</p>
+	<small>Application Insights es una característica de Azure Monitor que permite supervisar las aplicaciones en ejecución, detectar automáticamente anomalías de rendimiento y usar herramientas de análisis integradas para ver qué hacen los usuarios en una aplicación.
+	<a href = "https://learn.microsoft.com/training/modules/monitoring-fundamentals/2-identify-product-options">Descripción de las herramientas de supervisión en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+14. ¿Qué servicio de Azure puede generar una alerta si el uso de la máquina virtual supera el 80 % durante cinco minutos?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure Monitor</p>
+	<small>Azure Monitor es una plataforma para recopilar, analizar, visualizar y alertar en función de las métricas. Azure Monitor puede registrar datos desde un entorno completo de Azure y en el entorno local.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-monitoring-tools-azure/">Descripción de las herramientas de supervisión en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+15. ¿Qué puede usar para encontrar información sobre el mantenimiento planeado para los servicios de Azure que son críticos para su organización?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure Service Health</p>
+	<small>Puede profundizar en los servicios, las regiones y los detalles afectados para mostrar cómo influirá un evento y qué debe hacer. La mayoría de estos eventos se producen sin ningún impacto en el usuario y no se mostrarán aquí. En el caso excepcional de que se requiera un reinicio, Service Health le permitirá elegir cuándo realizar el mantenimiento para minimizar el tiempo de inactividad.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-monitoring-tools-azure/">Descripción de las herramientas de supervisión en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+16. ¿Qué puede aplicar a una máquina virtual de Azure para asegurarse de que los usuarios no puedan cambiar o eliminar el recurso?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Un bloqueo</p>
+	<small>Incorrecto: Una identidad administrada asignada por el usuario: Agregar una identidad no añade la capacidad de cambiar o eliminar el recurso.
+	<b>Correcto: Un bloqueo: Un bloqueo de recursos cumplirá ambos requisitos.</b>
+	Incorrecto: Una etiqueta: Una etiqueta no cumplirá los requisitos.
+	Incorrecto: Acceso condicional: El acceso condicional no cumplirá los requisitos.
+	<a href="https://learn.microsoft.com/azure/azure-resource-manager/management/lock-resources?tabs=json">Protección de los recursos de Azure con un bloqueo: Azure Resource Manager | Microsoft Learn</a>
+	<a href = "https://learn.microsoft.com/training/modules/describe-features-tools-azure-for-governance-compliance/">Descripción de las características y las herramientas de Azure para la gobernanza y el cumplimiento: Formación | Microsoft Learn</a>
+</small>
+</details>
+
+17. ¿Qué característica del Portal de gobernanza de Microsoft Purview debe usar para administrar el acceso a los orígenes de datos y los conjuntos de datos?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Directiva de Datos</p>
+	<small>Incorrecto: Data Catalog: Esto habilita la detección de datos.
+	Incorrecto: Uso compartido de datos: Comparte datos dentro y entre organizaciones.
+	Incorrecto: Data Estate Insights: Accede al estado del patrimonio de datos.
+	Correcto: Directiva de datos: Esto rige el acceso a los datos.
+	<a href = "https://learn.microsoft.com/azure/purview/overview">Introducción a las soluciones de gobernanza de Microsoft Purview: Microsoft Purview | Microsoft Learn</a>
+	<a href = "https://learn.microsoft.com/training/modules/describe-features-tools-azure-for-governance-compliance/">Descripción de las características y las herramientas de Azure para la gobernanza y el cumplimiento: Formación | Microsoft Learn</a>
+	</small>
+</details>
+
+18. ¿Qué dos atributos son característicos del modelo de implementación de nube privada? Cada respuesta correcta presenta una solución completa.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>El hardware debe comprarse, La empresa tiene el control total sobre los recursos físicos y la seguridad</p>
+	<small>En una nube privada, debe adquirirse hardware para el inicio y el mantenimiento. En una nube privada, las organizaciones controlan los recursos y la seguridad. El aprovisionamiento rápido es una característica del modelo de implementación en la nube pública. Pagar solo por lo que se usa es una característica del modelo de implementación en la nube pública.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/">Descripción de la informática en la nube: formación | Microsoft Learn</a>
+	</small>
+</details>
+
+19. s
 
 <details>
 	<summary>Respuesta</summary>
@@ -86,15 +196,7 @@
 	<small></small>
 </details>
 
-10. s
-
-<details>
-	<summary>Respuesta</summary>
-	<p></p>
-	<small></small>
-</details>
-
-11. s
+20. s
 
 <details>
 	<summary>Respuesta</summary>
