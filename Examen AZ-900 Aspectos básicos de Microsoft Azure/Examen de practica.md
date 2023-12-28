@@ -188,7 +188,99 @@
 	</small>
 </details>
 
-19. s
+19. ¿Cuáles son dos servicios básicos proporcionados por todos los proveedores de nube? Cada respuesta correcta presenta una solución completa.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Compute y Storage</p>
+	<small>Todos los proveedores de nube proporcionan servicios de proceso y almacenamiento. Coubicación es cuando una empresa alquila espacio en un centro de datos físico compartido. El desarrollo de aplicaciones es responsabilidad del cliente y normalmente se realiza internamente o a través de un tercero.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/">Descripción de la informática en la nube: formación | Microsoft Learn</a>
+	</small>
+</details>
+
+20. ¿Cuáles son dos características de un modelo basado en el consumo? Cada respuesta correcta presenta una solución completa.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Sin costos iniciales y la capacidad de dejar de pagar por los recursos que ya no se usen</p>
+	<small>En un modelo basado en el consumo, no paga por nada hasta que empiece a usar recursos y solo paga por lo que usa. Si deja de usar un recurso, deja de pagar por él. Normalmente, los gastos elevados se asocian a la compra de la infraestructura física, que no es necesaria en un modelo basado en el consumo.
+	<a href = "https://learn.microsoft.com/training/modules/describe-cloud-compute/">Descripción de la informática en la nube: formación | Microsoft Learn</a>
+	</small>
+</details>
+
+21. ¿Por qué la informática en la nube suele ser menos costosa que los centros de datos locales? Cada respuesta correcta presenta una solución completa.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Solo se factira por lo que use</p>
+	<small>Alquilar servicios de proceso y almacenamiento y facturar solo por lo que se usa a menudo reduce los gastos operativos. Según el servicio y el tipo de ancho de banda de red, se puede incurrir en cargos. Las ofertas de servicios en la nube suelen proporcionar funcionalidades que pueden ser difíciles o prohibitivas de implementar en el entorno local, especialmente para organizaciones más pequeñas. Los principales proveedores de nube ofrecen servicios en todo el mundo. Lo que facilita y hace relativamente más barato implementar servicios cerca de donde residan los usuarios.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/">Descripción de la informática en la nube: formación | Microsoft Learn</a>
+	</small>
+</details>
+
+22. ¿Cuál es una ventaja de la informática en la nube en comparación con las implementaciones locales?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Puede escalar más rápidamente</p>
+	<small>La informática en la nube le permite escalar más rápidamente. Poseer sus propias CPU y tener acceso total en caso de una interrupción de Internet no son características de la informática en la nube. Trabajar desde varias estaciones de trabajo no es específico de la informática en la nube en comparación con una implementación local.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/">Descripción de la informática en la nube: formación | Microsoft Learn</a>
+	</small>
+</details>
+
+23. Seleccione la respuesta que complete correctamente la oración.
+
+El aumento de la capacidad de proceso de una aplicación mediante la adición de RAM o CPU a una máquina virtual se denomina [elija la respuesta].
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Escalado vertical</p>
+	<small>Escale verticalmente para aumentar la capacidad de proceso mediante la incorporación de RAM o CPU adicionales a una máquina virtual. El escalado horizontal aumenta la capacidad de proceso mediante la adición de instancias de recursos, como la incorporación de máquinas virtuales a la configuración. La recuperación ante desastres mantiene los datos y otros recursos seguros en caso de desastre. La alta disponibilidad minimiza el tiempo de inactividad cuando las cosas salen mal.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/">https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/</a>
+	</small>
+</details>
+
+24. Seleccione la respuesta que complete correctamente la oración.
+
+La implementación y configuración rápidas de recursos basados en la nube a medida que cambian los requisitos empresariales se denomina [elija la respuesta].
+
+<details>
+	<summary>Respuesta</summary>
+	<p>agilidad</p>
+	<small><b>Agilidad</b>: significa que puede implementar y configurar recursos basados en la nube rápidamente a medida que cambian los requisitos de la aplicación. 
+	La escalabilidad: significa que puede agregar memoria RAM, CPU o máquinas virtuales completas a una configuración. 
+	Elasticidad: quiere decir que puede configurar aplicaciones basadas en la nube para aprovechar el escalado automático, de forma que las aplicaciones siempre dispongan de los recursos que necesiten. 
+	Alta disponibilidad: significa que las aplicaciones basadas en la nube pueden proporcionar una experiencia de usuario continua sin tiempo de inactividad aparente, incluso cuando las cosas salen mal.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/">Descripción de las ventajas de usar servicios en la nube: formación | Microsoft Learn</a>
+	</small>
+</details>
+
+25. ¿De qué son característicos los servicios de copia de seguridad basados en la nube, la replicación de datos y las características de distribución geográfica?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>un plan de recuperación ante desastres</p>
+	<small>La recuperación ante desastres usa servicios, como la copia de seguridad basada en la nube, la replicación de datos y la distribución geográfica, para mantener los datos y el código seguros en caso de desastre.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/">Descripción de las ventajas de usar servicios en la nube: formación | Microsoft Learn</a>
+	</small>
+</details>
+
+26. Seleccione la respuesta que complete correctamente la oración.
+
+Un ejemplo de [elija la respuesta] es el escalado automático de una aplicación para asegurarse de que la aplicación tenga los recursos necesarios para satisfacer las demandas del cliente.
+
+<details>
+	<summary>Respuesta</summary>
+	<p></p>
+	<small><b>La elasticidad</b> hace referencia a la capacidad de escalar los recursos según sea necesario, como durante las horas laborables, para asegurarse de que una aplicación pueda mantenerse al día a petición y luego, reducir los recursos disponibles durante las horas de poca actividad. 
+	Agilidad hace referencia a la capacidad de implementar rápidamente nuevas aplicaciones y servicios. 
+	La alta disponibilidad hace referencia a la capacidad de asegurarse de que un servicio o una aplicación permanezcan disponibles en caso de error. 
+	La distribución geográfica hace que un servicio o una aplicación estén disponibles en varias ubicaciones geográficas que suelen estar cerca de los usuarios.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/">Descripción de las ventajas de usar servicios en la nube: formación | Microsoft Learn</a>
+	</small>
+</details>
+
+27. s
 
 <details>
 	<summary>Respuesta</summary>
@@ -196,7 +288,31 @@
 	<small></small>
 </details>
 
-20. s
+28. s
+
+<details>
+	<summary>Respuesta</summary>
+	<p></p>
+	<small></small>
+</details>
+
+29. s
+
+<details>
+	<summary>Respuesta</summary>
+	<p></p>
+	<small></small>
+</details>
+
+30. s
+
+<details>
+	<summary>Respuesta</summary>
+	<p></p>
+	<small></small>
+</details>
+
+31. s
 
 <details>
 	<summary>Respuesta</summary>
