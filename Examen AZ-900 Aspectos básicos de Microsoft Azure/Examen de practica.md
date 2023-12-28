@@ -280,42 +280,268 @@ Un ejemplo de [elija la respuesta] es el escalado automático de una aplicación
 	</small>
 </details>
 
-27. s
+27. En un modelo de plataforma como servicio (PaaS), ¿cuáles dos componentes son responsabilidad del proveedor de servicios en la nube? Cada respuesta correcta presenta una solución completa.
 
 <details>
 	<summary>Respuesta</summary>
-	<p></p>
-	<small></small>
+	<p>sistema operativo y red física</p>
+	<small>En la PaaS, el proveedor de nube es responsable del sistema operativo, el centro de datos físico, los hosts físicos y la red física. En las PaaS, el cliente es responsable de las cuentas e identidades.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-service-types/">Descripción de los tipos de servicio en la nube: aprendizaje | Microsoft Learn</a>
+	</small>
 </details>
 
-28. s
+28. ¿En qué modelo de servicio en la nube es el cliente responsable de administrar el sistema operativo?
 
 <details>
 	<summary>Respuesta</summary>
-	<p></p>
-	<small></small>
+	<p>Infraestructura como servicio (IaaS)</p>
+	<small>IaaS consta de máquinas virtuales y redes proporcionadas por el proveedor de nube. El cliente es responsable del sistema operativo y las aplicaciones. El proveedor de nube es responsable del sistema operativo en PaaS y SaaS.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-service-types/">Descripción de los tipos de servicio en la nube: aprendizaje | Microsoft Learn</a>
+	</small>
 </details>
 
-29. s
+29. Su organización está creando una aplicación personalizada.
+
+Debe centrarse en el desarrollo de aplicaciones en lugar de en la configuración y administración de servidores.
+
+¿Qué modelo de servicio en la nube se debería usar?
 
 <details>
 	<summary>Respuesta</summary>
-	<p></p>
-	<small></small>
+	<p>plataforma como servicio (PaaS)</p>
+	<small>Con PaaS, los usuarios se pueden centrar en el desarrollo de aplicaciones, ya que el proveedor de nube lleva a cabo toda la administración de plataformas. 
+	En SaaS, el proveedor de servicios en la nube administra todos los aspectos del entorno de la aplicación, como las máquinas virtuales, los recursos de red, el almacenamiento de datos y las aplicaciones. 
+	IaaS es el modelo de servicio más cercano para administrar servidores físicos.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-service-types/">Descripción de los tipos de servicio en la nube: aprendizaje | Microsoft Learn</a>
+	</small>
 </details>
 
-30. s
+30. ¿Qué usa el modelo de servicio en la nube de infraestructura como servicio (IaaS)?
 
 <details>
 	<summary>Respuesta</summary>
-	<p></p>
-	<small></small>
+	<p>Azure Virtual Machines</p>
+	<small>Azure Virtual Machines es una oferta de IaaS. El cliente es responsable de la configuración de la máquina virtual, así como de todas las configuraciones del sistema operativo. 
+	Azure App Services y Azure Cosmos DB son ofertas de PaaS. 
+	Microsoft Office 365 es una oferta de SaaS.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-service-types/">Descripción de los tipos de servicio en la nube: aprendizaje | Microsoft Learn</a>
+	</small>
 </details>
 
-31. s
+31. ¿Qué tipos de servicios en la nube son redes virtuales?
 
 <details>
 	<summary>Respuesta</summary>
-	<p></p>
-	<small></small>
+	<p>infraestructura como servicio (IaaS)</p>
+	<small>IaaS le ayuda a reducir el costo y la complejidad de mantener un servidor físico y su infraestructura en el centro de datos. Las redes virtuales forman parte del servicio en la nube de IaaS.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-cloud-service-types/">Descripción de los tipos de servicio en la nube: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+32. Seleccione la respuesta que complete correctamente la oración.
+
+[Elija la respuesta] es el contenedor lógico que se usa para combinar y organizar recursos de Azure.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>un grupo de recursos</p>
+	<small>Los recursos se combinan en grupos de recursos, que actúan como contenedor lógico en el que se implementan y administran recursos de Azure como las aplicaciones web, las bases de datos y las cuentas de almacenamiento.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/">Descripción de los principales componentes arquitectónicos de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+33. Seleccione la respuesta que complete correctamente la oración.
+
+En un par de regiones, una región se empareja con otra en la misma [elegir respuesta].
+
+<details>
+	<summary>Respuesta</summary>
+	<p>geography</p>
+	<small>
+	Cada región de Azure se empareja siempre con otra región de la misma zona geográfica (por ejemplo, EE. UU., Europa o Asia) que se encuentre como mínimo a 500 km de distancia.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/">Descripción de los principales componentes arquitectónicos de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+34. ¿Qué ejemplifica una cuenta de Azure Storage denominada storage001?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Un recurso</p>
+	<small>Un recurso es un elemento administrable que está disponible mediante Azure. Las máquinas virtuales, cuentas de almacenamiento, aplicaciones web, bases de datos y redes virtuales son ejemplos de recursos.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/">Descripción de los principales componentes arquitectónicos de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+35. ¿Qué componente de Azure le permite replicar recursos en una geografía para garantizar la continuidad empresarial durante un desastre natural en el sitio primario?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>pares de región</p>
+	<small>Los pares de regiones permiten la replicación de recursos de Azure entre zonas geográficas para garantizar que una región secundaria esté disponible en caso de desastre en la región primaria.
+	<a href = "https://learn.microsoft.com/training/modules/azure-architecture-fundamentals/regions-availability-zones">Descripción de los principales componentes arquitectónicos de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+36. Seleccione la respuesta que complete correctamente la oración.
+
+[Elija la respuesta] es el servicio de implementación y administración de Azure.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure Resource Manager (ARM)</p>
+	<small>ARM es el servicio de implementación y mantenimiento para Azure. Proporciona una capa de administración que le permite crear, actualizar y eliminar recursos de su suscripción de Azure. Puede usar características de administración, como el control de acceso, los bloqueos de recursos y las etiquetas de recursos, para proteger y organizar los recursos después de la implementación.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/">Descripción de los principales componentes arquitectónicos de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+37. ¿Qué dos recursos de Azure pueden usar las zonas de disponibilidad? Cada respuesta correcta presenta una solución completa.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Bases de datos de Azure SQL y máquinas virtuales</p>
+	<small>Las zonas de disponibilidad son principalmente para las máquinas virtuales, los discos administrados, los equilibradores de carga y las bases de datos SQL.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/">Descripción de los principales componentes arquitectónicos de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+38. ¿Qué recurso de Azure es una emulación de software de un equipo físico que incluye un procesador virtual, memoria, almacenamiento y recursos de red?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>una máquina virtual</p>
+	<small>Las máquinas virtuales son emulaciones de software de equipos físicos. Incluyen un procesador virtual, memoria, almacenamiento y recursos de red. Hospedan un sistema operativo, y se puede instalar y ejecutar software, al igual que en un equipo físico.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-compute-networking-services/">Descripción de los servicios de proceso y redes de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+39. ¿Qué servicio de proceso de Azure puede usar para implementar y administrar un conjunto de máquinas virtuales idénticas?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Conjuntos de escalado de máquinas virtuales de Azure</p>
+	<small>Las instancias de Azure Virtual Machine Scale Sets son un recurso que puede utilizar para implementar y administrar un conjunto de máquinas virtuales idénticas.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-compute-networking-services/">Descripción de los servicios de proceso y redes de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+40. Debe permitir que los recursos de dos redes virtuales de Azure diferentes se comuniquen entre sí.
+
+¿Qué debe configurar?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>emparejamiento</p>
+	<small>Puede vincular redes virtuales entre sí mediante el emparejamiento de red virtual. El emparejamiento permite que los recursos de cada red virtual se comuniquen entre sí.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-compute-networking-services/">Descripción de los servicios de proceso y redes de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+41. ¿Qué puede usar para conectar recursos de Azure, como bases de datos de Azure SQL, a una red virtual de Azure?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>puntos de conexión del servicio</p>
+	<small>Los puntos de conexión de servicio se usan para exponer los servicios de Azure a una red virtual, lo que proporciona comunicación entre los dos. ExpressRoute se usa para conectar una red local a Azure. Los NSG permiten configurar reglas de entrada y de salida para redes virtuales y máquinas virtuales. El emparejamiento permite conectar redes virtuales juntas.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-compute-networking-services/">Descripción de los servicios de proceso y redes de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+42. ¿Qué dos servicios puede usar para establecer la conectividad de red entre una red local y los recursos de Azure? Cada respuesta correcta presenta una solución completa.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure VPN Gateway y ExpressRoute</p>
+	<small>Las conexiones de ExpressRoute y Azure VPN Gateway son dos servicios que puede usar para conectar una red local a Azure. Bastion proporciona una interfaz web para administrar de forma remota máquinas virtuales de Azure mediante SSH/RDP. Azure Firewall es un servicio de firewall con estado que se usa para proteger las redes virtuales.
+	<a href = "https://learn.microsoft.com/azure/expressroute/expressroute-connectivity-models">Azure ExpressRoute: Modelos de conectividad | Microsoft Learn</a>
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-compute-networking-services/">Descripción de los servicios de proceso y redes de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+43. ¿Qué servicio de almacenamiento debe usar para almacenar miles de archivos que contienen texto e imágenes? 
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Azure Blob Storage</p>
+	<small>Azure Blob Storage es una solución de almacenamiento de objetos optimizada para el almacenamiento de cantidades masivas de datos no estructurados, como texto o datos binarios.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-storage-services/">Descripción de los servicios de almacenamiento de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+44. ¿Qué nivel de servicio de Azure Blob Storage tiene los costos de almacenamiento más altos y los tiempos de acceso más rápidos para leer y escribir datos?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Acceso frecuente</p>
+	<small>El nivel de almacenamiento de acceso frecuente está optimizado para almacenar datos que se consultan con frecuencia. 
+	En el caso del nivel de almacenamiento de acceso esporádico, un Acuerdo de Nivel de Servicio con una disponibilidad ligeramente inferior y unos costos de acceso mayores, en comparación con los datos de acceso frecuente, es aceptable a cambio de unos costos de almacenamiento menores. 
+	El almacenamiento de archivo almacena datos sin conexión y ofrece los menores costos de almacenamiento, pero los mayores costos de acceso y rehidratación de datos.
+	<a href = "Descripción de los servicios de almacenamiento de Azure: aprendizaje | Microsoft Learn"></a>
+	</small>
+</details>
+
+45. ¿Qué dos protocolos se pueden usar para acceder a los recursos compartidos de archivos de Azure? Cada respuesta correcta presenta una solución completa.
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Network File System (NFS) y Bloque de mensajes del servidor (SMB)</p>
+	<small>Azure Files proporciona recursos compartidos de archivos totalmente administrados en la nube a los que se puede acceder mediante los protocolos SMB y NFS estándar del sector.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-storage-services/">Descripción de los servicios de almacenamiento de Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+46. ¿Cuál es el propósito de la defensa en profundidad?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>para usar varios niveles de protección y evitar que los usuarios no autorizados accedan a la información</p>
+	<small>El objetivo de la defensa en profundidad es usar varias capas de protección para evitar que los usuarios no autorizados accedan a la información o la roben.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/">Descripción de la identidad, el acceso y la seguridad en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+47. ¿Qué puede usar para asegurarse de que un usuario solo pueda acceder a las aplicaciones desde dispositivos compatibles?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Acceso condicional</p>
+	<small>El acceso condicional es una característica que usa Microsoft Entra para permitir o denegar el acceso a los recursos en función de señales de identidad, como el dispositivo que se está usando. 
+	El inicio de sesión único permite a los usuarios iniciar sesión una vez y utilizar esa credencial para acceder a varios recursos y aplicaciones de distintos proveedores. 
+	La MFA es un proceso en el que durante el inicio de sesión de un usuario se le solicita una forma adicional de identificación. 
+	Las soluciones de identidad híbrida crean una identidad de usuario común para la autenticación y autorización en todos los recursos, independientemente de la ubicación.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/">Descripción de la identidad, el acceso y la seguridad en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+48. ¿Qué puede usar para permitir que un usuario administre todos los recursos de un grupo de recursos?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Control de acceso basado en rol (RBAC) de Azure</p>
+	<small>Azure RBAC permite asignar un conjunto de permisos a un usuario o grupo. 
+	Las etiquetas de recursos permiten localizar recursos asociados a cargas de trabajo, entornos, unidades de negocio y propietarios específicos y actuar al respecto. 
+	Los bloqueos de recursos impiden el cambio accidental o la eliminación de un recurso. 
+	Key Vault es un servicio en la nube centralizado para almacenar los secretos de la aplicación en una única ubicación central.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/">Descripción de la identidad, el acceso y la seguridad en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+49. ¿A qué objeto o nivel se aplica un rol de control de acceso basado en roles (RBAC) de Azure?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>scope</p>
+	<small>Un rol RBAC de Azure se aplica a un ámbito, que es un recurso o un conjunto de recursos a los que se aplica el acceso. Los bloqueos de recursos impiden el cambio accidental o la eliminación de un recurso. Las etiquetas de recursos permiten localizar recursos asociados a cargas de trabajo, entornos, unidades de negocio y propietarios específicos y actuar al respecto. Las directivas aplican distintas reglas en las configuraciones del recurso para que esas configuraciones sigan cumpliendo con los estándares corporativos.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/">Descripción de la identidad, el acceso y la seguridad en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
+</details>
+
+50. ¿Qué puede usar para asegurarse de que los usuarios se autentiquen mediante la autenticación multifactor (MFA) cuando intenten iniciar sesión desde una ubicación específica?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Acceso condicional</p>
+	<small>El acceso condicional puede usar señales para determinar información sobre los intentos de autenticación y, a continuación, determinar si se va a bloquear el acceso o requerir comprobaciones adicionales, como la MFA.
+	<a href = "https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/">Descripción de la identidad, el acceso y la seguridad en Azure: aprendizaje | Microsoft Learn</a>
+	</small>
 </details>
