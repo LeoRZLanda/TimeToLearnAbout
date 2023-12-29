@@ -2457,3 +2457,154 @@ Para implementar esta plantilla en Azure, debe iniciar sesión en la cuenta de A
 2. Si la barra de comandos de la ventana de terminal indica **bash**, tiene el shell correcto desde el que trabajar y puede ir a la sección siguiente.
     
 3. De lo contrario, seleccione la lista desplegable y elija **Select Default Profile** (Seleccionar el perfil predeterminado).
+
+	![[Pasted image 20231229155242.png]]
+
+4. Seleccione **Git Bash**.
+
+	![[Pasted image 20231229155308.png]]
+
+5. Seleccione **Terminal > Nuevo terminal** para abrir una ventana de terminal del shell de Bash.
+
+###### Inicio de sesión en Azure
+
+1. En la ventana de terminal, ejecute este comando para iniciar sesión en Azure.
+
+	```CLI
+	az login
+	```
+
+2. Se abre un explorador para que pueda iniciar sesión en su cuenta. Después de iniciar sesión, se muestra en el terminal una lista de las suscripciones asociadas a esta cuenta. Si ha activado el espacio aislado, debería ver una denominada _Suscripción de Concierge_. Úsela para el resto del ejercicio.
+    
+3. En el shell de Bash, ejecute el siguiente comando para establecer la suscripción predeterminada para todos los comandos de la CLI de Azure que se ejecuten en esta sesión.
+
+	```CLI
+	az account set --subscription "Concierge Subscription"
+	```
+
+	Si ha usado más de un espacio aislado recientemente, es posible que aparezca más de una _Suscripción de Concierge_. Si es así, use los dos pasos siguientes para identificar y establecer la suscripción predeterminada.
+	
+	a. Ejecute el siguiente comando para obtener los id. de _Suscripción de Concierge_.
+
+	```CLI
+	az account list --refresh --query "[?contains(name, 'Concierge Subscription')].id" --output table
+	```
+	
+	b. Establezca la suscripción predeterminada mediante la ejecución del siguiente comando y reemplace _{your subscription ID}_ por el id. de Suscripción de Concierge más reciente.
+
+	```CLI
+	az account set --subscription {your subscription ID}
+	```
+
+###### Establecimiento del grupo de recursos predeterminado
+
+Al establecer el grupo de recursos que se creó al activar el espacio aislado como grupo de recursos predeterminado, puede omitir ese parámetro de los comandos de la CLI de Azure en este ejercicio. Para establecer el grupo de recursos, ejecute el siguiente comando.
+
+```CLI
+az configure --defaults group=[sandbox resource group name]
+```
+
+###### Implementación de la plantilla en Azure
+
+Ejecute los comandos siguientes para implementar la plantilla de ARM en Azure. La plantilla de ARM todavía no tiene ningún recurso, por lo que no verá ningún recurso creado. Debería obtener una implementación correcta.
+
+```CLI
+templateFile="azuredeploy.json"
+today=$(date +"%d-%b-%Y")
+DeploymentName="blanktemplate-"$today
+
+az deployment group create --name $DeploymentName --template-file $templateFile
+```
+
+En la sección superior del código anterior establece las variables de la CLI de Azure, que incluyen la ruta de acceso al archivo de la plantilla que se va a implementar, así como el nombre de la implementación. La sección inferior, `az deployment group create`, implementa la plantilla en Azure. Observe que el nombre de la implementación es `blanktemplate` con la fecha como sufijo.
+
+Debería ver `Running...` en el terminal.
+
+Cuando haya implementado la plantilla de ARM en Azure, vaya a [Azure Portal](https://portal.azure.com/) y asegúrese de que se encuentra en la suscripción de espacio aislado. Para ello, seleccione el avatar en la esquina superior derecha de la página. Seleccione **Cambiar directorio**. En la lista, seleccione el directorio **Espacio aislado de Microsoft Learn**.
+
+1. En el menú de recursos, seleccione **Grupos de recursos**.
+    
+2. Seleccione el grupo de recursos _[nombre del grupo de recursos del espacio aislado]_.
+    
+3. En el panel **Información general**, verá la implementación realizada correctamente.
+
+	![[Pasted image 20231229160623.png]]
+
+4. Seleccione **1 correcta** para ver los detalles de la implementación.
+
+	![[Pasted image 20231229160729.png]]
+
+
+5. Seleccione `blanktemplate` para ver qué recursos se han implementado. En este caso, estará vacío porque todavía no ha especificado ningún recurso en la plantilla.
+
+6. Deje la página abierta en el explorador. Tendrá que volver a comprobar las implementaciones.
+
+#### Adición de un recurso a la plantilla de ARM
+
+En la tarea anterior, ha aprendido a crear una plantilla en blanco y a implementarla. Ahora está listo para implementar un recurso real. En esta tarea, agregará un recurso de cuenta de Azure Storage a la plantilla de ARM mediante un fragmento de código de la extensión Herramientas de Azure Resource Manager para Visual Studio Code.
+
+1. En el archivo _azuredeploy.json_ de Visual Studio Code, coloque el cursor entre los corchetes del bloque de recursos `"resources":[],`.
+    
+2. Escriba _storage_ dentro de los corchetes. Aparece una lista de fragmentos de código relacionados. Seleccione **arm-storage**.
+
+	![[Pasted image 20231229161036.png]]
+	El archivo tendrá este aspecto:
+
+	```JSON
+	{
+	  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+	  "contentVersion": "1.0.0.0",
+	  "parameters": {},
+	  "functions": [],
+	  "variables": {},
+	  "resources": [
+	    {
+	      "name": "storageaccount1",
+	      "type": "Microsoft.Storage/storageAccounts",
+	      "apiVersion": "2019-06-01",
+	      "tags": {
+	        "displayName": "storageaccount1"
+	      },
+	      "location": "[resourceGroup().location]",
+	      "kind": "StorageV2",
+	      "sku": {
+	        "name": "Premium_LRS",
+	        "tier": "Premium"
+	      }
+	    }
+	  ],
+	  "outputs": {}
+	}
+```
+	
+	Los valores que se deben editar se resaltan en la nueva sección del archivo y se puede navegar por ellos mediante la tecla Tabulador.
+	    
+	Observe que los atributos `tags` y `location` están rellenados. El atributo `location` usa una función para establecer la ubicación del recurso en la del grupo de recursos. Obtendrá información sobre etiquetas y funciones en el módulo siguiente.
+    
+3. Cambie los valores _name_ y _displayName_ del recurso por algo único (por ejemplo, **learnexercise12321**). Este nombre debe ser único en todo Azure, por lo que debe elegir algo que sea único para usted.
+    
+4. Cambie el valor _name_ de sku de **Premium_LRS** a **Standard_LRS**. Cambie el valor de _tier_ a **Estándar**. Observe que Visual Studio Code proporciona las opciones adecuadas para los valores de atributo en IntelliSense. Elimine el valor predeterminado, incluidas las comillas, y escriba las comillas para ver este trabajo.
+
+	![[Pasted image 20231229161212.png]]
+
+5. La ubicación del recurso se establece en la del grupo de recursos donde se implementará. Mantenga este valor predeterminado.
+    
+6. Guarde el archivo.
+
+##### Comprobación de la implementación
+
+1. Cuando finalice la implementación, vuelva al Azure Portal en el explorador. Vaya al grupo de recursos y comprobará que ahora hay **2 implementaciones correctas**. Seleccione este vínculo.
+    
+    Observe que las dos implementaciones están en la lista.
+
+	![[Pasted image 20231229161355.png]]
+
+2. Seleccione **addstorage**.
+
+	![[Pasted image 20231229161409.png]]
+
+#### Azure PowerShell
+
+Observe que la cuenta de almacenamiento se ha implementado.
+
+### Adición de flexibilidad a la plantilla de Azure Resource Manager mediante parámetros y salidas
