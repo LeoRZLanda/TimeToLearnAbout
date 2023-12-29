@@ -1,0 +1,17 @@
+PS /home/leonardo/clouddrive> history
+
+  Id     Duration CommandLine
+  --     -------- -----------
+   1        0.013 cd $HOME\clouddrive
+   2        0.056 touch "./ConferenceDailyReset.ps1"
+   3        0.032 ls
+   4        0.075 dir
+   5        0.061 code ./ConferenceDailyReset.ps1
+   6        0.024 cat ./ConferenceDailyReset.ps1
+   7        0.546 Get-AzResourceGroup | Format-Table
+   8       15.278 ./ConferenceDailyReset.ps1 learn-e405f7e2-c768-4fc4-b2ff-6f628adcdbe9
+   9        0.031 code ./ConferenceDailyReset.ps1
+  10     1:30.883 ./ConferenceDailyReset.ps1 learn-e405f7e2-c768-4fc4-b2ff-6f628adcdbe9
+  11        0.105 Get-AzResource -Resourcetype Microsoft.Compute/VirtualMachines
+
+PS /home/leonardo/clouddrive>

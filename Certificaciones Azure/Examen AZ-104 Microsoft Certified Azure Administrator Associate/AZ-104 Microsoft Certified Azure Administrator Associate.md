@@ -1749,3 +1749,435 @@ Ha escrito un script que ha automatizado la creación de tres máquinas virtuale
 
 ### Resumen
 
+En este módulo, hemos escrito un script para automatizar la creación de varias máquinas virtuales. Aunque el script era relativamente corto, puede ver las posibilidades de combinar bucles, variables y funciones de PowerShell con cmdlets de PowerShell de Azure PowerShell.
+
+Azure PowerShell es una buena opción de automatización para los administradores con experiencia en PowerShell. También merece la pena considerar la combinación de una sintaxis limpia y un eficaz lenguaje de scripting incluso si no está familiarizado con PowerShell. Este nivel de automatización para tareas laboriosas y propensas a errores le ayudará a reducir el tiempo dedicado a la administración y aumentar la calidad.
+
+#### Limpieza
+
+El espacio aislado limpia los recursos automáticamente cuando haya terminado con este módulo.
+
+Al trabajar en una suscripción propia, se recomienda identificar al final de un proyecto si aún necesita los recursos creados. Los recursos que dejas en ejecución pueden costar dinero. Puede eliminar los recursos de forma individual o eliminar el grupo de recursos para eliminar todo el conjunto de recursos.
+
+Cuando se ejecuta en su propia suscripción, puede usar el siguiente cmdlet de PowerShell para eliminar el grupo de recursos y todos los recursos relacionados (reemplazando _MyResourceGroupName_ por el grupo de recursos que creó).
+
+```PowerShell
+Remove-AzResourceGroup -Name MyResourceGroupName
+```
+
+Cuando se le pida que confirme la eliminación, responda **Sí** o agregue el parámetro `-Force` para omitir el símbolo del sistema. El comando puede tardar varios minutos en completarse.
+
+#### Comprobar los conocimientos
+
+1. Verdadero o falso: Azure Portal, la CLI de Azure y Azure PowerShell ofrecen servicios bastante diferentes, por lo que es poco probable que las tres admitan el funcionamiento que necesita.
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Falso</b> Las tres herramientas ofrecen casi el mismo conjunto de servicios. Por lo general, los servicios no son un factor a la hora de decidir qué herramienta es mejor para sus tareas.</p>
+</details>
+
+2. Supongamos que está compilando una aplicación de edición de vídeos que ofrecerá almacenamiento en línea para el contenido de vídeo que generan los usuarios. Almacenará los vídeos en blobs de Azure, por lo que necesitará crear una cuenta de almacenamiento de Azure en la que contener los blogs. Una vez que la cuenta de almacenamiento esté preparada, es poco probable que la vaya a eliminar y volver a crear porque esto eliminaría todos los vídeos de los usuarios. ¿Qué herramienta es probable que ofrezca la forma más rápida y sencilla de crear la cuenta de almacenamiento?
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Azure Portal</b> El portal es una buena elección para operaciones únicas como la creación de una cuenta de almacenamiento duradera. El portal le ofrece una interfaz gráfica de usuario que contiene todas las propiedades de la cuenta de almacenamiento y proporciona información sobre herramientas para ayudarle a seleccionar las opciones adecuadas a sus necesidades.</p>
+</details>
+
+3. ¿Qué debe instalar en el equipo para poder ejecutar cmdlets de Azure PowerShell de forma local?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Necesita tanto el producto base de <b>PowerShell como el módulo de Az de PowerShell</b>. El producto base ofrece el shell, algunos comandos principales y construcciones de programación, como bucles, variables, etc. El módulo Az de PowerShell agrega los cmdlets que se necesitan para trabajar con recursos de Azure.</p>
+</details>
+
+## Control de los servicios de Azure con la CLI
+
+### Introducción
+
+Azure Portal es idóneo para realizar tareas únicas y para ver información general rápida del estado de los recursos. Sin embargo, para tareas que hay que repetir diariamente, o incluso cada hora, el uso de la línea de comandos y un conjunto de comandos o scripts probados puede ayudarle a realizar el trabajo más rápido y evitar errores.
+
+Supongamos que trabaja en una empresa que desarrolla aplicaciones web de Azure. Estas son aplicaciones hospedadas en Azure, con todas las ventajas de configuración automática de seguridad, equilibrio de carga, administración, etc. Está probando actualmente una aplicación web que genera previsiones de ventas, según un intervalo de entradas de diferentes bases de datos y otros orígenes de datos. Los desarrolladores usan equipos Windows, Linux y Mac, junto con un repositorio de GitHub para las compilaciones diarias de las aplicaciones.
+
+Como parte de las pruebas, quiere comparar el rendimiento de la aplicación con diferentes orígenes de datos y diferentes tipos de conexiones de datos. Ha observado que cuando el equipo de desarrollo usa Azure Portal para crear una nueva instancia de prueba de la aplicación, no siempre usan exactamente los mismos parámetros. Para solucionar este problema, piensa usar un conjunto de comandos de implementación estándar para cada prueba de aplicación, que se pueden automatizar si es necesario, y que funcionarán de la misma manera en todos los equipos que usa el equipo de software.
+
+En este módulo, aprenderá cómo administrar recursos de Azure mediante la CLI de Azure.
+
+#### Objetivos de aprendizaje
+
+En este módulo, aprenderemos a:
+
+- Instalar la CLI de Azure en Linux, macOS o Windows.
+- Conectarse a una suscripción de Azure mediante la CLI de Azure
+- Crear recursos de Azure mediante la CLI de Azure
+
+#### Requisitos previos
+
+- Experimentar con una interfaz de línea de comandos, como PowerShell o Bash
+- Conocimiento de conceptos básicos de Azure, como los grupos de recursos
+- Experiencia con la administración de recursos de Azure mediante Azure Portal
+
+### ¿Qué es la CLI de Azure?
+
+La CLI de Azure es un programa de **línea de comandos para conectarse a Azure y ejecutar comandos administrativos en recursos de Azure**. Se ejecuta en Linux, macOS y Windows y permite que los administradores y desarrolladores ejecuten sus comandos a través del símbolo del sistema (o script) de la línea de comandos o un terminal, en lugar de hacerlo en un explorador web. Por ejemplo, para reiniciar una máquina virtual (VM), usaría el siguiente comando:
+
+```Azure CLI
+az vm restart -g MyResourceGroup -n MyVm
+```
+
+La CLI de Azure proporciona herramientas de línea de comandos multiplataforma para administrar recursos de Azure, y puede instalarla de forma sencilla localmente en equipos Windows, Mac o Linux. También puede usar la CLI de Azure desde un explorador mediante Azure Cloud Shell. En ambos casos, puede usarla de forma interactiva o con scripts. Para un uso interactivo, inicie primero un shell (como cmd.exe en Windows o Bash en Linux o macOS), a continuación, emita el comando en el símbolo del shell. Para automatizar tareas repetitivas, combine los comandos de la CLI en un script de shell con la sintaxis de script del shell elegido y luego ejecute el script.
+
+#### Instalación de la CLI de Azure
+
+En Linux y macOS, use un administrador de paquetes para instalar la CLI de Azure. El administrador de paquetes recomendado es diferente en función del sistema operativo y la distribución:
+
+- Linux: **apt-get** en Ubuntu, **yum** en Red Hat y **zypper** en OpenSUSE
+- Mac: **Homebrew**
+
+La CLI de Azure está disponible en el repositorio de Microsoft, así que primero tiene que agregar ese repositorio al administrador de paquetes.
+
+En Windows, puede instalar la CLI de Azure mediante la descarga y ejecución de un archivo MSI.
+
+#### Uso de la CLI de Azure en scripts
+
+Si quiere usar los comandos de CLI de Azure en scripts, deberá tener en cuenta los problemas derivados del "shell" (o el entorno) utilizado para ejecutar el script. Por ejemplo, en un shell de Bash, usará esta sintaxis al establecer las variables:
+
+```Azure CLI
+variable="value"
+variable=integer
+```
+
+Si usa un entorno de PowerShell para ejecutar scripts de la CLI de Azure, usará esta sintaxis para las variables:
+
+```PowerShell
+$variable="value"
+$variable=integer
+```
+
+Debe instalar la CLI de Azure para poder usarla para administrar los recursos de Azure desde un equipo local. Los pasos de instalación varían para Windows, Linux y macOS, pero una vez instalada, los comandos son iguales en todas las plataformas.
+
+### Ejercicio: Instalación y ejecución de la CLI de Azure
+
+Vamos a instalar la CLI de Azure en el equipo local y después a ejecutar un comando para comprobar la instalación. El método que se usa para instalar la CLI de Azure depende del sistema operativo del equipo. Elija los pasos correspondientes a su sistema operativo.
+
+	 Nota
+	
+	Este ejercicio le guiará en el proceso de instalación local de la herramienta de la CLI de Azure. En el resto del módulo se usará Azure Cloud Shell para que pueda aprovechar la compatibilidad de la suscripción gratuita de Microsoft Learn. Puede considerar este ejercicio como una actividad opcional y simplemente revisar las instrucciones si lo prefiere.
+
+#### Instalación de Azure CLI
+
+##### Windows
+
+Aquí instalará la CLI de Azure en Windows con el instalador MSI.
+
+1. Vaya a [https://aka.ms/installazurecliwindows](https://aka.ms/installazurecliwindows) y seleccione**Ejecutar** o **Abrir archivo** en el cuadro de diálogo de seguridad del explorador.
+2. En el instalador, acepte los términos de licencia y después seleccione **Instalar**.
+3. En el cuadro de diálogo **Control de cuentas de usuario**, seleccione **Sí**.
+
+##### macOS
+
+Aquí instalará la CLI de Azure en macOS con el administrador de paquetes de Homebrew.
+
+ Importante
+
+Si el comando **brew** no está disponible, es posible que deba instalar el administrador de paquetes Homebrew. Para más información, vea el [sitio web de Homebrew](https://brew.sh/).
+
+1. Actualice el repositorio de brew para asegurarse de que obtiene el paquete más reciente de la CLI de Azure:
+
+```Bash
+brew update
+```
+
+2. Instalar la CLI de Azure:
+
+```Bash
+brew install azure-cli
+```
+
+##### Linux
+
+Aquí utilizará Advanced Packaging Tool (**apt**) y la línea de comandos de Bash para instalar la CLI de Azure en **Ubuntu Linux**.
+
+ Sugerencia
+
+Los siguientes comandos son para la versión 18.04 de Ubuntu. Otras versiones y distribuciones de Linux tienen instrucciones diferentes. Siga las instrucciones del artículo [Instalación de la CLI de Azure](https://learn.microsoft.com/es-es/cli/azure/install-azure-cli) si usa una versión de Linux diferente o tiene problemas.
+
+1. Modifique la lista de orígenes para que el repositorio de Microsoft quede registrado y el administrador de paquetes pueda localizar el paquete de la CLI de Azure:
+
+	```Bash
+	AZ_REPO=$(lsb_release -cs)
+	echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+	sudo tee /etc/apt/sources.list.d/azure-cli.list
+	```
+
+2. Importe la clave de cifrado del repositorio de Ubuntu de Microsoft. Esto permite que el administrador de paquetes compruebe que el paquete de la CLI de Azure que se instala provenga de Microsoft.
+
+	```Bash
+	curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+	```
+
+3. Instalar la CLI de Azure:
+
+	```Bash
+	sudo apt-get install apt-transport-https
+	sudo apt-get update && sudo apt-get install azure-cli
+	```
+
+#### Ejecución de la CLI de Azure
+
+Puede ejecutar la CLI de Azure abriendo un shell de bash (Linux y macOS) o desde el símbolo del sistema o PowerShell (Windows).
+
+1. Inicie la CLI de Azure y compruebe la instalación ejecutando la comprobación de versión.
+    
+	```Azure CLI
+	az --version
+	```
+
+	 Sugerencia
+	
+	La ejecución de la CLI de Azure desde PowerShell presenta algunas ventajas con respecto a la ejecución de la CLI de Azure desde el símbolo del sistema de Windows. PowerShell ofrece más características de finalización con tabulación de las que están disponibles en el símbolo del sistema.
+
+Ha configurado las máquinas locales para administrar recursos de Azure con la CLI de Azure. Ahora puede usar la CLI de Azure localmente para especificar comandos o ejecutar scripts. La CLI de Azure reenviará los comandos a los centros de datos de Azure, en donde se ejecutarán dentro de su suscripción de Azure.
+
+
+### Trabajo con la CLI de Azure
+
+La CLI de Azure permite escribir comandos y ejecutarlos de inmediato desde la línea de comandos. Recuerde que es el objetivo general en el ejemplo de desarrollo de software es implementar nuevas compilaciones de una aplicación web para realizar pruebas. Vamos a hablar sobre los tipos de tareas que se pueden realizar con la CLI de Azure.
+
+#### ¿Qué recursos de Azure se pueden administrar mediante la CLI de Azure?
+
+La CLI de Azure le permite controlar casi todos los aspectos de cualquier recurso de Azure. Puede trabajar con grupos de recursos, almacenamiento, máquinas virtuales, Microsoft Entra ID, contenedores, aprendizaje automático, etc.
+
+Los comandos de la CLI se estructuran en _grupos_ y _subgrupos_. Cada grupo representa un servicio suministrado por Azure y los subgrupos dividen los comandos para estos servicios en agrupaciones lógicas. Por ejemplo, el grupo `storage` contiene subgrupos como **cuenta**, **blob** y **cola**.
+
+Por tanto, ¿cómo puede encontrar los comandos específicos que necesita? Una forma de hacerlo es usar `az find`, el robot de IA que emplea la documentación de Azure para darle más información sobre los comandos y la CLI, entre otros.
+
+**Ejemplo**: encontrar los comandos más populares relacionados con la palabra **blob**:
+
+``` Azure CLI
+az find blob
+```
+
+**Ejemplo**: mostrarme los comandos más populares para un grupo de comandos de la CLI de Azure, como `az vm`:
+
+```Azure CLI
+az find "az vm"
+```
+
+**Ejemplo**: mostrarme los parámetros y subcomandos más populares para un comando de la CLI de Azure:
+
+
+```Azure CLI
+az find "az vm create"
+```
+
+Si ya conoce el nombre del comando que quiere, el argumento `--help` para ese comando obtendrá información más detallada sobre el comando y una lista de los subcomandos disponibles para un grupo de comandos. Por tanto, en el ejemplo de almacenamiento, se muestra cómo se puede obtener una lista de los comandos y subgrupos para administrar el almacenamiento de blobs:
+
+
+```Azure CLI
+az storage blob --help
+```
+
+#### Creación de un recurso de Azure
+
+La creación de un recurso de Azure normalmente consta de tres pasos: la conexión a la suscripción de Azure, la creación del recurso y la comprobación de que se creó correctamente. En la ilustración siguiente se muestra una introducción general del proceso.
+
+![[Pasted image 20231229120717.png]]
+
+Cada paso se corresponde con un comando diferente de la CLI de Azure.
+
+##### Conectar
+
+Puesto que está trabajando con una instalación local de la CLI de Azure, tiene que autenticarse para poder ejecutar comandos de Azure mediante el comando **login** de la CLI de Azure.
+
+```Azure CLI
+az login
+```
+
+La CLI de Azure normalmente iniciará el explorador predeterminado para abrir la página de inicio de sesión de Azure. Si esto no funciona, siga las instrucciones de la línea de comandos y escriba un código de autorización en [https://aka.ms/devicelogin](https://aka.ms/devicelogin).
+
+Una vez que la sesión se inicie correctamente, estará conectado a la suscripción de Azure.
+
+##### Creación
+
+A menudo, deberá crear un grupo de recursos para crear un servicio de Azure, por lo que vamos a usar grupos de recursos como ejemplo de creación de recursos de Azure desde la CLI.
+
+El comando **group create** de la CLI de Azure crea un grupo de recursos. Debe especificar un nombre y una ubicación. El nombre debe ser único dentro de su suscripción. La ubicación determina dónde se almacenarán los metadatos para el grupo de recursos. Puede usar cadenas como "Oeste de EE. UU.", "Norte de Europa" u "Oeste de la India" para especificar la ubicación; también puede usar los equivalentes de una sola palabra, como westus, northeurope o westindia. La sintaxis básica es la siguiente:
+
+```Azure CLI
+az group create --name <name> --location <location>
+```
+
+	 Importante
+	
+	No es necesario crear un grupo de recursos al usar el espacio aislado de Azure gratuito. En su lugar, usará un grupo de recursos creado previamente.
+
+##### Comprobación
+
+Para muchos recursos de Azure, la CLI de Azure proporciona un subcomando **list** que permite ver los detalles de los recursos. Por ejemplo, el comando **group list** de la CLI de Azure enumera los grupos de recursos de Azure. Esto es útil para comprobar si el grupo de recursos se creó correctamente:
+
+```Azure CLI
+az group list
+```
+
+Para obtener una vista más concisa, puede aplicar al resultado el formato de una tabla sencilla:
+
+```Azure CLI
+az group list --output table
+```
+
+### Ejercicio: Creación de un sitio web de Azure mediante la CLI
+
+A continuación, se usará la CLI de Azure para crear un grupo de recursos e implementar después una aplicación web en ese grupo de recursos.
+
+El espacio aislado gratuito permite crear recursos en un subconjunto de las regiones globales de Azure. Seleccione una región de la lista al crear los recursos:
+
+- westus2
+- southcentralus
+- centralus
+- eastus
+- westeurope
+
+- southeastasia
+- japaneast
+- brazilsouth
+- australiasoutheast
+- centralindia
+
+#### Uso de un grupo de recursos
+
+Si va a trabajar con su propia máquina y su suscripción de Azure, primero debe iniciar sesión en Azure con el comando `az login`. Sin embargo, no es necesario iniciar sesión cuando se usa el entorno de espacio aislado de Cloud Shell basado en el explorador.
+
+Normalmente, crearía un grupo de recursos a continuación para todos los recursos relacionados de Azure con un comando `az group create`, pero se ha creado el siguiente grupo de recursos para este ejercicio de forma automática:**[nombre del grupo de recursos de espacio aislado]**.
+
+	Nota
+	
+	En este ejercicio, se usa la región Este de EE. UU. Si tiene algún problema para crear el plan de App Service, seleccione otra región en la lista anterior.
+
+1. El primer paso de este ejercicio es crear múltiples variables para usarlas en comandos posteriores:
+    
+    
+    ```Bash
+    export RESOURCE_GROUP=[sandbox resource group name]
+    export AZURE_REGION=eastus
+    export AZURE_APP_PLAN=popupappplan-$RANDOM
+    export AZURE_WEB_APP=popupwebapp-$RANDOM
+    ```
+
+2. Puede solicitar a la CLI de Azure que muestre todos los grupos de recursos en una tabla. Mientras esté en el espacio aislado de Azure gratuito, solo debería haber uno:
+
+	```Azure CLI
+	az group list --output table
+	```
+
+	 Sugerencia
+
+	Puede usar el botón **Copiar** para copiar los comandos en el Portapapeles. Para pegarlos, haga clic con el botón derecho en una nueva línea en el terminal de Cloud Shell y seleccione **Pegar**, o bien use el método abreviado de teclado Mayús+Insert (⌘+V en macOS).
+
+3. A medida que avance con el desarrollo en Azure, puede acabar con varios grupos de recursos. Si tiene varios elementos en la lista de grupos, puede filtrar los valores devueltos agregando una opción `--query`. Pruebe el siguiente comando:
+
+	```Azure CLI
+	az group list --query "[?name == '$RESOURCE_GROUP']"
+	```
+
+	El formato de la consulta se establece con **JMESPath**, que es un lenguaje de consulta estándar para las solicitudes JSON. Puede obtener más información sobre este eficaz lenguaje de filtro en [http://jmespath.org/](http://jmespath.org/). También analizaremos con más detalle las consultas en el módulo [**Administración de máquinas virtuales con la CLI de Azure**](https://learn.microsoft.com/es-es/training/modules/manage-virtual-machines-with-azure-cli/).
+
+##### Pasos para crear un plan de servicio
+
+Al ejecutar Web Apps, mediante Azure App Service, paga por los recursos de proceso de Azure que la aplicación usa y los costos de los recursos dependen del plan de App Service asociado con Web Apps. Los planes de servicio determinan la región que se usa para el centro de datos de la aplicación, el número de máquinas virtuales que se usan y el plan de tarifa.
+
+1. Cree un plan de App Service para ejecutar la aplicación. En el siguiente comando se especifica el plan de tarifa gratuito, pero puede ejecutar `az appservice plan create --help` para ver los demás planes de tarifa.
+
+	 Nota
+
+	Los nombres de la aplicación y el plan deben ser _únicos_ en todo Azure. Las variables que ha creado anteriormente asignarán valores aleatorios como sufijos para garantizar que sean únicos. Sin embargo, si recibe un error al crear los recursos, debe ejecutar los comandos enumerados anteriormente para restablecer todas las variables con nuevos valores aleatorios.
+	
+	Si recibe un error sobre el grupo de recursos, ejecute los comandos enumerados anteriormente con un valor de grupo de recursos diferente.
+
+	```Azure CLI
+	az appservice plan create --name $AZURE_APP_PLAN --resource-group $RESOURCE_GROUP --location $AZURE_REGION --sku FREE
+	```
+
+	Este comando puede tardar varios minutos en completarse.
+
+2. Muestre todos los planes en una tabla para comprobar que el plan de servicio se haya creado correctamente:
+
+	```Azure CLI
+	az appservice plan list --output table
+	```
+
+	Debería obtener una respuesta similar a la del siguiente ejemplo:
+
+	```Resultados
+	Kind    Location    MaximumNumberOfWorkers    Name                NumberOfSites    ResourceGroup                               Status
+	------  ----------  ------------------------  ------------------  ---------------  ------------------------------------------  --------
+	app     East US     3                         popupappplan-54321  0                Learn-12345678-1234-1234-1234-123456789abc  Ready
+	```
+
+##### Creación de una aplicación web
+
+A continuación, cree la aplicación web en su plan de servicio. Puede implementar el código al mismo tiempo, pero, en nuestro ejemplo, crearemos la aplicación web e implementaremos el código por separado.
+
+1. Para crear la aplicación web, proporcione el nombre de la aplicación web y el nombre del plan de App Service que creó antes. Al igual que el nombre del plan de aplicación, el nombre de la aplicación web debe ser único. Las variables que creó antes asignan valores aleatorios que deberían ser suficientes para este ejercicio. Este comando puede tardar unos minutos en completarse.
+    
+	```Azure CLI
+	az webapp create --name $AZURE_WEB_APP --resource-group $RESOURCE_GROUP --plan $AZURE_APP_PLAN
+	```
+
+2. Muestre todas las aplicaciones en una tabla para comprobar que la aplicación se haya creado correctamente:
+
+	```Azure CLI
+	az webapp list --output table
+	```
+
+	Debería obtener una respuesta similar a la del siguiente ejemplo:
+
+	```Azure CLI
+	Name               Location    State    ResourceGroup                               DefaultHostName                      AppServicePlan
+	-----------------  ----------  -------  ------------------------------------------  -----------------------------------  ------------------
+	popupwebapp-12345  East US  Running  Learn-12345678-1234-1234-1234-123456789abc  popupwebapp-12345.azurewebsites.net  popupappplan-54321
+	```
+
+	Anote el valor de **DefaultHostName** mostrado en la tabla; esta dirección es la URL para el nuevo sitio web. Azure hará que su sitio web esté disponible con el nombre de aplicación único en el dominio `azurewebsites.net`. Por ejemplo, si el nombre de la aplicación fuera "popupwebapp-12345", la dirección del sitio web sería: `http://popupwebapp-12345.azurewebsites.net`. También puede usar el siguiente script para devolver la dirección HTTP:
+
+	```Bash
+	site="http://$AZURE_WEB_APP.azurewebsites.net"
+	echo $site
+	```
+
+3. Para obtener el código HTML predeterminado de la aplicación de ejemplo, use CURL con el valor de DefaultHostName:
+
+	```Bash
+	curl $AZURE_WEB_APP.azurewebsites.net
+	```
+
+	Debería obtener una respuesta similar a la del siguiente ejemplo:
+
+	```Resultados
+	<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Microsoft Azure App Service - Welcome</title><link rel="shortcut icon" href="https://appservice.azureedge.net/images/app-service/v4/favicon.ico" type="image/x-icon"/><link href="https://appservice.azureedge.net/css/app-service/v4/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"/><style>html, body{height: 100%; background-color: #ffffff; color: #000000; font-size: 13px;}*{border-radius: 0 !important;}</style> ... (continued)
+	```
+
+##### Implementación de código desde GitHub
+
+1. El último paso es implementar código de un repositorio GitHub en la aplicación web. Se usará una página PHP básica disponible en el repositorio GitHub de ejemplos de Azure que muestra "¡Hola mundo!" cuando se ejecuta. Asegúrese de usar el nombre de la aplicación web que creó. Este comando puede tardar unos minutos en completarse.
+
+	```Azure CLI
+	az webapp deployment source config --name $AZURE_WEB_APP --resource-group $RESOURCE_GROUP --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
+	```
+
+2. Una vez implementada, use un explorador o CURL para llegar de nuevo al sitio:
+
+	```Bash
+	curl $AZURE_WEB_APP.azurewebsites.net
+	```
+
+	La página muestra "¡Hola mundo!"
+
+	```Resultados
+	Hello World!
+	```
+
+En este ejercicio se ha mostrado un patrón típico de una sesión interactiva de la CLI de Azure. Primero ha usado un comando estándar para crear un grupo de recursos. Después ha usado un conjunto de comandos para implementar un recurso (en este ejemplo, una aplicación web) en este grupo de recursos. Podría combinar fácilmente este conjunto de comandos en un script de shell y ejecutarlo cada vez que sea necesario crear el mismo recurso.
+
+
+### Resumen
+
