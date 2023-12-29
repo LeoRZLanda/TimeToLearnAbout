@@ -2376,3 +2376,84 @@ Para agregar un recurso a la plantilla, tiene que conocer el proveedor de recurs
 
 Después de definir el proveedor y el tipo de recurso, debe comprender las propiedades de cada tipo de recurso que desee usar. Par obtener más información, consulte [Definición de recursos en plantillas de Azure Resource Manager](https://learn.microsoft.com/es-es/azure/templates). Vea la lista de la columna izquierda para buscar el recurso. Observe que las propiedades se ordenan por versión de API.
 
+![[Pasted image 20231229152929.png]]
+
+Este es un ejemplo de algunas de las propiedades enumeradas en la página Cuentas de almacenamiento:
+
+![[Pasted image 20231229152941.png]]
+
+Para este ejemplo de almacenamiento, la plantilla podría tener el aspecto siguiente:
+
+```JSON
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.1",
+  "apiProfile": "",
+  "parameters": {},
+  "variables": {},
+  "functions": [],
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2019-06-01",
+      "name": "learntemplatestorage123",
+      "location": "westus",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "kind": "StorageV2",
+      "properties": {
+        "supportsHttpsTrafficOnly": true
+      }
+    }
+  ],
+  "outputs": {}
+}
+```
+
+
+### Ejercicio: Creación e implementación de una plantilla de Azure Resource Manager
+
+En este ejercicio, creará una plantilla de Azure Resource Manager (plantilla de ARM), la implementará en Azure y, a continuación, actualizará esa plantilla de ARM para agregar parámetros y salidas.
+
+En este ejercicio se utilizan las [Herramientas de Azure Resource Manager para Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools). Asegúrese de instalar esta extensión en Visual Studio Code antes de iniciar el ejercicio.
+
+#### Creación de una plantilla de ARM
+
+1. Abra Visual Studio Code y cree un archivo denominado _azuredeploy.json_.
+    
+2. La extensión de plantilla de ARM de Visual Studio Code viene configurada con fragmentos de código que le ayudarán a desarrollar plantillas. Para empezar, agregará una plantilla en blanco. En la primera línea del archivo, escriba _arm_.
+    
+3. Visual Studio Code muestra automáticamente varias opciones posibles que comienzan por **arm!**. Seleccione la **plantilla de Azure Resource Manager (ARM)**. Visual Studio Code procesa automáticamente los esquemas y lenguajes de la plantilla.
+	
+	![[Pasted image 20231229153635.png]]
+	
+	El archivo ahora tiene este aspecto:
+	
+	```JSON
+	{
+	  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+	  "contentVersion": "1.0.0.0",
+	  "parameters": {},
+	  "functions": [],
+	  "variables": {},
+	  "resources": [],
+	  "outputs": {}
+	}
+	```
+	
+	Observe que este archivo tiene todas las secciones de una plantilla de ARM que se describen en la unidad anterior.
+
+4. Presione Ctrl+S para guardar los cambios en el archivo.
+
+#### Implementación de la plantilla de ARM en Azure
+
+##### Azure CLI
+
+Para implementar esta plantilla en Azure, debe iniciar sesión en la cuenta de Azure desde el terminal de Visual Studio Code. Asegúrese de que tiene instaladas las herramientas de la [CLI de Azure](https://learn.microsoft.com/es-es/cli/azure/install-azure-cli) y de que inicia sesión con la misma cuenta que utilizó para activar el espacio aislado.
+
+1. Seleccione **Terminal > Nuevo terminal** para abrir una ventana de terminal.
+    
+2. Si la barra de comandos de la ventana de terminal indica **bash**, tiene el shell correcto desde el que trabajar y puede ir a la sección siguiente.
+    
+3. De lo contrario, seleccione la lista desplegable y elija **Select Default Profile** (Seleccionar el perfil predeterminado).
