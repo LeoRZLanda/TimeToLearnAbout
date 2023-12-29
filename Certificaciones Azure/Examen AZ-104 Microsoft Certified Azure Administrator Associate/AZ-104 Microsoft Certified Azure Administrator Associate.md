@@ -896,3 +896,645 @@ El resto de este módulo se centra en la instalación y el uso de Azure PowerShe
 ### Instale PowerShell.
 
 Supongamos que ha elegido Azure PowerShell como solución de automatización. Los administradores prefieren ejecutar sus scripts localmente en lugar de en Azure Cloud Shell. El equipo usa máquinas que ejecutan Windows, macOS y Linux. Es preciso que la CLI de Azure funcione en todos los dispositivos.
+
+#### ¿Qué hay que instalar?
+
+Repasaremos las instrucciones de instalación en la siguiente unidad, pero veamos los dos componentes que constituyen Azure PowerShell.
+
+- **Producto base de PowerShell** Hay dos variantes: Windows PowerShell y PowerShell 7.x, que puede instalar en Windows, macOS y Linux.
+- **Módulo Azure Az de PowerShell**. Debe instalar este módulo adicional para agregar los comandos específicos de Azure a PowerShell.
+
+	 Sugerencia
+	
+	PowerShell 7.0.6 LTS, PowerShell 7.1.3, o cualquier versión superior, son las versiones que recomendamos para usar con el módulo Azure Az PowerShell en todas las plataformas.
+
+Cuando haya instalado el producto base, agregue el módulo Azure PowerShell a la instalación.
+
+#### Procedimiento para instalar PowerShell
+
+En Linux y macOS, use un administrador de paquetes para instalar PowerShell Core. El administrador de paquetes recomendado varía en función del sistema operativo y la distribución.
+
+	 Nota
+	
+	PowerShell está disponible en el repositorio de Microsoft, por lo que primero tendrá que agregar ese repositorio al administrador de paquetes.
+
+##### Linux
+
+En Linux, el administrador de paquetes cambiará en función de la distribución de Linux que se elija.
+
+| Distribuciones | Administrador de paquetes |  |
+| ---- | ---- | ---- |
+| Ubuntu, Debian | `apt-get` |  |
+| Red Hat, CentOS | `yum` |  |
+| OpenSUSE | `zypper` |  |
+| Fedora | `dnf` | ### Mac |
+##### Mac
+
+En macOS, use `Homebrew` para instalar PowerShell.
+
+En la sección siguiente, repasaremos los pasos de instalación detallados para algunas plataformas comunes.
+
+
+### Ejercicio: Instalación de Azure PowerShell
+
+En esta unidad, aprenderá a comprobar la versión de **PowerShell** que está instalada en la máquina local y a instalar la versión más reciente.
+
+	 Nota
+	
+	Este ejercicio le guía por la creación de una instalación local de las herramientas de PowerShell. En el resto del módulo se usará Azure Cloud Shell para que pueda sacar provecho del soporte técnico de la suscripción gratuita de Microsoft Learn. Si lo prefiere, considere este ejercicio como una actividad opcional y simplemente revise las instrucciones.
+
+#### Windows
+
+Windows PowerShell se incluye con el sistema operativo Windows; pero se recomienda instalar PowerShell 7.0.6 LTS, PowerShell 7.1.3 o posterior para su uso con el módulo de PowerShell Azure Az PowerShell. Puede comprobar qué versión está instalada mediante los pasos siguientes:
+
+1. En el **cuadro de búsqueda de la Bandeja del sistema**, escriba **PowerShell**. Es posible que tenga varios vínculos de acceso directo:
+
+	- PowerShell 7 (x64): la versión de 64 bits. Por lo general, debe elegir este acceso directo.
+	- Windows PowerShell: la versión de 64 bits incluida con Windows.
+	- Windows PowerShell (x86): una versión de 32 bits instalada en Windows de 64 bits.
+	- Windows PowerShell ISE: el entorno de scripting integrado (ISE) se usa para escribir scripts en Windows PowerShell.
+	- Windows PowerShell ISE (x86): versión de 32 bits del ISE.
+
+2. Seleccione el icono de PowerShell que mejor coincida.
+    
+3. Escriba el comando siguiente para determinar la versión instalada de PowerShell.
+
+```PowerShell
+$PSVersionTable.PSVersion
+```
+
+o
+
+```PowerShell
+pwsh -ver
+```
+
+Si el número de versión principal es inferior a 7, siga estas instrucciones para [actualizar la versión existente de Windows PowerShell](https://learn.microsoft.com/es-es/powershell/scripting/install/installing-powershell-on-windows#upgrading-an-existing-installation). También es importante instalar el SDK para admitir las herramientas de .NET.
+
+Puedes instalarlo mediante winget con los siguientes comandos
+
+```PowerShell
+winget search Microsoft.PowerShell
+
+winget install --id Microsoft.Powershell --source winget
+winget install --id Microsoft.Powershell.Preview --source winget
+```
+
+Necesita tener [instalado el SDK de .NET](https://learn.microsoft.com/es-es/dotnet/core/sdk) para ejecutar este comando.
+
+```PowerShell
+dotnet tool install --global PowerShell
+```
+
+Una vez que se instale la herramienta .NET, vuelva a ejecutar el comando version de PowerShell para comprobar la instalación.
+
+#### MacOS
+
+En macOS, instale **PowerShell** con el administrador de paquetes Homebrew.
+
+	Importante
+	
+	Si el comando **brew** no está disponible, es posible que deba instalar el administrador de paquetes Homebrew. Para obtener más información, consulte el [sitio web de Homebrew](https://brew.sh/).
+
+1. Instale Homebrew-Cask para obtener más paquetes, incluido el de PowerShell:
+
+```Bash
+brew install --cask powershell
+```
+
+2. Inicie PowerShell para comprobar que está instalado correctamente:
+
+```Bash
+pwsh
+```
+
+#### Linux
+
+La instalación de PowerShell para Linux implica el uso de un administrador de paquetes. En el ejemplo se usará **Ubuntu 18.04**, pero hay [instrucciones detalladas para otras versiones y distribuciones en la documentación](https://learn.microsoft.com/es-es/powershell/scripting/install/installing-powershell-core-on-linux).
+
+Instale PowerShell en Ubuntu Linux mediante Advanced Packaging Tool (**apt**) y la línea de comandos de Bash.
+
+1. Importe la clave de cifrado del repositorio de Ubuntu de Microsoft. Esta clave permite que el administrador de paquetes compruebe que el paquete de PowerShell que se instala proviene de Microsoft.
+
+```Bash
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+```
+
+2. Registre el **repositorio de Microsoft Ubuntu** para que el administrador de paquetes pueda localizar el paquete de PowerShell:
+
+```Bash
+sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/18.04/prod.list
+```
+
+3. Actualice la lista de paquetes:
+
+```Bash
+sudo apt-get update
+```
+
+4. Instalar PowerShell
+
+```Bash
+sudo apt-get install -y powershell
+```
+
+5. Inicie PowerShell para comprobar que está instalado correctamente:
+
+```Bash
+pwsh
+```
+
+
+
+También tendrá que configurar las máquinas locales para que admitan PowerShell. En la siguiente unidad, se revisarán los comandos que puede agregar, incluido el módulo Azure Az de PowerShell.
+
+### Creación de un recurso de Azure mediante scripts en Azure PowerShell
+
+
+En el **modo interactivo**, PowerShell le permite escribir comandos y ejecutarlos de inmediato.
+
+Recuerde que el objetivo general del ejemplo de Administración de relaciones con los clientes (CRM) es crear tres entornos de prueba que contienen máquinas virtuales. Usa los grupos de recursos para garantizar que las máquinas virtuales se organizan en entornos independientes: uno para las pruebas unitarias, otro para las pruebas de integración y un tercero para las pruebas de aceptación. Solo tiene que crear los grupos de recursos una vez, por lo que, en este caso de uso, el modo interactivo de PowerShell es una buena elección.
+
+Cuando se escribe un comando en PowerShell, este lo hace coincidir con un _cmdlet_ y luego realiza la acción solicitada. En primer lugar, veremos algunos comandos comunes que puede usar, después veremos cómo instalar la compatibilidad de Azure con PowerShell.
+
+#### ¿Qué son los cmdlets de PowerShell?
+
+Un comando de PowerShell se denomina **cmdlet** (que se pronuncia “command-let”). Un cmdlet es un comando que manipula una sola característica. El término **cmdlet** quiere decir "pequeño comando". Por convención, se anima a los autores de cmdlets a hacerlos sencillos y con un único propósito.
+
+El producto base de PowerShell incluye cmdlets que funcionan con características como las sesiones y los trabajos en segundo plano. Puede agregar módulos a la instalación de PowerShell para obtener cmdlets que manipulen otras características. Por ejemplo, hay módulos de terceros para trabajar con FTP, administrar el sistema operativo, acceder al sistema de archivos, etc.
+
+Los cmdlets siguen una convención de nomenclatura verbo-sustantivo; por ejemplo, `Get-Process`, `Format-Table` y `Start-Service`. También hay una convención para la elección del verbo: "get" para recuperar datos, "set" para insertar o actualizar datos, "format" para dar formato a los datos, "out" para dirigir la salida a un destino, etc.
+
+Se recomienda a los creadores de cmdlets incluir un archivo de ayuda con cada cmdlet. El cmdlet `Get-Help` muestra el archivo de ayuda de cualquier cmdlet. Por ejemplo, para obtener ayuda sobre el cmdlet `Get-ChildItem`, escriba la siguiente instrucción en una sesión de Windows PowerShell:
+
+```PoweShell
+Get-Help -Name Get-ChildItem -Detailed
+```
+
+#### ¿Qué son los módulos de PowerShell?
+
+Los cmdlets se suministran en _módulos_. Un módulo PowerShell es una biblioteca de vínculos dinámicos (DLL) que incluye el código para procesar cada cmdlet disponible. Carga cmdlets en PowerShell mediante la carga del módulo en el que están contenidos. Para obtener una lista de los módulos cargados, use el comando `Get-Module`:
+
+```PowerShell
+Get-Module
+```
+
+Este comando genera un resultado similar a este:
+
+```Output
+ModuleType Version    Name                                ExportedCommands
+---------- -------    ----                                ----------------
+Manifest   3.1.0.0    Microsoft.PowerShell.Management     {Add-Computer, Add-Content, Checkpoint-Computer, Clear-Con...
+Manifest   3.1.0.0    Microsoft.PowerShell.Utility        {Add-Member, Add-Type, Clear-Variable, Compare-Object...}
+Binary     1.0.0.1    PackageManagement                   {Find-Package, Find-PackageProvider, Get-Package, Get-Pack...
+Script     1.0.0.1    PowerShellGet                       {Find-Command, Find-DscResource, Find-Module, Find-RoleCap...
+Script     2.0.0      PSReadline                          {Get-PSReadLineKeyHandler, Get-PSReadLineOption, Remove-PS...
+```
+
+#### ¿Qué es el módulo Az de PowerShell?
+
+**Az** es el nombre formal del módulo de Azure PowerShell, que contiene cmdlets para trabajar con las características de Azure. Contiene cientos de cmdlets que le permiten controlar casi cualquier aspecto de todos los recursos de Azure. Puede trabajar con grupos de recursos, almacenamiento, máquinas virtuales, Microsoft Entra ID, contenedores, aprendizaje automático, etc. El módulo **Az** es un componente de código abierto [disponible en GitHub](https://github.com/Azure/azure-powershell).
+
+ Nota
+
+Es posible que haya visto o usado comandos de Azure PowerShell con un formato `-AzureRM`. Como los módulos de Az PowerShell ya tienen todas las funcionalidades de los de AzureRM PowerShell, incluso más, el 29 de febrero de 2024 se van a retirar estos últimos. Para evitar interrupciones del servicio, [actualice los scripts](https://aka.ms/azpsmigrate) que usan los módulos de AzureRM PowerShell para que utilicen los de Az PowerShell antes del 29 de febrero de 2024. Para actualizar automáticamente los scripts, siga la [guía de inicio rápido](https://learn.microsoft.com/es-es/powershell/azure/quickstart-migrate-azurerm-to-az-automatically).
+
+##### Instale el módulo Az de PowerShell.
+
+El módulo Az de PowerShell está disponible en un repositorio global llamado Galería de PowerShell. Se puede instalar en la máquina local por medio del cmdlet `Install-Module`.
+
+Para instalar el módulo Azure Az de PowerShell más reciente, ejecute los comandos siguientes:
+
+1. Abra el menú **Inicio** y escriba **PowerShell**.
+    
+2. Seleccione el icono de **PowerShell**.
+    
+3. Escriba el siguiente comando y presione Entrar:
+
+```PowerShell
+Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -AllowClobber
+```
+
+El comando anterior instala el módulo para el usuario actual (controlado por el parámetro `Scope`).
+
+El comando se basa en NuGet para recuperar componentes. En función de la versión de NuGet que haya instalado, es posible que reciba un mensaje para descargar e instalar la versión más reciente.
+
+```Output
+NuGet provider is required to continue
+PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet
+ provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
+'C:\Users\<username>\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running
+'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import
+ the NuGet provider now?
+ [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"):
+```
+
+Escriba **Y** y presione Entrar.
+
+De manera predeterminada, Galería de PowerShell no está configurada como un repositorio de confianza para PowerShellGet. Cada vez que realice una instalación desde un repositorio que no sea de confianza, se le pide que confirme que quiere instalar el módulo con la siguiente salida:
+
+```Output
+You are installing the modules from an untrusted repository. If you trust this repository, change its
+InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to install the modules from
+'PSGallery'?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+```
+
+Escriba **Y** o **A**, y luego presione Entrar.
+
+###### Error en la ejecución del script
+
+En función de la configuración de seguridad, es posible que se produzca un error en `Import-Module` como el de la salida siguiente:
+
+```Output
+import-module : File C:\Program Files\PowerShell\Modules\az\6.3.0\Az.psm1 cannot be loaded
+because running scripts is disabled on this system. For more information, see about_Execution_Policies at
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ import-module Az
++ ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [Import-Module], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess,Microsoft.PowerShell.Commands.ImportModuleCommand
+```
+
+También es posible que no responda en absoluto y no se pueda realizar la acción. En este caso, presione Ctrl+C para detener el programa.
+
+Los dos comportamientos normalmente indican que la directiva de ejecución está "restringida", lo que significa que no se pueden ejecutar los módulos que se descarguen de un origen externo (lo que incluye la Galería de PowerShell). Para comprobarlo, ejecute el cmdlet `Get-ExecutionPolicy`. Si el cmdlet devuelve "Restricted (Restringida)", entonces:
+
+1. Use el cmdlet `Set-ExecutionPolicy` para cambiar la directiva a "RemoteSigned":
+
+```PowerShell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Se le pide permiso:
+
+```Output
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose
+you to the security risks described in the about_Execution_Policies help topic at
+https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): Y
+```
+
+2. Escriba **Y** o **A**, y luego presione Entrar.
+    
+3. En el símbolo del sistema, presione la Flecha arriba del teclado y vuelva a ejecutar el comando `Install-Module` para Azure.
+    
+
+Debería poder ver que se carga del módulo Az de PowerShell. Cuando termine, podrá usar `Import-Module` para cargar los cmdlets.
+
+##### Actualización de un módulo de PowerShell
+
+Puede recibir una advertencia o un mensaje de error que indique que ya está instalada una versión del módulo Azure PowerShell. Si es así, puede emitir el siguiente comando para actualizar a la versión _más reciente_.
+
+```PowerShell
+Update-Module -Name Az
+```
+
+Como sucede con el cmdlet `Install-Module`, responda **Sí** o **Sí a todo** cuando se le pregunte si confía en el módulo. Si tiene problemas, también puede usar el comando `Update-Module` para volver a instalar un módulo.
+
+#### Ejemplo: creación de un grupo de recursos con Azure PowerShell
+
+Una vez que haya instalado el módulo de Azure, puede empezar a trabajar con Azure. Vamos a realizar una tarea común: crear un grupo de recursos. Como sabe, los grupos de recursos se usan para administrar conjuntamente los recursos relacionados. La creación de un grupo de recursos es una de las primeras tareas que se realizan al iniciar una nueva solución de Azure.
+
+Debe realizar cuatro pasos:
+
+1. Importar los cmdlets de Azure.
+    
+2. Conectarse a la suscripción de Azure.
+    
+3. Crear el grupo de recursos.
+    
+4. Compruebe que la creación se ha realizado correctamente.
+    
+
+En la siguiente ilustración se muestra información general de estos pasos:
+
+![[Pasted image 20231228180719.png]]
+
+
+##### Importación de los cmdlets de Azure
+
+A partir de PowerShell 3.0, los módulos se cargan automáticamente cuando se usa un cmdlet dentro del módulo. Ya no es necesario importar manualmente módulos de PowerShell a menos que haya cambiado la configuración predeterminada de carga automática de módulos.
+
+##### Conexión
+
+Cuando trabaje con una instalación local de Azure PowerShell, tiene que autenticarse para poder ejecutar los comandos de Azure. El cmdlet `Connect-AzAccount` le pide las credenciales de Azure y luego se conecta a la suscripción de Azure. Tiene muchos parámetros opcionales, pero, si lo único que necesita es un aviso interactivo, no se necesita ningún parámetro:
+
+```Azure PowerShell
+Connect-AzAccount
+```
+
+##### Trabajo con suscripciones
+
+Si es la primera vez que usa Azure, es probable que solo tenga una suscripción. Pero si ya lleva un tiempo usándolo, puede haber creado varias suscripciones de Azure. Puede configurar Azure PowerShell para ejecutar comandos en una suscripción determinada.
+
+No puede estar en varias suscripciones a la vez. Use el cmdlet `Get-AzContext` para determinar qué suscripción está activa. Si no es la correcta, puede cambiar las suscripciones mediante otro cmdlet.
+
+1. Obtenga una lista de los nombres de todas las suscripciones de la cuenta con el comando `Get-AzSubscription`.
+    
+2. Cambie la suscripción, para lo que debe usar el nombre de la que va a seleccionar.
+
+
+``` Azure PowerShell
+Set-AzContext -Subscription '00000000-0000-0000-0000-000000000000'
+```
+
+Si necesita buscar el **Id. de suscripción**, vaya a Azure Portal y seleccione **Suscripciones** en la página de inicio
+
+##### Obtención de una lista de todos los grupos de recursos
+
+Puede recuperar una lista de todos los grupos de recursos de la suscripción activa.
+
+```Azure PowerShell
+Get-AzResourceGroup
+```
+
+Para obtener una vista más concisa, puede enviar la salida de `Get-AzResourceGroup` al cmdlet `Format-Table` mediante el signo "| ".
+
+```Azure PowerShell
+Get-AzResourceGroup | Format-Table
+```
+
+El resultado es parecido a este:
+
+```Output
+ResourceGroupName                  Location       ProvisioningState Tags TagsTable ResourceId
+-----------------                  --------       ----------------- ---- --------- ----------
+cloud-shell-storage-southcentralus southcentralus Succeeded                        /subscriptions/00000000-0000-0000...
+ExerciseResources                  eastus         Succeeded                        /subscriptions/00000000-0000-0000...
+```
+
+##### Crear un grupo de recursos
+
+Como sabe, cuando vaya a crear recursos en Azure, siempre los pondrá en un grupo de recursos para facilitar su administración. A menudo un grupo de recursos es uno de los primeros elementos que se crean al iniciar una nueva aplicación.
+
+Puede crear grupos de recursos con el cmdlet `New-AzResourceGroup`. Debe especificar un nombre y una ubicación. El nombre debe ser único dentro de su suscripción. La ubicación determina dónde se almacenan los metadatos del grupo de recursos (lo que puede ser importante por motivos de cumplimiento). Use cadenas como "Oeste de EE. UU.", "Europa del Norte" u "Oeste de la India" para especificar la ubicación. Como sucede con la mayoría de los cmdlets de Azure, `New-AzResourceGroup` tiene muchos parámetros opcionales. Sin embargo, la sintaxis principal es la siguiente:
+
+```PowerShell
+New-AzResourceGroup -Name <name> -Location <location>
+```
+
+	 Nota
+	
+	Recuerde que se trabajará en un espacio aislado de Azure activo, que crea automáticamente el grupo de recursos. Use el comando anterior si prefiere trabajar en una suscripción propia.
+
+##### Comprobación de los recursos
+
+`Get-AzResource` enumera los recursos de Azure, lo que resulta útil aquí para comprobar que la creación de los recursos y el grupo de recursos se ha realizado correctamente.
+
+```PowerShell
+Get-AzResource
+```
+
+Al igual que el comando `Get-AzResourceGroup`, puede obtener una vista más concisa a través del cmdlet `Format-Table`:
+
+```PowerShell
+Get-AzResource | Format-Table
+```
+
+También puede filtrarlo por grupos de recursos específicos para que solo se enumeren los recursos asociados a un grupo concreto:
+
+```PowerShell
+Get-AzResource -ResourceGroupName ExerciseResources
+```
+
+##### Cree una máquina virtual de Azure.
+
+Otra tarea común que puede hacer con PowerShell es crear máquinas virtuales.
+
+Azure PowerShell proporciona el cmdlet `New-AzVm` para crear una máquina virtual. El cmdlet tiene muchos parámetros para que pueda controlar la gran cantidad de valores de configuración de la máquina virtual. La mayoría de los parámetros tiene valores predeterminados razonables, por lo que solo es necesario especificar cinco elementos:
+
+- **ResourceGroupName**: el grupo de recursos debería ponerse la nueva máquina virtual.
+- **Name**: el nombre de la máquina virtual en Azure.
+- **Ubicación**: la ubicación geográfica en la que debería aprovisionarse la máquina virtual.
+- **Credential**: un objeto que contiene el nombre de usuario y la contraseña de la cuenta de administrador de la máquina virtual. Aquí se usa el cmdlet `Get-Credential`. Este cmdlet pide un nombre de usuario y una contraseña, los empaqueta en un objeto de credencial.
+- **Imagen**: la imagen de sistema operativo que se va a usar para la máquina virtual, que normalmente es una distribución de Linux o Windows Server.
+
+```PowerShell
+New-AzVm
+       -ResourceGroupName <resource group name>
+       -Name <machine name>
+       -Credential <credentials object>
+       -Location <location>
+       -Image <image name>
+```
+
+Estos parámetros se pueden suministrar directamente al cmdlet como se ha indicado en el ejemplo anterior. Como alternativa, puede usar otros cmdlets para configurar la máquina virtual, como `Set-AzVMOperatingSystem`, `Set-AzVMSourceImage`, `Add-AzVMNetworkInterface` y `Set-AzVMOSDisk`.
+
+Este es un ejemplo de las cadenas del cmdlet `Get-Credential` junto con el parámetro `-Credential`:
+
+```PowerShell
+New-AzVM -Name MyVm -ResourceGroupName ExerciseResources -Credential (Get-Credential) ...
+```
+
+El sufijo `AzVM` es específico de los comandos basados en máquina virtual de PowerShell. No obstante, se pueden usar otros:
+
+|Comando|Descripción|
+|---|---|
+|`Remove-AzVM`|Elimina una máquina virtual de Azure|
+|`Start-AzVM`|Inicia una máquina virtual detenida|
+|`Stop-AzVM`|Detiene una máquina virtual en ejecución|
+|`Restart-AzVM`|Reinicia una máquina virtual|
+|`Update-AzVM`|Actualiza la configuración de una máquina virtual|
+
+###### Ejemplo: Obtención de información de una máquina virtual
+
+Puede enumerar las máquinas virtuales de la suscripción con el comando `Get-AzVM -Status`. Este comando también admite la especificación de una máquina virtual específica mediante la inclusión de la propiedad `-Name`. Aquí, se asigna a una variable de PowerShell:
+
+```PowerShell
+$vm = Get-AzVM  -Name MyVM -ResourceGroupName ExerciseResources
+```
+
+Lo interesante es que ahora la máquina virtual es un _objeto_ con el que puede interactuar. Por ejemplo, puede realizar cambios en ese objeto y, después, devolverlos a Azure con el comando `Update-AzVM`:
+
+```PowerShell
+$ResourceGroupName = "ExerciseResources"
+$vm = Get-AzVM  -Name MyVM -ResourceGroupName $ResourceGroupName
+$vm.HardwareProfile.vmSize = "Standard_DS3_v2"
+
+Update-AzVM -ResourceGroupName $ResourceGroupName  -VM $vm
+```
+
+El modo interactivo de PowerShell es adecuado para tareas aisladas. En el ejemplo, se usa el mismo grupo de recursos durante todo el proyecto, por lo que crearlo de forma interactiva es razonable. Para esta tarea, el modo interactivo suele ser más rápido y sencillo que escribir un script y ejecutarlo solo una vez.
+
+### Ejercicio: Creación de un recurso de Azure mediante scripts en Azure PowerShell
+
+Recuerde el escenario original: creación de máquinas virtuales para probar el software de CRM. Cada vez que hay una nueva compilación disponible, se pone en marcha una nueva máquina virtual para poder probar la experiencia de instalación completa a partir de una imagen limpia. Cuando haya terminado, querrá eliminar la máquina virtual.
+
+Vamos a probar los comandos para crear una máquina virtual.
+
+#### Creación de una máquina virtual Linux con Azure PowerShell
+
+Como se va a usar el espacio aislado de Azure, no es necesario crear un grupo de recursos. En su lugar, use el grupo de recursos **[nombre del grupo de recursos del espacio aislado]**. Además, tenga en cuenta las restricciones de ubicación.
+
+Vamos a crear una máquina virtual de Azure con PowerShell.
+
+1. Use el cmdlet `New-AzVm` para crear una máquina virtual.
+
+	- Use el grupo de recursos **[nombre del grupo de recursos del espacio aislado]**.
+	
+	- Asigne un nombre a la máquina virtual. Normalmente se recomienda usar algo significativo que identifique los fines de la máquina virtual, la ubicación y el número de instancia (si hay más de una). Usamos "testvm-eus-01" para "Probar máquina virtual en el Este de EE. UU., instancia 1". Viene su propio nombre, en función de dónde coloque la máquina virtual.
+	
+	- Seleccione una ubicación cercana en la lista siguiente en el espacio aislado de Azure. Si usa Copiar y Pegar, asegúrese de cambiar el valor en el siguiente comando de ejemplo.
+    
+	    - westus2
+	    - southcentralus
+	    - centralus
+	    - eastus
+	    - westeurope
+	    - southeastasia
+	    - japaneast
+	    - brazilsouth
+	    - australiasoutheast
+	    - centralindia
+    
+	- Use "Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest" para la imagen. Esta imagen es Ubuntu Linux.
+	    
+	- Use el cmdlet `Get-Credential` y especifique los resultados en el parámetro `Credential`.
+	
+	  Importante
+	  
+		Vea las [Preguntas frecuentes sobre máquinas virtuales de Linux](https://learn.microsoft.com/es-es/azure/virtual-machines/linux/faq#what-are-the-username-requirements-when-creating-a-vm) para conocer las limitaciones del nombre de usuario y la contraseña. Las contraseñas deben tener entre 12 y 123 caracteres, y deben cumplir tres de estos cuatro requisitos de complejidad:
+		
+		- Deben incluir caracteres en minúscula.
+		- Deben incluir caracteres en mayúscula.
+		- Deben incluir un dígito.
+		- Deben incluir un carácter especial (REGEX.MATCH [\W_]).
+	
+	- Agregue el parámetro `-OpenPorts` y pase "22" como el puerto. Este puerto permite usar SSH en la máquina.
+    
+	- Cree un nombre de dirección IP pública. Usará este nombre para crear y buscar la dirección IP estática para iniciar sesión en la máquina.
+	
+	``` PowerShell
+	New-AzVm -ResourceGroupName [sandbox resource group name] -Name "testvm-eus-01" -Credential (Get-Credential) -Location "eastus" -Image Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest -OpenPorts 22 -PublicIpAddressName "testvm-eus-01"
+	```
+
+2. Cree un nombre de usuario y una contraseña y luego presione Escribir. PowerShell comienza a crear la máquina virtual.
+    
+3. La creación de la máquina virtual tarda unos minutos en completarse. Una vez hecho, puede consultar y asignar el objeto de máquina virtual a una variable (`$vm`).
+
+	```PowerShell
+	$vm = (Get-AzVM -Name "testvm-eus-01" -ResourceGroupName [sandbox resource group name])
+	```
+
+4. Consulte el valor para volcar la información sobre la máquina virtual.
+
+	```PowerShell
+	$vm
+	```
+
+	Debería ver algo parecido a la salida siguiente
+
+	```PowerShell
+	ResourceGroupName : [sandbox resource group name]
+	Id                : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/[sandbox resource group name]/providers/Microsoft.Compute/virtualMachines/testvm-eus-01
+	VmId              : 00000000-0000-0000-0000-000000000000
+	Name              : testvm-eus-01
+	Type              : Microsoft.Compute/virtualMachines
+	Location          : eastus
+	Tags              : {}
+	HardwareProfile   : {VmSize}
+	NetworkProfile    : {NetworkInterfaces}
+	OSProfile         : {ComputerName, AdminUsername, LinuxConfiguration, Secrets}
+	ProvisioningState : Succeeded
+	StorageProfile    : {ImageReference, OsDisk, DataDisks}
+	```
+
+5. Puede acceder a objetos complejos mediante una notación de punto (`.`). Por ejemplo, para ver las propiedades del objeto `VMSize` asociado a la sección HardwareProfile, ejecute el comando siguiente:
+
+	```PowerShell
+	$vm.HardwareProfile
+	```
+
+6. También puede obtener información sobre uno de los discos; para ello, ejecute el comando siguiente:
+
+	```PowerShell
+	$vm.StorageProfile.OsDisk
+	```
+
+7. Incluso puede pasar el objeto de máquina virtual a otros cmdlets. Por ejemplo, al ejecutar el siguiente comando se mostrarán todos los tamaños disponibles para la máquina virtual:
+
+	```PowerShell
+	$vm | Get-AzVMSize
+	```
+
+8. Ahora, ejecute el comando siguiente para obtener la dirección IP pública:
+
+	```PowerShell
+	Get-AzPublicIpAddress -ResourceGroupName [sandbox resource group name] -Name "testvm-eus-01"
+	```
+
+9. Con la dirección IP, puede conectarse a la máquina virtual con SSH. Por ejemplo, si usó el nombre de usuario `bob` y la dirección IP fuera `205.22.16.5`, la ejecución de este comando conectaría a la máquina Linux:
+
+	```PowerShell
+	ssh bob@205.22.16.5
+	```
+
+	Cierre la sesión escribiendo `exit`.
+
+#### Eliminación de una máquina virtual
+
+Para probar algunos comandos más, vamos a eliminar la máquina virtual. En primer lugar, es necesario apagarlo (escriba **Y** si se le pide que continúe):
+
+```PowerShell
+Stop-AzVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName
+```
+
+Cuando la máquina virtual se haya detenido, elimine la máquina virtual mediante la ejecución del cmdlet `Remove-AzVM` (escriba **Y** si se le pide que continúe):
+
+```PowerShell
+Remove-AzVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName
+```
+
+Ejecute este comando para enumerar todos los recursos del grupo de recursos:
+
+```PowerShell
+Get-AzResource -ResourceGroupName $vm.ResourceGroupName | Format-Table
+```
+
+Debería ver diferentes recursos (discos, redes virtuales, etc.) que aún existen.
+
+```Output
+Microsoft.Compute/disks
+Microsoft.Network/networkInterfaces
+Microsoft.Network/networkSecurityGroups
+Microsoft.Network/publicIPAddresses
+Microsoft.Network/virtualNetworks
+```
+
+El comando `Remove-AzVM`_solo elimina la máquina virtual_. No limpia ninguno de los demás recursos. En este punto, simplemente eliminaríamos el grupo de recursos y nos libraríamos de él. Pero vamos a continuar el ejercicio para limpiar manualmente. Debería ver un patrón en los comandos.
+
+1. Elimine la interfaz de red:
+
+	```PowerShell
+	$vm | Remove-AzNetworkInterface –Force
+	```
+
+2. Elimine los discos administrados del SO:
+
+	```PowerShell
+	Get-AzDisk -ResourceGroupName $vm.ResourceGroupName -DiskName $vm.StorageProfile.OSDisk.Name | Remove-AzDisk -Force
+	```
+
+3. A continuación, elimine la red virtual:
+
+	```PowerShell
+	Get-AzVirtualNetwork -ResourceGroupName $vm.ResourceGroupName | Remove-AzVirtualNetwork -Force
+	```
+
+4. Elimine el grupo de seguridad de red:
+
+	```PowerShell
+	Get-AzNetworkSecurityGroup -ResourceGroupName $vm.ResourceGroupName | Remove-AzNetworkSecurityGroup -Force
+	```
+
+5. Por último, elimine la IP pública:
+
+```PowerShell
+Get-AzPublicIpAddress -ResourceGroupName $vm.ResourceGroupName | Remove-AzPublicIpAddress -Force
+```
+
+Debemos haber detectado todos los recursos creados. Compruebe el grupo de recursos simplemente para asegurarse. Aquí se han usado muchos comandos manuales, pero un enfoque mejor habría sido escribir un _script_. Después, se podría reutilizar esta lógica más adelante para crear o eliminar una máquina virtual. Vamos a examinar la creación de scripts con PowerShell.
+
+### Creación y guardado de scripts en Azure PowerShell
