@@ -1578,3 +1578,174 @@ PowerShell tiene muchas características que se encuentran en los lenguajes de p
 
 Como ha visto en la unidad anterior, PowerShell admite variables. Use `$` para declarar una variable y `=` para asignar un valor. Por ejemplo:
 
+```PowerShell
+$loc = "East US"
+$iterations = 3
+```
+
+Las variables pueden contener objetos. Por ejemplo, en la definición siguiente se establece la variable **adminCredential** para el objeto devuelto por el cmdlet **Get-Credential**.
+
+```PowerShell
+$adminCredential = Get-Credential
+```
+
+
+Para obtener el valor almacenado en una variable, use el prefijo `$` y su nombre como se muestra a continuación:
+
+```PowerShell
+$loc = "East US"
+New-AzResourceGroup -Name "MyResourceGroup" -Location $loc
+```
+
+##### Bucles
+
+PowerShell tiene varias estructuras de bucle, como `For`, `Do...While` y `For...Each`. El bucle `For` es la mejor coincidencia para nuestras necesidades ya que ejecutaremos un cmdlet un número fijo de veces.
+
+En el ejemplo siguiente se muestra la sintaxis básica. El ejemplo se ejecuta durante dos iteraciones y, cada vez, se imprime el valor de **i**. Los operadores de comparación se escriben `-lt` para "menor que", `-le` para "menor o igual que", `-eq` para "igual", `-ne` para "no igual", etc.
+
+```PowerShell
+For ($i = 1; $i -lt 3; $i++)
+{
+    $i
+}
+```
+
+##### Parámetros
+
+Cuando se ejecuta un script, se pueden pasar argumentos en la línea de comandos. Se pueden proporcionar nombres para cada parámetro para ayudar a que el script extraiga los valores. Por ejemplo:
+
+```PowerShell
+.\setupEnvironment.ps1 -size 5 -location "East US"
+```
+
+Dentro del script, los valores se capturan en variables. En este ejemplo, los parámetros se comparan por nombre:
+
+```PowerSHell
+param([string]$location, [int]$size)
+```
+
+Puede omitir los nombres de la línea de comandos. Por ejemplo:
+
+```PowerShell
+.\setupEnvironment.ps1 5 "East US"
+```
+
+Dentro del script, se recurre a la posición para buscar coincidencias cuando los parámetros no tienen nombre:
+
+```PowerShell
+param([int]$size, [string]$location)
+```
+
+La combinación de PowerShell y Azure PowerShell ofrece todas las herramientas necesarias para la automatización de Azure. En nuestro ejemplo CRM, podremos crear varias máquinas virtuales con Linux con un parámetro para que el script sea genérico y un bucle para evitar código repetido. Este script nos permite ejecutar una operación anteriormente compleja en un solo paso.
+
+### Ejercicio: Creación y guardado de scripts en Azure PowerShell
+
+En esta unidad, continuará con el ejemplo de una empresa que crea herramientas administrativas con Linux. Recuerde que tiene previsto usar máquinas virtuales Linux para permitir que los clientes potenciales prueben el software. Tiene un grupo de recursos listo y ahora es el momento de crear las máquinas virtuales.
+
+La empresa ha pagado por un stand en una gran feria de Linux. Planea habilitar un área de demostración que contiene tres terminales, cada una de ellas conectada a una máquina virtual Linux independiente. Al final de cada día, desea eliminar las máquinas virtuales y volver a crearlas, para empezar de cero cada mañana. Crear las máquinas virtuales manualmente después de trabajar cuando está cansado sería una tarea propensa a errores. Quiere escribir un script de PowerShell para automatizar el proceso de creación de máquinas virtuales.
+
+#### Escritura de un script para crear máquinas virtuales
+
+Siga estos pasos en Cloud Shell a la derecha para escribir el script:
+
+1. Cambie a la carpeta principal en Cloud Shell.
+
+	```PowerShell
+	cd $HOME\clouddrive
+	```
+
+2. Cree un archivo de texto denominado **ConferenceDailyReset.ps1**.
+
+	```PowerShell
+	touch "./ConferenceDailyReset.ps1"
+	```
+
+3. Abra el editor integrado y seleccione el archivo **ConferenceDailyReset.ps1**.
+
+	```PowerShell
+	code "./ConferenceDailyReset.ps1"
+	```
+
+	 Sugerencia
+	
+	Cloud Shell integrado también admite emacs, vim y nano si prefiere usar uno de esos editores.
+
+
+4. Empiece por capturar el parámetro de entrada en una variable. Agregue la siguiente línea al script.
+
+```PowerShell
+param([string]$resourceGroup)
+```
+
+ Nota
+
+Normalmente, tendría que autenticarse en Azure con las credenciales mediante `Connect-AzAccount` y esto se puede hacer en el script. Pero en el entorno de Cloud Shell ya está autenticado, por lo que esto no es necesario.
+
+5. Pida un nombre de usuario y una contraseña para la cuenta de administrador de la máquina virtual y capture el resultado en una variable:
+
+	```PowerShell
+	$adminCredential = Get-Credential -Message "Enter a username and password for the VM administrator."
+	```
+
+6. Cree un bucle que se ejecute tres veces:
+
+	```PowerShell
+	For ($i = 1; $i -le 3; $i++) 
+	{
+	
+	}
+	```
+
+7. En el cuerpo del bucle, cree un nombre para cada máquina virtual, almacénelo en una variable y envíelo a la consola:
+
+	```PowerShell
+	$vmName = "ConferenceDemo" + $i
+	Write-Host "Creating VM: " $vmName
+	```
+
+8. Luego cree una máquina virtual con la variable `$vmName`:
+
+	```PowerShell
+	New-AzVm -ResourceGroupName $resourceGroup -Name $vmName -Credential $adminCredential -Image Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest
+	```
+
+9. Guarde el archivo. Puede usar el menú "..." de la esquina superior derecha del editor. También hay métodos abreviados de teclado comunes para _Guardar_, como `Ctrl + S`.
+
+
+El script completado debería ser similar al código siguiente:
+
+```PowerShell
+param([string]$resourceGroup)
+
+$adminCredential = Get-Credential -Message "Enter a username and password for the VM administrator."
+
+For ($i = 1; $i -le 3; $i++)
+{
+    $vmName = "ConferenceDemo" + $i
+    Write-Host "Creating VM: " $vmName
+    New-AzVm -ResourceGroupName $resourceGroup -Name $vmName -Credential $adminCredential -Image Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest
+}
+```
+
+#### Ejecución del script
+
+1. Guarde el archivo y cierre el editor mediante el menú contextual "..." de la parte superior derecha del editor (o use Ctrl + Q).
+    
+2. Ejecute el script.
+
+	```PowerShell
+	./ConferenceDailyReset.ps1 [sandbox resource group name]
+	```
+
+	El script puede tardar varios minutos en completarse. Cuando haya finalizado, examine los recursos que ahora hay en el grupo de recursos para comprobar que se ha ejecutado correctamente:
+
+	```PowerShell
+	Get-AzResource -ResourceType Microsoft.Compute/virtualMachines
+	```
+
+Debería tener tres máquinas virtuales, cada una con un nombre único.
+
+Ha escrito un script que ha automatizado la creación de tres máquinas virtuales en el grupo de recursos indicado por un parámetro de script. El script es corto y sencillo pero automatiza un proceso que tardaría mucho tiempo en completar manualmente en Azure Portal.
+
+### Resumen
+
