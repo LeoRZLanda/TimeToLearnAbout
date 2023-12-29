@@ -2181,3 +2181,191 @@ En este ejercicio se ha mostrado un patrón típico de una sesión interactiva d
 
 ### Resumen
 
+La CLI de Azure es una buena elección para los menos familiarizados con la línea de comandos y el scripting de Azure. Su sintaxis simple y la compatibilidad multiplataforma ayudan a reducir el riesgo de errores al realizar tareas repetitivas y regulares. En este módulo, usó los comandos de la CLI de Azure para crear un grupo de recursos e implementar una aplicación web mediante un pequeño grupo de comandos. Puede combinar estos comandos en un script de shell como parte de una solución de automatización.
+
+#### Limpieza
+
+El espacio aislado limpia los recursos automáticamente cuando haya terminado con este módulo.
+
+Al trabajar en una suscripción propia, se recomienda identificar al final de un proyecto si aún necesita los recursos creados. Los recursos que dejas en ejecución pueden costar dinero. Puede eliminar los recursos de forma individual o eliminar el grupo de recursos para eliminar todo el conjunto de recursos.
+
+#### Comprobar los conocimientos
+
+1. ¿Qué es necesario instalar en el equipo para poder ejecutar comandos de la CLI de Azure localmente?
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Solo tiene que instalar la CLI de Azure</b>. Se usa un shell para emitir los comandos de la CLI, pero cada plataforma tiene al menos un shell integrado.</p>
+</details>
+
+2. Verdadero o falso: La CLI de Azure se puede instalar en Linux, macOS y Windows. Además, los comandos de la CLI son los mismos en todas las plataformas.
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Verdadero</b>La CLI es multiplataforma y se puede instalar en Linux, macOS y Windows. Después de la instalación, los comandos de la CLI que se ejecutan son los mismos en todas las ubicaciones. Esto significa que puede aprender los comandos una vez y usarlos con todas las instalaciones locales o en Azure Cloud Shell.</p>
+</details>
+
+3. ¿Qué valor de parámetro se puede agregar a la mayoría de los comandos de la CLI para obtener una salida concisa con formato?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>El parámetro <b>table</b> aplica formato de tabla a la salida. Esto puede hacer que la salida de los comandos que generan mucha sea mucho más legible.</p>
+</details>
+
+## Implementación de la infraestructura de Azure mediante plantillas de ARM de JSON
+
+### Introducción
+
+Las plantillas de Azure Resource Manager (plantillas de ARM) de JSON le **permiten especificar la infraestructura del proyecto de forma declarativa y reutilizable**. Puede realizar el control de versiones y guardar las plantillas en el mismo control de código fuente que el proyecto de desarrollo.
+
+Imagine que administra un equipo de software que desarrolla un sistema de inventario para empresas asociadas. Tiene planeado implementar este producto en Azure y cada empresa asociada tendrá su propia solución. Las distintas directivas para cada implementación se implementarán a través de diferentes cuentas de almacenamiento de Azure. Decida usar la práctica de _infraestructura como código_ mediante el uso de plantillas de ARM. Este enfoque le permite realizar un seguimiento de las distintas versiones y asegurarse de que las implementaciones de infraestructura para cada entorno son coherentes y flexibles.
+
+En este módulo, le presentaremos la estructura de plantillas de ARM. También practicará con la creación e implementación de una plantilla de ARM en Azure.
+
+<div>
+	<b style="font-size: 24;">Nota</b>
+	<br>
+	<br>
+	Bicep es un lenguaje para la definición de recursos de Azure. Ofrece una experiencia de creación más sencilla que JSON, junto con otras características que ayudan a mejorar la calidad de la infraestructura como código. Se recomienda que cualquier usuario nuevo en la infraestructura como código en Azure utilice Bicep en lugar de JSON. Para obtener más información sobre Bicep, consulte la ruta de aprendizaje.
+	<a href = "https://learn.microsoft.com/es-es/training/paths/fundamentals-bicep/"> Aspectos básicos de Bicep</a>
+</div>
+
+#### Objetivos de aprendizaje
+
+En este módulo, aprenderemos a:
+
+- Implementar una plantilla de ARM de JSON mediante Visual Studio Code.
+- Declarar recursos y dotar de flexibilidad a la plantilla mediante la adición de parámetros y salidas.
+
+#### Requisitos previos
+
+- Tener conocimientos de Azure, incluidos Azure Portal, las suscripciones, los grupos de recursos y las definiciones de recursos
+- Una cuenta de Azure. Puede obtener una cuenta gratuita [aquí](https://azure.microsoft.com/free)
+- [Visual Studio Code](https://code.visualstudio.com/) instalado localmente.
+- [Herramientas de Azure Resource Manager para la extensión Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools) instaladas localmente
+- Tener instaladas localmente una de las siguientes:
+    - Las herramientas más recientes de la [CLI de Azure](https://learn.microsoft.com/es-es/cli/azure/install-azure-cli)
+    - Las herramientas más recientes de [Azure PowerShell](https://learn.microsoft.com/es-es/powershell/azure/install-az-ps)
+
+### Exploración de la estructura de plantillas de Azure Resource Manager
+
+En esta unidad, aprenderemos a usar las plantillas de Azure Resource Manager (plantillas de ARM) para implementar la infraestructura como código. Examinará las secciones de una plantilla de ARM, aprenderá a implementarla en Azure y profundizará en los detalles de la sección de _recursos_ de la plantilla.
+
+#### ¿Qué es la infraestructura como código?
+
+La _infraestructura como código_ le permite describir, mediante código, la infraestructura que necesita para la aplicación.
+
+Con la infraestructura como código, puede mantener en un repositorio de código central el código de la aplicación y todo lo que necesita para implementarla. Las **ventajas de la infraestructura como código son** las siguientes:
+
+- **Configuraciones coherentes**
+- **Escalabilidad mejorada**
+- **Implementaciones más rápidas**
+- **Mejor rastreabilidad**
+
+#### ¿Qué es una plantilla de ARM?
+
+Las plantillas de ARM son **archivos** de notación de objetos JavaScript (**JSON**) **que definen la infraestructura y la configuración de la implementación**. La plantilla usa una _sintaxis declarativa_. La sintaxis declarativa es una forma de crear la estructura y los elementos que describen el aspecto que tendrán los recursos sin describir el flujo de control. La sintaxis declarativa es diferente de la _sintaxis imperativa_, en la que se usan comandos que el equipo debe ejecutar. El scripting imperativo se centra en especificar cada paso de la implementación de los recursos.
+
+Las plantillas de ARM le permiten declarar lo que piensa implementar sin tener que escribir la secuencia de comandos de programación para crearlo. En una plantilla de ARM, se especifican los recursos y las propiedades de esos recursos. Después, [Azure Resource Manager](https://learn.microsoft.com/es-es/azure/azure-resource-manager/management/overview) usa esa información para implementar los recursos de forma organizada y coherente.
+
+##### Ventajas del uso de plantillas de ARM
+
+Las plantillas de ARM **permiten automatizar las implementaciones** y usar el procedimiento de infraestructura como código (IaC). El código de plantilla se convierte en parte de los proyectos de infraestructura y desarrollo. Como sucede con el código de la aplicación, puede almacenar los archivos IaC en un repositorio de origen y crear una versión de él.
+
+Las plantillas de ARM son _idempotentes_, lo que significa que puede implementar la misma plantilla muchas veces y obtener los mismos tipos de recursos en el mismo estado.
+
+Resource Manager organiza la implementación de los recursos para que se creen en el orden correcto. Siempre que sea posible, los recursos también se crearán en paralelo, por lo que las implementaciones de plantillas de ARM finalizan más rápido que las implementaciones con scripts.
+
+![[Pasted image 20231229135150.png]]
+
+**Resource Manager también tiene validación integrada**. Comprueba la plantilla antes de iniciar la implementación para asegurarse de que la implementación se realizará correctamente.
+
+Si las implementaciones se vuelven más complejas, puede dividir las plantillas de ARM en componentes más pequeños y reutilizables. Puede vincular estas plantillas más pequeñas juntas en el momento de la implementación. También **puede anidar plantillas** dentro de otras.
+
+En Azure Portal, puede revisar el historial de implementación y obtener información sobre el estado de la implementación. El portal muestra los valores para todos los parámetros y salidas.
+
+También puede integrar las plantillas de ARM en herramientas de integración continua e implementación continua (CI/CD), como [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines), que permite automatizar las canalizaciones de versión para actualizaciones de aplicaciones e infraestructura rápidas y confiables. Mediante Azure DevOps y las tareas de plantilla de ARM, puede compilar e implementar los proyectos de forma continuada.
+
+##### Estructura de los archivos de plantilla de ARM
+
+Al escribir una plantilla de ARM, debe comprender todos los elementos que la componen y lo que hacen. Los archivos de plantilla de ARM se componen de los elementos siguientes:
+
+|Elemento|Descripción|
+|---|---|
+|**schema**|una sección obligatoria en la que se define la ubicación del archivo de esquema JSON que describe la estructura de los datos JSON. El número de versión que use dependerá del ámbito de la implementación y del editor de JSON.|
+|**contentVersion**|una sección obligatoria en la que se define la versión de la plantilla (por ejemplo, 1.0.0.0). Puede usar este valor para documentar los cambios importantes en la plantilla y asegurarse de que implementa la plantilla correcta.|
+|**apiProfile**|una sección opcional en la que se define una colección de versiones de API para los tipos de recurso. Puede usar este valor para evitar tener que especificar las versiones de API para cada recurso de la plantilla.|
+|**parameters**|una sección opcional en la que se definen los valores que se proporcionan durante la implementación. Estos valores se pueden proporcionar mediante un archivo de parámetros, con parámetros de la línea de comandos o en Azure Portal.|
+|**variables**|una sección opcional en la que se definen los valores que se usan para simplificar las expresiones de lenguaje de plantilla.|
+|**functions**|una sección opcional en la que se pueden definir [funciones definidas por el usuario](https://learn.microsoft.com/es-es/azure/azure-resource-manager/templates/template-user-defined-functions) que están disponibles dentro de la plantilla. Las funciones definidas por el usuario pueden simplificar la plantilla cuando se usan repetidamente expresiones complicadas en la plantilla.|
+|**resources**|una sección obligatoria en la que se definen los elementos reales que quiere implementar o actualizar en un grupo de recursos o una suscripción.|
+|**output**|una sección opcional en la que se especifican los valores que se devolverán al final de la implementación.|
+
+#### Implementación de una plantilla de ARM en Azure
+
+Puede implementar una plantilla de ARM en Azure de una de las siguientes maneras:
+
+- Implementación de una plantilla local
+- Implementación de una plantilla vinculada
+- Implementación en una canalización de implementación continua
+
+Este módulo se centra en la implementación de una plantilla de ARM local. En módulos Learn futuros obtendrá información sobre cómo implementar una infraestructura más complicada y realizar la integración con Azure Pipelines.
+
+Para implementar una plantilla local, es necesario tener [Azure PowerShell](https://learn.microsoft.com/es-es/powershell/azure/install-az-ps) o la [CLI de Azure](https://learn.microsoft.com/es-es/cli/azure/install-azure-cli) instalado localmente.
+
+En primer lugar, inicie sesión en Azure con la CLI de Azure o Azure PowerShell.
+
+```CLI
+az login
+```
+
+o
+
+```PowerShell
+Connect-AzAccount
+```
+
+Después, defina el grupo de recursos. Puede usar un grupo de recursos ya definido o crear uno nuevo con el siguiente comando. Puede obtener los valores de ubicación disponibles en: `az account list-locations` (la CLI) o `Get-AzLocation` (PowerShell). Puede configurar la ubicación predeterminada mediante `az configure --defaults location=<location>`.
+
+```CLI
+az group create --name {name of your resource group} --location "{location}"
+```
+
+o
+
+```PowerShell
+New-AzResourceGroup `
+  -Name {name of your resource group} `
+  -Location "{location}"
+```
+
+
+Para iniciar una implementación de plantilla en el grupo de recursos, use el comando [az deployment group create](https://learn.microsoft.com/es-es/cli/azure/deployment/group#az-deployment-group-create) de la CLI de Azure o el comando [New-AzResourceGroupDeployment](https://learn.microsoft.com/es-es/powershell/module/az.resources/new-azresourcegroupdeployment) de Azure PowerShell.
+
+ **Sugerencia**
+
+La diferencia entre `az deployment group create` y `az group deployment create` es que `az group deployment create` es un comando antiguo que va a quedar en desuso y se reemplazará por `az deployment group create`. Por lo tanto, se recomienda usar `az deployment group create` para implementar recursos en el ámbito del grupo de recursos.
+
+
+Ambos comandos requieren el grupo de recursos, la región y el nombre de la implementación para que pueda identificarla fácilmente en el historial de implementación. Para mayor comodidad, los ejercicios crean una variable que almacena la ruta de acceso al archivo de plantilla. Esta variable facilita la ejecución de los comandos de implementación, ya que no es necesario volver a escribir la ruta de acceso cada vez que se implementa. Este es un ejemplo:
+
+```CLI
+templateFile="{provide-the-path-to-the-template-file}"
+az deployment group create --name blanktemplate --resource-group myResourceGroup --template-file $templateFile
+```
+
+o
+
+```PowerShell
+$templateFile = "{provide-the-path-to-the-template-file}"
+New-AzResourceGroupDeployment `
+  -Name blanktemplate `
+  -ResourceGroupName myResourceGroup `
+  -TemplateFile $templateFile
+```
+
+Las plantillas vinculadas se usan para implementar soluciones complejas. Puede dividir una plantilla en muchas e implementarlas a través de una plantilla principal. Cuando se implementa la plantilla principal, se desencadena la implementación de la plantilla vinculada. Puede almacenar y proteger la plantilla vinculada mediante un token de SAS.
+
+Una canalización de CI/CD automatiza la creación e implementación de proyectos de desarrollo, lo que incluye proyectos de plantilla de ARM. Las dos canalizaciones más comunes que se usan para la implementación de plantillas son [Azure Pipelines](https://learn.microsoft.com/es-es/training/paths/deploy-applications-with-azure-devops/) y [Acciones de GitHub](https://learn.microsoft.com/es-es/training/paths/automate-workflow-github-actions/).
+
+En otros módulos se describe más información sobre estos dos tipos de implementación.
