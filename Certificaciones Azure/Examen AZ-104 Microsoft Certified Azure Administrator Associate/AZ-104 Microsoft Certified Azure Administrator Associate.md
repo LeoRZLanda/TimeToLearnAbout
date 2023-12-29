@@ -1538,3 +1538,43 @@ Get-AzPublicIpAddress -ResourceGroupName $vm.ResourceGroupName | Remove-AzPublic
 Debemos haber detectado todos los recursos creados. Compruebe el grupo de recursos simplemente para asegurarse. Aquí se han usado muchos comandos manuales, pero un enfoque mejor habría sido escribir un _script_. Después, se podría reutilizar esta lógica más adelante para crear o eliminar una máquina virtual. Vamos a examinar la creación de scripts con PowerShell.
 
 ### Creación y guardado de scripts en Azure PowerShell
+
+Las tareas complejas o repetitivas suelen consumir una gran cantidad de tiempo administrativo. Las organizaciones prefieren automatizar estas tareas para reducir los costos y evitar errores.
+
+**La automatización es importante** en el ejemplo de la empresa Administración de relaciones con los clientes (CRM). En ese ejemplo, el software se prueba en varias Linux Virtual Machines (VM) que es necesario eliminar y volver a crear de forma continua. Quiere usar un script de PowerShell **para** automatizar **la creación de las máquinas virtuales en lugar de crearlas manualmente cada vez**.
+
+Además de la operación básica para crear una máquina virtual, hay varios requisitos más para el script:
+
+- Creará varias máquinas virtuales, por lo que le interesa colocar la creación dentro de un bucle.
+- Tendrá que crear las máquinas virtuales en tres grupos de recursos diferentes, por lo que el nombre del grupo de recursos se debe pasar al script como un parámetro.
+
+En esta sección, verá cómo escribir y ejecutar un script de Azure PowerShell que cumple estos requisitos.
+
+#### ¿Qué es un script de PowerShell?
+
+Un script de PowerShell es un archivo de texto que contiene comandos y construcciones de control. Los comandos son invocaciones de los cmdlets. Las construcciones de control son características de programación como bucles, variables, parámetros, comentarios, etc., proporcionadas por PowerShell.
+
+Los archivos de script de PowerShell tienen la extensión de archivo `.ps1`. Puede crear y guardar estos archivos con cualquier editor de texto.
+
+	 Sugerencia
+	
+	Si va a escribir scripts de PowerShell en Windows, puede usar el entorno de scripting integrado (ISE) de Windows PowerShell. Este editor proporciona características como color de sintaxis y una lista de los cmdlets disponibles.
+
+La captura de pantalla siguiente muestra Windows PowerShell ISE con un script de ejemplo para conectarse a Azure y crear una máquina virtual en Azure.
+
+![[Pasted image 20231229101419.png]]
+
+Después de escribir el script, para ejecutarlo desde la línea de comandos de PowerShell, pase el nombre del archivo precedido por un punto y una barra diagonal inversa:
+
+```PowerShell
+.\myScript.ps1
+```
+
+#### Técnicas de PowerShell
+
+PowerShell tiene muchas características que se encuentran en los lenguajes de programación típicos. Se pueden definir variables, usar bifurcaciones y bucles, parámetros de línea de comandos de captura, escribir funciones, agregar comentarios y así sucesivamente. En este script se necesitarán tres características: variables, bucles y parámetros.
+
+##### Variables
+
+Como ha visto en la unidad anterior, PowerShell admite variables. Use `$` para declarar una variable y `=` para asignar un valor. Por ejemplo:
+
