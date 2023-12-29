@@ -2369,3 +2369,10 @@ Las plantillas vinculadas se usan para implementar soluciones complejas. Puede d
 Una canalización de CI/CD automatiza la creación e implementación de proyectos de desarrollo, lo que incluye proyectos de plantilla de ARM. Las dos canalizaciones más comunes que se usan para la implementación de plantillas son [Azure Pipelines](https://learn.microsoft.com/es-es/training/paths/deploy-applications-with-azure-devops/) y [Acciones de GitHub](https://learn.microsoft.com/es-es/training/paths/automate-workflow-github-actions/).
 
 En otros módulos se describe más información sobre estos dos tipos de implementación.
+
+#### Adición de recursos a la plantilla
+
+Para agregar un recurso a la plantilla, tiene que conocer el proveedor de recursos y sus tipos de recursos. La sintaxis de esta combinación tiene el formato _{proveedor_de_recursos}/{tipo_de_recurso}_. Por ejemplo, para agregar un recurso de cuenta de almacenamiento a la plantilla, necesitará el proveedor de recursos _Microsoft.Storage_. Uno de los tipos de este proveedor es _storageAccount_. Por tanto, el tipo de recurso se mostrará como _Microsoft.Storage/storageAccounts_. Puede usar una lista de [proveedores de recursos para servicios de Azure](https://learn.microsoft.com/es-es/azure/azure-resource-manager/management/azure-services-resource-providers) para encontrar los proveedores que necesita.
+
+Después de definir el proveedor y el tipo de recurso, debe comprender las propiedades de cada tipo de recurso que desee usar. Par obtener más información, consulte [Definición de recursos en plantillas de Azure Resource Manager](https://learn.microsoft.com/es-es/azure/templates). Vea la lista de la columna izquierda para buscar el recurso. Observe que las propiedades se ordenan por versión de API.
+
