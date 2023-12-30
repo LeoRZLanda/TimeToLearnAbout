@@ -3317,3 +3317,51 @@ Para obtener más información, consulte los artículos siguientes:
 
 ### Introducción
 
+Microsoft Entra ID es un **servicio de administración de identidades y directorios** basado en la nube que admite el acceso de los usuarios a varios recursos y aplicaciones.
+
+Trabaja para una gran empresa multinacional que recientemente ha adoptado Microsoft Entra ID. Como administrador de TI, es responsable de administrar el acceso de los usuarios a diferentes recursos y aplicaciones. Sin embargo, con una fuerza de trabajo tan diversa y distribuida en varias ubicaciones, garantizar un acceso seguro y eficaz puede ser un desafío. Se necesita una solución que proporcione administración de identidades centralizada y ofrezca características de seguridad sólidas. Con Microsoft Entra ID, podrá proporcionar a los usuarios acceso sin problemas a los recursos internos y externos. Al implementar Microsoft Entra ID, **podrá mejorar la seguridad, mejorar la productividad y reducir los costes de su organización**.
+
+En este módulo, obtendrá información sobre los componentes y conceptos clave de Microsoft Entra ID. Los temas tratados incluyen inquilinos, identidades, cuentas y suscripciones de Azure. Explorará las distintas ediciones de Microsoft Entra ID y sus características. Además, descubrirá las ventajas de las características del autoservicio de restablecimiento de contraseña (SSPR) y cómo implementarlas en su organización.
+
+El objetivo de este módulo es proporcionarle una mejor comprensión de Microsoft Entra ID y sus características.
+
+#### Objetivos de aprendizaje
+
+En este módulo aprenderá a:
+
+- Defina los conceptos de Microsoft Entra, incluidas las identidades, las cuentas y los inquilinos.
+    
+- Describir las características de Microsoft Entra para admitir diferentes configuraciones.
+    
+- Comprenda las diferencias entre Microsoft Entra ID y Active Directory Domain Services (AD DS).
+    
+- Elija entre las ediciones admitidas de Microsoft Entra ID.
+    
+- Descripción de cómo unirse a Microsoft Entra.
+    
+- Descripción del autoservicio de restablecimiento de contraseña de Microsoft Entra.
+    
+
+#### Aptitudes evaluadas
+
+El contenido del módulo le ayuda a prepararse para el [examen AZ-104: Administrador de Microsoft Azure](https://learn.microsoft.com/es-es/certifications/exams/az-104).
+
+#### Requisitos previos
+
+- Comprenda los conceptos básicos de las soluciones de identidad centralizadas. Este conocimiento incluye identidades, cuentas y métodos de autenticación.
+    
+- Familiaridad con las soluciones de identidad locales frente a las de la nube. Este conocimiento incluye ventajas y características comunes.
+
+
+### Descripción de las ventajas y características de Microsoft Entra ID
+
+[Microsoft Entra ID](https://learn.microsoft.com/es-es/azure/active-directory/) es el directorio basado en la nube multiinquilino de Microsoft y el servicio de administración de identidades. Microsoft Entra ID ayuda con el acceso de los usuarios a recursos y aplicaciones, por ejemplo:
+
+- Recursos y aplicaciones internos ubicados en la red corporativa.
+    
+- Recursos externos como Microsoft 365, Azure Portal y aplicaciones SaaS.
+    
+- Aplicaciones en la nube desarrolladas para la organización.
+    
+
+En el diagrama siguiente se muestra un ejemplo de implementación de Microsoft Entra ID. En este escenario, Windows Server AD usa la [autenticación Kerberos](https://learn.microsoft.com/es-es/windows-server/security/kerberos/kerberos-authentication-overview) y [NTLM](https://learn.microsoft.com/es-es/windows-server/security/kerberos/ntlm-overview) en las aplicaciones locales.
