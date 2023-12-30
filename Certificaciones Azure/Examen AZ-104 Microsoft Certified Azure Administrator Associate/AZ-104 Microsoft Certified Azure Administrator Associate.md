@@ -2575,14 +2575,14 @@ En la tarea anterior, ha aprendido a crear una plantilla en blanco y a implement
 	  ],
 	  "outputs": {}
 	}
-```
-	
+	```
+
 	Los valores que se deben editar se resaltan en la nueva sección del archivo y se puede navegar por ellos mediante la tecla Tabulador.
-	    
+
 	Observe que los atributos `tags` y `location` están rellenados. El atributo `location` usa una función para establecer la ubicación del recurso en la del grupo de recursos. Obtendrá información sobre etiquetas y funciones en el módulo siguiente.
-    
+
 3. Cambie los valores _name_ y _displayName_ del recurso por algo único (por ejemplo, **learnexercise12321**). Este nombre debe ser único en todo Azure, por lo que debe elegir algo que sea único para usted.
-    
+
 4. Cambie el valor _name_ de sku de **Premium_LRS** a **Standard_LRS**. Cambie el valor de _tier_ a **Estándar**. Observe que Visual Studio Code proporciona las opciones adecuadas para los valores de atributo en IntelliSense. Elimine el valor predeterminado, incluidas las comillas, y escriba las comillas para ver este trabajo.
 
 	![[Pasted image 20231229161212.png]]
