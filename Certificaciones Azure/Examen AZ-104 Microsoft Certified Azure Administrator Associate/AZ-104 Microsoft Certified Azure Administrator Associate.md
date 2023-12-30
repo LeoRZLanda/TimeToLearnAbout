@@ -2777,3 +2777,516 @@ Observe que la cuenta de almacenamiento se ha implementado.
 
 ### Adición de flexibilidad a la plantilla de Azure Resource Manager mediante parámetros y salidas
 
+En la unidad anterior, creamos una plantilla de Azure Resource Manager (ARM) y le agregamos una cuenta de Azure Storage. Es posible que haya detectado que hay un problema en la plantilla. El nombre de la cuenta de almacenamiento está codificado de forma rígida. Esta plantilla solo se puede usar para implementar la misma cuenta de almacenamiento cada vez. Para implementar una cuenta de almacenamiento con otro nombre, tendría que crear una plantilla, lo que no es una forma práctica de automatizar las implementaciones. La SKU de la cuenta de almacenamiento también está codificada de forma rígida, lo que significa que no se puede modificar el tipo de cuenta de almacenamiento para otros entornos. Recuerde que en este escenario, cada implementación puede tener un tipo diferente de cuenta de almacenamiento. Puede hacer que la plantilla sea más reutilizable si agrega un parámetro para la SKU de la cuenta de almacenamiento.
+
+En esta unidad, encontrará información sobre las secciones _parameters_ y _outputs_ de la plantilla.
+
+#### Parámetros de la plantilla de ARM
+
+Los parámetros de la plantilla de ARM le permiten personalizar la implementación, ya que proporcionan valores específicos para un entorno concreto. Por ejemplo, puede pasar valores diferentes en función de si realiza la implementación en un entorno para desarrollo, prueba, producción u otros. Por ejemplo, en la plantilla anterior se usa la SKU de cuenta de almacenamiento _Standard_LRS_. Puede volver a usar esta plantilla para otras implementaciones que crean una cuenta de almacenamiento si convierte en un parámetro el nombre de la SKU de la cuenta de almacenamiento. Después, pase el nombre de la SKU que quiere para esta implementación concreta cuando se implemente la plantilla. Puede llevar a cabo este paso en la línea de comandos o mediante un archivo de parámetros.
+
+En la sección `parameters` de la plantilla, especifique los valores que se pueden especificar al implementar los recursos. Está limitado a 256 parámetros por plantilla. Las definiciones de parámetros pueden utilizar la mayoría de las funciones de plantilla.
+
+Las propiedades disponibles para un parámetro son las siguientes:
+
+```JSON
+"parameters": {
+  "<parameter-name>": {
+    "type": "<type-of-parameter-value>",
+    "defaultValue": "<default-value-of-parameter>",
+    "allowedValues": [
+      "<array-of-allowed-values>"
+    ],
+    "minValue": <minimum-value-for-int>,
+    "maxValue": <maximum-value-for-int>,
+    "minLength": <minimum-length-for-string-or-array>,
+    "maxLength": <maximum-length-for-string-or-array-parameters>,
+    "metadata": {
+      "description": "<description-of-the-parameter>"
+    }
+  }
+}
+```
+
+Los tipos permitidos de parámetros son los siguientes:
+
+- string
+- secureString
+- integers
+- boolean
+- object
+- secureObject
+- array
+
+##### Recomendaciones para el uso de parámetros
+
+Use los parámetros para las configuraciones que varían según el entorno, como, por ejemplo, la SKU, el tamaño o la capacidad. Use los parámetros también para los nombres de recursos que desee especificar para facilitar la identificación o para cumplir las convenciones de nomenclatura internas. Proporcione una descripción para cada parámetro y use valores predeterminados siempre que sea posible.
+
+Por motivos de seguridad, en las plantillas nunca codifique de forma rígida los nombres de usuario o las contraseñas, ni les proporcione valores predeterminados. Use siempre parámetros para los nombres de usuario y las contraseñas (o los secretos). Use _secureString_ para todas las contraseñas y los secretos. Si pasa datos confidenciales en un objeto JSON, use el tipo _secureObject_. Los parámetros de plantilla con los tipos _secureString_ o _secureObject_ no se pueden leer ni recolectar después de la implementación del recurso.
+
+##### Uso de parámetros en una plantilla de ARM
+
+En la sección parameters de la plantilla de ARM, especifique los parámetros que se pueden especificar al implementar los recursos. Está limitado a 256 parámetros en una plantilla.
+
+Este es un ejemplo de un archivo de plantilla con un parámetro para la SKU de la cuenta de almacenamiento definida en la sección `parameters` de la plantilla. Puede proporcionar un valor predeterminado para el parámetro que se usará si no se especifica ningún valor durante la ejecución.
+
+```JSON
+"parameters": {
+  "storageAccountType": {
+    "type": "string",
+    "defaultValue": "Standard_LRS",
+    "allowedValues": [
+      "Standard_LRS",
+      "Standard_GRS",
+      "Standard_ZRS",
+      "Premium_LRS"
+    ],
+    "metadata": {
+      "description": "Storage Account type"
+    }
+  }
+}
+```
+
+Después, use el parámetro en la definición del recurso. La sintaxis es `[parameters('name of the parameter')]`. Usará la función `parameters`. Obtendrá más información sobre las funciones en el módulo siguiente.
+
+```JSON
+"resources": [
+  {
+    "type": "Microsoft.Storage/storageAccounts",
+    "apiVersion": "2019-04-01",
+    "name": "learntemplatestorage123",
+    "location": "[resourceGroup().location]",
+    "sku": {
+      "name": "[parameters('storageAccountType')]"
+    },
+    "kind": "StorageV2",
+    "properties": {
+      "supportsHttpsTrafficOnly": true
+    }
+  }
+]
+```
+
+Al implementar la plantilla, puede proporcionar un valor para el parámetro. Observe la última línea del comando siguiente:
+
+
+```CLI
+templateFile="azuredeploy.json"
+az deployment group create --name testdeployment1 --template-file $templateFile --parameters storageAccountType=Standard_LRS
+```
+
+o
+
+```PowerShell
+$templateFile="azuredeploy.json"
+New-AzResourceGroupDeployment `
+  -Name testdeployment1 `
+  -TemplateFile $templateFile `
+  -storageAccountType Standard_LRS
+```
+
+#### Salidas de plantilla de ARM
+
+En la sección outputs de la plantilla de ARM, puede especificar los valores que se devolverán después de una implementación correcta. Estos son los elementos que componen la sección de salidas.
+
+```JSON
+"outputs": {
+  "<output-name>": {
+    "condition": "<boolean-value-whether-to-output-value>",
+    "type": "<type-of-output-value>",
+    "value": "<output-value-expression>",
+    "copy": {
+      "count": <number-of-iterations>,
+      "input": <values-for-the-variable>
+    }
+  }
+}
+```
+
+|Elemento|Descripción|
+|---|---|
+|**nombre de salida**|Debe ser un identificador válido de JavaScript.|
+|**condition**|(opcional) Un valor booleano que indica si se devuelve este valor de salida. Si es true, el valor se incluye en la salida de la implementación. Si es false, el valor de salida se omite para esta implementación. Si no se especifica, el valor predeterminado es true.|
+|**type**|el tipo del valor de salida.|
+|**value**|(opcional) Una expresión de lenguaje de plantilla que se evalúa y se devuelve como valor de salida.|
+|**copy**|(opcional) Se usa para devolver más de un valor para una salida.|
+
+##### Uso de salidas en una plantilla de ARM
+
+Este es un ejemplo para generar los puntos de conexión de la cuenta de almacenamiento:
+
+```JSON
+"outputs": {
+  "storageEndpoint": {
+    "type": "object",
+    "value": "[reference('learntemplatestorage123').primaryEndpoints]"
+  }
+}
+```
+
+Observe el elemento `reference` de la expresión. Esta función obtiene el estado de tiempo de ejecución de la cuenta de almacenamiento.
+
+#### Implementación de una plantilla de ARM de nuevo
+
+Recuerde que las plantillas de ARM son _idempotentes_, lo cual significa que puede volver a implementar la plantilla en el mismo entorno y, si no se ha cambiado nada en ella, tampoco se cambiará nada en el entorno. Si se ha producido un cambio en la plantilla (por ejemplo, si ha cambiado el valor de un parámetro), solo se implementará ese cambio. La plantilla puede contener todos los recursos que necesita para la solución de Azure y puede volver a ejecutar una plantilla de forma segura. Los recursos solo se crearán si no existían ya, y solo se actualizarán si se produce un cambio.
+
+### Ejercicio: Adición de parámetros y salidas a la plantilla de Azure Resource Manager
+
+En este ejercicio, agregará un parámetro para definir el nombre de la cuenta de almacenamiento de Azure durante la implementación. Después, agregará un parámetro para definir qué SKU de cuenta de almacenamiento se permiten y definir cuál se va a usar para esta implementación. También agregará utilidad a la plantilla de Azure Resource Manager (plantilla de ARM) mediante la adición de una salida que se puede usar más adelante en el proceso de implementación.
+
+#### Creación de parámetros para la plantilla de ARM
+
+Aquí, puede hacer que la plantilla de ARM sea más flexible si agrega parámetros que se pueden establecer en tiempo de ejecución. Cree un parámetro para el valor `storageName`.
+
+1. En el archivo _azuredeploy.json_ de Visual Studio Code, coloque el cursor entre las llaves del atributo _parameters_. Su aspecto es similar a este: `"parameters":{},`
+    
+2. Seleccione Entrar y luego **par**. Verá una lista de fragmentos de código relacionados. Elija **new-parameter**, que agrega un parámetro genérico a la plantilla. Tiene este aspecto:
+
+	```JSON
+	"parameters": {
+	    "parameter1": {
+	    "type": "string",
+	    "metadata": {
+	        "description": "description"
+	    }
+	  }
+	},
+	```
+
+3. Cambie el parámetro de **parameter1** a **storageName** y deje el tipo como una cadena. Agregue un valor **minLength** de **3** y un valor **maxLength** de **24**. Agregue un valor de descripción de **Nombre del recurso de almacenamiento de Azure**.
+    
+4. El bloque de parámetros debería tener este aspecto:
+
+```JSON
+"parameters": {
+  "storageName": {
+    "type": "string",
+    "minLength": 3,
+    "maxLength": 24,
+    "metadata": {
+      "description": "The name of the Azure storage resource"
+    }
+  }
+},
+```
+
+5. Use el nuevo parámetro del bloque `resources` en los valores `name` y `displayName`. El archivo completo tendrá este aspecto:
+
+```JSON
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageName": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 24,
+      "metadata": {
+        "description": "The name of the Azure storage resource"
+      }
+    }
+  },
+  "functions": [],
+  "variables": {},
+  "resources": [
+    {
+      "name": "[parameters('storageName')]",
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2019-06-01",
+      "tags": {
+        "displayName": "[parameters('storageName')]"
+      },
+      "location": "[resourceGroup().location]",
+      "kind": "StorageV2",
+      "sku": {
+        "name": "Standard_LRS",
+        "tier": "Standard"
+      }
+    }
+  ],
+  "outputs": {}
+}
+```
+
+6. Guarde el archivo
+
+##### Implementación de la plantilla de ARM con parámetros
+
+Aquí, cambiará el nombre de la implementación para que refleje mejor lo que hace y rellenará un valor para el nuevo parámetro.
+
+Ejecute el siguiente comando de Azure PowerShell o Azure CLI en el terminal. Este fragmento de código es el mismo código que ha usado antes, pero se ha cambiado el nombre de la implementación. Rellene un nombre único para el parámetro `storageName`. Recuerde que este nombre debe ser único en todo Azure. Puede usar el nombre único que ha creado en la última unidad. En ese caso, Azure actualizará el recurso en lugar de crear uno.
+
+
+```PowerShell
+$templateFile="azuredeploy.json"
+$today=Get-Date -Format "MM-dd-yyyy"
+$deploymentName="addnameparameter-"+"$today"
+New-AzResourceGroupDeployment `
+  -Name $deploymentName `
+  -TemplateFile $templateFile `
+  -storageName {your-unique-name}
+```
+
+o
+
+```CLI
+templateFile="azuredeploy.json"
+today=$(date +"%d-%b-%Y")
+DeploymentName="addnameparameter-"$today
+
+az deployment group create --name $DeploymentName --template-file $templateFile --parameters storageName={your-unique-name}
+```
+
+##### Comprobación de la implementación
+
+1. Cuando finalice la implementación, vuelva al Azure Portal en el explorador. Vaya al grupo de recursos y compruebe que ahora hay **3 implementaciones correctas**. Seleccione este vínculo.
+    
+    Observe que las tres implementaciones están en la lista.
+    
+2. Explore la implementación _addnameparameter_ como ha hecho antes.
+    
+
+##### Adición de otro parámetro para limitar los valores permitidos
+
+Aquí se usan parámetros para limitar los valores permitidos para un parámetro.
+
+1. Coloque el cursor después de la llave de cierre del parámetro `storageName`. Agregue una coma y seleccione Entrar.
+    
+2. De nuevo, escriba **par** y seleccione **new-parameter**.
+    
+3. Cambie el nuevo parámetro genérico por lo siguiente:
+
+	```JSON
+	"storageSKU": {
+	   "type": "string",
+	   "defaultValue": "Standard_LRS",
+	   "allowedValues": [
+	     "Standard_LRS",
+	     "Standard_GRS",
+	     "Standard_RAGRS",
+	     "Standard_ZRS",
+	     "Premium_LRS",
+	     "Premium_ZRS",
+	     "Standard_GZRS",
+	     "Standard_RAGZRS"
+	   ]
+	 }
+	```
+
+	Aquí se muestran los valores que este parámetro permitirá. Si la plantilla se ejecuta con un valor no permitido, se producirá un error en la implementación.
+    
+4. Agregue un comentario a este parámetro.
+
+	![[Pasted image 20231229175759.png]]
+
+	Las plantillas de ARM admiten comentarios `//` y `/* */`.
+
+5. Actualice **resources** para usar el parámetro `storageSKU`. Aproveche las ventajas de IntelliSense en Visual Studio Code para facilitar esta tarea.
+
+	```JSON
+	"sku": {
+	     "name": "[parameters('storageSKU')]"
+	   }
+	```
+	
+	El archivo completo tendrá este aspecto:
+	
+	```JSON
+	{
+	  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+	  "contentVersion": "1.0.0.0",
+	  "parameters": {
+	    "storageName": {
+	      "type": "string",
+	      "minLength": 3,
+	      "maxLength": 24,
+	      "metadata": {
+	        "description": "The name of the Azure storage resource"
+	      }
+	    },
+	    "storageSKU": {
+	      "type": "string",
+	      "defaultValue": "Standard_LRS",
+	      "allowedValues": [
+	        "Standard_LRS",
+	        "Standard_GRS",
+	        "Standard_RAGRS",
+	        "Standard_ZRS",
+	        "Premium_LRS",
+	        "Premium_ZRS",
+	        "Standard_GZRS",
+	        "Standard_RAGZRS"
+	      ]
+	    }
+	  },
+	  "functions": [],
+	  "variables": {},
+	  "resources": [
+	    {
+	      "name": "[parameters('storageName')]",
+	      "type": "Microsoft.Storage/storageAccounts",
+	      "apiVersion": "2019-06-01",
+	      "tags": {
+	        "displayName": "[parameters('storageName')]"
+	      },
+	      "location": "[resourceGroup().location]",
+	      "kind": "StorageV2",
+	      "sku": {
+	        "name": "[parameters('storageSKU')]",
+	        "tier": "Standard"
+	      }
+	    }
+	  ],
+	  "outputs": {}
+	}
+	```
+
+6. Guarde el archivo.
+
+##### Implementación de la plantilla de ARM
+
+Aquí, se implementará correctamente mediante el uso de un parámetro `storageSKU` que se encuentra en la lista de permitidos. Después, intentará implementar la plantilla mediante un parámetro `storageSKU` que no esté en la lista de permitidos. Se producirá un error en la segunda implementación, como es de esperar.
+
+1. Ejecute los comandos siguientes para implementar la plantilla. Rellene un nombre único para el parámetro `storageName`. Recuerde que este nombre debe ser único en todo Azure. Puede usar el nombre único que ha creado en la última sección. En ese caso, Azure actualizará el recurso en lugar de crear uno.
+
+	```PowerShell
+	$today=Get-Date -Format "MM-dd-yyyy"
+	$deploymentName="addSkuParameter-"+"$today"
+	New-AzResourceGroupDeployment `
+	  -Name $deploymentName `
+	  -TemplateFile $templateFile `
+	  -storageName {your-unique-name} `
+	  -storageSKU Standard_GRS
+	```
+
+	o
+
+	```CLI
+	templateFile="azuredeploy.json"
+	today=$(date +"%d-%b-%Y")
+	DeploymentName="addSkuParameter-"$today
+	
+	az deployment group create --name $DeploymentName --template-file $templateFile --parameters storageSKU=Standard_GRS storageName={your-unique-name}
+	```
+
+	Deje que finalice esta implementación. Esta implementación se realiza correctamente de la manera esperada. Los valores permitidos impiden que los usuarios de la plantilla pasen valores de parámetro que no funcionan para el recurso. Ahora se verá lo que sucede cuando se proporciona una SKU no válida.
+
+2. Ejecute los comandos siguientes para implementar la plantilla con un parámetro que no está permitido. Aquí ha cambiado el parámetro `storageSKU` por **Basic**. Rellene un nombre único para el parámetro `storageName`. Recuerde que este nombre debe ser único en todo Azure. Puede usar el nombre único que ha creado en la última sección. En ese caso, Azure actualizará el recurso en lugar de crear uno.
+
+	```PowerShell
+	$today=Get-Date -Format "MM-dd-yyyy"
+	$deploymentName="addSkuParameter-"+"$today"
+	New-AzResourceGroupDeployment `
+	  -Name $deploymentName `
+	  -TemplateFile $templateFile `
+	  -storageName {your-unique-name} `
+	  -storageSKU Basic
+	```
+
+
+	o
+
+	```CLI
+	templateFile="azuredeploy.json"
+	today=$(date +"%d-%b-%Y")
+	DeploymentName="addSkuParameter-"$today
+	
+	az deployment group create --name $DeploymentName --template-file $templateFile --parameters storageSKU=Basic storageName={your-unique-name}
+	```
+
+
+	Se produce un error en esta implementación. Observe el error.
+	
+	![[Pasted image 20231229180252.png]]
+#### Adición de salida a la plantilla de ARM
+
+Aquí agregará a la sección `outputs` de la plantilla de ARM para generar los puntos de conexión para el recurso de cuenta de almacenamiento.
+
+1. En el archivo _azuredeploy.json_ de Visual Studio Code, coloque el cursor entre las llaves del atributo outputs `"outputs":{},`.
+    
+2. Presione Entrar y luego escriba _out_. Obtendrá una lista de fragmentos de código relacionados. Seleccione **new-output**. Esto agrega una salida genérica a la plantilla. Tendrá este aspecto:
+
+	```JSON
+	"outputs": {
+	  "output1": {
+	    "type": "string",
+	    "value": "value"
+	  }
+	```
+
+3. Cambie **"output1"** a **"storageEndpoint"**, y después cambie el valor de `type` a **"object"**. Cambie el valor de `value` a **"[reference(parameters('storageName')).primaryEndpoints]"**. Esta expresión es la que se describe en la unidad anterior que obtiene los datos del punto de conexión. Dado que especificamos _object_ como tipo, devolverá el objeto en formato JSON.
+
+
+```JSON
+"outputs": {
+  "storageEndpoint": {
+    "type": "object",
+    "value": "[reference(parameters('storageName')).primaryEndpoints]"
+  }
+```
+
+4. Guarda el archivo
+
+
+##### Implementación de la plantilla de ARM con una salida
+
+Aquí, implementará la plantilla y verá la salida de los puntos de conexión como JSON. Tendrá que rellenar un nombre único para el parámetro `storageName`. Recuerde que este nombre debe ser único en todo Azure. Puede usar el nombre único que ha creado en la última sección. En ese caso, Azure actualizará el recurso en lugar de crear uno.
+
+1. Ejecute los comandos siguientes para implementar la plantilla. Asegúrese de reemplazar _{your-unique-name}_ (el nombre único) por una cadena única.
+    
+	```PowerShell
+	$today=Get-Date -Format "MM-dd-yyyy"
+	$deploymentName="addOutputs-"+"$today"
+	New-AzResourceGroupDeployment `
+	  -Name $deploymentName `
+	  -TemplateFile $templateFile `
+	  -storageName {your-unique-name} `
+	  -storageSKU Standard_LRS
+	```
+
+	o
+
+	```CLI
+	templateFile="azuredeploy.json"
+	today=$(date +"%d-%b-%Y")
+	DeploymentName="addoutputs-"$today
+	
+	az deployment group create --name $DeploymentName --template-file $templateFile --parameters storageSKU=Standard_LRS storageName={your-unique-name}
+	```
+
+	Observe la salida.
+	
+	![[Pasted image 20231229180556.png]]
+##### Comprobación de la implementación de salida
+
+En Azure Portal, vaya a la implementación _addOutputs_. Ahí también puede encontrar la salida.
+
+![[Pasted image 20231229180618.png]]
+
+### Prueba de Conocimientos
+
+1. a
+
+<details>
+	<summary>Respuesta</summary>
+	<p></p>
+</details>
+
+2. a
+
+<details>
+	<summary>Respuesta</summary>
+	<p></p>
+</details>
+
+3. a
+
+<details>
+	<summary>Respuesta</summary>
+	<p></p>
+</details>
+
+
+### Resumen
+
