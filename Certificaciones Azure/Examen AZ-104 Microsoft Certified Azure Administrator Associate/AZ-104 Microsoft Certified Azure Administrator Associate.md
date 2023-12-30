@@ -3266,27 +3266,54 @@ En Azure Portal, vaya a la implementación _addOutputs_. Ahí también puede en
 
 ### Prueba de Conocimientos
 
-1. a
+1. ¿Qué es una plantilla de Azure Resource Manager?
 
 <details>
 	<summary>Respuesta</summary>
-	<p></p>
+	<p>Una plantilla de Azure Resource Manager <b>es un archivo JSON</b> que define la infraestructura y la configuración de la implementación. Las plantillas de ARM le permiten declarar lo que piensa implementar sin tener que escribir la secuencia de comandos de programación para crearlo.</p>
 </details>
 
-2. a
+2. ¿Cuál de estos _no_ es un elemento de una plantilla de Azure Resource Manager?
 
 <details>
 	<summary>Respuesta</summary>
-	<p></p>
+	<p><b>idempotent</b>Los elementos de una plantilla de Azure Resource Manager son schema, contentVersion, apiProfile, parameters, variables, functions, resources y output.</p>
 </details>
 
-3. a
+3. Las plantillas de Azure Resource Manager son idempotentes. Esto significa que si ejecuta una plantilla sin cambios por segunda vez:
 
 <details>
 	<summary>Respuesta</summary>
-	<p></p>
+	<p>Si el recurso ya existe y no se detecta ningún cambio en las propiedades, no se realizará ninguna acción. Si el recurso ya existe y se produce un cambio en alguna propiedad, el recurso se actualiza. Si el recurso no existe, se creará.</p>
 </details>
 
 
 ### Resumen
+
+En este módulo, hemos aprendido sobre las plantillas de Azure Resource Manager (plantillas de ARM) y se han usado para implementar una cuenta de almacenamiento en Azure. Hemos aumentado la flexibilidad de la plantilla agregando parámetros y obtenido resultados a raíz de la ejecución de la plantilla.
+
+En resumen:
+
+- Hemos implementado una plantilla de ARM mediante Visual Studio Code.
+- Hemos declarado recursos y dotado de flexibilidad a la plantilla mediante la adición de recursos, parámetros y salidas.
+
+#### Saber más
+
+Para obtener más información, consulte los artículos siguientes:
+
+- [Herramientas de Azure Resource Manager para Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
+- [Descripción de la estructura y la sintaxis de las plantillas de ARM](https://learn.microsoft.com/es-es/azure/azure-resource-manager/templates/template-syntax)
+- [Información general sobre Azure Resource Manager](https://learn.microsoft.com/es-es/azure/azure-resource-manager/management/overview)
+- [Instalación de la CLI de Azure](https://learn.microsoft.com/es-es/cli/azure/install-azure-cli)
+- [Instalación de Azure PowerShell](https://learn.microsoft.com/es-es/powershell/azure/install-az-ps)
+- [Proveedores de recursos para servicios de Azure](https://learn.microsoft.com/es-es/azure/azure-resource-manager/management/azure-services-resource-providers)
+- [Definición de recursos en plantillas de Azure Resource Manager](https://learn.microsoft.com/es-es/azure/templates)
+- [Salidas en las plantillas de Azure Resource Manager](https://learn.microsoft.com/es-es/azure/azure-resource-manager/templates/template-outputs?tabs=azure-powershell)
+- [Parámetros en las plantillas de Azure Resource Manager](https://learn.microsoft.com/es-es/azure/azure-resource-manager/templates/template-parameters)
+
+# AZ-104: Administración de identidades y gobernanza en Azure
+
+## Configuración de Microsoft Entra ID
+
+### Introducción
 
