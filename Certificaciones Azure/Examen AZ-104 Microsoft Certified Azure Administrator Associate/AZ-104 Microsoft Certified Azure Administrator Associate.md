@@ -3365,3 +3365,144 @@ El contenido del módulo le ayuda a prepararse para el [examen AZ-104: Administ
     
 
 En el diagrama siguiente se muestra un ejemplo de implementación de Microsoft Entra ID. En este escenario, Windows Server AD usa la [autenticación Kerberos](https://learn.microsoft.com/es-es/windows-server/security/kerberos/kerberos-authentication-overview) y [NTLM](https://learn.microsoft.com/es-es/windows-server/security/kerberos/ntlm-overview) en las aplicaciones locales.
+
+![[Pasted image 20240102093042.png]]
+
+#### Aspectos que se deben conocer sobre las características de Microsoft Entra
+
+Vamos a examinar algunas de las características destacadas de Microsoft Entra ID.
+
+|Característica de Azure AD|Descripción|
+|---|---|
+|**Acceso mediante inicio de sesión único (SSO)**|Microsoft Entra ID proporciona inicio de sesión único (SSO) seguro en aplicaciones web en la nube y en aplicaciones locales. Los usuarios pueden iniciar sesión con el mismo conjunto de credenciales para acceder a todas sus aplicaciones.|
+|**Compatibilidad con dispositivos omnipresente**|Microsoft Entra ID funciona con dispositivos iOS, macOS, Android y Windows, y ofrece una experiencia común en todos los dispositivos. Los usuarios pueden iniciar aplicaciones desde un panel de acceso personalizado basado en web, una aplicación móvil, Microsoft 365 o portales de empresa personalizados con sus credenciales de trabajo existentes.|
+|**Acceso remoto seguro**|Microsoft Entra ID permite el acceso remoto seguro a aplicaciones web locales. El acceso seguro puede incluir la autenticación multifactor (MFA), las directivas de acceso condicional y la administración de acceso basada en grupos. Los usuarios pueden acceder a aplicaciones web locales desde cualquier lugar, incluido desde el mismo portal.|
+|**Extensibilidad a la nube**|Microsoft Entra ID puede extenderse a la nube para ayudarle a administrar un conjunto coherente de usuarios, grupos, contraseñas y dispositivos en todos los entornos.|
+|**Protección de datos confidenciales**|Microsoft Entra ID ofrece funcionalidades únicas de protección de identidades para proteger los datos confidenciales y las aplicaciones. Los administradores pueden supervisar si hay actividad de inicio de sesión sospechosa y posibles vulnerabilidades en una vista consolidada de usuarios y recursos en el directorio.|
+|**Soporte mediante autoservicio**|Microsoft Entra ID le permite delegar tareas de administrador seleccionadas a los empleados de la empresa. Proporcionar acceso a aplicaciones de autoservicio y administración de contraseñas mediante pasos de comprobación puede reducir las llamadas al departamento de soporte técnico y mejorar la seguridad.|
+
+
+#### Aspectos que se deben tener en cuenta al usar características de Microsoft Entra
+
+Microsoft Entra ID ofrece muchas características y ventajas. Tenga en cuenta qué características se pueden usar para admitir mejor los escenarios corporativos.
+
+- **Considere la posibilidad de habilitar el acceso con inicio de sesión único**. Habilite el acceso SSO para que los usuarios se conecten a la nube o usen las aplicaciones locales. El inicio de sesión único de Microsoft Entra es compatible con Microsoft 365 y miles de aplicaciones SaaS, como Salesforce, Workday, DocuSign, ServiceNow y Box.
+    
+- **Tenga en cuenta la experiencia de usuario y la compatibilidad con dispositivos**. Cree una experiencia de usuario coherente que funcione para todos los dispositivos y puntos de acceso de directorio. Puede diseñar portales de empresa personalizados y acceso personalizado basado en web para los empleados que les permita conectarse con sus credenciales de trabajo existentes.
+    
+- **Tenga en cuenta las ventajas del acceso remoto seguro**. Proteja las aplicaciones web locales mediante la implementación del acceso remoto seguro con MFA y directivas de acceso.
+    
+- **Tenga en cuenta las ventajas de la extensibilidad a la nube**. Conecte Active Directory y otros directorios locales de la nube a Microsoft Entra en unos pocos pasos. Puede facilitar a los administradores la administración de los mismos usuarios, grupos, contraseñas y dispositivos en todos los entornos admitidos.
+
+- **Considere la posibilidad de usar la protección avanzada para los datos confidenciales**. Mejore la seguridad de los datos confidenciales y de las aplicaciones mediante las características de protección integradas de Microsoft Entra ID. Los administradores pueden utilizar los informes de seguridad avanzados, las notificaciones, las recomendaciones de corrección y las directivas basadas en riesgos.
+    
+- **Tenga en cuenta las opciones de autoservicio de costo reducido**. Aproveche las ventajas de las características de autoservicio de Microsoft Entra para ayudar a reducir los costos de su organización. Delegue determinadas tareas, como el restablecimiento de contraseñas o la creación y administración de grupos, a los usuarios que no son administradores.
+    
+
+En la siguiente unidad, exploraremos los conceptos de Microsoft Entra que hacen posible estas características.
+
+### Descripción de los conceptos de Microsoft Entra
+
+Para implementar Microsoft Entra ID en la configuración corporativa, debe comprender los componentes clave del servicio. En la tabla siguiente se describen los principales componentes y conceptos de Microsoft Entra ID y se explica cómo funcionan conjuntamente para admitir las características de servicio
+
+|Concepto de Azure AD|Descripción|
+|---|---|
+|**Identidad**|Una _identidad_ es un objeto que se puede autenticar. La identidad puede ser un usuario con un nombre de usuario y una contraseña. Las identidades también pueden ser aplicaciones u otros servidores que requieren autenticación mediante certificados o claves secretas. Microsoft Entra ID es el producto subyacente que proporciona el servicio de identidad.|
+|**Cuenta**|Una _cuenta_ es una identidad que tiene datos asociados. Para tener una cuenta, primero debe tener una identidad válida. No puede tener una cuenta sin una identidad.|
+|**Cuenta de Microsoft Entra**|Una _cuenta de Azure AD_ es una identidad que se crea mediante Microsoft Entra ID u otro servicio en la nube de Microsoft, como Microsoft 365. Las identidades se almacenan en Microsoft Entra ID y pueden acceder a ellas las suscripciones de servicio en la nube de su organización. La cuenta de Microsoft Entra también se denomina _cuenta profesional o educativa_.|
+|**Inquilino (directorio) de Azure**|Un _inquilino_ de Azure es una instancia única, dedicada y de confianza de Microsoft Entra ID. Cada inquilino (también denominado _directorio_) representa una sola organización. Cuando su organización se registra a una suscripción de servicio en la nube de Microsoft, automáticamente se crea un nuevo inquilino. Dado que cada inquilino es una instancia dedicada y de confianza de Microsoft Entra ID, puede crear varios inquilinos o instancias.|
+|**Suscripción de Azure**|Una suscripción de Azure se usa para pagar los servicios en la nube de Azure. Cada suscripción se une a un único inquilino. Puede tener varias suscripciones.|
+
+
+	 Sugerencia
+	
+	Si es cliente de Microsoft 365, Azure o Dynamics CRM Online, es posible que ya esté usando Microsoft Entra ID. Cada inquilino de Microsoft 365, Azure y Dynamics CRM ya es un inquilino de Microsoft Entra. Puede empezar a usar el inquilino para administrar el acceso a miles de otras aplicaciones en la nube que se integran con Microsoft Entra ID.
+
+### Comparación de Active Directory Domain Services y Microsoft Entra ID
+
+Active Directory Domain Services (AD DS) es la implementación tradicional de Active Directory basado en Windows Server en un servidor físico o virtual. Active Directory Domain Services (AD DS) también incluye Servicios de certificados de Active Directory (AD CS), Active Directory Lightweight Directory Services (AD LDS), Servicios de federación de Active Directory (AD FS) y Active Directory Rights Management Services (AD RMS).
+
+	 Importante
+	
+	Si bien puede implementar y administrar AD DS en Azure Virtual Machines, se recomienda usar Microsoft Entra ID, a menos que su configuración tenga como destino cargas de trabajo de IaaS que dependan específicamente de AD DS.
+
+#### Aspectos que se deben tener en cuenta al usar Microsoft Entra en lugar de AD DS
+
+**Microsoft Entra ID es similar a AD DS, pero hay diferencias importantes**. Es importante comprender que el uso de Microsoft Entra ID para **la configuración es diferente de implementar** un controlador de dominio de Active Directory en una máquina virtual de Azure y, a continuación, agregarlo al dominio local.
+
+A medida que planee la estrategia de identidad, tenga en cuenta las siguientes **características que distinguen Microsoft Entra ID de AD DS**.
+
+- **Solución de identidad**: **AD DS es principalmente un servicio de directorio, mientras que Microsoft Entra ID es una solución de identidad completa**. Microsoft Entra ID está diseñado para aplicaciones basadas en Internet que usan comunicaciones HTTP y HTTPS. Las características y capacidades de Microsoft Entra ID admiten la administración segura de identidades de destino.
+    
+- **Protocolos de comunicación**: Dado que **Microsoft Entra ID se basa en HTTP y HTTPS, no usa la autenticación Kerberos**. Microsoft Entra ID implementa los protocolos HTTP y HTTPS, como SAML, WS-Federation y OpenID Connect para la autenticación, así como OAuth para la autorización.
+    
+- **Servicios de federación**: **Microsoft Entra ID incluye servicios de federación** y muchos servicios de terceros como Facebook.
+    
+- **Estructura plana**: Los usuarios y grupos de Microsoft Entra se crean en una estructura plana. **No hay unidades organizativas (UO) ni objetos de directiva de grupo (GPO)**.
+    
+- **Servicio administrado**: Microsoft Entra ID es un servicio administrado. Solo se administran los usuarios, los grupos y las directivas. Si implementa AD DS con máquinas virtuales mediante Azure, administra muchas otras tareas, como la implementación, la configuración, las máquinas virtuales, la aplicación de revisiones y otros procesos de back-end.
+
+### Selección de las ediciones de Microsoft Entra
+
+Microsoft Entra ID incluye cuatro ediciones: **Gratis**, **Aplicaciones de Microsoft 365**, **Premium P1**y **Premium P2**. La edición Free se incluye con una suscripción de Azure. Las ediciones Premium están disponibles mediante un Contrato Enterprise de Microsoft, el programa Licencia por volumen abierto y el programa Proveedores de soluciones en la nube. Los suscriptores de Azure y Microsoft 365 también pueden comprar Microsoft Entra ID P1 y P2 en línea.
+
+#### Aspectos que se deben conocer sobre las ediciones de Microsoft Entra
+
+Tenga en cuenta las siguientes características que distinguen las distintas ediciones de Microsoft Entra ID. Después de revisar las características y descripciones, piense en qué edición funciona mejor para su organización. Un `X` indica que se admite la característica.
+
+|Característica|Gratuito|Aplicaciones de Microsoft 365|Premium P1|Premium P2|
+|---|---|---|---|---|
+|**Objetos de directorio**|500.000|Sin límite|Sin límite|Sin límite|
+|**Single Sign-on** (Inicio de sesión único)|Sin límite|Sin límite|Sin límite|Sin límite|
+|**Administración de identidades y acceso principales**|`X`|`X`|`X`|`X`|
+|**Colaboración de negocio a negocio**|`X`|`X`|`X`|`X`|
+|**Administración de identidades y acceso  <br>para Aplicaciones de Microsoft 365**||`X`|`X`|`X`|
+|**Características de la edición Premium**|||`X`|`X`|
+|**Identidades híbridas**|||`X`|`X`|
+|**Administración avanzada de acceso a grupos**|||`X`|`X`|
+|**Acceso condicional**|||`X`|`X`|
+|**Identity Protection**||||`X`|
+|**Identity Governance**||||`X`|
+
+
+##### Microsoft Entra ID Free
+
+La edición Gratis proporciona administración de usuarios y grupos, sincronización de directorios locales e informes básicos. El acceso con inicio de sesión único se admite en Azure, Microsoft 365 y muchas aplicaciones SaaS populares.
+
+##### Microsoft Entra Aplicaciones de Microsoft 365
+
+Esta edición se incluye con Microsoft 365. Además de las características de la edición Gratis, esta edición proporciona administración de identidades y acceso para aplicaciones de Microsoft 365. La compatibilidad adicional incluye personalización de marca, MFA, administración de acceso a grupos y autoservicio de restablecimiento de contraseña para los usuarios en la nube.
+
+##### Microsoft Entra ID P1
+
+Además de las características de la edición Gratis, la edición Premium P1 permite a los usuarios de entornos híbridos acceder a recursos locales y en la nube. Esta edición admite la administración avanzada, como los grupos dinámicos, la administración de grupos de autoservicio y capacidades de escritura diferida en la nube. La edición P1 también incluye Microsoft Identity Manager, un conjunto de administración de identidades y acceso local. Las características adicionales de la edición P1 permiten el autoservicio de restablecimiento de contraseña para los usuarios locales.
+
+##### Microsoft Entra ID P2
+
+Además de incluir las características de las ediciones Gratis y P1, la edición Premium P2 ofrece Microsoft Entra ID Protection para facilitar el acceso condicional basado en riesgos a las aplicaciones y a los datos críticos de la empresa. Privileged Identity Management se incluye para descubrir, restringir y supervisar a los administradores y su acceso a los recursos, y proporcionar acceso Just-in-Time cuando sea necesario.
+
+ Sugerencia
+
+La [página de precios de Microsoft Entra](https://azure.microsoft.com/pricing/details/active-directory) contiene información detallada sobre lo que se incluye en cada edición.
+
+### Implementación de la unión a Microsoft Entra
+
+Microsoft Entra ID habilita el inicio de sesión único (SSO) en dispositivos, aplicaciones y servicios desde cualquier ubicación. Para admitir el SSO, los administradores de TI deben asegurarse de que los recursos corporativos están protegidos y de que los dispositivos cumplen los estándares de seguridad y cumplimiento.
+
+![[Pasted image 20240102095822.png]]
+
+La característica de unión a Microsoft Entra funciona con SSO para proporcionar acceso a aplicaciones y recursos de la organización, así como simplificar las implementaciones de dispositivos de trabajo Windows.
+
+#### Aspectos que se deben saber sobre la característica de unión a Microsoft Entra
+
+Veamos algunas de las ventajas de usar dispositivos unidos:
+
+|Prestación|Descripción|
+|---|---|
+|**Inicio de sesión único (SSO)**|Los dispositivos unidos ofrecen acceso SSO a sus servicios y aplicaciones SaaS administrados por Azure. Los usuarios no necesitarán solicitudes de autenticación adicionales cuando accedan a los recursos de trabajo. La función SSO está disponible incluso cuando no están conectados a la red de dominios.|
+|**Enterprise State Roaming**|A partir de Windows 10, los usuarios pueden sincronizar de forma segura su configuración de usuario y los datos de configuración de la aplicación con dispositivos unidos. La itinerancia de estado empresarial reduce el tiempo para configurar un nuevo dispositivo.|
+|**Windows Hello**|Proporcione a los usuarios un acceso seguro y cómodo a los recursos de trabajo desde dispositivos unidos.|
+|**Restricción de acceso**|Restrinja el acceso de los usuarios a las aplicaciones para que solo se produzca desde dispositivos unidos que cumplan las directivas de cumplimiento.|
+|**Acceso sin problemas a los recursos locales**|Los dispositivos unidos tienen acceso ininterrumpido a los recursos locales cuando el dispositivo tiene línea de visión al controlador de dominio local.|
+
+
