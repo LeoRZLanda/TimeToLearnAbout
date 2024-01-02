@@ -3506,3 +3506,123 @@ Veamos algunas de las ventajas de usar dispositivos unidos:
 |**Acceso sin problemas a los recursos locales**|Los dispositivos unidos tienen acceso ininterrumpido a los recursos locales cuando el dispositivo tiene línea de visión al controlador de dominio local.|
 
 
+#### Aspectos que se deben tener en cuenta al usar dispositivos unidos
+
+Su organización está interesada en usar dispositivos unidos en su estrategia de administración. A medida que planee cómo implementar la característica, revise estos puntos de configuración:
+
+- **Tenga en cuenta las opciones de conexión**. Conecte el dispositivo a Microsoft Entra ID de una de estas dos maneras:
+    
+    - **Registre** el dispositivo en Microsoft Entra ID para que pueda administrar la identidad del dispositivo. El registro de dispositivos de Microsoft Entra proporciona una identidad al dispositivo que se utiliza para autenticarlo cuando el usuario inicia sesión en Microsoft Entra. Puede utilizar esta identidad para habilitar o deshabilitar el dispositivo.
+        
+    - **Únase** al dispositivo, que es una extensión del registro de un dispositivo. La unión ofrece las ventajas del registro, y también cambia el estado local del dispositivo. El cambio del estado local permite a los usuarios iniciar sesión en un dispositivo mediante una cuenta profesional o educativa en lugar de con una cuenta personal.
+        
+- **Considere la posibilidad de combinar el registro con otras soluciones**. Combine el registro con una solución de administración de dispositivos móviles (MDM), como Microsoft Intune para proporcionar otros atributos de dispositivo en Microsoft Entra ID. Puede crear reglas de acceso condicional que obliguen a que el acceso desde dispositivos cumpla con los estándares de seguridad y cumplimiento de la organización.
+    
+- **Tenga en cuenta otros escenarios de implementación**. Aunque la unión a AD está pensada para organizaciones que tengan una infraestructura de Windows Server Active Directory local, se puede usar en otros escenarios, como sucursales.
+
+### Implementar el autoservicio de restablecimiento de contraseña de Microsoft Entra
+
+Muchas de las llamadas al departamento de soporte técnico son solicitudes a fin de restablecer contraseñas para los usuarios. La característica de **autoservicio de restablecimiento de contraseña** (SSPR) de Microsoft Entra le permite dar a los usuarios la posibilidad de omitir el departamento de soporte técnico y restablecer sus propias contraseñas.
+
+#### Aspectos que se deben conocer sobre la característica SSPR de Microsoft Entra
+
+Examine las siguientes características y requisitos de la característica SSPR:
+
+- SSPR requiere una cuenta de Microsoft Entra con privilegios de administrador global para administrar las opciones de SSPR. Esta cuenta siempre puede restablecer sus propias contraseñas, independientemente de las opciones configuradas.
+    
+- SSPR usa un grupo de seguridad para limitar los usuarios que tienen privilegios de SSPR.
+    
+- Todas las cuentas de usuario de la organización deben tener una licencia válida para usar SSPR.
+    
+
+#### Aspectos que se deben tener en cuenta al usar SSPR
+
+Su organización quiere implementar la compatibilidad con SSPR en su solución de administración. A medida que planee la configuración, revise los siguientes puntos:
+
+- **Piense en quién puede restablecer sus contraseñas**. Decida qué usuarios de la organización deben tener la posibilidad de usar la característica. En Azure Portal, hay tres opciones para la característica SSPR: **Ninguno**, **Seleccionados** y **Todos**.
+
+![[Pasted image 20240102102542.png]]
+
+
+- La opción **Seleccionados** es útil para crear grupos concretos que tengan SSPR habilitado. Puede crear grupos para pruebas o pruebas de concepto antes de aplicar la característica a un grupo más grande. Cuando esté listo para implementar SSPR en todas las cuentas de usuario del inquilino de Microsoft Entra, puede cambiar la configuración.
+    
+- **Tenga en cuenta los métodos de autenticación**. Determine cuántos métodos de autenticación se requieren para restablecer una contraseña y seleccione las opciones de autenticación para los usuarios.
+    
+    - El sistema debe requerir al menos un método de autenticación para restablecer una contraseña.
+        
+    - Un plan de SSPR seguro ofrece varios métodos de autenticación para el usuario. Las opciones incluyen notificaciones por correo electrónico, mensajes de texto o códigos de seguridad enviados al teléfono móvil o de la oficina del usuario. También puede ofrecer al usuario un conjunto de preguntas de seguridad.
+        
+    - Puede requerir que las preguntas de seguridad se registren para los usuarios del inquilino de Microsoft Entra.
+        
+    - Puede configurar las preguntas de seguridad correctamente respondidas que considere necesarias para obtener un restablecimiento de contraseña correcto.
+    
+- **Considere la posibilidad de combinar métodos para mejorar la seguridad**. Las preguntas de seguridad pueden ser menos seguras que otros métodos de autenticación. Es posible que algunos usuarios conozcan las respuestas de las preguntas de un usuario determinado o que las preguntas sean fáciles de resolver. Si admite preguntas de seguridad, combine esta opción con otros métodos de autenticación.
+
+
+### Prueba de conocimientos
+
+Supongamos que su empresa busca una solución de identidad sólida. Su trabajo es decidir si la opción óptima es Microsoft Entra ID o Active Directory Domain Services (AD DS). Si elige Microsoft Entra ID, debe seleccionar la edición que mejor satisfaga las necesidades de su organización y determinar qué características se van a implementar.
+
+A continuación se indican algunos requisitos para el diseño:
+
+- **Los usuarios deben poder iniciar sesión en dispositivos, aplicaciones y servicios desde cualquier lugar**.
+    
+- **El equipo de TI quiere que los usuarios administren sus propias contraseñas y realicen tareas relacionadas**.
+    
+- **El departamento legal solicita protección para los datos confidenciales para cumplir los estándares de cumplimiento de gobernanza**.
+
+1. ¿Qué opción describe correctamente Microsoft Entra ID?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Microsoft Entra ID <b>es principalmente una solución de identidad</b>. Está diseñado para aplicaciones basadas en Internet mediante comunicaciones HTTP y HTTPS.</p>
+</details>
+
+
+2. ¿Qué término define una instancia dedicada y de confianza de Microsoft Entra ID?
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Un inquilino de Azure</b> es una instancia dedicada y de confianza de Microsoft Entra ID. Un inquilino se crea automáticamente cuando una organización se registra en una suscripción de servicio en la nube de Microsoft</p>
+</details>
+
+
+3. Sus usuarios quieren tener la posibilidad de iniciar sesión en dispositivos, aplicaciones y servicios desde cualquier lugar. Los usuarios quieren iniciar sesión mediante una cuenta profesional o educativa en lugar de con una cuenta personal. ¿Qué debe hacer primero?
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Unir el dispositivo a Microsoft Entra ID</b> La unión del dispositivo proporciona las características que necesita.</p>
+</details>
+
+### Resumen y Recursos
+
+Los administradores de Azure deben estar familiarizados con Microsoft Entra ID y sus conceptos.
+
+En este módulo, hemos obtenido información sobre las características de Microsoft Entra y explorado los escenarios de implementación. Junto a la revisión de los componentes principales de Microsoft Entra ID, incluidos los inquilinos, las identidades y las cuentas, y hemos aprendido cómo están relacionados. También hemos comparado Active Directory Domain Services con Microsoft Entra ID y descubierto cómo las diferentes ediciones de Microsoft Entra admiten características. Aunado a la exploración de las ventajas de las características de unión a Microsoft Entra y autoservicio de restablecimiento de contraseña (SSPR) y ha pensado en cómo implementarlas para su organización.
+
+Las principales conclusiones de este módulo son:
+
+- Microsoft Entra ID es un servicio de administración de identidades y directorios basado en la nube que permite el acceso de los usuarios a varios recursos y aplicaciones.
+- Microsoft Entra ID proporciona ventajas como seguridad mejorada, experiencia del usuario coherente, costos reducidos y productividad mejorada.
+- Microsoft Entra ID incluye varios componentes y conceptos clave, como identidades, cuentas, inquilinos y suscripciones.
+- Microsoft Entra ID ofrece una alternativa basada en la nube a Active Directory Domain Services (AD DS).
+- Microsoft Entra ID está disponible en cuatro ediciones, cada una de las cuales ofrece diferentes características y funcionalidades.
+- El autoservicio de restablecimiento de contraseña ofrece a los usuarios la posibilidad de omitir el departamento de soporte técnico y restablecer sus propias contraseñas.
+
+#### Más información con la documentación de Azure
+
+- [¿Qué es Microsoft Entra ID?](https://learn.microsoft.com/es-es/entra/fundamentals/whatis). En este artículo, se revisan las características, las licencias y la terminología de Microsoft Entra ID.
+    
+- [Comparación de Active Directory con Microsoft Entra ID](https://learn.microsoft.com/es-es/entra/fundamentals/compare). En este artículo, se describen las diferencias y similitudes entre los conceptos de Active Directory y Microsoft Entra ID.
+    
+- [Planeamiento de una implementación de SSPR de Microsoft Entra](https://learn.microsoft.com/es-es/entra/identity/authentication/howto-sspr-deployment). En este artículo, se revisan las funcionalidades clave, la arquitectura y las consideraciones de planeación.
+    
+
+#### Más información con el aprendizaje autodirigido
+
+- [Explorar Microsoft Entra ID](https://learn.microsoft.com/es-es/training/modules/explore-azure-active-directory). En este módulo de aprendizaje, se presenta Microsoft Entra ID.
+    
+- [Permitir que los usuarios restablezcan sus contraseñas con el autoservicio de restablecimiento de contraseña de Microsoft Entra](https://learn.microsoft.com/es-es/training/modules/allow-users-reset-their-password). En este módulo de aprendizaje, se describe SSPR y cómo se implementa.
+
+## Configuración de cuentas de usuario y de grupo
+
