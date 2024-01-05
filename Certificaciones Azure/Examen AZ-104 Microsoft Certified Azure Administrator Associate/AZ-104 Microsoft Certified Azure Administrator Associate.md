@@ -3626,3 +3626,31 @@ Las principales conclusiones de este módulo son:
 
 ## Configuración de cuentas de usuario y de grupo
 
+El acceso a los recursos de Azure se controla mediante cuentas de usuario e identidades definidas en Microsoft Entra ID. Microsoft Entra ID admite cuentas de grupo para ayudarle a organizar las cuentas de usuario y facilitar la administración.
+
+En este módulo, su empresa quiere aprovechar las características de la cuenta de usuario y grupo en Microsoft Entra ID. Debe **comprender los conceptos de cuentas de usuario y cuentas de grupo**. Busca información sobre cómo crear, configurar y administrar estas cuentas. La organización necesita compatibilidad con la configuración masiva de opciones, la organización de cuentas de grupo y la administración de cuentas en varios directorios.
+
+En este módulo, obtendrá información sobre las cuentas de usuario y las cuentas de grupo. Obtendrá información sobre un acceso directo de administrador para la creación masiva de cuentas de usuario. Obtenga información sobre cómo controlar el acceso de administrador a través de unidades administrativas. También simula la creación de usuarios y grupos en Azure Portal.
+
+El objetivo de este módulo es crear y administrar correctamente cuentas de usuario y grupo.
+
+### Objetivos de aprendizaje
+
+En este módulo aprenderá a:
+
+- Cree y configure cuentas de usuario, incluidas las propiedades de la cuenta y las actualizaciones masivas.
+    
+- Cree y configure cuentas de grupo, incluida la asignación de miembros del grupo.
+    
+- Use unidades administrativas para controlar el acceso de administrador.
+    
+
+### Aptitudes evaluadas
+
+El contenido del módulo le ayuda a prepararse para el [examen AZ-104: Administrador de Microsoft Azure](https://learn.microsoft.com/es-es/credentials/certifications/exams/az-104/).
+
+### Requisitos previos
+
+- Comprenda los conceptos básicos de las soluciones de identidad centralizadas. Este conocimiento incluye identidades, cuentas y métodos de autenticación.
+    
+- Familiaridad con la administración de cuentas de usuario y grupo, incluido el principio de privilegios mínimos.
