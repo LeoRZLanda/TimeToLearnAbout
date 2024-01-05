@@ -3727,3 +3727,111 @@ Vamos a examinar algunas características de las operaciones masivas Azure Porta
 - Las plantillas de operación masiva se pueden descargar desde el Centro de administración de Microsoft Entra.
     
 - Se pueden descargar listas masivas de cuentas de usuario.
+
+#### Aspectos que se deben tener en cuenta al crear cuentas de usuario
+
+Estas son algunas consideraciones de diseño para crear y eliminar cuentas de usuario. Piense en qué convenciones y procesos de cuenta de usuario podrían ser necesarios para su organización.
+
+- **Considere el uso de convenciones de nomenclatura**. Establezca o implemente una convención de nomenclatura para las cuentas de usuario. Aplique convenciones a los nombres de cuenta de usuario, los nombres para mostrar y los alias de usuario para que haya coherencia en toda la organización. Las convenciones para nombres y alias pueden simplificar el proceso de creación masiva mediante la reducción de áreas de unicidad en el archivo CSV. Una convención para los nombres de usuario podría comenzar con el apellido del usuario seguido de un punto y terminar con el nombre del usuario, como en `Sawyer-Miller.Aran@contoso.com`.
+    
+- **Considere la posibilidad de usar contraseñas iniciales**. Implante una convención para la contraseña inicial de un usuario recién creado. Diseñe un sistema para notificar a los nuevos usuarios sobre sus contraseñas de forma segura. Puede generar una contraseña aleatoria y enviarla por correo electrónico al nuevo usuario o a su administrador.
+    
+- **Considere las estrategias para minimizar errores**. Vea y solucione los errores; para ello, descargue el archivo de resultados en la página **Resultados de la operación masiva** en Azure Portal. El archivo de resultados contiene el motivo de cada error. Un error puede ser una cuenta de usuario que ya se ha creado o una cuenta duplicada. Por lo general, es más fácil cargar y solucionar problemas de grupos de usuarios más pequeños.
+
+### Creación de cuentas de grupo
+
+Microsoft Entra ID permite a su organización definir dos tipos diferentes de cuentas de grupo. Los **grupos de seguridad** se usan para administrar el acceso de miembros y equipos a los recursos compartidos de un grupo de usuarios. Puede crear un grupo de seguridad para una directiva de seguridad específica y aplicar los mismos permisos a todos los miembros del grupo. Los **grupos de Microsoft 365** proporcionan oportunidades de colaboración. Los miembros del grupo tienen acceso a un buzón, un calendario, archivos, un sitio de SharePoint y muchos más recursos compartidos.
+
+#### Aspectos que debe conocer sobre la creación de cuentas de grupo
+
+Revise las siguientes características de las cuentas de grupo en Microsoft Entra ID. En la captura de pantalla siguiente se muestra una lista de grupos en Azure Portal:
+
+![[Pasted image 20240105121856.png]]
+
+- **Use grupos de seguridad** para establecer permisos para todos los miembros del grupo al mismo tiempo, en lugar de agregar permisos para cada miembro individualmente.
+    
+- Agregue grupos de Microsoft 365 para habilitar el acceso de grupo para usuarios invitados fuera de la organización de Microsoft Entra.
+    
+- Un administrador de Microsoft Entra solo puede implementar grupos de seguridad.
+    
+- Los usuarios normales y los administradores de Microsoft Entra pueden usar grupos de Microsoft 365.
+
+#### Aspectos que se deben tener en cuenta al agregar miembros a grupos
+
+Al agregar miembros a un grupo, hay diferentes maneras de asignar derechos de acceso a miembros. A medida que lea estas opciones, tenga en cuenta qué grupos son necesarios para el funcionamiento de su organización y qué derechos de acceso se deben aplicar a los miembros del grupo.
+
+|Derechos de acceso|Descripción|
+|---|---|
+|**Asignado**|Agregue usuarios específicos como miembros de un grupo, donde cada usuario puede tener permisos únicos.|
+|**Usuario dinámico**|Use reglas de pertenencia dinámicas para agregar y quitar miembros de un grupo automáticamente. Cuando los atributos de un miembro cambian, Azure revisa las reglas de grupos dinámicos del directorio. Si los atributos del miembro cumplen los requisitos de la regla, el miembro se agrega al grupo. Si los atributos del miembro ya no cumplen los requisitos de la regla, el miembro se elimina.|
+|**Dispositivo dinámico**|(_Solo para grupos de seguridad_) Aplique reglas de grupos dinámicos para agregar y quitar automáticamente dispositivos en grupos de seguridad. Si los atributos de un dispositivo cambian, Azure revisa las reglas de grupos dinámicos del directorio. Si los atributos de un dispositivo cumplen los requisitos de la regla, el dispositivo se agrega al grupo de seguridad. Si los atributos del dispositivo ya no cumplen los requisitos de la regla, el dispositivo se elimina.|
+
+
+### Crear unidades administrativas
+
+
+A medida que diseña la estrategia para la administración de identidades y la gobernanza en Azure, es fundamental planificar la administración completa de la infraestructura de Microsoft Entra. Puede ser útil restringir el ámbito administrativo mediante unidades administrativas para su organización. **La división de roles y responsabilidades es especialmente útil para las organizaciones que tienen muchas divisiones independientes**.
+
+Pensemos en las tareas de administración de una universidad grande compuesta por varias escuelas diferentes, por ejemplo, de Negocios, Ingeniería y Medicina. La universidad cuenta con oficinas administrativas, edificios académicos, edificios sociales y dormitorios estudiantiles. Con fines de seguridad, cada oficina de negocios tiene su propia red interna para recursos como servidores, impresoras y máquinas de fax. Todos los edificios académicos están conectados a la red universitaria, para que tanto instructores como alumnos puedan acceder a sus cuentas. La red también está disponible para estudiantes y decanos en las habitaciones compartidas y los edificios sociales. En toda la universidad, los usuarios invitados necesitan acceso a Internet a través de la red universitaria.
+
+La universidad tiene un equipo de administradores de TI que trabajan juntos para controlar el acceso a los recursos, administrar usuarios y establecer directivas para la escuela. Algunos administradores tienen privilegios mayores que otros en función del ámbito de sus responsabilidades. Se necesita una autoridad central para planificar, administrar y supervisar la estructura completa. En este escenario, puede asignar unidades administrativas para facilitar la administración de la organización.
+
+![[Pasted image 20240105122930.png]]
+
+#### Aspectos que hay que tener en cuenta en las unidades administrativas
+
+Veamos cómo un rol de administrador central puede usar unidades administrativas para dar soporte al departamento de Ingeniería en nuestro escenario:
+
+- Cree un rol que tenga permisos administrativos solo para los usuarios de Microsoft Entra en la unidad administrativa del departamento de Ingeniería.
+    
+- Cree una unidad administrativa para el departamento de Ingeniería.
+    
+- Rellene la unidad administrativa solo con los alumnos, el personal y los recursos del departamento de Ingeniería.
+    
+- Agregue el equipo de TI del departamento de Ingeniería al rol, junto con su ámbito.
+
+#### Aspectos que se deben tener en cuenta al trabajar con unidades administrativas
+
+Piense en cómo puede implementar unidades administrativas en su organización. A continuación, se indican algunas consideraciones:
+
+- **Considere la posibilidad de usar herramientas de administración**. Revise las opciones para administrar las unidades administrativas. Puede usar Azure Portal, cmdlets y scripts de PowerShell o Microsoft Graph.
+    
+- **Considere los requisitos de rol de Azure Portal**. Planifique su estrategia para unidades administrativas según los privilegios de rol. En Azure Portal, solo los usuarios con el rol Administrador global o Administrador de roles con privilegios pueden administrar las unidades administrativas.
+    
+- **Considere el ámbito de las unidades administrativas**. Tenga en cuenta que el ámbito de una unidad administrativa solo se aplica a los permisos de _administración_. Los miembros y administradores de una unidad administrativa pueden ejercer sus permisos de _usuario_ predeterminados para examinar otros usuarios, grupos o recursos fuera de su unidad administrativa.
+
+
+### Simulación interactiva de laboratorio
+
+#### Escenario del laboratorio
+
+Su organización usará la autenticación de Microsoft Entra. Se le ha encargado el aprovisionamiento de las cuentas de usuario y grupo necesarias. La pertenencia a los grupos debe actualizarse automáticamente en función de los puestos de trabajo del usuario. También debe invitar a usuarios invitados de otro inquilino. Estos usuarios invitados solo deben tener permisos limitados para los recursos de la suscripción.
+
+Su organización tiene estos requisitos específicos:
+
+- Cualquier usuario con el puesto de administrador en la nube debe asignarse al grupo administrador de la nube de TI.
+- Cualquier usuario con el puesto de administrador del sistema debe asignarse al grupo administrador del sistema de TI.
+- Cualquier usuario que sea miembro del grupo administrador de la nube de TI o del grupo administrador del sistema de TI debe asignarse al grupo administrador del laboratorio de TI.
+- Se debe invitar a un administrador del sistema en otro inquilino de Active Directory como usuario invitado con permisos limitados.
+
+#### Diagrama de la arquitectura
+
+![[Pasted image 20240105123522.png]]
+
+#### Objetivos
+
+- **Tarea 1**: Crear y configurar usuarios de Microsoft Entra.
+    - El usuario **AZ104-01a-aaduser1** será un administrador en la nube asignado al rol Administrador de usuarios.
+    - El usuario **AZ104-01a-aaduser2** será administrador del sistema.
+- **Tarea 2**: creación de grupos de AD con pertenencia asignada y dinámica.
+    - El grupo **administrador en la nube de TI** debe asignarse al grupo administrador en la nube.
+    - El grupo **administrador en el sistema de TI** debe incluir a cualquier usuario con el puesto de administrador del sistema.
+    - El grupo **administrador del laboratorio de TI** debe incluir cualquier usuario en el grupo administrador de la nube de TI o en el grupo administrador del sistema de TI.
+- **Tarea 3**: Cree un inquilino de Microsoft Entra. Este inquilino se usará para demostrar a los usuarios invitados.
+- **Tarea 4**: Administrar usuarios invitados de Microsoft Entra.
+    - En el nuevo inquilino de Microsoft Entra, cree un usuario administrador del sistema, **az104-01b-aaduser1**.
+    - Invite al nuevo usuario como usuario invitado a su suscripción.
+
+ Nota
+
+Haga clic [aqui](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201) para iniciar la simulación de laboratorio. Cuando haya terminado, asegúrese de volver a esta página para continuar con el aprendizaje.
