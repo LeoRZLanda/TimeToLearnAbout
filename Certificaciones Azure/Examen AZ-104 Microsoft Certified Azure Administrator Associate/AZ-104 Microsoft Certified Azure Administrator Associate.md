@@ -3835,3 +3835,397 @@ Su organización tiene estos requisitos específicos:
  Nota
 
 Haga clic [aqui](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201) para iniciar la simulación de laboratorio. Cuando haya terminado, asegúrese de volver a esta página para continuar con el aprendizaje.
+
+### Prueba de conocimiento
+
+1. ¿Qué tipo de cuenta de usuario permite a una organización externa acceder a los recursos?
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Una cuenta de usuario invitado para cada miembro del equipo externo.</b> Una cuenta de usuario invitado restringe el acceso de los usuarios a únicamente el que necesitan.</p>
+</details>
+
+2. ¿Qué tipo de cuenta de grupo puede crear para que pueda aplicar los mismos permisos a todos los miembros del grupo?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Puede crear un <b>grupo de seguridad</b> para una directiva de seguridad específica y aplicar los mismos permisos a todos los miembros del grupo.</p>
+</details>
+
+3. ¿Qué rol de Microsoft Entra permite a un usuario administrar todos los grupos en los inquilinos de Teams y asignar también otros roles de administrador?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>El rol <b>Administrador global</b> administra todos los aspectos de Microsoft Entra ID y los servicios de Microsoft que usan identidades de Microsoft Entra. Este rol puede administrar grupos entre inquilinos y asignar otros roles de administrador.</p>
+</details>
+
+### Resumen y recursos
+
+Los administradores de Azure deben estar familiarizados con la configuración de cuentas de usuario y grupo en Microsoft Entra ID.
+
+En este módulo, hemos aprendido que todos los usuarios que desean acceder a los recursos de Azure necesitan una cuenta de usuario de Azure. Microsoft Entra ID admite el acceso a los recursos de la organización mediante la asignación de derechos de acceso a usuarios y grupos. Ha descubierto cómo se crean las cuentas de usuario y grupo en Microsoft Entra ID. Ha explorado cómo configurar y administrar cuentas de usuario y grupo, incluida la configuración masiva. Ha revisado cómo puede admitir su organización la organización de cuentas de grupo y administrar cuentas en varios directorios.
+
+Las principales conclusiones de este módulo son las siguientes:
+
+- Microsoft Entra ID admite tres tipos de cuentas de usuario: identidades en la nube, identidades sincronizadas por directorios e identidades de usuario invitado.
+    
+- Las identidades en la nube tienen información de perfil, como el puesto de trabajo y la ubicación de la oficina. Esta información puede adaptarse a las necesidades de su organización.
+    
+- Puede crear de forma masiva cuentas de usuario y grupo. El proceso usa un archivo de plantilla administrado a través del portal.
+    
+- Hay dos tipos de cuentas de grupo: Seguridad y Microsoft 365.
+    
+- Las unidades administrativas le ayudan a controlar el acceso de administrador a los recursos.
+
+#### Más información con la documentación de Azure
+
+- [Documentación de la administración de usuarios empresariales](https://learn.microsoft.com/es-es/entra/identity/users/). Esta colección de artículos que tratan diversos temas relacionados con la autenticación de usuarios en Microsoft Entra. Aprenderá a usar grupos, nombres de dominio y licencias para administrar el acceso de los usuarios a aplicaciones y recursos3.
+    
+- [Administrar grupos y pertenencia a grupos de Microsoft Entra](https://learn.microsoft.com/es-es/entra/fundamentals/how-to-manage-groups). En este artículo se explica cómo crear, editar y eliminar grupos en Microsoft Entra. También aprenderá a agregar o quitar miembros y propietarios, asignar roles y usar reglas dinámicas para la pertenencia a grupos2.
+    
+
+#### Más información con el aprendizaje autodirigido
+
+- [Administración de usuarios y grupos en Microsoft Entra ID](https://learn.microsoft.com/es-es/training/modules/manage-users-and-groups-in-aad/). En este módulo de entrenamiento se describen los principios básicos del usuario y los grupos.
+    
+- [Crear usuarios y grupos de Azure en Microsoft Entra ID (ejercicio, suscripción necesaria)](https://learn.microsoft.com/es-es/training/modules/create-users-and-groups-in-azure-active-directory/). En este módulo de aprendizaje se explica cómo crear usuarios y asignarlos a grupos.
+
+## Configuración de suscripciones
+
+### Introducción
+
+En este módulo se proporciona información general sobre las suscripciones de Azure y su **importancia en la administración de costos** para las organizaciones.
+
+Trabaja para una empresa multinacional que recientemente ha decidido migrar su infraestructura a la nube. Como parte de esta migración, se le ha encargado administrar los costos asociados a los recursos de Azure de la empresa. Debe comprender cómo funcionan las suscripciones de Azure y cómo pueden ayudarle a administrar y optimizar los costos de forma eficaz.
+
+El objetivo de este módulo es dotarle de los conocimientos y aptitudes para **administrar correctamente las suscripciones de Azure y controlar los costos de su organización**. Aprenderá cómo funcionan las suscripciones de Azure y cómo usan las herramientas y técnicas de administración de costos. Optimice el uso de recursos, evite el gasto excesivo y tome decisiones fundamentadas para lograr el ahorro de costos.
+
+#### Objetivos de aprendizaje
+
+En este módulo aprenderemos a:
+
+- Determinar la región correcta para buscar los servicios de Azure
+    
+- Revise las características y los casos de uso de las suscripciones de Azure.
+    
+- Obtener una suscripción de Azure.
+    
+- Comprender la facturación y las características de las distintas suscripciones de Azure
+    
+- Use Microsoft Cost Management and Billing para el análisis de costos.
+    
+- Descubra cuándo usar el etiquetado de recursos de Azure.
+    
+- Identificar formas de reducir los costos
+    
+
+#### Aptitudes evaluadas
+
+El contenido del módulo le ayuda a prepararse para el [examen AZ-104: Administrador de Microsoft Azure](https://learn.microsoft.com/es-es/credentials/certifications/exams/az-104/).
+
+#### Requisitos previos
+
+- Familiaridad con la informática en la nube y los servicios en la nube de Azure.
+- Familiaridad con los modelos de facturación de servicios en la nube y los métodos de suscripción.
+- Familiaridad con técnicas de administración de costos, como informes y presupuestos.
+
+### Identificación de regiones de Azure
+
+Microsoft Azure está formado por centros de datos ubicados en todo el mundo. Estos centros de datos están organizados y se ponen a disposición de los usuarios finales por **región**. Una [región](https://azure.microsoft.com/global-infrastructure/regions/) **es un área geográfica del planeta que contiene al menos un centros de datos**, aunque podrían ser varios. Los centros de datos son cercanos y están conectados mediante una red de baja latencia. Algunos ejemplos de regiones son: Oeste de EE. UU., Centro de Canadá, Europa Occidental, Este de Australia y Japón Occidental.
+
+#### Aspectos que conviene saber sobre las regiones
+
+Estos son algunos puntos que tener en cuenta sobre las regiones:
+
+- Azure está disponible con carácter general en más de 60 regiones en 140 países.
+    
+- Azure cuenta con más regiones globales que cualquier otro proveedor de nube.
+    
+- Las regiones le proporcionan la flexibilidad y la escala necesarias para acercar las aplicaciones a los usuarios.
+    
+- Las regiones conservan la residencia de los datos y ofrecen opciones completas de cumplimiento y resistencia para los clientes.
+    
+
+#### Aspectos que conviene saber sobre los pares de regiones
+
+La mayoría de las regiones de Azure se emparejan con otra región dentro de la misma geografía para crear un _par regional_ (o _regiones emparejadas_). Los pares regionales ayudan a admitir la disponibilidad siempre activa de los recursos de Azure que usa la infraestructura. En la tabla siguiente se describen algunas características destacadas de las regiones emparejadas:
+
+|Característica|Descripción|
+|---|---|
+|**Aislamiento físico**|Azure prefiere al menos 500 km (aproximadamente) de separación entre centros de datos en un par regional. Este principio no es práctico ni posible en todas las zonas geográficas. La separación del centro de datos físico reduce la probabilidad de que los desastres naturales, los disturbios civiles, los cortes del suministro eléctrico o las interrupciones de la red física afecten simultáneamente a ambas regiones.|
+|**Replicación proporcionada por la plataforma**|Algunos servicios, como el almacenamiento con redundancia geográfica, proporcionan replicación automática a la región emparejada.|
+|**Orden de recuperación de las regiones**|Durante una interrupción amplia, tiene prioridad la recuperación de una región de cada par. Se garantiza que, si las aplicaciones se implementan en regiones emparejadas, se dará prioridad a la recuperación de una de las regiones.|
+|**Actualizaciones secuenciales**|Las actualizaciones del sistema de Azure que estén previstas se implementan en las regiones emparejadas de forma secuencial, no a la vez. La implementación gradual minimiza el tiempo de inactividad, los errores y los errores lógicos en el caso excepcional de que una actualización sea incorrecta.|
+|**Residencia de datos**|Las regiones residen dentro de la misma geografía que su conjunto habilitado (excepto las de Sur de Brasil y Singapur).|
+
+
+#### Aspectos que se deben tener en cuenta al usar regiones y pares regionales
+
+Ha revisado las consideraciones importantes sobre las regiones y los pares regionales. Ahora piense en cómo puede implementar regiones en las organización.
+
+- **Considere la posibilidad de implementar recursos y regiones**. Planee las regiones en las que quiera implementar los recursos. En la mayoría de los servicios de Azure, cuando implemente un recurso en Azure, elegirá la región en la que quiere que se implemente el recurso.
+    
+- **Considere la posibilidad de admitir el servicio por región**. Investigue la disponibilidad de regiones y servicios. Algunos servicios o características de Azure Virtual Machines solo están disponibles en determinadas regiones, por ejemplo, determinados tipos de almacenamiento o tamaños de Virtual Machines.
+    
+- **Considere los servicios que no necesitan regiones**. Identifique los servicios que no necesitan compatibilidad con regiones. Algunos servicios globales de Azure no requieren que se seleccione una región. Entre estos servicios se incluyen Microsoft Entra ID, Microsoft Azure Traffic Manager y Azure DNS.
+    
+- **Considere las excepciones al emparejamiento de regiones**. Compruebe el sitio web de Azure para ver la disponibilidad y las excepciones de la región actual. Si tiene previsto admitir la región Sur de Brasil, tenga en cuenta que está emparejada con una región fuera de su geografía. La región de Singapur también tiene una excepción al emparejamiento regional estándar.
+    
+- **Considere las ventajas de la residencia de datos**. Aproveche las ventajas de la residencia de datos que ofrecen los pares regionales. Esta característica puede ayudar a satisfacer los requisitos de cumplimiento y las obligaciones fiscales de cada jurisdicción.
+
+#### Búsqueda de regiones para la geografía empresarial
+
+Visite el sitio web de la infraestructura global de Azure para encontrar las regiones admitidas para la geografía empresarial. Puede buscar por nombre de país o región o por producto de Microsoft. También hay disponible una lista de pares de regiones y excepciones admitidos.
+
+![[Pasted image 20240105132805.png]]
+
+
+|Por geografía|Por producto|Regiones emparejadas|
+|---|---|---|
+|Busque [Regiones de Azure](https://azure.microsoft.com/global-infrastructure/geographies/#geographies) por geografía.|Busque [Productos de Azure](https://azure.microsoft.com/global-infrastructure/services/) por región o geografía.|Busque por [Regiones emparejadas](https://learn.microsoft.com/es-es/azure/best-practices-availability-paired-regions#azure-cross-region-replication-pairings-for-all-geographies) y excepciones.|
+|[![Screenshot that shows how to search for available regions by geographic location.](https://learn.microsoft.com/es-es/training/wwl-azure/configure-subscriptions/media/regions-select-by-geography.png)](https://learn.microsoft.com/es-es/training/wwl-azure/configure-subscriptions/media/regions-select-by-geography-expanded.png#lightbox)|[![Screenshot that shows how to find products available according to region or geographic location.](https://learn.microsoft.com/es-es/training/wwl-azure/configure-subscriptions/media/regions-select-by-product.png)](https://learn.microsoft.com/es-es/training/wwl-azure/configure-subscriptions/media/regions-select-by-product-expanded.png#lightbox)|[![Screenshot that shows how to search for regional pairs.](https://learn.microsoft.com/es-es/training/wwl-azure/configure-subscriptions/media/search-region-pairs.png)](https://learn.microsoft.com/es-es/training/wwl-azure/configure-subscriptions/media/search-region-pairs-expanded.png#lightbox)|
+
+### Implementación de suscripciones de Azure
+
+Una suscripción de Azure **es una unidad lógica de servicios de Azure que está vinculada a una cuenta de Azure**. Una cuenta de Azure es una identidad en Microsoft Entra ID o en un directorio de confianza para Microsoft Entra ID, como una cuenta profesional o educativa. Las suscripciones le ayudan a organizar el acceso a los recursos de servicios en la nube de Azure y a controlar cómo se notifica, factura y paga el uso de recursos.
+
+![[Pasted image 20240105133036.png]]
+
+#### Aspectos que debe saber sobre las suscripciones
+
+A medida que piense en las suscripciones que se van a implementar para la empresa, tenga en cuenta los puntos siguientes:
+
+- Todos los servicios en la nube de Azure pertenecen a una suscripción.
+    
+- Cada suscripción puede tener una configuración de pago y facturación diferente.
+    
+- Se pueden vincular varias suscripciones a la misma cuenta de Azure.
+    
+- Se puede vincular más de una cuenta de Azure a la misma suscripción.
+    
+- La facturación de los servicios de Azure se realiza por suscripción.
+    
+- Si la cuenta de Azure es la única asociada a una suscripción, será responsable de los requisitos de facturación.
+    
+- Es posible que para las operaciones de programación para un servicio en la nube se necesite un identificador de suscripción.
+    
+
+#### Aspectos que se deben tener en cuenta al usar suscripciones
+
+Tenga en cuenta cuántas suscripciones necesita la organización para admitir los escenarios empresariales. A medida que realice la planificación, piense en cómo puede organizar los recursos en grupos de recursos.
+
+- **Considere los tipos de cuentas de Azure necesarias**. Determine los tipos de cuentas de Azure que los usuarios vincularán con las suscripciones de Azure. Puede usar una cuenta de Microsoft Entra o un directorio de confianza para Microsoft Entra ID como una cuenta profesional o educativa. Si usted no pertenece a ninguna de estas organizaciones, puede registrarse para obtener una cuenta de Azure con su cuenta de Microsoft, que también es de confianza para Microsoft Entra ID.
+    
+- **Considere la posibilidad de varias suscripciones**. Configure diferentes suscripciones y opciones de pago según los departamentos, proyectos, oficinas regionales de la empresa, etc. Un usuario puede tener más de una suscripción vinculada a su cuenta de Azure, donde cada suscripción pertenece a recursos, privilegios de acceso, límites y facturación para un proyecto específico.
+    
+- **Considere la posibilidad de usar una suscripción de servicios compartidos dedicada.** Planifique cómo los usuarios pueden compartir recursos asignados en una sola suscripción. Use una suscripción de servicios compartidos para garantizar que todos los recursos de red comunes se facturen juntos y se aíslen de otras cargas de trabajo. Entre los ejemplos de suscripciones de servicios compartidos se incluyen Azure ExpressRoute y Virtual WAN.
+    
+- **Considere el acceso a los recursos**. Cada suscripción de Azure se puede asociar a una instancia de Microsoft Entra ID. Los usuarios y los servicios se autentican con Microsoft Entra ID antes de acceder a los recursos.
+
+
+### Obtención de una suscripción a Azure
+
+Para usar Azure, debe tener una suscripción de Azure. Hay varias maneras de adquirir una suscripción de Azure. Puede obtener una suscripción de Azure como parte de un contrato Enterprise o mediante un revendedor o un partner de Microsoft. Los usuarios también pueden abrir una cuenta gratuita personal para obtener una suscripción de prueba.
+
+#### Aspectos que debe saber sobre cómo obtener una suscripción de Azure
+
+Revise las siguientes formas de obtener una suscripción de Azure y tenga en cuenta qué opciones funcionarían para la organización.
+
+|Opción de adquisición|Descripción|
+|---|---|
+|![](https://learn.microsoft.com/es-es/training/wwl-azure/configure-subscriptions/media/enterprise-icon.png)|**Contrato Enterprise**  <br>  <br>Cualquier cliente con un [contrato Enterprise](https://azure.microsoft.com/pricing/enterprise-agreement/) puede agregar Azure a su contrato previo si establece de antemano un compromiso monetario con Azure. El compromiso se materializa a lo largo del año mediante cualquier combinación de los diversos servicios en la nube que ofrece Azure.|
+|![](https://learn.microsoft.com/es-es/training/wwl-azure/configure-subscriptions/media/resellers-icon.png)|**Revendedor de Microsoft**  <br>  <br>Compre Azure mediante el [programa de licencia Open](https://www.microsoft.com/licensing/licensing-programs/open-license.aspx), que proporciona una manera sencilla y flexible de comprar servicios en la nube de su revendedor de Microsoft. Si ya ha comprado una clave de licencia de Azure bajo licencia Open, [active una nueva suscripción o agregue más créditos ahora](https://azure.microsoft.com/offers/ms-azr-0111p/).|
+|![](https://learn.microsoft.com/es-es/training/wwl-azure/configure-subscriptions/media/partners-icon.png)|**Partner de Microsoft**  <br>  <br>Busque un [asociado de Microsoft](https://azure.microsoft.com/partners/directory/) que pueda diseñar e implementar la solución en la nube de Azure que le interese. Estos asociados cuentan con experiencia empresarial y tecnológica para recomendar soluciones que satisfagan las necesidades únicas de su negocio.|
+|![](https://learn.microsoft.com/es-es/training/wwl-azure/configure-subscriptions/media/personal-icon.png)|**Cuenta gratuita personal**  <br>  <br>Cualquier usuario se puede suscribir a una [cuenta de prueba gratuita](https://azure.microsoft.com/free/). Puede empezar a usar Azure de inmediato y no se le cobrará hasta que decida actualizar.|
+
+### Identificación del uso de la suscripción de Azure
+
+Se han revisado las posibles formas de obtener una suscripción de Azure. Ahora se examinarán los tipos de suscripciones de Azure que están disponibles.
+
+Azure ofrece opciones de suscripción gratuitas y de pago para satisfacer diferentes necesidades y requisitos. Las suscripciones más comunes son **Gratis**, **Pago por uso**, **Contrato Enterprise** y **Estudiante**. Para la organización, puede elegir una combinación de opciones de adquisición y de suscripción a fin de satisfacer los escenarios empresariales.
+
+#### Aspectos que se deben tener en cuenta al elegir suscripciones de Azure
+
+A medida que piense en qué tipos de suscripciones de Azure funcionarían para la organización, tenga en cuenta estos escenarios:
+
+- **Considere la posibilidad de probar Azure de forma gratuita**. Una suscripción gratuita de Azure incluye un crédito monetario para gastar en cualquier servicio durante los primeros 30 días. Obtendrá acceso gratuito a los productos más populares de Azure durante 12 meses y acceso a más de 25 productos que siempre son gratuitos. La suscripción gratuita de Azure es una manera excelente de empezar para los nuevos usuarios.
+    
+    - Para configurar una suscripción gratuita, necesita un número de teléfono, una tarjeta de crédito y una cuenta de Microsoft.
+    - La información de la tarjeta de crédito solo se usa para la verificación de identidad. No se le cobra por ningún servicio hasta que actualice a una suscripción de pago.
+- **Considere la posibilidad de pagar mensualmente por los servicios usados**. Una suscripción de pago por uso (PAYG) carga mensualmente a su tarjeta los servicios que use durante ese período de facturación. Este tipo de suscripción es adecuado para una amplia variedad de usuarios, desde particulares y pequeñas empresas hasta organizaciones muy grandes.
+    
+- **Considere la posibilidad de usar un Contrato Enterprise de Azure**. Un Contrato Enterprise proporciona flexibilidad para comprar servicios en la nube y licencias de software bajo un contrato. El contrato incluye descuentos para nuevas licencias y Software Assurance. Este tipo de suscripción tiene como destino organizaciones de escala empresarial.
+    
+- **Considere la posibilidad de admitir Azure for Students**. Las suscripciones de Azure for Students incluyen un crédito monetario que se puede usar durante los primeros 12 meses.
+    
+    - Los alumnos pueden seleccionar servicios gratuitos sin tener que proporcionar una tarjeta de crédito durante el proceso de registro.
+    - Debe comprobar su estado de estudiante mediante la dirección de correo electrónico profesional.
+
+ Nota
+
+Para obtener una lista completa de las opciones de suscripción de Azure, vea las [ofertas actuales de Microsoft Azure](https://azure.microsoft.com/support/legal/offer-details/).
+
+### Implementación de Microsoft Cost Management
+
+Con los productos y servicios de Azure, solo paga por lo que usa. A medida que cree y use recursos de Azure, se le cobrará por ellos.
+
+Microsoft Cost Management proporciona compatibilidad con las tareas de facturación administrativa y le ayuda a administrar el acceso de facturación a los costos. También puede usar el producto para supervisar y controlar el gasto de Azure, y optimizar el uso de los recursos de Azure.
+
+![[Pasted image 20240105134059.png]]
+
+#### Aspectos que se deben conocer sobre Microsoft Cost Management
+
+La organización está interesada en las ventajas de usar Microsoft Cost Management para supervisar la facturación de suscripción y el uso de recursos. A medida que planea la implementación, revisa las siguientes características del producto:
+
+- Microsoft Cost Management muestras los costos de organización y los patrones de uso con análisis avanzados. Los costos dependen de los precios negociados y del factor de reserva y los descuentos de Ventaja híbrida de Azure. Los análisis predictivos también están disponibles.
+    
+- En los informes de Microsoft Cost Management se muestran los costos basados en el uso consumidos por los servicios de Azure y las ofertas de Marketplace de terceros. En conjunto, en los informes se muestran los costos internos y externos del uso y los cargos de Azure Marketplace. Los informes le ayudan a comprender los gastos y el uso de recursos, y pueden ayudar a identificar anomalías de gastos. Es posible que en los informes no sean visibles cargos como los de compras de reservas, soporte técnico e impuestos.
+    
+- El producto usa grupos de administración de Azure, presupuestos y recomendaciones para mostrar con claridad cómo se organizan los gastos y cómo se pueden reducir los costos.
+    
+- Puede usar Azure Portal o varias API para la automatización de la exportación, de manera que se integren los datos de costos con los procesos y sistemas externos. También están disponibles la exportación de datos de facturación automatizada y los informes programados.
+
+
+#### Aspectos que se deben tener en cuenta al usar Microsoft Cost Management
+
+Microsoft Cost Management puede ayudarle a planificar y controlar los costos de la organización. Tenga en cuenta cómo se pueden implementar las características del producto para admitir los escenarios empresariales:
+
+- **Considere el análisis de costos**. Aproveche las características de análisis de costos de Microsoft Cost Management para explorar y analizar los costos de la organización. Puede ver los costos agregados por organización para saber dónde se acumulan e identificar las tendencias de gasto. Supervise los costos acumulados en el tiempo para estimar las tendencias de costos mensuales, trimestrales o incluso anuales con respecto a un presupuesto.
+    
+- **Considere las opciones de presupuesto**. Use las características de Microsoft Cost Management para establecer y mantener presupuestos. El producto le ayuda a planificar y cumplir con las responsabilidades financieras de la organización. Los presupuestos ayudan a evitar que se superen los umbrales o los límites de costos. Puede usar datos de análisis para informar a otros usuarios sobre sus gastos a fin de administrar los costos de forma proactiva. Las características presupuestarias le ayudan a ver cómo avanza el gasto de la empresa en el tiempo.
+    
+- **Considere las recomendaciones**. Revise las recomendaciones de Microsoft Cost Management para obtener información sobre cómo puede optimizar y mejorar la eficacia mediante la identificación de recursos inactivos e infrautilizados. Las recomendaciones pueden revelar opciones de recursos menos costosas. Al implementar las recomendaciones, puede cambiar la forma en que usa sus recursos para ahorrar dinero. El uso de recomendaciones es un proceso sencillo:
+    
+    1. Vea las recomendaciones de optimización de costos para identificar posibles deficiencias de uso.
+    2. Actúe de acuerdo a una recomendación para modificar el uso del recurso de Azure e implementar una opción más rentable.
+    3. Compruebe la nueva acción para asegurarse de que el cambio tiene el efecto deseado.
+    
+- **Considere la exportación de los datos de administración de costos**. Microsoft Cost Management le ayuda a trabajar con la información de facturación. Si usa los sistemas externos para acceder o revisar los datos de administración de costos, puede exportar los datos fácilmente desde Azure.
+    
+    - Establezca una exportación programada diariamente en formato de valores separados por comas (CSV) y almacene los archivos de datos en el almacenamiento de Azure.
+    - Acceda a los datos exportados desde el sistema externo.
+
+### Aplicación de etiquetas de recursos
+
+Puede aplicar etiquetas a los recursos de Azure para organizarlos de forma lógica por categorías. Las etiquetas son útiles para ordenar, buscar, administrar y realizar análisis en los recursos.
+
+Cada etiqueta de recurso se compone de un nombre y un valor. Podría tener el nombre de etiqueta `Server` y el valor `Production` o `Development`, y después aplicar el par etiqueta-valor a los recursos del equipo de ingeniería.
+
+Este es un ejemplo en el que se muestra cómo agregar etiquetas para un grupo de recursos en Azure Portal:
+
+![[Pasted image 20240105134748.png]]
+
+#### Aspectos que debe saber sobre las etiquetas de recursos
+
+A medida que planifique las suscripciones, los recursos y los servicios de Azure, revise estas características de las etiquetas de recursos de Azure:
+
+- Cada etiqueta de recurso tiene un nombre y un valor.
+    
+- El nombre de la etiqueta permanece constante para todos los recursos que tienen aplicada la etiqueta.
+    
+- El valor de la etiqueta se puede seleccionar a partir de un conjunto definido de valores, o bien puede ser único para una instancia de recurso específica.
+    
+- Un recurso o un grupo de recursos puede tener un máximo de 50 pares nombre-valor de etiqueta.
+    
+- Los recursos del grupo no heredan las etiquetas aplicadas al grupo de recursos.
+    
+
+#### Aspectos que se deben tener en cuenta al usar etiquetas de recursos
+
+Estas son algunas cosas que puede hacer con las etiquetas de recursos:
+
+- **Considere la posibilidad de buscar por datos de etiquetas**. Consulte el nombre y el valor de la etiqueta para buscar recursos en la suscripción.
+    
+- **Considere la posibilidad de buscar recursos relacionados**. Recupere los recursos relacionados de otros grupos de recursos mediante la búsqueda por el nombre o el valor de la etiqueta.
+    
+- **Considere la posibilidad de agrupar los datos de facturación**. Agrupe recursos como máquinas virtuales por centro de costos y entorno de producción. Al descargar el archivo de valores separados por comas (CSV) de uso de recursos para los servicios, las etiquetas aparecen en la columna `Tags`.
+    
+- **Considere la posibilidad de crear etiquetas con PowerShell o la CLI de Azure**. Cree muchas etiquetas de recursos mediante programación con Azure PowerShell o la CLI de Azure.
+
+#### Cómo mantener la suscripción de Azure limpia
+
+
+
+### Ahorro de gastos
+
+Azure tiene varias opciones que pueden ayudarle a ahorrar costos significativos para la organización. A medida que prepara el plan de implementación para suscripciones, servicios y recursos de Azure, tenga en cuenta las siguientes ventajas de ahorro de costos.
+
+|Ahorro de costos|Descripción|
+|---|---|
+|**Reservas**|Ahorre dinero pagando por adelantado. Puede pagar uno o tres años de máquina virtual, capacidad de proceso de SQL Database, rendimiento de Azure Cosmos DB u otros recursos de Azure. El pago adelantado le permite obtener un descuento en los recursos que utiliza. Reservations puede reducir considerablemente los costos en máquinas virtuales, capacidad de proceso de SQL Database, Azure Cosmos DB u otros recursos en hasta un 72 % en precios de pago por uso. Reservations ofrece un descuento en la facturación y no afecta al estado del entorno de ejecución de los recursos.|
+|**Ventajas híbridas de Azure**|Acceda a las ventajas de precios si tiene una licencia que incluya _Software Assurance_. Con la Ventaja híbrida de Azure, podrá maximizar el valor de las inversiones en licencias existentes de Windows Server o SQL Server al migrar a Azure. La Calculadora de ahorros de la Ventaja híbrida de Azure le ayudará a determinar el ahorro.|
+|**Créditos de Azure**|Use la ventaja de crédito mensual para desarrollar, probar y experimentar con nuevas soluciones en Azure. Como suscriptor de Visual Studio, podría usar Microsoft Azure sin cargo adicional. Con el crédito de Azure mensual, dispone de Azure como espacio aislado personal para el desarrollo y las pruebas.|
+|**Regiones de Azure**|Compare los precios entre regiones. Los precios pueden variar de una región a otra, incluso en Estados Unidos. Compruebe los precios en varias regiones para ver si puede ahorrar al seleccionar otra región para la suscripción.|
+|**Budgets**|Aplique las características presupuestarias de Microsoft Cost Management para ayudar a planificar y promover la responsabilidad de la organización. Con presupuestos, puede tener en cuenta los servicios de Azure que consume o a los que se suscribe durante un período específico. Supervise el gasto en el tiempo e informe a otros sobre sus gastos para administrar de forma proactiva los costos. Use presupuestos para comparar y realizar el seguimiento del gasto mientras analiza los costos.|
+|**Calculadora de precios**|La [Calculadora de precios](https://azure.microsoft.com/pricing/calculator/) proporciona estimaciones en todas las áreas de Azure, incluidas las de procesos, redes, almacenamiento, sitios web y bases de datos.|
+
+En la imagen siguiente se muestra un escenario para usar la Calculadora de precios. El cliente tiene una instancia de una máquina virtual de la serie D1 en Windows. La instancia se ejecuta en la región Oeste de EE. UU. en el nivel estándar.
+
+![[Pasted image 20240105135107.png]]
+
+
+### Prueba de conocimiento
+
+1. El controlador financiero de la empresa quiere recibir una notificación cada vez que la empresa esté a medio camino de gastar el dinero asignado a los servicios en la nube. ¿Qué enfoque admite esta solicitud?
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Crear un presupuesto y un umbral de gasto.</b> Las alertas de facturación ayudan a supervisar y administrar la actividad de facturación de las cuentas de Azure. Los umbrales de presupuesto se pueden evaluar y se restablecen automáticamente al final de un período.</p>
+</details>
+
+2. El controlador financiero de la empresa quiere identificar a qué departamento de facturación pertenece cada recurso de Azure. ¿Qué enfoque habilita este requisito?
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Usar una etiqueta en cada recurso que incluya el departamento de facturación asociado</b> Las etiquetas proporcionan información extra, o metadatos, sobre los recursos. El equipo podría crear una etiqueta denominada `BillingDept`, donde el valor es el nombre del departamento de facturación. Azure Policy garantiza que se asignan las etiquetas adecuadas cuando se aprovisionan recursos.</p>
+</details>
+
+3. ¿Qué opción conserva la residencia de datos y ofrece opciones completas de cumplimiento y resistencia?
+
+<details>
+	<summary>Respuesta</summary>
+	<p><b>Las regiones</b> conservan la residencia de datos y ofrecen opciones completas de cumplimiento y resistencia para los clientes.</p>
+</details>
+
+### Resumen y recursos
+
+Los administradores de Azure suelen obtener y administrar suscripciones de Azure. Las suscripciones de Azure le ayudan a identificar y administrar eficazmente los costos de la organización, a fin de que pueda proporcionar servicios y recursos para escenarios específicos.
+
+En este módulo, hemos obtenido información sobre las regiones de Azure admitidas y cómo localizar los servicios de Azure. También sobre las características y los casos de uso de las suscripciones de Azure y cómo obtener suscripciones. Hemos explorado las características y la facturación de los diferentes tipos de suscripciones de Azure y cómo aplicar el etiquetado de recursos. Hemos descubierto cómo se puede usar Microsoft Cost Management para el análisis de costos. Hemos aprendido a identificar formas de reducir los costos de facturación.
+
+Las principales conclusiones de este módulo son:
+
+- Las regiones de Azure proporcionan flexibilidad, residencia de datos, cumplimiento y opciones de resistencia.
+    
+- Las suscripciones de Azure son esenciales para administrar el acceso a los recursos y la facturación de Azure.
+    
+- Azure ofrece varias opciones de suscripción, como Gratis, Pago por uso, Contrato Enterprise y Estudiante.
+    
+- Azure ofrece opciones de ahorro de costos, como reservas, ventajas híbridas de Azure y créditos de Azure.
+    
+- El etiquetado de recursos permite organizar y analizar recursos en Azure.
+    
+- Microsoft Cost Management ayuda a supervisar y controlar los gastos de Azure.
+    
+- La calculadora de precios proporciona estimaciones de facturación para distintos casos de uso.
+    
+
+#### Más información con la documentación de Azure
+
+- [Cost Management](https://learn.microsoft.com/es-es/azure/cost-management-billing/#cost-management). En esta colección de artículos se tratan los precios, los informes, los análisis, la supervisión y la optimización de los costos.
+    
+- [Administración de facturas y suscripciones](https://learn.microsoft.com/es-es/azure/cost-management-billing/#billing---subscriptions). En esta colección de artículos se tratan la administración de cuenta, las suscripciones, las facturas y los pagos.
+    
+- [Calculadora de precios](https://azure.microsoft.com/pricing/calculator/). Esta herramienta calcula los costos por mes u hora del uso de Azure.
+    
+
+#### Más información con el aprendizaje autodirigido
+
+- [Control del gasto de Azure y administración de facturas con Microsoft Cost Management y Facturación](https://learn.microsoft.com/es-es/training/paths/control-spending-manage-bills/). Aprenda a supervisar y controlar el gasto de Azure y a optimizar el uso de los recursos de Azure.
+    
+- [Introducción al análisis de costos y creación de presupuestos con Microsoft Cost Management (ejercicio, suscripción necesaria)](https://learn.microsoft.com/es-es/training/modules/analyze-costs-create-budgets-azure-cost-management/). Obtenga más información sobre cómo usar el análisis de costos para comprender cómo estos se acumulan cada mes. Use este conocimiento para crear un presupuesto de Azure para supervisar los costos y crear alertas al respecto.
+    
+- [Descripción de la administración de costos en Azure (ejercicio, suscripción necesaria)](https://learn.microsoft.com/es-es/training/modules/describe-cost-management-azure/). Explore los métodos para calcular, realizar un seguimiento y administrar los costos en Azure.
+
+## Configuración de Azure Policy
+
