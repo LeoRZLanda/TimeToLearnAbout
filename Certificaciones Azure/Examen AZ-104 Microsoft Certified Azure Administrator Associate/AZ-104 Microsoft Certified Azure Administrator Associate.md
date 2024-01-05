@@ -3626,6 +3626,8 @@ Las principales conclusiones de este módulo son:
 
 ## Configuración de cuentas de usuario y de grupo
 
+### Introducción
+
 El acceso a los recursos de Azure se controla mediante cuentas de usuario e identidades definidas en Microsoft Entra ID. Microsoft Entra ID admite cuentas de grupo para ayudarle a organizar las cuentas de usuario y facilitar la administración.
 
 En este módulo, su empresa quiere aprovechar las características de la cuenta de usuario y grupo en Microsoft Entra ID. Debe **comprender los conceptos de cuentas de usuario y cuentas de grupo**. Busca información sobre cómo crear, configurar y administrar estas cuentas. La organización necesita compatibilidad con la configuración masiva de opciones, la organización de cuentas de grupo y la administración de cuentas en varios directorios.
@@ -3634,7 +3636,7 @@ En este módulo, obtendrá información sobre las cuentas de usuario y las cuent
 
 El objetivo de este módulo es crear y administrar correctamente cuentas de usuario y grupo.
 
-### Objetivos de aprendizaje
+#### Objetivos de aprendizaje
 
 En este módulo aprenderá a:
 
@@ -3645,12 +3647,83 @@ En este módulo aprenderá a:
 - Use unidades administrativas para controlar el acceso de administrador.
     
 
-### Aptitudes evaluadas
+#### Aptitudes evaluadas
 
 El contenido del módulo le ayuda a prepararse para el [examen AZ-104: Administrador de Microsoft Azure](https://learn.microsoft.com/es-es/credentials/certifications/exams/az-104/).
 
-### Requisitos previos
+#### Requisitos previos
 
 - Comprenda los conceptos básicos de las soluciones de identidad centralizadas. Este conocimiento incluye identidades, cuentas y métodos de autenticación.
     
 - Familiaridad con la administración de cuentas de usuario y grupo, incluido el principio de privilegios mínimos.
+
+### Crear las cuentas de usuario
+
+Cada usuario que desee acceso a los recursos de Azure precisa una cuenta de usuario de Azure. Una cuenta de usuario contiene toda la información necesaria para autenticar al usuario durante el proceso de inicio de sesión. **Microsoft Entra ID admite tres tipos de cuentas de usuario**. Los tipos indican dónde se define el usuario (en la nube o en el entorno local) y si el usuario es interno o externo a la organización de Microsoft Entra.
+
+#### Aspectos que se deben conocer sobre las cuentas de usuario
+
+En la tabla siguiente se describen las cuentas de usuario admitidas en Microsoft Entra ID. A medida que revise estas opciones, tenga en cuenta qué tipos de cuentas de usuario se adaptan a su organización.
+
+|Cuenta de usuario|Descripción|
+|---|---|
+|**Identidad en la nube**|Las cuentas de usuario con una _identidad en la nube_ solo se definen en Microsoft Entra ID. Este tipo de cuenta de usuario incluye cuentas de administrador y usuarios que se administran como parte de la organización. Una identidad en la nube puede ser para las cuentas de usuario definidas en la organización de Microsoft Entra y también para las cuentas de usuario definidas en una instancia externa de Microsoft Entra. Cuando se quita una identidad en la nube del directorio principal, se elimina la cuenta de usuario.|
+|**Identidades sincronizadas con Directory**|Las cuentas de usuario que tienen una _identidad sincronizada con Directory_ se definen en una instancia local de Active Directory. Se realiza una actividad de sincronización a través de Microsoft Entra Connect para incorporar estos usuarios a Azure. El origen de estas cuentas es Windows Server Active Directory.|
+|**Usuario invitado**|Las cuentas de _usuario invitado_ se definen fuera de Azure. Algunos ejemplos son las cuentas de usuario de otros proveedores de nube y cuentas de Microsoft, como una cuenta de Xbox Live. El origen de las cuentas de usuario invitado es Usuario invitado. Las cuentas de usuario invitado son útiles cuando los proveedores externos o los contratistas necesitan acceso a sus recursos de Azure.|
+
+
+#### Aspectos que se deben tener en cuenta al elegir cuentas de usuario
+
+- **Tenga en cuenta dónde se definen los usuarios**. Determine dónde se definen los usuarios. ¿Se definen todos los usuarios dentro de la organización de Microsoft Entra o algunos de ellos se definen en instancias externas de Microsoft Entra? ¿Tiene usuarios externos a su organización? Es habitual que las empresas admitan dos o más tipos de cuenta en su infraestructura.
+    
+- **Considere la posibilidad de admitir colaboradores externos**. Permita que los colaboradores externos accedan a los recursos de Azure de su organización al admitir el tipo de cuenta de **usuario invitado**. Cuando el colaborador externo ya no requiera acceso, puede eliminar la cuenta de usuario y sus privilegios de acceso.
+    
+- **Considere usar una combinación de cuentas de usuario**. Implemente los tipos de cuenta de usuario que permiten a su organización satisfacer sus necesidades empresariales. Admita cuentas de usuario de identidad sincronizada con Directory para los usuarios definidos en Windows Server Active Directory. Admita identidades en la nube para los usuarios definidos en la estructura interna de Microsoft Entra o para usuarios definidos en una instancia externa de Microsoft Entra.
+
+### Administrar cuentas de usuario
+
+Hay varias maneras de agregar cuentas de usuario de identidad en la nube en Microsoft Entra ID. Un enfoque común consiste en usar Azure Portal. **También se pueden agregar cuentas de usuario a Microsoft Entra ID mediante el Centro de administración de Microsoft 365, la consola de administración de Microsoft Intune y la CLI de Azure**.
+
+#### Aspectos que se deben conocer sobre las cuentas de identidad en la nube
+
+Vamos a revisar cómo se definen las cuentas de usuario de identidad en la nube en Microsoft Entra ID. Este es un ejemplo de la nueva página **Usuario** en Azure Portal. El administrador puede **crear** un usuario dentro de la organización o **invitar** a un usuario invitado para proporcionarle acceso a los recursos de la organización:
+
+![[Pasted image 20240105113519.png]]
+
+- La nueva cuenta de usuario debe tener un nombre para mostrar y un nombre de cuenta de usuario asociado. Un ejemplo de nombre para mostrar es `Aran Sawyer-Miller`, y el nombre de la cuenta de usuario asociada podría ser `asawmill@contoso.com`.
+    
+- La información y la configuración que describen a un usuario se almacenan en el perfil de la cuenta de usuario.
+    
+- El perfil puede incluir otros parámetros, como el puesto de un usuario y su dirección de correo electrónico de contacto.
+    
+- Un usuario con privilegios de administrador global o administrador de usuarios puede predefinir los datos del perfil en las cuentas de usuario, como el número de teléfono principal de la empresa.
+    
+- Los usuarios que no son administradores pueden establecer algunos de sus datos del perfil, pero no pueden cambiar su nombre para mostrar ni el nombre de la cuenta.
+
+#### Aspectos que se deben tener en cuenta al administrar cuentas de identidad en la nube
+
+Hay varios puntos que se deben tener en cuenta sobre la administración de cuentas de usuario. A medida que revise esta lista, piense en cómo puede agregar cuentas de usuario de identidad en la nube para su organización.
+
+- **Considere los datos del perfil de usuario**. Permita que los usuarios establezcan la información de perfil en sus cuentas, según sea necesario. Los datos del perfil de usuario, incluida la foto, el trabajo y la información de contacto del usuario, son opcionales. También puede proporcionar determinadas opciones de configuración del perfil para cada usuario en función de los requisitos de su organización.
+    
+- **Considere las opciones de restauración para las cuentas eliminadas**. Incluya escenarios de restauración en el plan de administración de cuentas. Las operaciones de restauración de una cuenta eliminada están disponibles hasta 30 días después de eliminar la cuenta. Después de 30 días, no se puede restaurar una cuenta de usuario eliminada.
+    
+- **Considere la recopilación de datos de cuentas**. Recopile información de inicio de sesión y registro de auditoría para las cuentas de usuario. Microsoft Entra ID le permite recopilar estos datos para ayudarle a analizar y mejorar la infraestructura.
+
+### Creación masiva de cuentas de usuario
+
+Microsoft Entra ID admite varias operaciones masivas, como la creación y eliminación masivas de cuentas de usuario. El enfoque más común para este tipo de operaciones es usar Azure Portal. Se puede usar Azure PowerShell para la carga masiva de cuentas de usuario.
+
+#### Aspectos que se deben conocer sobre las operaciones de cuentas masivas
+
+Vamos a examinar algunas características de las operaciones masivas Azure Portal. Este es un ejemplo que muestra la opción **Creación masiva de usuarios** para nuevas cuentas de usuario en Microsoft Entra ID:
+
+![[Pasted image 20240105113951.png]]
+
+- Solo los administradores globales o los administradores de usuarios tienen privilegios para crear y eliminar cuentas de usuario en Azure Portal.
+    
+- Para completar operaciones de creación o eliminación masivas, el administrador rellena una plantilla de valores separados por comas (CSV) de los datos de las cuentas de usuario.
+    
+- Las plantillas de operación masiva se pueden descargar desde el Centro de administración de Microsoft Entra.
+    
+- Se pueden descargar listas masivas de cuentas de usuario.
