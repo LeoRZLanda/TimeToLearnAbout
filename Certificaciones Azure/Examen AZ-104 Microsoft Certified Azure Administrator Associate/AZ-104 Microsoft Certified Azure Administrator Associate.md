@@ -1,4 +1,4 @@
-
+[AZ-104: Administración de identidades y gobernanza en Azure - Training | Microsoft Learn](https://learn.microsoft.com/es-es/training/paths/az-104-manage-identities-governance/)
 # Detalles de certificación
 
 Los candidatos a esta certificación deben tener experiencia en la implementación, la administración y la supervisión del entorno de Microsoft Azure de una organización, incluido lo siguiente:
@@ -4263,3 +4263,179 @@ El contenido del módulo le ayuda a prepararse para el [examen AZ-104: Administ
 
 ### Creación de grupos de administración
 
+Las organizaciones que usan varias suscripciones necesitan una manera eficaz de administrar el acceso, las directivas y el cumplimiento. [Los grupos de administración de Azure](https://learn.microsoft.com/es-es/azure/governance/management-groups/overview) ofrecen un nivel de ámbito y control que está por encima de las suscripciones. Puede usar grupos de administración como contenedores para administrar el acceso, la directiva y el cumplimiento en todas las suscripciones.
+
+#### Aspectos que debe saber sobre los grupos de administración
+
+Tenga en cuenta las características siguientes de los grupos de administración de Azure:
+
+- De manera predeterminada, todas las suscripciones nuevas se colocan en el grupo de administración de nivel superior o _grupo raíz_.
+    
+- Todas las suscripciones dentro de un grupo de administración heredan automáticamente las condiciones aplicadas a ese grupo de administración.
+    
+- Un árbol de grupo de administración puede admitir hasta seis niveles de profundidad.
+    
+- La autorización de control de acceso basado en rol de Azure para las operaciones del grupo de administración no está habilitada de manera predeterminada.
+    
+
+En el diagrama siguiente se muestra cómo se pueden usar los grupos de administración de Azure para organizar las suscripciones en una jerarquía de administración unificada de directivas y acceso. En este escenario, la organización tiene un único grupo de administración de nivel superior. Todos los directorios del grupo raíz se contraen en el grupo de nivel superior.
+
+![[Pasted image 20240105184334.png]]
+
+#### Aspectos que se deben tener en cuenta al usar grupos de administración
+
+Revise las siguientes formas de usar grupos de administración en Azure Policy para administrar las suscripciones:
+
+- **Considere las jerarquías y grupos personalizados**. Alinee las suscripciones de Azure mediante jerarquías personalizadas y agrupaciones que satisfagan la estructura organizativa y los escenarios empresariales de la empresa. Puede usar grupos de administración para dirigirse a directivas y presupuestos de gasto entre suscripciones.
+    
+- **Considere la herencia de directivas**. Controle la herencia jerárquica de acceso y privilegios en las definiciones de directiva. Todas las suscripciones dentro de un grupo de administración heredan las condiciones que se aplican al grupo de administración. Puede aplicar directivas a un grupo de administración para limitar las regiones disponibles para crear máquinas virtuales (VM). La directiva se puede aplicar a todos los grupos de administración, suscripciones y recursos del grupo de administración inicial, para asegurarse de que las máquinas virtuales solo se crean en las regiones especificadas.
+    
+- **Considere las reglas de cumplimiento**. Organice las suscripciones en grupos de administración para ayudar a satisfacer las reglas de cumplimiento de departamentos y equipos individuales.
+    
+- **Considere los informes de costos**. Use grupos de administración para realizar informes de costos por departamento o para escenarios empresariales específicos. Puede usar grupos de administración para informar sobre los detalles presupuestarios entre suscripciones.
+
+
+#### Creación de grupos de administración
+
+Puede crear un grupo de administración con Azure Policy mediante Azure Portal, PowerShell o la CLI de Azure. Este es un ejemplo de lo que verá en Azure Portal:
+
+![[Pasted image 20240105184609.png]]
+
+Un grupo de administración tiene un identificador (id.) único de directorio y un nombre para mostrar. El id. se usa para enviar comandos en el grupo de administración. El valor del id. no se puede cambiar después de crearlo porque se usa en todo el sistema de Azure para identificar el grupo de administración. El nombre para mostrar del grupo de administración es opcional y se puede cambiar en cualquier momento.
+
+### Implementación de directivas de Azure
+
+
+Azure Policy es un servicio de Azure que se usa para crear, asignar y administrar directivas. Puede usar directivas para aplicar reglas en los recursos a fin de cumplir los estándares de cumplimiento corporativo y los contratos de nivel de servicio. Azure Policy ejecuta evaluaciones y exámenes en los recursos para asegurarse de que son compatibles.
+
+#### Aspectos que debe saber sobre Azure Policy
+
+Las ventajas principales de Azure Policy se encuentran en las áreas de aplicación y cumplimiento, escalado y corrección. Azure Policy también es importante para los equipos que ejecutan un entorno en el que se necesitan diferentes formas de gobernanza.
+
+|Ventaja|Descripción|
+|---|---|
+|**Aplicación de reglas y cumplimiento**|Habilite directivas integradas, o bien cree directivas personalizadas para todos los tipos de recursos. Admita la evaluación y aplicación de directivas en tiempo real y la evaluación periódica o a petición del cumplimiento.|
+|**Aplicación de directivas a gran escala**|Aplicar directivas a un grupo de administración con control en toda la organización. Aplique varias directivas y agregue estados de directiva con la iniciativa de directiva. Defina un ámbito de exclusión.|
+|**Corrección**|Realice la corrección en tiempo real y en los recursos existentes.|
+|**Ejercicio de la gobernanza**|Implemente tareas de gobernanza para el entorno:  <br>- Admita varios equipos de ingeniería (implementación y funcionamiento en el entorno)  <br>- Administre varias suscripciones  <br>- Estandarice y aplique la configuración de los recursos en la nube  <br>- Administre el cumplimiento normativo, el control de costos, la seguridad y la coherencia de diseño|
+
+
+#### Aspectos que se deben tener en cuenta al usar Azure Policy
+
+Revise los escenarios siguientes para usar Azure Policy. Tenga en cuenta cómo puede implementar el servicio en la organización.
+
+- **Considere la posibilidad de implementar recursos**. Especifique los tipos de recursos que la organización puede implementar mediante Azure Policy. Puede especificar un conjunto de SKU de máquina virtual que la organización puede implementar.
+    
+- **Considere las restricciones de ubicación**. Limite las ubicaciones que los usuarios pueden especificar al implementar los recursos. Puede elegir las ubicaciones geográficas o las regiones que están disponibles para la organización.
+    
+- **Considere la posibilidad de aplicar reglas**. Aplique reglas de cumplimiento y opciones de configuración para ayudar a administrar los recursos y las opciones de usuario. Puede aplicar una etiqueta obligatoria en los recursos y definir los valores permitidos.
+    
+- **Considere la posibilidad de realizar auditorías de inventario**. Use Azure Policy con el servicio Azure Backup en las máquinas virtuales y ejecute auditorías de inventario.
+
+### Creación de directivas de Azure
+
+Los administradores de Azure usan Azure Policy para crear directivas que definan convenciones para los recursos. Una _definición de directiva_ describe las condiciones de cumplimiento de un recurso y las acciones que se deben completar cuando se cumplen las condiciones. Una o varias definiciones de directiva se agrupan en una _definición de iniciativa_, para controlar el ámbito de las directivas y evaluar el cumplimiento de los recursos.
+
+![Diagram that shows an initiative definition for a group of policy definitions that are applied to resources.](https://learn.microsoft.com/es-es/training/wwl-azure/configure-azure-policy/media/implement-azure-policy-b4a4a47c.png)
+
+Hay cuatro pasos básicos para crear y trabajar con definiciones de directiva en Azure Policy.
+
+#### Paso 1: Creación de definiciones de directiva
+
+Una definición de directiva expresa una condición para evaluar y las acciones que se deben realizar cuando se cumple la condición. Puede crear definiciones de directiva propias, o bien elegir entre definiciones integradas en Azure Policy. Puede crear una definición de directiva para evitar que las máquinas virtuales de la organización se implementen, si se exponen a una dirección IP pública.
+
+#### Paso 2: Creación de una definición de iniciativa
+
+Una definición de iniciativa es un conjunto de definiciones de directiva que facilita el seguimiento del estado de cumplimiento del recurso para satisfacer un objetivo mayor. Puede crear definiciones de iniciativa propias, o bien usar las definiciones integradas en Azure Policy. Puede usar una definición de iniciativa para asegurarse de que los recursos cumplen las normativas de seguridad.
+
+#### Paso 3: Ámbito de la definición de iniciativa
+
+Azure Policy le permite controlar cómo se aplican las definiciones de iniciativa a los recursos de la organización. Puede limitar el ámbito de una definición de iniciativa a grupos de administración, suscripciones o grupos de recursos concretos.
+
+#### Paso 4: Determinación del cumplimiento
+
+Una vez que se asigna una definición de iniciativa, puede evaluar el estado de cumplimiento de todos los recursos. Los recursos individuales, los grupos de recursos y las suscripciones de un ámbito se pueden excluir del efecto de las reglas de directiva. Las exclusiones se controlan individualmente para cada asignación.
+
+### Creación de definiciones de directiva
+
+
+Azure Policy ofrece definiciones de directivas integradas para ayudarle a configurar rápidamente las condiciones de control de los recursos. Además de las directivas integradas, también puede crear definiciones propias o importarlas desde otros orígenes.
+
+#### Acceso a definiciones de directiva integradas
+
+Puede ordenar la [lista de definiciones integradas](https://learn.microsoft.com/es-es/azure/governance/policy/samples/built-in-policies) por categoría para buscar directivas que satisfagan las necesidades empresariales.
+
+![[Pasted image 20240105190001.png]]
+
+Estos son algunos ejemplos de definiciones de directivas integradas:
+
+- **SKU de tamaño de máquina virtual permitidas**: se especifica un conjunto de SKU de tamaño de máquina virtual que la organización puede implementar. Esta directiva se encuentra en la categoría Proceso.
+    
+- **Ubicaciones permitidas**: se restringen las ubicaciones que los usuarios pueden especificar al implementar los recursos. Use esta directiva para aplicar los requisitos de cumplimiento de replicación geográfica. Esta directiva se encuentra en la categoría General.
+    
+- **Configurar cuentas de Azure Device Update for IoT Hub para deshabilitar el acceso a la red pública**: se deshabilita el acceso a la red pública para recursos de Device Update for IoT Hub. Esta directiva se encuentra en la categoría Internet de las cosas.
+
+#### Adición de nuevas definiciones de directiva
+
+Si no encuentra una directiva integrada que satisfaga las necesidades empresariales, puede agregar una definición o crearla. Las definiciones de directiva también se pueden importar en Azure Policy desde [GitHub](https://github.com/Azure/azure-policy/tree/master/samples). Las nuevas definiciones de directiva se agregan al repositorio de ejemplos casi a diario.
+
+![Screenshot that shows how to add a new policy definition, and the option to import a sample policy definition from GitHub.](https://learn.microsoft.com/es-es/training/wwl-azure/configure-azure-policy/media/new-policy-definition-46cb3ecb.png)
+
+ Nota
+
+Al agregar o crear una definición de iniciativa, asegúrese de que la definición usa el formato JSON específico necesario para Azure. Para más información, vea [Estructura de definiciones de Azure Policy](https://learn.microsoft.com/es-es/azure/governance/policy/concepts/definition-structure).
+
+### Creación de una definición de iniciativa
+
+Después de determinar las definiciones de directiva, el siguiente paso consiste en crear una definición de iniciativa para las directivas. Una definición de iniciativa tiene una o varias definiciones de directiva. Un ejemplo de uso de definiciones de iniciativa es asegurarse de que los recursos cumplen las normativas de seguridad.
+
+ Sugerencia
+
+Incluso si solo tiene algunas definiciones de directiva en la organización, se recomienda crear y aplicar una definición de iniciativa.
+
+#### Adición de una nueva definición de iniciativa
+
+Al crear una definición de iniciativa, asegúrese de que la definición usa el formato JSON específico requerido por Azure. Para más información, vea [Estructura de la definición de iniciativa de Azure Policy](https://learn.microsoft.com/es-es/azure/governance/policy/concepts/initiative-definition-structure).
+
+Este es un ejemplo de cómo crear una definición de iniciativa en Azure Portal:
+
+![[Pasted image 20240105190510.png]]
+
+#### Uso de una definición de iniciativa integrada
+
+Puede crear definiciones de iniciativa propias, o bien usar las definiciones integradas en Azure Policy. Puede ordenar la [lista de iniciativas integradas](https://learn.microsoft.com/es-es/azure/governance/policy/samples/built-in-initiatives) por categoría a fin de buscar definiciones para la organización.
+
+Estos son algunos ejemplos de definiciones de iniciativa integradas:
+
+- **Auditar las máquinas con configuración de seguridad de contraseña no segura**: use esta iniciativa para implementar una directiva de auditoría en los recursos especificados de la organización. La definición evalúa los recursos para comprobar si hay una configuración de seguridad de contraseña no segura. Esta iniciativa se encuentra en la categoría Configuración de invitado.
+    
+- **Configurar máquinas Windows para ejecutar el agente de Azure Monitor y asociarlas a una regla de recopilación de datos**: use esta iniciativa para supervisar y proteger las máquinas virtuales Windows, los conjuntos de escalado de máquinas virtuales y las máquinas de Arc. La definición implementa la extensión Agente de Azure Monitor y asocia los recursos a una regla de recopilación de datos especificada. Esta iniciativa se encuentra en la categoría Supervisión.
+    
+- **Configuración de Azure Defender para habilitarlo en servidores SQL**: habilite Azure Defender en las instancias de Azure SQL Server para detectar actividades anómalas que indiquen intentos inusuales y potencialmente peligrosos de acceder a las bases de datos o aprovechar sus vulnerabilidades de seguridad. Esta iniciativa se encuentra en la categoría SQL.
+
+### Ámbito de la definición de iniciativa
+
+Después de crear la definición de la iniciativa, el siguiente paso consiste en asignar la iniciativa para establecer el ámbito de las directivas. El ámbito determina qué recursos o agrupación de recursos se ven afectados por las condiciones de las directivas.
+
+Este es un ejemplo en el que se muestra cómo configurar la asignación del ámbito:
+
+![Screenshot that shows how to assign an initiative definition to resources or groups or resources to establish the scope.](https://learn.microsoft.com/es-es/training/wwl-azure/configure-azure-policy/media/assign-definition-87bc203c.png)
+
+Para establecer el ámbito, seleccione las suscripciones afectadas. Como opción, también puede elegir los grupos de recursos afectados.
+
+En el ejemplo siguiente se muestra cómo aplicar el ámbito:
+
+![Screenshot that shows how a scope is applied to a subscription, and optionally applied to a resource group.](https://learn.microsoft.com/es-es/training/wwl-azure/configure-azure-policy/media/scope-initiative-9fbf59d5.png)
+
+
+### Determinación del cumplimiento
+
+Ha definido las directivas, ha creado la definición de iniciativa y ha asignado las directivas a los recursos afectados. El último paso consiste en evaluar el estado de cumplimiento de los recursos con ámbito.
+
+En el ejemplo siguiente se muestra cómo puede usar la característica **Cumplimiento** para buscar iniciativas, directivas y recursos no compatibles.
+
+![Screenshot that shows how to use the compliance feature to look for non-compliant initiatives, policies, and resources.](https://learn.microsoft.com/es-es/training/wwl-azure/configure-azure-policy/media/determine-compliance-c198f4ba.png)
+
+Las condiciones de la directiva se evalúan en función de los recursos con ámbito existentes. Aunque en Azure Portal no se muestra la lógica de evaluación, se muestran los resultados del estado de cumplimiento. El resultado del estado de cumplimiento puede ser compatible o no compatible.
+
+### Simulación interactiva de laboratorio
