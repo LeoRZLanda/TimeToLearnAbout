@@ -4229,3 +4229,37 @@ Las principales conclusiones de este módulo son:
 
 ## Configuración de Azure Policy
 
+### Introducción
+
+[Azure Policy](https://azure.microsoft.com/services/azure-policy/) es un servicio de Azure que **permite crear, asignar y administrar directivas para controlar o auditar recursos**. Dichas directivas aplican distintas reglas a las configuraciones de los recursos de modo que estas configuraciones sigan cumpliendo con los estándares corporativos.
+
+Su empresa está sujeta a muchas regulaciones y reglas de cumplimiento. La empresa quiere asegurarse de que cada departamento implementa los recursos correctamente. Es responsable de investigar cómo usar Azure Policy y grupos de administración para implementar medidas de cumplimiento.
+
+En este módulo, aprenderemos a implementar directivas de Azure. El contenido incluye ejemplos de definiciones de directiva y de iniciativa. Aprenderá a definir el ámbito de las directivas y a los recursos no conformes de identidad. También aprenderá las ventajas y el uso de los grupos de administración.
+
+El objetivo de este módulo es garantizar que los administradores puedan utilizar la directiva de Azure para garantizar el cumplimiento de los recursos.
+
+#### Objetivos de aprendizaje
+
+En este módulo aprenderemos a:
+
+- Implementar Azure Policy con definiciones de directivas e iniciativas.
+    
+- Definir el ámbito de las directivas de Azure y determinar el cumplimiento.
+    
+- Crear grupos de administración destinados a directivas y presupuestos de gastos.
+    
+
+#### Aptitudes evaluadas
+
+El contenido del módulo le ayuda a prepararse para el [examen AZ-104: Administrador de Microsoft Azure](https://learn.microsoft.com/es-es/certifications/exams/az-104).
+
+#### Requisitos previos
+
+- Conocimientos básicos de los conceptos de Azure, como suscripciones, grupos de recursos y recursos.
+- Conocimientos prácticos de los conceptos de gobernanza, como el cumplimiento y los informes.
+- Familiaridad con Azure Resource Manager y cómo usarlo para implementar y administrar recursos.
+- Conocimiento de la sintaxis JSON para poder crear definiciones de directiva y asignaciones de directivas.
+
+### Creación de grupos de administración
+
