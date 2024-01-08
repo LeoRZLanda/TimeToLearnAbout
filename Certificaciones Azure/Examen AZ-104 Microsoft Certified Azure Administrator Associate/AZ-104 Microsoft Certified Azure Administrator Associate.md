@@ -4438,4 +4438,61 @@ En el ejemplo siguiente se muestra cómo puede usar la característica **Cumpli
 
 Las condiciones de la directiva se evalúan en función de los recursos con ámbito existentes. Aunque en Azure Portal no se muestra la lógica de evaluación, se muestran los resultados del estado de cumplimiento. El resultado del estado de cumplimiento puede ser compatible o no compatible.
 
-### Simulación interactiva de laboratorio
+### Simulación interactiva de laboratorio: Manage governance via Azure Policy
+
+
+#### Escenario del laboratorio
+
+Su organización está pilotando un nuevo proyecto de infraestructura. El director de tecnología quiere saber qué recursos de Azure se usan en el nuevo proyecto. Sus tareas específicas son:
+
+- Cree una manera de etiquetar los recursos del proyecto.
+- No permitir crear recursos sin la etiqueta de recurso.
+- Si se crea un recurso sin la etiqueta, agregue automáticamente la etiqueta.
+
+#### Diagrama de la arquitectura
+
+![[Pasted image 20240108094111.png]]
+
+
+#### Objetivos
+
+- **Tarea 1**: crear y asignar etiquetas a través de Azure Portal.
+    - Con fines de prueba, identifique el grupo de recursos Cloud Shell.
+    - Agregue una etiqueta al grupo de recursos. Asigne el valor de la etiqueta.
+    - Compruebe que la cuenta de almacenamiento del grupo de recursos no tiene la etiqueta.
+- **Tarea 2**: exija el etiquetado a través de Azure Policy.
+    - Localice la directiva integrada **Requerir una etiqueta y su valor en los recursos** y revise la definición.
+    - Asigne la directiva al grupo de recursos.
+    - Configure la etiqueta requerida: **Rol** con un valor de **Infra**.
+    - Cree una nueva cuenta de almacenamiento en el grupo de recursos y compruebe sin la etiqueta que no puede crear el recurso.
+- **Tarea 3**: aplique automáticamente el etiquetado mediante una directiva de Azure.
+    - Asigne la **etiqueta Heredar una etiqueta del grupo de recursos si falta** la directiva integrada al grupo de recursos.
+    - Configure la corrección para agregar automáticamente la etiqueta **Rol** si falta en un nuevo recurso.
+    - Cree una nueva cuenta de almacenamiento y compruebe que se agregan la etiqueta y el valor.
+
+
+
+Click al siguiente link para acceder a [Manage governance via Azure Policy](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)
+
+### Prueba de Conocimiento
+
+1. a
+
+<details>
+	<summary>Respuesta</summary>
+	<p></p>
+</details>
+
+2. a
+
+<details>
+	<summary>Respuesta</summary>
+	<p></p>
+</details>
+
+3. a
+
+<details>
+	<summary>Respuesta</summary>
+	<p></p>
+</details>
