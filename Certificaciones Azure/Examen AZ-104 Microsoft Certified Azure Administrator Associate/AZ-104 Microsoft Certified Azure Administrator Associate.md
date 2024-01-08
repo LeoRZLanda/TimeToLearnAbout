@@ -4476,7 +4476,13 @@ Click al siguiente link para acceder a [Manage governance via Azure Policy](http
 
 ### Prueba de Conocimiento
 
-1. a
+La empresa va a implementar Azure Policy para administrar la gobernanza en varias suscripciones de Azure. Va a explorar cómo usar directivas, iniciativas y definiciones de Azure para los distintos departamentos. Va a investigar cómo los grupos de administración pueden admitir los escenarios empresariales.
+
+El equipo financiero solicita que los recursos y la facturación se clasifiquen por departamento, por ejemplo, Marketing, Investigación y Recursos Humanos. Les gustaría que la facturación se consolidara en varios grupos de recursos para asegurarse de que todos los usuarios cumplen la solución.
+
+#### Responda a las siguientes preguntas
+
+1. Hay varias directivas de Azure que deben aplicarse a una sucursal nueva. Enfoque óptimo
 
 <details>
 	<summary>Respuesta</summary>
