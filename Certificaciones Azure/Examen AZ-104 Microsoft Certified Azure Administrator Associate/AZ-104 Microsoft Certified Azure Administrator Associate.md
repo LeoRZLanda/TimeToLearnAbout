@@ -4486,19 +4486,237 @@ El equipo financiero solicita que los recursos y la facturación se clasifiquen 
 
 <details>
 	<summary>Respuesta</summary>
-	<p></p>
+	<p><b>Crear una iniciativa de directiva.</b> Una iniciativa de directiva es un conjunto de definiciones de directiva que se podrían aplicar a la sucursal nueva.</p>
 </details>
 
-2. a
+2. Para satisfacer la solicitud del equipo financiero de facturación por departamento, se han creado varios grupos de recursos y se han aplicado las etiquetas de recursos. ¿Cuál es el paso siguiente?
 
 <details>
 	<summary>Respuesta</summary>
-	<p></p>
+	<p><b>Crear una directiva de Azure.</b> Una directiva de Azure necesite que se aplique una etiqueta de recurso antes de crear el recurso.</p>
 </details>
 
-3. a
+3. ¿Cómo asegurarse de que solo se implementan tamaños de SKU de máquina virtual rentables?
 
 <details>
 	<summary>Respuesta</summary>
-	<p></p>
+	<p><b>Crear una directiva en Azure Policy que especifique los tamaños de SKU permitidos.</b> Hay una directiva de Azure integrada para especificar los tamaños de SKU de máquina virtual permitidos. Una vez que se habilita la directiva, se aplica siempre que se cree o se cambie el tamaño de una máquina virtual</p>
 </details>
+
+4. ¿Qué opción puede usar para administrar la gobernanza en varias suscripciones de Azure?
+
+<details>
+	<summary>Respuesta</summary>
+	<p>Los <b>grupos de administración</b> facilitan la ordenación jerárquica de los recursos de Azure en colecciones, en un nivel de ámbito superior al de las suscripciones. Mediante Azure Policy y los controles de acceso basado en roles de Azure, se pueden aplicar condiciones de gobernanza distintas a cada grupo de administración para administrar las suscripciones de Azure de forma eficaz. Los recursos y las suscripciones asignados a un grupo de administración heredan automáticamente las condiciones que se aplican al grupo de administración.</p>
+</details>
+
+### Resumen y recursos
+
+Azure Policy es un servicio de Azure que permite crear, asignar y administrar directivas. Azure Policy le ayuda a definir e implementar la estrategia de gobernanza mediante directivas para controlar y auditar los recursos.
+
+En este módulo, hemos aprendido sobre Azure Policy y cómo nos permite controlar y auditar los recursos. Hemos explorado cómo implementar definiciones e iniciativas de directivas de Azure para los departamentos corporativos. Hemos aprendido a crear grupos de administración, directivas de ámbito y a administrar presupuestos de gasto. Hemos revisado el ámbito de las directivas de Azure para cumplir las normativas de cumplimiento.
+
+Las principales conclusiones de este módulo son:
+
+- Azure Policy es un servicio eficaz de Azure que le permite aplicar reglas y garantizar el cumplimiento de los estándares corporativos y los contratos de nivel de servicio.
+- Los grupos de administración proporcionan una manera de administrar de forma eficaz el acceso, las directivas y el cumplimiento en varias suscripciones, lo que permite administrar directivas y acceso de manera unificada.
+- La creación de definiciones de directivas y de iniciativas permite definir convenciones para los recursos y controlar el ámbito de las directivas, lo que garantiza el cumplimiento de los recursos.
+- La característica Cumplimiento de Azure Policy le ayuda a determinar el estado de los recursos y evaluar si son compatibles o no.
+
+#### Más información con la documentación de Azure
+
+- [Documentación de Azure Policy](https://learn.microsoft.com/es-es/azure/governance/policy/). Esta colección de artículos es el punto de partida de todo lo relacionado con Azure Policy.
+    
+- [Definiciones de directiva integradas de Azure Policy](https://learn.microsoft.com/es-es/azure/governance/policy/samples/built-in-policies). Esta página es un índice de las definiciones de directiva integradas de Azure Policy.
+    
+- [iniciativas de directivas integradas de Azure](https://learn.microsoft.com/es-es/azure/governance/policy/samples/built-in-initiatives). Esta página es un índice de las definiciones de iniciativa integradas de Azure Policy.
+    
+- [Inicio rápido: Creación de una asignación de directivas para identificar recursos no compatibles](https://learn.microsoft.com/es-es/azure/governance/policy/assign-policy-portal). Esta guía de inicio rápido lo guiará por el proceso de creación de una asignación de directiva para identificar las máquinas virtuales que no están usando discos administrados.
+    
+
+#### Más información con el aprendizaje autodirigido
+
+- [Introducción a Azure Policy](https://learn.microsoft.com/es-es/training/modules/intro-to-azure-policy/). En este módulo, se ofrece una introducción a Azure Policy y se describen sus características, funcionalidades y casos de uso.
+
+
+## Configuración del control de acceso basado en rol
+
+### Introducción
+
+Los administradores de Azure necesitan proteger el acceso a sus recursos de Azure, como máquinas virtuales (VM), sitios web, redes y almacenamiento. Los administradores necesitan mecanismos para ayudarles a administrar quién puede acceder a sus recursos y qué acciones se permiten. Las organizaciones que hacen negocios en la nube reconocen que proteger sus recursos es una función crítica de su infraestructura.
+
+En este módulo, su empresa está investigando cómo asegurarse de que sus datos y recursos corporativos están protegidos. Quieren una protección segura que les permita controlar el acceso a sus datos y recursos mediante la especificación de roles y privilegios de acceso para empleados y asociados comerciales. Es responsable de investigar cómo usar el control de acceso basado en rol (RBAC) para realizar estas tareas. Debe asegurarse de que los recursos de la empresa están protegidos y también admitir el acceso de los usuarios a los recursos.
+
+El objetivo de este módulo es comprender las características y los casos de uso del control de acceso basado en roles (RBAC) de Azure. Ha descubierto cómo crear definiciones de roles y asignaciones de roles, y buscar y usar roles RBAC de Azure integrados. Además, explorará cómo usar RBAC para administrar el acceso a las suscripciones. También revisará las diferencias entre los roles RBAC de Azure y Entra ID.
+
+#### Objetivos de aprendizaje
+
+En este módulo aprenderemos a:
+
+- Conocer los conceptos y principios de RBAC de Azure.
+- Crear definiciones de roles y asignaciones de roles.
+- Identifique las diferencias entre los roles RBAC de Azure y Microsoft Entra.
+- Usar RBAC para administrar el acceso a los recursos.
+- Revisar y seleccionar el mejor rol integrado de Azure para un escenario.
+
+#### Requisitos previos
+
+- Conocimientos de Azure. Tener un conocimiento general de los servicios, conceptos y terminología de Azure que le ayude a comprender RBAC de forma más eficaz.
+    
+- Conceptos de identidad. Un conocimiento básico de Microsoft Entra ID, que es el servicio de administración de identidades y acceso basado en la nube de Microsoft, es esencial. Los conocimientos de conceptos como usuarios, grupos, roles y permisos son útiles.
+    
+- Administración de recursos de Azure. Comprender cómo se organizan, implementan y administran los recursos proporciona contexto para la implementación de RBAC.
+    
+- Modelos de control de acceso. Conocimiento de los modelos de control de acceso, como el control de acceso discrecional (DAC) y el control de acceso obligatorio (MAC). Este conocimiento le ayuda a comprender los principios subyacentes a RBAC y sus ventajas sobre los mecanismos de control de acceso tradicionales.
+
+### Implementación del control de acceso basado en roles
+
+La administración de acceso seguro para los recursos en la nube es fundamental para las empresas que operan en la nube. El control de acceso basado en rol (RBAC) es un **mecanismo que puede ayudarle a administrar quién puede acceder a los recursos** de Azure. RBAC le permite determinar qué operaciones pueden hacer los usuarios específicos en recursos específicos y controlar a qué áreas de un recurso puede tener acceso cada usuario.
+
+RBAC es un sistema de autorización basado en Azure Resource Manager. El RBAC permite una administración de acceso muy detallado de los recursos en Azure.
+
+#### Aspectos que debe saber sobre RBAC de Azure
+
+Estas son algunas cosas que puede realizar con RBAC de Azure:
+
+- Permitir que una aplicación acceda a todos los recursos de un grupo de recursos.
+    
+- Permitir que un usuario administre las VM en una suscripción y que otro usuario administre las redes virtuales.
+    
+- Permitir a un grupo de administradores de base de datos (DBA) administrar bases de datos SQL en una suscripción.
+    
+- Permitir que un usuario administre todos los recursos de un grupo de recursos, como las máquinas virtuales, los sitios web y las subredes.
+    
+
+#### Conceptos de RBAC de Azure
+
+En la tabla siguiente se describen los conceptos básicos de RBAC de Azure.
+
+
+| Concepto | Descripción | Ejemplos |
+| ---- | ---- | ---- |
+| **Entidad de seguridad** | Objeto que representa un elemento que solicita acceso a los recursos. | Usuario, grupo, entidad de servicio o identidad administrada |
+| **Definición de roles** | Conjunto de permisos que enumera las operaciones permitidas. RBAC de Azure incluye definiciones de roles integradas, pero también puede crear sus propias definiciones de roles personalizados. | Algunas definiciones de roles integradas: _Lector_, _Colaborador_, _Propietario_, _Administracdor de acceso de ususairo_. |
+| **Ámbito** | Límite del _nivel_ de acceso solicitado o "cuánto" se concede. | Grupo de administración, subscripción, grupo de recursos, recurso |
+| **Cesión** | Una **asignación** añade una **definición de roles** a una **entidad de seguridad**en un ámbito **determinado**. Los usuarios pueden conceder el acceso descrito en una definición de roles mediante la creación (adición) de una asignación al rol. | - Asignar el rol _Administrador de acceso de usuario_ a un grupo de administración con ámbito aun grupo de administración.                    - Asignar el rol _Colaborador_ a un usuario con ámbito a una subscripción. |
+
+
+#### Aspectos que se deben tener en cuenta al usar RBAC de Azure
+
+A medida que piense en cómo puede implementar roles y asignaciones de ámbito dentro de su organización, tenga en cuenta estos puntos:
+
+- **Tenga en cuenta los solicitantes**. Planee su estrategia para adaptarse a todos los tipos de acceso a los recursos. Las entidades de seguridad se crean para todo lo que solicite acceso a los recursos. Determine quiénes son los solicitantes de su organización. Los solicitantes pueden ser usuarios internos o externos, grupos de usuarios, aplicaciones y servicios, recursos, etc.
+    
+- **Tenga en cuenta sus roles**. Examine los tipos de responsabilidades de trabajo y los escenarios de trabajo de su organización. Los roles se suelen crear en torno a los requisitos para cumplir las tareas de trabajo o completar los objetivos de trabajo. Algunos usuarios, como administradores, controladores corporativos e ingenieros, pueden requerir un nivel de acceso más allá de lo que la mayoría de los usuarios necesitan. Algunos roles se pueden definir para proporcionar el mismo acceso a todos los miembros de un equipo o departamento para recursos o aplicaciones específicos.
+    
+- **Considere el ámbito de los permisos**. Piense en cómo puede garantizar la seguridad controlando el ámbito de los permisos para las asignaciones de roles. Describa los tipos de permisos y niveles de ámbito que necesita admitir. Puede aplicar distintos niveles de ámbito para un único rol para admitir solicitantes en distintos escenarios.
+    
+- **Considere las definiciones integradas o personalizadas**. Revise la lista de definiciones de roles integrado en el RBAC de Azure. Los roles integrados se pueden usar tal y como están o ajustados para satisfacer los requisitos específicos de su organización. También puede crear definiciones de rol personalizadas desde cero.
+
+### Creación de una definición de roles
+
+Una definición de rol consta de un conjunto de permisos definidos en un fichero JSON. Cada conjunto de permisos tiene un nombre, como _Actions_ o _NotActions_, que describe los permisos. Algunos ejemplos de conjunto de permisos son:
+
+- Los permisos _Actions_ especifican qué acciones se permiten.
+    
+- Los permisos_NotActions_ especifican qué acciones no se permiten.
+    
+- Los permisos_DataActions_ indican cómo se pueden modificar o usar los datos.
+    
+- Los permisos_AssignableScopes_ enumeran los ámbitos en los que se puede asignar una definición de rol.
+    
+
+En el diagrama siguiente se muestran los detalles del rol _Contributor_ en el RBAC de Azure.
+
+![[Pasted image 20240108111632.png]]
+
+Los permisos _Actions_ indican que el rol _Colaborador_ tiene todos los privilegios de acción. El comodín (carácter asterisco `"*"`) significa "todo". Los permisos _NotActions_ acotan los privilegios que proporciona el conjunto de acciones _Actions_ y prohíben tres acciones:
+
+- `Authorization/*/Delete`: No está autorizado a eliminar o quitar en "todo".
+- `Authorization/*/Write`: No está autorizado a escribir o cambiar en "todo".
+- `Authorization/elevateAccess/Action`: No está autorizado a subir el nivel o el ámbito de los privilegios de acceso.
+
+El rol _Contributor_ también tiene dos permisos que especifican cómo pueden verse afectados los datos:
+
+- `"NotDataActions": []`: No se enumera ninguna acción concreta. Por tanto, todas las acciones podrán afectar a los datos.
+- `"AssignableScopes": ["/"]`: El rol se puede asignar a todos los ámbitos que afecten a los datos.
+
+
+#### Lo que hay que saber sobre las definiciones de roles
+
+Revise las siguientes características de las definiciones de roles:
+
+- El RBAC de Azure proporciona roles y conjuntos de permisos integrados. También se pueden crear permisos y role personalizados.
+    
+- El rol integrado _Propietario_ tiene el nivel más alto de privilegios de acceso en Azure.
+    
+- El sistema resta los permisos _NotActions_ de los permisos _Actions_ para determinar los _permisos efectivos_ de un rol.
+    
+- Los permisos _AssignableScopes_ de un rol pueden ser grupos de administración, suscripciones, grupos de recursos o recursos.
+    
+
+#### Permisos de los roles
+
+Combine los permisos _Actions_ y _NotActions_ para conceder y denegar los privilegios exactos a cada rol. Los permisos _Actions_ pueden dar amplitud de acceso, mientras que los permisos _NotActions_ pueden acotar el acceso.
+
+La tabla siguiente muestra cómo se usan los permisos _Actions_ y _NotActions_ en las definiciones de tres roles integrados: _Propietario_, _Colaborador_ y _Lector_. Los permisos se van acotando desde el rol _Propietario_ a los roles _Colaborador_ y _Lector_ para restringir el acceso.
+
+|Nombre de rol|Descripción|Permisos de Actions|Permisos de NotActions|
+|---|---|---|---|
+|_Propietario_|Permitir todas las acciones|`*`|N/D|
+|_Colaborador_|Permitir todas las acciones menos la asignación de los roles de escritura o borrado|`*`|- `Microsoft.Authorization /*/Delete`                -`Microsoft.Authorization /*/Write`                -`Microsoft.Authorization /elevateAccess/Action`       |
+|_Lector_|Permitir todas las acciones de lectura|`/*/read`|N/D|
+
+
+#### Ámbitos de rol
+
+Una vez definidos los permisos de un rol, use los permisos _AssignableScopes_ para especificar cómo se puede asignar dicho rol. Veamos algunos ejemplos.
+
+- Dé a un rol el ámbito de disponible para su asignación en dos suscripciones:
+    
+    `"/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e", "/subscriptions/e91d47c4-76f3-4271-a796-21b4ecfe3624"`
+    
+- Dé a un rol el ámbito de disponible para su asignación solo en el grupo de recursos de Red:
+    
+    `"/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e/resourceGroups/Network"`
+    
+- Dé a un rol el ámbito de disponible para su asignación a todos los solicitantes:
+    
+    `"/"`
+
+#### Aspectos que hay que tener en cuenta al crear roles
+
+Tenga en cuenta los siguientes puntos relativos a la creación de definiciones de rol en el RBAC de Azure:
+
+- **Considere la posibilidad de usar roles integrados**. Consulte la lista de [definiciones de roles integrados](https://learn.microsoft.com/es-es/azure/role-based-access-control/built-in-roles) en el RBAC de Azure. Hay más de 100 definiciones de roles predefinidos entre las que elegir, como, por ejemplo, _Owner_, _Backup Operator_, _Website Contributor_ y _SQL Security Manager_. Los roles integrados se definen para varias categorías de servicios, tareas y usuarios como, por ejemplo, General, Redes, Almacenamiento, Bases de datos, etc.
+    
+- **Considere la posibilidad de crear definiciones personalizadas**. Defina sus propios [roles personalizados](https://learn.microsoft.com/es-es/azure/role-based-access-control/custom-roles) que respondan a escenarios de negocio específicos de su organización. Puede modificar los permisos de un rol integrado para que se adapte a las necesidades específicas de su organización. También puede crear definiciones de rol personalizadas desde cero.
+    
+- **Considere la posibilidad de limitar el ámbito de acceso**. Asigne los roles con el nivel mínimo de ámbito necesario para realizar las tareas necesarias. Algunos usuarios como, por ejemplo, los administradores, requieren acceso total a los recursos corporativos para mantener la infraestructura. Otros usuarios de la organización pueden requerir acceso de escritura a recursos personales o del equipo, y acceso de solo lectura a los recursos compartidos de la empresa.
+    
+- **Considere la posibilidad de controlar los cambios en los datos**. Identifique los datos o recursos que solo se deben modificar en determinados escenarios y aplique un estricto control de acceso. Restrinja el acceso de los usuarios al mínimo necesario para que puedan hacer su trabajo. Una estrategia de administración de acceso bien planeada ayuda a mantener la infraestructura y a evitar problemas de seguridad.
+    
+- **Considere la posibilidad de aplicar asignaciones de denegación**. Determine si necesita implementar la característica de asignación de denegación. De forma similar a una asignación de roles, una asignación de denegación asocia un conjunto de acciones de denegación a un usuario, grupo o entidad de servicio en un ámbito determinado con el fin de denegar el acceso. Las asignaciones de denegación impiden que los usuarios realicen acciones concretas en recursos de Azure, aunque una asignación de roles les conceda acceso.
+
+### Crear una asignación de rol
+
+Una asignación de roles es el proceso de establecer el ámbito de una definición de roles para limitar permisos a un usuario, un grupo, una entidad de servicio o identidad administrada.
+
+#### Lo que hay que saber sobre las definiciones de roles
+
+Revise las siguientes características de las definiciones de roles:
+
+- El propósito de la asignación de roles es conceder acceso.
+    
+- Los límites de ámbito que se definen para un rol están disponibles para el solicitante asignado.
+    
+- El acceso se revoca quitando una asignación de roles.
+    
+- Un recurso hereda las asignaciones de roles de su recurso principal.
+    
+- Los permisos efectivos para un solicitante son una combinación de los permisos para los roles asignados del solicitante y los permisos de los roles asignados a los recursos solicitados.
+    
+
+### Aspectos que se deben tener en cuenta al asignar niveles de ámbito para roles
+
+En el diagrama siguiente se muestra un ejemplo de cómo se pueden aplicar ámbitos a un rol para conceder distintos niveles de acceso para distintos usuarios. Piense en cómo puede implementar ámbitos para los roles con el fin de crear asignaciones significativas para su organización.
