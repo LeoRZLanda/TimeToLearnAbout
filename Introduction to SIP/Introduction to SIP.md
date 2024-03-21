@@ -131,4 +131,21 @@
 * 405 Method not allowed
 	* Specific method (Message Type) is not allowed un the session
 * 408 Request timeout
-	* The server could not process the request in a sulfable amount of time
+	* The server could not process the request in a sultable amount of time
+* 480 Temporarily Unavailable
+	* Destination is not available currently
+* 488 Not acceptable here
+	* Some part of the request can not be accepted by the server
+
+### SIP 500 Messages
+
+* Server Failure Response
+* 500 Server Internal Error
+	* The server failed to processes the request due to some unexpected condition
+* 503 Service Unavailable
+	* The server is unable to process the request, usually temporally
+* 504 Server Time-Out
+	* Server forwarded request to another server, but did not receive a response in time
+
+### SIP 600 Message
+
