@@ -76,5 +76,59 @@
 	* SIP Invite
 * I'm trying to connect your call
 	* SIP Trying
-* I've found your destination, and i'm ringing it
-	* 
+* I've found your destination, and I'm ringing it
+	* SIP Ringing
+	* SIP Session Progress
+* I've Connected your call
+	* SIP OK
+* I'm Disconnecting your call
+	* SIP Bye
+
+### SIP 100 messages
+
+* Provisional Responses
+* 100 Trying
+	* Confirmation that call is being processed
+* 180 Ringing
+	* Confirmation that destination is being alerted
+* 181 Call is being forwarded
+	* Indication that Far-End is Forwarding the call
+* 183 Session progress
+	* Sent to provide additional information about a call that is still being established
+	* Typically used for "Early media"
+
+### SIP 200 Messages
+
+* Successful Responses
+* 200 OK
+	* Request was completed successfully
+* 202 Accepted
+	* Request has been received, and is currently being processed
+
+### SIP 300 Messages
+
+* Redirection Responses
+* 300 Multiple Choices
+	* Destination has been identified ti have more than one option for which to connect to
+* 301 Moved permanently
+	* The original destination is no longer valid, and provides information on where to send the call now.
+* 302 Moved temporarly
+	* Same as Moved permanently, only may include an "Expires" time
+* 305 Use Proxy
+	* Specifies a specific proxy needed to connect to in order to process the request
+
+### SIP 400 Messages
+
+* Client Failure Response
+* 400 Bad Request
+	* Bad Syntax
+* 401 Unauthorized
+	* SIP Requested requires authentication that was not provided or correct
+* 403 Forbidden
+	* Request was valid but deliberately did not process the request
+* 404 Not Found
+	* The request was valid, but the server is not able to find the destination
+* 405 Method not allowed
+	* Specific method (Message Type) is not allowed un the session
+* 408 Request timeout
+	* The server could not process the request in a sulfable amount of time
