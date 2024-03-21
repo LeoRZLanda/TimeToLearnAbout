@@ -50,3 +50,31 @@
 
 ## A new Challenger Approaches: SIP
 
+### Session Initiation Protocol
+
+* SIP Changed the playing field
+	* Advancements
+	* Challenges
+* SIP Signaling is similar to EMAIL & HTTP Requests
+* SIP is versatile
+	* VoIP Calls
+	* Instant Messaging
+	* Presence
+* SIP is a Standard
+	* Sort of
+
+# Sección 3: SIP Signaling Messages
+
+## SIP Signaling
+
+### Signaling Overview 
+
+* Keep-Alive Messages
+	* SIP Options
+	* SIP Register
+* I need to make a call
+	* SIP Invite
+* I'm trying to connect your call
+	* SIP Trying
+* I've found your destination, and i'm ringing it
+	* 
