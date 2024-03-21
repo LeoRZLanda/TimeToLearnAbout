@@ -1,8 +1,12 @@
 [
   "calendar",
-  "obsidian-fullscreen-plugin",
   "obsidian-git",
   "note-refactor-obsidian",
   "execute-code",
-  "cm-editor-syntax-highlight-obsidian"
+  "cm-editor-syntax-highlight-obsidian",
+  "table-editor-obsidian",
+  "obsidian-outliner",
+  "obsidian-mind-map",
+  "obsidian-kanban",
+  "obsidian-trello"
 ]

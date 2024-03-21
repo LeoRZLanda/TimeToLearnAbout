@@ -4,21 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "25c939b8855044ea",
+        "id": "73167015dd3d1f87",
         "type": "tabs",
         "children": [
           {
-            "id": "c58e06748ca88997",
+            "id": "90b9437038bbf0df",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Untitled.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
+                "file": "Introduction to SIP.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -88,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.canvas",
+                "file": "Introduction to SIP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Untitled.canvas",
+                "file": "Introduction to SIP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +115,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false
               }
             }
           },
@@ -128,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.canvas"
+                "file": "Introduction to SIP.md"
               }
             }
           },
@@ -146,16 +143,34 @@
             "state": {
               "type": "all-properties",
               "state": {
-                "sortOrder": "frequency"
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
+          },
+          {
+            "id": "44c0eb4509e665fc",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "3ba03182aa7fd2fb",
+            "type": "leaf",
+            "state": {
+              "type": "trello-plugin",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 374.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -164,12 +179,20 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c58e06748ca88997",
+  "active": "90b9437038bbf0df",
   "lastOpenFiles": [
+    "Introduction to SIP.md",
+    "Apendix/Pasted image 20240320213044.png",
+    "Apendix/Pasted image 20240320212817.png",
+    "Apendix/Pasted image 20240320212439.png",
+    "Apendix",
     "Untitled.canvas",
+    "2024-03-20.md",
+    "2024-03-21.md",
     "Examen AZ-900 Aspectos básicos de Microsoft Azure.md",
     "Examen de practica.md",
     "Apendix/Pasted image 20231227164336.png",
@@ -179,9 +202,6 @@
     "Apendix/Pasted image 20231227135330.png",
     "Apendix/Pasted image 20231227135302.png",
     "Apendix/Pasted image 20231227135249.png",
-    "Apendix/Pasted image 20231227135200.png",
-    "Apendix/Pasted image 20231227135055.png",
-    "Apendix/Pasted image 20231227135037.png",
     "Recursos/Estimaciones/Sin confirmar 45157.crdownload",
     "Recursos/Estimaciones/Calculadora del costo total de propiedad (TCO) _ Microsoft Azure.pdf",
     "Recursos/Estimaciones/ExportedEstimate.xlsx",
@@ -191,7 +211,6 @@
     "Recursos/Blob",
     "Recursos/template.zip",
     "Recursos",
-    "Nueva carpeta",
     "Apendix/Pasted.md",
     "Winforms.md",
     "Apendix/Hola.md",
@@ -211,9 +230,6 @@
     "React/Conceptos Basicos/Componentes/Componente de Clase.md",
     "React/Conceptos Basicos/Componentes/Componente Funcional.md",
     "React/Conceptos Basicos/Hooks.md",
-    "React/Conceptos Basicos/Event Listener.md",
-    "React/Conceptos Basicos/Estado.md",
-    "React/Inicio/Inicio.md",
-    "React/Inicio/Que es React.md"
+    "React/Conceptos Basicos/Event Listener.md"
   ]
 }
