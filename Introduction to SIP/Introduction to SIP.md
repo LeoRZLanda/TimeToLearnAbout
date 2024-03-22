@@ -161,3 +161,19 @@
 
 ## SIP Media
 
+* RTP - Real Time Protocol
+* RTCP - Real Time Control Protocol
+* SDP - Session Description Protocol
+* Media Path
+	* Transmitted via RTP
+	* Two Streams - One in Each Direction
+	* Media Path communicated during Call setup
+* Media Stream can Change Mid Call
+	* Changes Communicated via SDP
+	* (Music) On Hold
+	* Mute
+* Call Quality
+	* Monitored by RTCP
+
+## Understanding SDP
+
