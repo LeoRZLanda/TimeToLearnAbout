@@ -177,3 +177,18 @@
 
 ## Understanding SDP
 
+* Session Description Protocol
+* Contains Information about Media Estavlishment
+* Found in
+	* SIP Invite
+	* SIP 200OK
+	* SIP 18x Messages (Early Media)
+
+### SDP Example
+
+![[Pasted image 20240321221643.png]]
+
+# Sección 5: How to speak SIP
+
+## The back to back user agent & ladder diagrams
+
