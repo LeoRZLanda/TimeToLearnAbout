@@ -112,7 +112,7 @@
 	* Destination has been identified ti have more than one option for which to connect to
 * 301 Moved permanently
 	* The original destination is no longer valid, and provides information on where to send the call now.
-* 302 Moved temporarly
+* 302 Moved temporarily
 	* Same as Moved permanently, only may include an "Expires" time
 * 305 Use Proxy
 	* Specifies a specific proxy needed to connect to in order to process the request
@@ -131,7 +131,7 @@
 * 405 Method not allowed
 	* Specific method (Message Type) is not allowed un the session
 * 408 Request timeout
-	* The server could not process the request in a sultable amount of time
+	* The server could not process the request in a suitable amount of time
 * 480 Temporarily Unavailable
 	* Destination is not available currently
 * 488 Not acceptable here
@@ -148,4 +148,16 @@
 	* Server forwarded request to another server, but did not receive a response in time
 
 ### SIP 600 Message
+
+* Global Failure Responses
+* 603 Decline
+	* Destination does not wish to participate in the call or cannot do so
+* 604 Does not Exist Anywhere
+	* Server has information that shows that the destination does not exist anywhere
+* 606 Not Acceptable
+	* The destination was contacted successfully, but some aspect of the request were not acceptable
+
+# Sección 4: SIP Media
+
+## SIP Media
 
