@@ -190,5 +190,32 @@
 
 # Sección 5: How to speak SIP
 
-## The back to back user agent & ladder diagrams
+## The back to back user agent (B2B-UA) & The ladder diagram
+
+### The back to back user agent (B2B-UA)
+
+* A Server or Device will Act as a B2B-UA
+	* PBX
+	* SBC (Session Border Controller)
+	* Provider Equipment
+* B2B-UA Manages calls that traverse it
+	* Allows for a call control & advanced call routing
+* UAC - User Agent Client
+	* Originator of the call
+* UAS - User Agent Server
+	* Destination of the call
+
+### The ladder diagram
+
+![[Pasted image 20240322193249.png]]
+
+## Wireshark 101
+
+Descargaremos wireshark [aquí](https://www.wireshark.org/download.html)
+
+## Contents of SIP Packets
+
+Vamos a descargar la siguiente muestra [aquí](https://wiki.wireshark.org/uploads/__moin_import__/attachments/SampleCaptures/SIP_CALL_RTP_G711)
+
+
 
