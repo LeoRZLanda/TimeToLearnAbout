@@ -219,3 +219,21 @@ Vamos a descargar la siguiente muestra [aquí](https://wiki.wireshark.org/upload
 
 
 
+Y abriremos el reporte sip con wireshark, de ahi le daremos click a Telephony -> SIP Flows
+
+![[Pasted image 20240322205507.png]]
+
+
+A continuación seleccionas un perfil y das clic en Flow sequence
+
+![[Pasted image 20240322205609.png]]
+
+Tambien al seleccionar el primer paquete INVITE y vemos el cuerpo del mensaje podemos ver un ejemplo mas claro de SDP, como lo habíamos visto anteriormente
+
+![[Pasted image 20240322205943.png]]
+
+
+# Sección 6: SIP Tracking 101 - Practice Examples
+
+## Installing FreePBX in virtualBox
+
