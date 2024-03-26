@@ -25,14 +25,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "meet chatbot 3 26 2024.md",
+                "file": "meets/meet chatbot 3 26 2024.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "93ad521b9f8edd2b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "meets/CRMVTiger meet.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "meet chatbot 3 26 2024.md",
+                "file": "meets/CRMVTiger meet.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "meet chatbot 3 26 2024.md",
+                "file": "meets/CRMVTiger meet.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "meet chatbot 3 26 2024.md"
+                "file": "meets/CRMVTiger meet.md"
               }
             }
           },
@@ -189,10 +201,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "dfa87793fb7507c7",
+  "active": "93ad521b9f8edd2b",
   "lastOpenFiles": [
+    "meets/Apendix/Pasted image 20240326143703.png",
+    "meets/Apendix",
+    "meets",
+    "meets/meet chatbot 3 26 2024.md",
+    "meets/CRMVTiger meet.md",
     "Introduction to SIP.md",
-    "meet chatbot 3 26 2024.md",
     "Apendix/Pasted image 20240322205943.png",
     "Apendix/Pasted image 20240322205609.png",
     "Apendix/Pasted image 20240322205507.png",
@@ -216,8 +232,6 @@
     "Recursos/Nueva carpeta",
     "Recursos/Blob/template.zip",
     "Recursos/Blob",
-    "Recursos/template.zip",
-    "Recursos",
     "Apendix/Pasted.md",
     "Winforms.md",
     "Apendix/Hola.md",
@@ -235,8 +249,6 @@
     "React/Conceptos Basicos/Conceptos Básicos.md",
     "React/Conceptos Basicos/Componentes/Componentes.md",
     "React/Conceptos Basicos/Componentes/Componente de Clase.md",
-    "React/Conceptos Basicos/Componentes/Componente Funcional.md",
-    "React/Conceptos Basicos/Hooks.md",
-    "React/Conceptos Basicos/Event Listener.md"
+    "React/Conceptos Basicos/Componentes/Componente Funcional.md"
   ]
 }
