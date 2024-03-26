@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "dfa87793fb7507c7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "meet chatbot 3 26 2024.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Introduction to SIP.md",
+                "file": "meet chatbot 3 26 2024.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Introduction to SIP.md",
+                "file": "meet chatbot 3 26 2024.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Introduction to SIP.md"
+                "file": "meet chatbot 3 26 2024.md"
               }
             }
           },
@@ -176,14 +189,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "90b9437038bbf0df",
+  "active": "dfa87793fb7507c7",
   "lastOpenFiles": [
+    "Introduction to SIP.md",
+    "meet chatbot 3 26 2024.md",
     "Apendix/Pasted image 20240322205943.png",
     "Apendix/Pasted image 20240322205609.png",
     "Apendix/Pasted image 20240322205507.png",
     "Apendix/Pasted image 20240322193249.png",
     "Apendix/Pasted image 20240321221643.png",
-    "Introduction to SIP.md",
     "Apendix/Pasted image 20240320213044.png",
     "Apendix/Pasted image 20240320212817.png",
     "Apendix/Pasted image 20240320212439.png",
@@ -195,7 +209,6 @@
     "Examen de practica.md",
     "Apendix/Pasted image 20231227164336.png",
     "Apendix/Pasted image 20231227163318.png",
-    "Apendix/Pasted image 20231227162911.png",
     "Recursos/Estimaciones/Sin confirmar 45157.crdownload",
     "Recursos/Estimaciones/Calculadora del costo total de propiedad (TCO) _ Microsoft Azure.pdf",
     "Recursos/Estimaciones/ExportedEstimate.xlsx",
