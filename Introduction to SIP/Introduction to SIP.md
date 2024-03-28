@@ -237,3 +237,61 @@ Tambien al seleccionar el primer paquete INVITE y vemos el cuerpo del mensaje po
 
 ## Installing FreePBX in virtualBox
 
+Para empezar necesitaremos la siguiente [iso](https://downloads.freepbxdistro.org/ISO/FreePBX-64bit-10.13.66.iso) de freePBX.
+
+De ahi crearemos una maquina virtual con minimo 1gb de ram y 20gb de espacio junto con un procesador, en mi caso sigo las instrucciones del video con 4GB ram 80GB de espacio y un procesador.
+
+Modificaremos las configuraciones de red y pondremos que sea Bridged adapter, para utilizar la misma ip de nuestra computadora.
+
+
+De ahi solo procede el ejecutar la maquina virtual, darle a full installation  y seguir las siguientes instrucciones, al finalizar.
+
+Nos pedirá iniciar sesión con las credenciales previas, root y la contraseña que seleccionamos.
+
+Para a partir de ahi nos mostrara la ip en donde estará el servicio activo, al ingresar a dicha ip en un navegador, nos pedirá crear un usuario, para después mandarnos al siguiente interfaz.
+
+![[Pasted image 20240327201509.png]]
+
+De ahi daremos clic a FreePBX administration y digitaremos nuestro usuario previo.
+
+Si te aparecen popups de ellos solo ignóralos y dales skip o abort.
+
+Si te pide seleccionar idioma puedes ponerlo en español, en mi caso lo dejare en ingles.
+
+Bueno, hasta este punto deberíamos de tener la siguiente interfaz.
+
+![[Pasted image 20240327202325.png]]
+
+## Configuring FreePBX Extensions
+
+Ahora es momento de configurar un par de extensiones para poder realizar que dos teléfonos puedan hacer llamadas.
+
+No dirigiremos al menu de applications -> Extensions
+
+![[Pasted image 20240327202658.png]]
+
+de ahi a add extension -> add new PJSIP extension
+
+![[Pasted image 20240327202753.png]]
+
+A continuación le modificaremos los siguientes datos.
+
+![[Pasted image 20240327203004.png]]
+
+User extension
+Display Name
+Secret
+Password for new user
+
+
+Las que se muestran en la imagen son solo demostrativas, puedes poner lo que gustes.
+
+
+Realizaremos esto mismo dos veces, para dos usuarios.
+
+Al finalizar no hay que olvidar de presionar el botón Apply Config.
+
+![[Pasted image 20240327203630.png]]
+
+## Setting up Zoiper Soft-Phone
+
