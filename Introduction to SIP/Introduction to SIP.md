@@ -304,3 +304,27 @@ De ahi ir a descargar [Zoiper](https://www.zoiper.com/en/voip-softphone/download
 
 iniciaremosel programa de instalación y como culaquiera, next e install, para que al final nos solicite iniciar sesión con las credenciales previas que hemos creado en FreePBX.
 
+![[Pasted image 20240404125742.png]]
+
+nos iremos a free user
+
+![[Pasted image 20240404125814.png]]
+
+colocamos la ip que esta dirigida nuestro frePBX
+
+![[Pasted image 20240404125933.png]]
+
+si solicita info adicional, skip
+
+
+despues nos brindara información de que configuración usar, y como es logigo usaremos SIP UDP
+
+![[Pasted image 20240404130027.png]]
+
+daremos next y skip despues, realizaremos este proceso en el siguiente servidor
+
+
+
+![[Pasted image 20240404130547.png]]
+
+
