@@ -295,3 +295,12 @@ Al finalizar no hay que olvidar de presionar el botón Apply Config.
 
 ## Setting up Zoiper Soft-Phone
 
+primero antes que nada hay que tener dos servidores o maquina avirtual externa, en mi caso tengo windows server 2022, a continuación hay que apagar la configuración, IE Enhanced Security COnfiguration, de momento.
+
+![[Pasted image 20240404114324.png]]
+
+
+De ahi ir a descargar [Zoiper](https://www.zoiper.com/en/voip-softphone/download/current) 
+
+iniciaremosel programa de instalación y como culaquiera, next e install, para que al final nos solicite iniciar sesión con las credenciales previas que hemos creado en FreePBX.
+
