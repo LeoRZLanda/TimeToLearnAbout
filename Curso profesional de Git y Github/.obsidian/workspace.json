@@ -1,0 +1,221 @@
+{
+  "main": {
+    "id": "0e5fbfe435eb139f",
+    "type": "split",
+    "children": [
+      {
+        "id": "73167015dd3d1f87",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "90b9437038bbf0df",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "224916864fbff081",
+    "type": "split",
+    "children": [
+      {
+        "id": "1bd84ff8559aae14",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "365baf2f65cfe812",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "fecfc2d03db318ef",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e5b7cb190c7244fb",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6ec4d8cd642081f0",
+    "type": "split",
+    "children": [
+      {
+        "id": "6e372764dc8eeb91",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0b4f0b5a643e5ae1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ec8d801d02f670c9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "04d8902af614be8c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false
+              }
+            }
+          },
+          {
+            "id": "fe349e409dc942a6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "dfb39d840c750064",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "c5516f41694ef17d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              }
+            }
+          },
+          {
+            "id": "44c0eb4509e665fc",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 6
+      }
+    ],
+    "direction": "horizontal",
+    "width": 374.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "90b9437038bbf0df",
+  "lastOpenFiles": [
+    "Apendix/Pasted image 20240404151136.png",
+    "Apendix/Pasted image 20240404150847.png",
+    "Apendix/Pasted image 20240404144901.png",
+    "Apendix/Pasted image 20240404144732.png",
+    "Apendix/Pasted image 20240404144640.png",
+    "Apendix/Pasted image 20240404143805.png",
+    "Apendix/Pasted image 20240404143727.png",
+    "Apendix/Pasted image 20240404143531.png",
+    "Apendix/Pasted image 20240404143438.png",
+    "Apendix/Pasted image 20240404143300.png",
+    "callcapture.pcap",
+    "callcapture.pcap.filepart",
+    "Apendix/Pasted image 20240404135006.png",
+    "POSIBLE ERROR.md",
+    "Introduction to SIP.md",
+    "meets/meet chatbot 3 26 2024.md",
+    "meets/CRMVTiger meet.md",
+    "meets/Apendix",
+    "meets",
+    "Apendix",
+    "Untitled.canvas",
+    "2024-03-20.md",
+    "2024-03-21.md",
+    "Examen AZ-900 Aspectos básicos de Microsoft Azure.md",
+    "Examen de practica.md",
+    "Recursos/Estimaciones/Sin confirmar 45157.crdownload",
+    "Recursos/Estimaciones/Calculadora del costo total de propiedad (TCO) _ Microsoft Azure.pdf",
+    "Recursos/Estimaciones/ExportedEstimate.xlsx",
+    "Recursos/Estimaciones",
+    "Recursos/Nueva carpeta",
+    "Apendix/Pasted.md",
+    "Winforms.md",
+    "Apendix/Hola.md",
+    "Apendix.md",
+    "Errores/Filtro fechas en detalles cuentas/ManejoPresupuesto/wwwroot/lib/jquery-validation/LICENSE.md",
+    "2023-11-22.md",
+    "Aprende ASP.NET Core MVC 6.md",
+    "Comandos.md",
+    "ManejoPresupuesto/wwwroot/lib/jquery-validation/LICENSE.md",
+    "Portafolio/wwwroot/lib/jquery-validation/LICENSE.md",
+    "TryHackMe/Pre Security/Windows Fundamentals/Windows Fundamentals 1.md",
+    "React/Introcucción a JSX/JSX.md",
+    "React/React.md",
+    "README.md",
+    "React/Conceptos Basicos/Conceptos Básicos.md",
+    "React/Conceptos Basicos/Componentes/Componentes.md",
+    "React/Conceptos Basicos/Componentes/Componente de Clase.md"
+  ]
+}

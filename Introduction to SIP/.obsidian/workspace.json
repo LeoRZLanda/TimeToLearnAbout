@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "90b9437038bbf0df",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Introduction to SIP.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "47f352c9d2de2f8b",
             "type": "leaf",
             "state": {
@@ -31,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -189,19 +176,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "47f352c9d2de2f8b",
+  "active": "365baf2f65cfe812",
   "lastOpenFiles": [
-    "Apendix/Pasted image 20240404130547.png",
-    "Apendix/Pasted image 20240404130027.png",
-    "Apendix/Pasted image 20240404125933.png",
-    "Apendix/Pasted image 20240404125814.png",
-    "Apendix/Pasted image 20240404125742.png",
-    "Apendix/Pasted image 20240404114442.png",
-    "Apendix/Pasted image 20240404114409.png",
-    "Apendix/Pasted image 20240404114408.png",
-    "Apendix/Pasted image 20240404114324.png",
-    "Apendix/Pasted image 20240327203630.png",
-    "Apendix/Pasted image 20240327203004.png",
+    "Apendix/Pasted image 20240404151136.png",
+    "Apendix/Pasted image 20240404150847.png",
+    "Apendix/Pasted image 20240404144901.png",
+    "Apendix/Pasted image 20240404144732.png",
+    "Apendix/Pasted image 20240404144640.png",
+    "Apendix/Pasted image 20240404143805.png",
+    "Apendix/Pasted image 20240404143727.png",
+    "Apendix/Pasted image 20240404143531.png",
+    "Apendix/Pasted image 20240404143438.png",
+    "Apendix/Pasted image 20240404143300.png",
+    "callcapture.pcap",
+    "callcapture.pcap.filepart",
+    "Apendix/Pasted image 20240404135006.png",
     "POSIBLE ERROR.md",
     "Introduction to SIP.md",
     "meets/meet chatbot 3 26 2024.md",
@@ -219,8 +208,6 @@
     "Recursos/Estimaciones/ExportedEstimate.xlsx",
     "Recursos/Estimaciones",
     "Recursos/Nueva carpeta",
-    "Recursos/Blob/template.zip",
-    "Recursos/Blob",
     "Apendix/Pasted.md",
     "Winforms.md",
     "Apendix/Hola.md",
