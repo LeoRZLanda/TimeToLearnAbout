@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "99912638a7cc1e29",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Introduction to SIP.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Introduction to SIP.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Introduction to SIP.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -176,8 +189,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "365baf2f65cfe812",
+  "active": "99912638a7cc1e29",
   "lastOpenFiles": [
+    "Introduction to SIP.md",
+    "conflict-files-obsidian-git.md",
     "Apendix/Pasted image 20240404151136.png",
     "Apendix/Pasted image 20240404150847.png",
     "Apendix/Pasted image 20240404144901.png",
@@ -190,9 +205,7 @@
     "Apendix/Pasted image 20240404143300.png",
     "callcapture.pcap",
     "callcapture.pcap.filepart",
-    "Apendix/Pasted image 20240404135006.png",
     "POSIBLE ERROR.md",
-    "Introduction to SIP.md",
     "meets/meet chatbot 3 26 2024.md",
     "meets/CRMVTiger meet.md",
     "meets/Apendix",
