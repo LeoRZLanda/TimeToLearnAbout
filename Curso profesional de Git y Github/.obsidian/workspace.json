@@ -11,8 +11,12 @@
             "id": "90b9437038bbf0df",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Curso profesional de Git y GitHub.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Curso profesional de Git y GitHub.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Curso profesional de Git y GitHub.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Curso profesional de Git y GitHub.md"
+              }
             }
           },
           {
@@ -170,6 +178,7 @@
   },
   "active": "90b9437038bbf0df",
   "lastOpenFiles": [
+    "Curso profesional de Git y GitHub.md",
     "Apendix/Pasted image 20240404151136.png",
     "Apendix/Pasted image 20240404150847.png",
     "Apendix/Pasted image 20240404144901.png",
@@ -182,7 +191,6 @@
     "Apendix/Pasted image 20240404143300.png",
     "callcapture.pcap",
     "callcapture.pcap.filepart",
-    "Apendix/Pasted image 20240404135006.png",
     "POSIBLE ERROR.md",
     "Introduction to SIP.md",
     "meets/meet chatbot 3 26 2024.md",
