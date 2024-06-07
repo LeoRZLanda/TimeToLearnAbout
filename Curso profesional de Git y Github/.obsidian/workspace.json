@@ -23,9 +23,11 @@
             "id": "1f659285de158971",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.5.12"
+                "file": "Curso profesional de Git y GitHub.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -187,7 +189,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1f659285de158971",
+  "active": "365baf2f65cfe812",
   "lastOpenFiles": [
     "Curso profesional de Git y GitHub.md",
     "Apendix/Pasted image 20240404151136.png",
