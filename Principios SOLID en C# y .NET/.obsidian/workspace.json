@@ -26,18 +26,6 @@
             }
           },
           {
-            "id": "6ba702303088364c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Principio de responsabilidad única/Aplicando el principio de responsabilidad única.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "a00403fd9d13911d",
             "type": "leaf",
             "state": {
@@ -48,9 +36,33 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "b940a0da098259c5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Principio de Abierto-Cerrado/Conociendo el principio de abierto-cerrado.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f2dd06caf7a3106a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Principio de Abierto-Cerrado/Aplicando el principio de Abierto-cerrado.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -116,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Principio de responsabilidad única/Aplicando el principio de responsabilidad única.md",
+                "file": "Principio de Abierto-Cerrado/Aplicando el principio de Abierto-cerrado.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Principio de responsabilidad única/Aplicando el principio de responsabilidad única.md",
+                "file": "Principio de Abierto-Cerrado/Aplicando el principio de Abierto-cerrado.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,7 +168,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Principio de responsabilidad única/Aplicando el principio de responsabilidad única.md"
+                "file": "Principio de Abierto-Cerrado/Aplicando el principio de Abierto-cerrado.md"
               }
             }
           },
@@ -207,11 +219,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6ba702303088364c",
+  "active": "f2dd06caf7a3106a",
   "lastOpenFiles": [
+    "Principio de Abierto-Cerrado/Conociendo el principio de abierto-cerrado.md",
+    "Principio de Abierto-Cerrado/Aplicando el principio de Abierto-cerrado.md",
     "Principio de responsabilidad única/Conociendo el Principio de Responsabilidad única.md",
-    "Introducción.md",
+    "Principio de Abierto-Cerrado",
     "Principio de responsabilidad única/Aplicando el principio de responsabilidad única.md",
+    "Principio de responsabilidad única/ExportHelper.cs",
+    "Introducción.md",
     "Principio de responsabilidad única",
     "Apendix/Pasted image 20240607191834.png",
     "Apendix",
@@ -236,13 +252,11 @@
     "meets/meet chatbot 3 26 2024.md",
     "meets/CRMVTiger meet.md",
     "meets/Apendix",
-    "meets",
     "Untitled.canvas",
     "2024-03-20.md",
     "2024-03-21.md",
     "Examen AZ-900 Aspectos básicos de Microsoft Azure.md",
     "Examen de practica.md",
-    "Recursos/Estimaciones/Sin confirmar 45157.crdownload",
     "Apendix/Pasted.md",
     "Winforms.md",
     "Apendix/Hola.md",
@@ -253,8 +267,6 @@
     "Comandos.md",
     "ManejoPresupuesto/wwwroot/lib/jquery-validation/LICENSE.md",
     "Portafolio/wwwroot/lib/jquery-validation/LICENSE.md",
-    "TryHackMe/Pre Security/Windows Fundamentals/Windows Fundamentals 1.md",
-    "React/Introcucción a JSX/JSX.md",
-    "React/React.md"
+    "TryHackMe/Pre Security/Windows Fundamentals/Windows Fundamentals 1.md"
   ]
 }
