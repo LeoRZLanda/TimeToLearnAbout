@@ -20,7 +20,7 @@ El **principio de responsabilidad única (SRP)** establece que cada clase o m�
 
 ## Ejemplos de aplicación del SRP
 
-Como usuario luego de confirmar la compra espero ver un mensaje de confirmación, tener la posibilidad de descargar la factura y un correo electrónico de confirmación.
+Como usuario luego de confirmar la compra espero ver un **mensaje de confirmación**, tener la posibilidad de **descargar la factura** y un **correo electrónico de confirmación**.
 
 - **Clase** `Persona`**:** Tiene la responsabilidad de almacenar información personal (nombre, dirección, etc.).
 - **Clase** `Calculadora`**:** Tiene la responsabilidad de realizar operaciones matemáticas (suma, resta, etc.).
