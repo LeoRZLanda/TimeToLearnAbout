@@ -49,6 +49,16 @@ PD: is part of the Fortinet Security Fabric
 
 ### FortiGuard Labs
 
-To stay up-to-date with the changing threat landscape, FortiGate devices can receive updates through FortiGuard Security services, powered by FortiGuard Labs
+To stay up-to-date with the changing threat landscape, FortiGate devices can receive updates through FortiGuard Security services, powered by FortiGuard Labs.
+
+Founded in 2002, FortiGuard Labs is Fortinet´s elite cybersecurity threat intelligence and research organization.
 
 
+Partnering with law enforcement agencies, government organizations, and security vendor alliances worldwide to fight emerging global security risks.
+
+
+#### Features of FortiGuard Labs
+
+* Trusted machine learning and artificial intelligence: 
+* Real-time threat intelligence
+* Threat hunting and outbreak alerts.
