@@ -49,3 +49,6 @@ PD: is part of the Fortinet Security Fabric
 
 ### FortiGuard Labs
 
+To stay up-to-date with the changing threat landscape, FortiGate devices can receive updates through FortiGuard Security services, powered by FortiGuard Labs
+
+
