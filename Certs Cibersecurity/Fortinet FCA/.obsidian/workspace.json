@@ -1,0 +1,264 @@
+{
+  "main": {
+    "id": "0e5fbfe435eb139f",
+    "type": "split",
+    "children": [
+      {
+        "id": "73167015dd3d1f87",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "90b9437038bbf0df",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "1f659285de158971",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.2"
+              }
+            }
+          },
+          {
+            "id": "a00403fd9d13911d",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "b940a0da098259c5",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "f2dd06caf7a3106a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "FCA - FortiGate 7.4 Operator Self-Paced.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "224916864fbff081",
+    "type": "split",
+    "children": [
+      {
+        "id": "1bd84ff8559aae14",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "365baf2f65cfe812",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "fecfc2d03db318ef",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e5b7cb190c7244fb",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6ec4d8cd642081f0",
+    "type": "split",
+    "children": [
+      {
+        "id": "6e372764dc8eeb91",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0b4f0b5a643e5ae1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "FCA - FortiGate 7.4 Operator Self-Paced.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ec8d801d02f670c9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "FCA - FortiGate 7.4 Operator Self-Paced.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "04d8902af614be8c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false
+              }
+            }
+          },
+          {
+            "id": "fe349e409dc942a6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "FCA - FortiGate 7.4 Operator Self-Paced.md"
+              }
+            }
+          },
+          {
+            "id": "dfb39d840c750064",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "c5516f41694ef17d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              }
+            }
+          },
+          {
+            "id": "44c0eb4509e665fc",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 6
+      }
+    ],
+    "direction": "horizontal",
+    "width": 374.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "f2dd06caf7a3106a",
+  "lastOpenFiles": [
+    "FCA - FortiGate 7.4 Operator Self-Paced.md",
+    "Principio de Abierto-Cerrado/Conociendo el principio de abierto-cerrado.md",
+    "Principio de Abierto-Cerrado/Aplicando el principio de Abierto-cerrado.md",
+    "Principio de Abierto-Cerrado/Apendix/Pasted image 20240611112212.png",
+    "Principio de Abierto-Cerrado/Apendix/Pasted image 20240611111013.png",
+    "Principio de Abierto-Cerrado/Apendix",
+    "Principio de responsabilidad única/Conociendo el Principio de Responsabilidad única.md",
+    "Principio de Abierto-Cerrado",
+    "Principio de responsabilidad única/Aplicando el principio de responsabilidad única.md",
+    "Principio de responsabilidad única/ExportHelper.cs",
+    "Introducción.md",
+    "Principio de responsabilidad única",
+    "Apendix/Pasted image 20240607191834.png",
+    "Apendix",
+    "Recursos/Recursos.md",
+    "Recursos/solid_csharp_net_slides.pdf",
+    "Recursos/solid_csharp_net_slides.pdf.crdownload",
+    "Recursos",
+    "Curso profesional de Git y GitHub.md",
+    "Apendix/Pasted image 20240404151136.png",
+    "Apendix/Pasted image 20240404150847.png",
+    "Apendix/Pasted image 20240404144901.png",
+    "Apendix/Pasted image 20240404144732.png",
+    "Apendix/Pasted image 20240404144640.png",
+    "Apendix/Pasted image 20240404143805.png",
+    "Apendix/Pasted image 20240404143727.png",
+    "callcapture.pcap",
+    "callcapture.pcap.filepart",
+    "POSIBLE ERROR.md",
+    "Introduction to SIP.md",
+    "meets/meet chatbot 3 26 2024.md",
+    "meets/CRMVTiger meet.md",
+    "Untitled.canvas",
+    "2024-03-20.md",
+    "2024-03-21.md",
+    "Examen AZ-900 Aspectos básicos de Microsoft Azure.md",
+    "Examen de practica.md",
+    "Apendix/Pasted.md",
+    "Winforms.md",
+    "Apendix/Hola.md",
+    "Apendix.md",
+    "Errores/Filtro fechas en detalles cuentas/ManejoPresupuesto/wwwroot/lib/jquery-validation/LICENSE.md",
+    "2023-11-22.md",
+    "Aprende ASP.NET Core MVC 6.md",
+    "Comandos.md",
+    "ManejoPresupuesto/wwwroot/lib/jquery-validation/LICENSE.md",
+    "Portafolio/wwwroot/lib/jquery-validation/LICENSE.md"
+  ]
+}

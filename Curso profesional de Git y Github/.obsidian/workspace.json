@@ -41,8 +41,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -199,7 +198,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "8a9069759d6ce9f6",
+  "active": "90b9437038bbf0df",
   "lastOpenFiles": [
     "Curso profesional de Git y GitHub.md",
     "Apendix/Pasted image 20240404151136.png",
