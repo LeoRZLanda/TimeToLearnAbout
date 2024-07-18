@@ -1,0 +1,250 @@
+{
+  "main": {
+    "id": "0e5fbfe435eb139f",
+    "type": "split",
+    "children": [
+      {
+        "id": "e96100e561aff6df",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5c46dc817edad9dc",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          },
+          {
+            "id": "97257bc495212dc4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Examen AZ-900 Aspectos básicos de Microsoft Azure.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "beb07eaf9f0750f4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Examen de practica.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "53043dd16ac41c8a",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.3"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "224916864fbff081",
+    "type": "split",
+    "children": [
+      {
+        "id": "1bd84ff8559aae14",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "365baf2f65cfe812",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "fecfc2d03db318ef",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e5b7cb190c7244fb",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6ec4d8cd642081f0",
+    "type": "split",
+    "children": [
+      {
+        "id": "6e372764dc8eeb91",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0b4f0b5a643e5ae1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Examen de practica.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ec8d801d02f670c9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Examen de practica.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "04d8902af614be8c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "fe349e409dc942a6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Examen de practica.md"
+              }
+            }
+          },
+          {
+            "id": "dfb39d840c750064",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "c5516f41694ef17d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "beb07eaf9f0750f4",
+  "lastOpenFiles": [
+    "Examen AZ-900 Aspectos básicos de Microsoft Azure.md",
+    "Examen de practica.md",
+    "Apendix/Pasted image 20231227164336.png",
+    "Apendix/Pasted image 20231227163318.png",
+    "Apendix/Pasted image 20231227162911.png",
+    "Apendix/Pasted image 20231227135740.png",
+    "Apendix/Pasted image 20231227135330.png",
+    "Apendix/Pasted image 20231227135302.png",
+    "Apendix/Pasted image 20231227135249.png",
+    "Apendix/Pasted image 20231227135200.png",
+    "Apendix/Pasted image 20231227135055.png",
+    "Apendix/Pasted image 20231227135037.png",
+    "Recursos/Estimaciones/Sin confirmar 45157.crdownload",
+    "Recursos/Estimaciones/Calculadora del costo total de propiedad (TCO) _ Microsoft Azure.pdf",
+    "Recursos/Estimaciones/ExportedEstimate.xlsx",
+    "Recursos/Estimaciones",
+    "Recursos/Nueva carpeta",
+    "Recursos/Blob/template.zip",
+    "Recursos/Blob",
+    "Recursos/template.zip",
+    "Recursos",
+    "Nueva carpeta",
+    "Apendix/Pasted.md",
+    "Winforms.md",
+    "Apendix/Hola.md",
+    "Apendix.md",
+    "Errores/Filtro fechas en detalles cuentas/ManejoPresupuesto/wwwroot/lib/jquery-validation/LICENSE.md",
+    "2023-11-22.md",
+    "Aprende ASP.NET Core MVC 6.md",
+    "Comandos.md",
+    "ManejoPresupuesto/wwwroot/lib/jquery-validation/LICENSE.md",
+    "Portafolio/wwwroot/lib/jquery-validation/LICENSE.md",
+    "TryHackMe/Pre Security/Windows Fundamentals/Windows Fundamentals 1.md",
+    "React/Introcucción a JSX/JSX.md",
+    "React/React.md",
+    "README.md",
+    "React/Conceptos Basicos/Conceptos Básicos.md",
+    "React/Conceptos Basicos/Componentes/Componentes.md",
+    "React/Conceptos Basicos/Componentes/Componente de Clase.md",
+    "React/Conceptos Basicos/Componentes/Componente Funcional.md",
+    "React/Conceptos Basicos/Hooks.md",
+    "React/Conceptos Basicos/Event Listener.md",
+    "React/Conceptos Basicos/Estado.md",
+    "React/Inicio/Inicio.md",
+    "React/Inicio/Que es React.md",
+    "React/Inicio/Ventajas de React.md",
+    "Untitled.canvas"
+  ]
+}
