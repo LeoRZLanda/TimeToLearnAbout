@@ -29,7 +29,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Outline.md",
+                "file": "Getting Started.md",
                 "mode": "source",
                 "source": false
               }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Outline.md",
+                "file": "Getting Started.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Outline.md",
+                "file": "Getting Started.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Outline.md"
+                "file": "Getting Started.md"
               }
             }
           },
@@ -195,6 +195,8 @@
   },
   "active": "beb07eaf9f0750f4",
   "lastOpenFiles": [
+    "realese.md",
+    "Getting Started.md",
     "Codes/UnitTestingCourse/UnitTestingCourse/TestDouble/Untestable",
     "Codes/UnitTestingCourse/UnitTestingCourse/TestDouble/Testable",
     "Codes/UnitTestingCourse/UnitTestingCourse/TestDouble",
@@ -205,8 +207,6 @@
     "Codes/UnitTestingCourse/UnitTestingCourse/obj/Debug",
     "Codes/UnitTestingCourse/UnitTestingCourse/obj",
     "Codes/UnitTestingCourse/UnitTestingCourse/bin/Release",
-    "Codes/UnitTestingCourse/UnitTestingCourse/bin/Debug",
-    "Outline.md",
     "Examen AZ-900 Aspectos básicos de Microsoft Azure.md",
     "Examen de practica.md",
     "Apendix/Pasted image 20231227164336.png",
